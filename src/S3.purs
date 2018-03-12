@@ -19,392 +19,544 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "S3" :: String
-
 
 -- | <p>Aborts a multipart upload.</p><p>To verify that all parts have been removed, so you don't get charged for the part storage, you should call the List Parts operation and ensure the parts list is empty.</p>
 abortMultipartUpload :: forall eff. AbortMultipartUploadRequest -> Aff (exception :: EXCEPTION | eff) AbortMultipartUploadOutput
-abortMultipartUpload = Request.request serviceName "abortMultipartUpload" 
+abortMultipartUpload = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "abortMultipartUpload"
 
 
 -- | Completes a multipart upload by assembling previously uploaded parts.
 completeMultipartUpload :: forall eff. CompleteMultipartUploadRequest -> Aff (exception :: EXCEPTION | eff) CompleteMultipartUploadOutput
-completeMultipartUpload = Request.request serviceName "completeMultipartUpload" 
+completeMultipartUpload = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "completeMultipartUpload"
 
 
 -- | Creates a copy of an object that is already stored in Amazon S3.
 copyObject :: forall eff. CopyObjectRequest -> Aff (exception :: EXCEPTION | eff) CopyObjectOutput
-copyObject = Request.request serviceName "copyObject" 
+copyObject = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "copyObject"
 
 
 -- | Creates a new bucket.
 createBucket :: forall eff. CreateBucketRequest -> Aff (exception :: EXCEPTION | eff) CreateBucketOutput
-createBucket = Request.request serviceName "createBucket" 
+createBucket = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "createBucket"
 
 
 -- | <p>Initiates a multipart upload and returns an upload ID.</p><p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
 createMultipartUpload :: forall eff. CreateMultipartUploadRequest -> Aff (exception :: EXCEPTION | eff) CreateMultipartUploadOutput
-createMultipartUpload = Request.request serviceName "createMultipartUpload" 
+createMultipartUpload = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "createMultipartUpload"
 
 
 -- | Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
 deleteBucket :: forall eff. DeleteBucketRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucket = Request.request serviceName "deleteBucket" 
+deleteBucket = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucket"
 
 
 -- | Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).
 deleteBucketAnalyticsConfiguration :: forall eff. DeleteBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketAnalyticsConfiguration = Request.request serviceName "deleteBucketAnalyticsConfiguration" 
+deleteBucketAnalyticsConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketAnalyticsConfiguration"
 
 
 -- | Deletes the cors configuration information set for the bucket.
 deleteBucketCors :: forall eff. DeleteBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketCors = Request.request serviceName "deleteBucketCors" 
+deleteBucketCors = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketCors"
 
 
 -- | Deletes the server-side encryption configuration from the bucket.
 deleteBucketEncryption :: forall eff. DeleteBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketEncryption = Request.request serviceName "deleteBucketEncryption" 
+deleteBucketEncryption = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketEncryption"
 
 
 -- | Deletes an inventory configuration (identified by the inventory ID) from the bucket.
 deleteBucketInventoryConfiguration :: forall eff. DeleteBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketInventoryConfiguration = Request.request serviceName "deleteBucketInventoryConfiguration" 
+deleteBucketInventoryConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketInventoryConfiguration"
 
 
 -- | Deletes the lifecycle configuration from the bucket.
 deleteBucketLifecycle :: forall eff. DeleteBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketLifecycle = Request.request serviceName "deleteBucketLifecycle" 
+deleteBucketLifecycle = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketLifecycle"
 
 
 -- | Deletes a metrics configuration (specified by the metrics configuration ID) from the bucket.
 deleteBucketMetricsConfiguration :: forall eff. DeleteBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketMetricsConfiguration = Request.request serviceName "deleteBucketMetricsConfiguration" 
+deleteBucketMetricsConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketMetricsConfiguration"
 
 
 -- | Deletes the policy from the bucket.
 deleteBucketPolicy :: forall eff. DeleteBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketPolicy = Request.request serviceName "deleteBucketPolicy" 
+deleteBucketPolicy = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketPolicy"
 
 
 -- | Deletes the replication configuration from the bucket.
 deleteBucketReplication :: forall eff. DeleteBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketReplication = Request.request serviceName "deleteBucketReplication" 
+deleteBucketReplication = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketReplication"
 
 
 -- | Deletes the tags from the bucket.
 deleteBucketTagging :: forall eff. DeleteBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketTagging = Request.request serviceName "deleteBucketTagging" 
+deleteBucketTagging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketTagging"
 
 
 -- | This operation removes the website configuration from the bucket.
 deleteBucketWebsite :: forall eff. DeleteBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-deleteBucketWebsite = Request.request serviceName "deleteBucketWebsite" 
+deleteBucketWebsite = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteBucketWebsite"
 
 
 -- | Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects.
 deleteObject :: forall eff. DeleteObjectRequest -> Aff (exception :: EXCEPTION | eff) DeleteObjectOutput
-deleteObject = Request.request serviceName "deleteObject" 
+deleteObject = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteObject"
 
 
 -- | Removes the tag-set from an existing object.
 deleteObjectTagging :: forall eff. DeleteObjectTaggingRequest -> Aff (exception :: EXCEPTION | eff) DeleteObjectTaggingOutput
-deleteObjectTagging = Request.request serviceName "deleteObjectTagging" 
+deleteObjectTagging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteObjectTagging"
 
 
 -- | This operation enables you to delete multiple objects from a bucket using a single HTTP request. You may specify up to 1000 keys.
 deleteObjects :: forall eff. DeleteObjectsRequest -> Aff (exception :: EXCEPTION | eff) DeleteObjectsOutput
-deleteObjects = Request.request serviceName "deleteObjects" 
+deleteObjects = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "deleteObjects"
 
 
 -- | Returns the accelerate configuration of a bucket.
 getBucketAccelerateConfiguration :: forall eff. GetBucketAccelerateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) GetBucketAccelerateConfigurationOutput
-getBucketAccelerateConfiguration = Request.request serviceName "getBucketAccelerateConfiguration" 
+getBucketAccelerateConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketAccelerateConfiguration"
 
 
 -- | Gets the access control policy for the bucket.
 getBucketAcl :: forall eff. GetBucketAclRequest -> Aff (exception :: EXCEPTION | eff) GetBucketAclOutput
-getBucketAcl = Request.request serviceName "getBucketAcl" 
+getBucketAcl = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketAcl"
 
 
 -- | Gets an analytics configuration for the bucket (specified by the analytics configuration ID).
 getBucketAnalyticsConfiguration :: forall eff. GetBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) GetBucketAnalyticsConfigurationOutput
-getBucketAnalyticsConfiguration = Request.request serviceName "getBucketAnalyticsConfiguration" 
+getBucketAnalyticsConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketAnalyticsConfiguration"
 
 
 -- | Returns the cors configuration for the bucket.
 getBucketCors :: forall eff. GetBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) GetBucketCorsOutput
-getBucketCors = Request.request serviceName "getBucketCors" 
+getBucketCors = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketCors"
 
 
 -- | Returns the server-side encryption configuration of a bucket.
 getBucketEncryption :: forall eff. GetBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) GetBucketEncryptionOutput
-getBucketEncryption = Request.request serviceName "getBucketEncryption" 
+getBucketEncryption = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketEncryption"
 
 
 -- | Returns an inventory configuration (identified by the inventory ID) from the bucket.
 getBucketInventoryConfiguration :: forall eff. GetBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) GetBucketInventoryConfigurationOutput
-getBucketInventoryConfiguration = Request.request serviceName "getBucketInventoryConfiguration" 
+getBucketInventoryConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketInventoryConfiguration"
 
 
 -- | Deprecated, see the GetBucketLifecycleConfiguration operation.
 getBucketLifecycle :: forall eff. GetBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) GetBucketLifecycleOutput
-getBucketLifecycle = Request.request serviceName "getBucketLifecycle" 
+getBucketLifecycle = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketLifecycle"
 
 
 -- | Returns the lifecycle configuration information set on the bucket.
 getBucketLifecycleConfiguration :: forall eff. GetBucketLifecycleConfigurationRequest -> Aff (exception :: EXCEPTION | eff) GetBucketLifecycleConfigurationOutput
-getBucketLifecycleConfiguration = Request.request serviceName "getBucketLifecycleConfiguration" 
+getBucketLifecycleConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketLifecycleConfiguration"
 
 
 -- | Returns the region the bucket resides in.
 getBucketLocation :: forall eff. GetBucketLocationRequest -> Aff (exception :: EXCEPTION | eff) GetBucketLocationOutput
-getBucketLocation = Request.request serviceName "getBucketLocation" 
+getBucketLocation = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketLocation"
 
 
 -- | Returns the logging status of a bucket and the permissions users have to view and modify that status. To use GET, you must be the bucket owner.
 getBucketLogging :: forall eff. GetBucketLoggingRequest -> Aff (exception :: EXCEPTION | eff) GetBucketLoggingOutput
-getBucketLogging = Request.request serviceName "getBucketLogging" 
+getBucketLogging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketLogging"
 
 
 -- | Gets a metrics configuration (specified by the metrics configuration ID) from the bucket.
 getBucketMetricsConfiguration :: forall eff. GetBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) GetBucketMetricsConfigurationOutput
-getBucketMetricsConfiguration = Request.request serviceName "getBucketMetricsConfiguration" 
+getBucketMetricsConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketMetricsConfiguration"
 
 
 -- | Deprecated, see the GetBucketNotificationConfiguration operation.
 getBucketNotification :: forall eff. GetBucketNotificationConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NotificationConfigurationDeprecated
-getBucketNotification = Request.request serviceName "getBucketNotification" 
+getBucketNotification = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketNotification"
 
 
 -- | Returns the notification configuration of a bucket.
 getBucketNotificationConfiguration :: forall eff. GetBucketNotificationConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NotificationConfiguration
-getBucketNotificationConfiguration = Request.request serviceName "getBucketNotificationConfiguration" 
+getBucketNotificationConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketNotificationConfiguration"
 
 
 -- | Returns the policy of a specified bucket.
 getBucketPolicy :: forall eff. GetBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) GetBucketPolicyOutput
-getBucketPolicy = Request.request serviceName "getBucketPolicy" 
+getBucketPolicy = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketPolicy"
 
 
 -- | Returns the replication configuration of a bucket.
 getBucketReplication :: forall eff. GetBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) GetBucketReplicationOutput
-getBucketReplication = Request.request serviceName "getBucketReplication" 
+getBucketReplication = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketReplication"
 
 
 -- | Returns the request payment configuration of a bucket.
 getBucketRequestPayment :: forall eff. GetBucketRequestPaymentRequest -> Aff (exception :: EXCEPTION | eff) GetBucketRequestPaymentOutput
-getBucketRequestPayment = Request.request serviceName "getBucketRequestPayment" 
+getBucketRequestPayment = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketRequestPayment"
 
 
 -- | Returns the tag set associated with the bucket.
 getBucketTagging :: forall eff. GetBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) GetBucketTaggingOutput
-getBucketTagging = Request.request serviceName "getBucketTagging" 
+getBucketTagging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketTagging"
 
 
 -- | Returns the versioning state of a bucket.
 getBucketVersioning :: forall eff. GetBucketVersioningRequest -> Aff (exception :: EXCEPTION | eff) GetBucketVersioningOutput
-getBucketVersioning = Request.request serviceName "getBucketVersioning" 
+getBucketVersioning = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketVersioning"
 
 
 -- | Returns the website configuration for a bucket.
 getBucketWebsite :: forall eff. GetBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) GetBucketWebsiteOutput
-getBucketWebsite = Request.request serviceName "getBucketWebsite" 
+getBucketWebsite = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getBucketWebsite"
 
 
 -- | Retrieves objects from Amazon S3.
 getObject :: forall eff. GetObjectRequest -> Aff (exception :: EXCEPTION | eff) GetObjectOutput
-getObject = Request.request serviceName "getObject" 
+getObject = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getObject"
 
 
 -- | Returns the access control list (ACL) of an object.
 getObjectAcl :: forall eff. GetObjectAclRequest -> Aff (exception :: EXCEPTION | eff) GetObjectAclOutput
-getObjectAcl = Request.request serviceName "getObjectAcl" 
+getObjectAcl = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getObjectAcl"
 
 
 -- | Returns the tag-set of an object.
 getObjectTagging :: forall eff. GetObjectTaggingRequest -> Aff (exception :: EXCEPTION | eff) GetObjectTaggingOutput
-getObjectTagging = Request.request serviceName "getObjectTagging" 
+getObjectTagging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getObjectTagging"
 
 
 -- | Return torrent files from a bucket.
 getObjectTorrent :: forall eff. GetObjectTorrentRequest -> Aff (exception :: EXCEPTION | eff) GetObjectTorrentOutput
-getObjectTorrent = Request.request serviceName "getObjectTorrent" 
+getObjectTorrent = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "getObjectTorrent"
 
 
 -- | This operation is useful to determine if a bucket exists and you have permission to access it.
 headBucket :: forall eff. HeadBucketRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-headBucket = Request.request serviceName "headBucket" 
+headBucket = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "headBucket"
 
 
 -- | The HEAD operation retrieves metadata from an object without returning the object itself. This operation is useful if you're only interested in an object's metadata. To use HEAD, you must have READ access to the object.
 headObject :: forall eff. HeadObjectRequest -> Aff (exception :: EXCEPTION | eff) HeadObjectOutput
-headObject = Request.request serviceName "headObject" 
+headObject = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "headObject"
 
 
 -- | Lists the analytics configurations for the bucket.
 listBucketAnalyticsConfigurations :: forall eff. ListBucketAnalyticsConfigurationsRequest -> Aff (exception :: EXCEPTION | eff) ListBucketAnalyticsConfigurationsOutput
-listBucketAnalyticsConfigurations = Request.request serviceName "listBucketAnalyticsConfigurations" 
+listBucketAnalyticsConfigurations = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listBucketAnalyticsConfigurations"
 
 
 -- | Returns a list of inventory configurations for the bucket.
 listBucketInventoryConfigurations :: forall eff. ListBucketInventoryConfigurationsRequest -> Aff (exception :: EXCEPTION | eff) ListBucketInventoryConfigurationsOutput
-listBucketInventoryConfigurations = Request.request serviceName "listBucketInventoryConfigurations" 
+listBucketInventoryConfigurations = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listBucketInventoryConfigurations"
 
 
 -- | Lists the metrics configurations for the bucket.
 listBucketMetricsConfigurations :: forall eff. ListBucketMetricsConfigurationsRequest -> Aff (exception :: EXCEPTION | eff) ListBucketMetricsConfigurationsOutput
-listBucketMetricsConfigurations = Request.request serviceName "listBucketMetricsConfigurations" 
+listBucketMetricsConfigurations = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listBucketMetricsConfigurations"
 
 
 -- | Returns a list of all buckets owned by the authenticated sender of the request.
 listBuckets :: forall eff.  Aff (exception :: EXCEPTION | eff) ListBucketsOutput
-listBuckets = Request.request serviceName "listBuckets" (Types.NoInput unit)
+listBuckets = Request.request service method (Types.NoInput unit) where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listBuckets"
 
 
 -- | This operation lists in-progress multipart uploads.
 listMultipartUploads :: forall eff. ListMultipartUploadsRequest -> Aff (exception :: EXCEPTION | eff) ListMultipartUploadsOutput
-listMultipartUploads = Request.request serviceName "listMultipartUploads" 
+listMultipartUploads = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listMultipartUploads"
 
 
 -- | Returns metadata about all of the versions of objects in a bucket.
 listObjectVersions :: forall eff. ListObjectVersionsRequest -> Aff (exception :: EXCEPTION | eff) ListObjectVersionsOutput
-listObjectVersions = Request.request serviceName "listObjectVersions" 
+listObjectVersions = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listObjectVersions"
 
 
 -- | Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket.
 listObjects :: forall eff. ListObjectsRequest -> Aff (exception :: EXCEPTION | eff) ListObjectsOutput
-listObjects = Request.request serviceName "listObjects" 
+listObjects = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listObjects"
 
 
 -- | Returns some or all (up to 1000) of the objects in a bucket. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. Note: ListObjectsV2 is the revised List Objects API and we recommend you use this revised API for new application development.
 listObjectsV2 :: forall eff. ListObjectsV2Request -> Aff (exception :: EXCEPTION | eff) ListObjectsV2Output
-listObjectsV2 = Request.request serviceName "listObjectsV2" 
+listObjectsV2 = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listObjectsV2"
 
 
 -- | Lists the parts that have been uploaded for a specific multipart upload.
 listParts :: forall eff. ListPartsRequest -> Aff (exception :: EXCEPTION | eff) ListPartsOutput
-listParts = Request.request serviceName "listParts" 
+listParts = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "listParts"
 
 
 -- | Sets the accelerate configuration of an existing bucket.
 putBucketAccelerateConfiguration :: forall eff. PutBucketAccelerateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketAccelerateConfiguration = Request.request serviceName "putBucketAccelerateConfiguration" 
+putBucketAccelerateConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketAccelerateConfiguration"
 
 
 -- | Sets the permissions on a bucket using access control lists (ACL).
 putBucketAcl :: forall eff. PutBucketAclRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketAcl = Request.request serviceName "putBucketAcl" 
+putBucketAcl = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketAcl"
 
 
 -- | Sets an analytics configuration for the bucket (specified by the analytics configuration ID).
 putBucketAnalyticsConfiguration :: forall eff. PutBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketAnalyticsConfiguration = Request.request serviceName "putBucketAnalyticsConfiguration" 
+putBucketAnalyticsConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketAnalyticsConfiguration"
 
 
 -- | Sets the cors configuration for a bucket.
 putBucketCors :: forall eff. PutBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketCors = Request.request serviceName "putBucketCors" 
+putBucketCors = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketCors"
 
 
 -- | Creates a new server-side encryption configuration (or replaces an existing one, if present).
 putBucketEncryption :: forall eff. PutBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketEncryption = Request.request serviceName "putBucketEncryption" 
+putBucketEncryption = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketEncryption"
 
 
 -- | Adds an inventory configuration (identified by the inventory ID) from the bucket.
 putBucketInventoryConfiguration :: forall eff. PutBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketInventoryConfiguration = Request.request serviceName "putBucketInventoryConfiguration" 
+putBucketInventoryConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketInventoryConfiguration"
 
 
 -- | Deprecated, see the PutBucketLifecycleConfiguration operation.
 putBucketLifecycle :: forall eff. PutBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketLifecycle = Request.request serviceName "putBucketLifecycle" 
+putBucketLifecycle = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketLifecycle"
 
 
 -- | Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.
 putBucketLifecycleConfiguration :: forall eff. PutBucketLifecycleConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketLifecycleConfiguration = Request.request serviceName "putBucketLifecycleConfiguration" 
+putBucketLifecycleConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketLifecycleConfiguration"
 
 
 -- | Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the logging status of a bucket, you must be the bucket owner.
 putBucketLogging :: forall eff. PutBucketLoggingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketLogging = Request.request serviceName "putBucketLogging" 
+putBucketLogging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketLogging"
 
 
 -- | Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
 putBucketMetricsConfiguration :: forall eff. PutBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketMetricsConfiguration = Request.request serviceName "putBucketMetricsConfiguration" 
+putBucketMetricsConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketMetricsConfiguration"
 
 
 -- | Deprecated, see the PutBucketNotificationConfiguraiton operation.
 putBucketNotification :: forall eff. PutBucketNotificationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketNotification = Request.request serviceName "putBucketNotification" 
+putBucketNotification = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketNotification"
 
 
 -- | Enables notifications of specified events for a bucket.
 putBucketNotificationConfiguration :: forall eff. PutBucketNotificationConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketNotificationConfiguration = Request.request serviceName "putBucketNotificationConfiguration" 
+putBucketNotificationConfiguration = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketNotificationConfiguration"
 
 
 -- | Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.
 putBucketPolicy :: forall eff. PutBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketPolicy = Request.request serviceName "putBucketPolicy" 
+putBucketPolicy = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketPolicy"
 
 
 -- | Creates a new replication configuration (or replaces an existing one, if present).
 putBucketReplication :: forall eff. PutBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketReplication = Request.request serviceName "putBucketReplication" 
+putBucketReplication = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketReplication"
 
 
 -- | Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
 putBucketRequestPayment :: forall eff. PutBucketRequestPaymentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketRequestPayment = Request.request serviceName "putBucketRequestPayment" 
+putBucketRequestPayment = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketRequestPayment"
 
 
 -- | Sets the tags for a bucket.
 putBucketTagging :: forall eff. PutBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketTagging = Request.request serviceName "putBucketTagging" 
+putBucketTagging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketTagging"
 
 
 -- | Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.
 putBucketVersioning :: forall eff. PutBucketVersioningRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketVersioning = Request.request serviceName "putBucketVersioning" 
+putBucketVersioning = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketVersioning"
 
 
 -- | Set the website configuration for a bucket.
 putBucketWebsite :: forall eff. PutBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
-putBucketWebsite = Request.request serviceName "putBucketWebsite" 
+putBucketWebsite = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putBucketWebsite"
 
 
 -- | Adds an object to a bucket.
 putObject :: forall eff. PutObjectRequest -> Aff (exception :: EXCEPTION | eff) PutObjectOutput
-putObject = Request.request serviceName "putObject" 
+putObject = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putObject"
 
 
 -- | uses the acl subresource to set the access control list (ACL) permissions for an object that already exists in a bucket
 putObjectAcl :: forall eff. PutObjectAclRequest -> Aff (exception :: EXCEPTION | eff) PutObjectAclOutput
-putObjectAcl = Request.request serviceName "putObjectAcl" 
+putObjectAcl = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putObjectAcl"
 
 
 -- | Sets the supplied tag-set to an object that already exists in a bucket
 putObjectTagging :: forall eff. PutObjectTaggingRequest -> Aff (exception :: EXCEPTION | eff) PutObjectTaggingOutput
-putObjectTagging = Request.request serviceName "putObjectTagging" 
+putObjectTagging = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "putObjectTagging"
 
 
 -- | Restores an archived copy of an object back into Amazon S3
 restoreObject :: forall eff. RestoreObjectRequest -> Aff (exception :: EXCEPTION | eff) RestoreObjectOutput
-restoreObject = Request.request serviceName "restoreObject" 
+restoreObject = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "restoreObject"
 
 
 -- | <p>Uploads a part in a multipart upload.</p><p><b>Note:</b> After you initiate multipart upload and upload one or more parts, you must either complete or abort multipart upload in order to stop getting charged for storage of the uploaded parts. Only after you either complete or abort multipart upload, Amazon S3 frees up the parts storage and stops charging you for the parts storage.</p>
 uploadPart :: forall eff. UploadPartRequest -> Aff (exception :: EXCEPTION | eff) UploadPartOutput
-uploadPart = Request.request serviceName "uploadPart" 
+uploadPart = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "uploadPart"
 
 
 -- | Uploads a part by copying data from an existing object as data source.
 uploadPartCopy :: forall eff. UploadPartCopyRequest -> Aff (exception :: EXCEPTION | eff) UploadPartCopyOutput
-uploadPartCopy = Request.request serviceName "uploadPartCopy" 
+uploadPartCopy = Request.request service method  where
+    service = Request.ServiceName "S3"
+    method = Request.MethodName "uploadPartCopy"
 
 
 newtype AbortDate = AbortDate Types.Timestamp
