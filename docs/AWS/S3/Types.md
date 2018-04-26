@@ -26,7 +26,7 @@ Encode AbortDate
 
 ``` purescript
 newtype AbortIncompleteMultipartUpload
-  = AbortIncompleteMultipartUpload { "DaysAfterInitiation" :: NullOrUndefined (DaysAfterInitiation) }
+  = AbortIncompleteMultipartUpload { "DaysAfterInitiation" :: Maybe (DaysAfterInitiation) }
 ```
 
 Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload.
@@ -51,7 +51,7 @@ Constructs AbortIncompleteMultipartUpload from required parameters
 #### `newAbortIncompleteMultipartUpload'`
 
 ``` purescript
-newAbortIncompleteMultipartUpload' :: ({ "DaysAfterInitiation" :: NullOrUndefined (DaysAfterInitiation) } -> { "DaysAfterInitiation" :: NullOrUndefined (DaysAfterInitiation) }) -> AbortIncompleteMultipartUpload
+newAbortIncompleteMultipartUpload' :: ({ "DaysAfterInitiation" :: Maybe (DaysAfterInitiation) } -> { "DaysAfterInitiation" :: Maybe (DaysAfterInitiation) }) -> AbortIncompleteMultipartUpload
 ```
 
 Constructs AbortIncompleteMultipartUpload's fields from required parameters
@@ -60,7 +60,7 @@ Constructs AbortIncompleteMultipartUpload's fields from required parameters
 
 ``` purescript
 newtype AbortMultipartUploadOutput
-  = AbortMultipartUploadOutput { "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = AbortMultipartUploadOutput { "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -83,7 +83,7 @@ Constructs AbortMultipartUploadOutput from required parameters
 #### `newAbortMultipartUploadOutput'`
 
 ``` purescript
-newAbortMultipartUploadOutput' :: ({ "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> AbortMultipartUploadOutput
+newAbortMultipartUploadOutput' :: ({ "RequestCharged" :: Maybe (RequestCharged) } -> { "RequestCharged" :: Maybe (RequestCharged) }) -> AbortMultipartUploadOutput
 ```
 
 Constructs AbortMultipartUploadOutput's fields from required parameters
@@ -92,7 +92,7 @@ Constructs AbortMultipartUploadOutput's fields from required parameters
 
 ``` purescript
 newtype AbortMultipartUploadRequest
-  = AbortMultipartUploadRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = AbortMultipartUploadRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -115,7 +115,7 @@ Constructs AbortMultipartUploadRequest from required parameters
 #### `newAbortMultipartUploadRequest'`
 
 ``` purescript
-newAbortMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> AbortMultipartUploadRequest
+newAbortMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) }) -> AbortMultipartUploadRequest
 ```
 
 Constructs AbortMultipartUploadRequest's fields from required parameters
@@ -140,7 +140,7 @@ Encode AbortRuleId
 
 ``` purescript
 newtype AccelerateConfiguration
-  = AccelerateConfiguration { "Status" :: NullOrUndefined (BucketAccelerateStatus) }
+  = AccelerateConfiguration { "Status" :: Maybe (BucketAccelerateStatus) }
 ```
 
 ##### Instances
@@ -163,7 +163,7 @@ Constructs AccelerateConfiguration from required parameters
 #### `newAccelerateConfiguration'`
 
 ``` purescript
-newAccelerateConfiguration' :: ({ "Status" :: NullOrUndefined (BucketAccelerateStatus) } -> { "Status" :: NullOrUndefined (BucketAccelerateStatus) }) -> AccelerateConfiguration
+newAccelerateConfiguration' :: ({ "Status" :: Maybe (BucketAccelerateStatus) } -> { "Status" :: Maybe (BucketAccelerateStatus) }) -> AccelerateConfiguration
 ```
 
 Constructs AccelerateConfiguration's fields from required parameters
@@ -188,7 +188,7 @@ Encode AcceptRanges
 
 ``` purescript
 newtype AccessControlPolicy
-  = AccessControlPolicy { "Grants" :: NullOrUndefined (Grants), "Owner" :: NullOrUndefined (Owner) }
+  = AccessControlPolicy { "Grants" :: Maybe (Grants), "Owner" :: Maybe (Owner) }
 ```
 
 ##### Instances
@@ -211,7 +211,7 @@ Constructs AccessControlPolicy from required parameters
 #### `newAccessControlPolicy'`
 
 ``` purescript
-newAccessControlPolicy' :: ({ "Grants" :: NullOrUndefined (Grants), "Owner" :: NullOrUndefined (Owner) } -> { "Grants" :: NullOrUndefined (Grants), "Owner" :: NullOrUndefined (Owner) }) -> AccessControlPolicy
+newAccessControlPolicy' :: ({ "Grants" :: Maybe (Grants), "Owner" :: Maybe (Owner) } -> { "Grants" :: Maybe (Grants), "Owner" :: Maybe (Owner) }) -> AccessControlPolicy
 ```
 
 Constructs AccessControlPolicy's fields from required parameters
@@ -366,7 +366,7 @@ Encode AllowedOrigins
 
 ``` purescript
 newtype AnalyticsAndOperator
-  = AnalyticsAndOperator { "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) }
+  = AnalyticsAndOperator { "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) }
 ```
 
 ##### Instances
@@ -389,7 +389,7 @@ Constructs AnalyticsAndOperator from required parameters
 #### `newAnalyticsAndOperator'`
 
 ``` purescript
-newAnalyticsAndOperator' :: ({ "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) } -> { "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) }) -> AnalyticsAndOperator
+newAnalyticsAndOperator' :: ({ "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) } -> { "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) }) -> AnalyticsAndOperator
 ```
 
 Constructs AnalyticsAndOperator's fields from required parameters
@@ -398,7 +398,7 @@ Constructs AnalyticsAndOperator's fields from required parameters
 
 ``` purescript
 newtype AnalyticsConfiguration
-  = AnalyticsConfiguration { "Id" :: AnalyticsId, "Filter" :: NullOrUndefined (AnalyticsFilter), "StorageClassAnalysis" :: StorageClassAnalysis }
+  = AnalyticsConfiguration { "Id" :: AnalyticsId, "Filter" :: Maybe (AnalyticsFilter), "StorageClassAnalysis" :: StorageClassAnalysis }
 ```
 
 ##### Instances
@@ -421,7 +421,7 @@ Constructs AnalyticsConfiguration from required parameters
 #### `newAnalyticsConfiguration'`
 
 ``` purescript
-newAnalyticsConfiguration' :: AnalyticsId -> StorageClassAnalysis -> ({ "Id" :: AnalyticsId, "Filter" :: NullOrUndefined (AnalyticsFilter), "StorageClassAnalysis" :: StorageClassAnalysis } -> { "Id" :: AnalyticsId, "Filter" :: NullOrUndefined (AnalyticsFilter), "StorageClassAnalysis" :: StorageClassAnalysis }) -> AnalyticsConfiguration
+newAnalyticsConfiguration' :: AnalyticsId -> StorageClassAnalysis -> ({ "Id" :: AnalyticsId, "Filter" :: Maybe (AnalyticsFilter), "StorageClassAnalysis" :: StorageClassAnalysis } -> { "Id" :: AnalyticsId, "Filter" :: Maybe (AnalyticsFilter), "StorageClassAnalysis" :: StorageClassAnalysis }) -> AnalyticsConfiguration
 ```
 
 Constructs AnalyticsConfiguration's fields from required parameters
@@ -478,7 +478,7 @@ Constructs AnalyticsExportDestination's fields from required parameters
 
 ``` purescript
 newtype AnalyticsFilter
-  = AnalyticsFilter { "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (AnalyticsAndOperator) }
+  = AnalyticsFilter { "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (AnalyticsAndOperator) }
 ```
 
 ##### Instances
@@ -501,7 +501,7 @@ Constructs AnalyticsFilter from required parameters
 #### `newAnalyticsFilter'`
 
 ``` purescript
-newAnalyticsFilter' :: ({ "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (AnalyticsAndOperator) } -> { "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (AnalyticsAndOperator) }) -> AnalyticsFilter
+newAnalyticsFilter' :: ({ "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (AnalyticsAndOperator) } -> { "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (AnalyticsAndOperator) }) -> AnalyticsFilter
 ```
 
 Constructs AnalyticsFilter's fields from required parameters
@@ -526,7 +526,7 @@ Encode AnalyticsId
 
 ``` purescript
 newtype AnalyticsS3BucketDestination
-  = AnalyticsS3BucketDestination { "Format" :: AnalyticsS3ExportFileFormat, "BucketAccountId" :: NullOrUndefined (AccountId), "Bucket" :: BucketName, "Prefix" :: NullOrUndefined (Prefix) }
+  = AnalyticsS3BucketDestination { "Format" :: AnalyticsS3ExportFileFormat, "BucketAccountId" :: Maybe (AccountId), "Bucket" :: BucketName, "Prefix" :: Maybe (Prefix) }
 ```
 
 ##### Instances
@@ -549,7 +549,7 @@ Constructs AnalyticsS3BucketDestination from required parameters
 #### `newAnalyticsS3BucketDestination'`
 
 ``` purescript
-newAnalyticsS3BucketDestination' :: BucketName -> AnalyticsS3ExportFileFormat -> ({ "Format" :: AnalyticsS3ExportFileFormat, "BucketAccountId" :: NullOrUndefined (AccountId), "Bucket" :: BucketName, "Prefix" :: NullOrUndefined (Prefix) } -> { "Format" :: AnalyticsS3ExportFileFormat, "BucketAccountId" :: NullOrUndefined (AccountId), "Bucket" :: BucketName, "Prefix" :: NullOrUndefined (Prefix) }) -> AnalyticsS3BucketDestination
+newAnalyticsS3BucketDestination' :: BucketName -> AnalyticsS3ExportFileFormat -> ({ "Format" :: AnalyticsS3ExportFileFormat, "BucketAccountId" :: Maybe (AccountId), "Bucket" :: BucketName, "Prefix" :: Maybe (Prefix) } -> { "Format" :: AnalyticsS3ExportFileFormat, "BucketAccountId" :: Maybe (AccountId), "Bucket" :: BucketName, "Prefix" :: Maybe (Prefix) }) -> AnalyticsS3BucketDestination
 ```
 
 Constructs AnalyticsS3BucketDestination's fields from required parameters
@@ -590,7 +590,7 @@ Encode Body
 
 ``` purescript
 newtype Bucket
-  = Bucket { "Name" :: NullOrUndefined (BucketName), "CreationDate" :: NullOrUndefined (CreationDate) }
+  = Bucket { "Name" :: Maybe (BucketName), "CreationDate" :: Maybe (CreationDate) }
 ```
 
 ##### Instances
@@ -613,7 +613,7 @@ Constructs Bucket from required parameters
 #### `newBucket'`
 
 ``` purescript
-newBucket' :: ({ "Name" :: NullOrUndefined (BucketName), "CreationDate" :: NullOrUndefined (CreationDate) } -> { "Name" :: NullOrUndefined (BucketName), "CreationDate" :: NullOrUndefined (CreationDate) }) -> Bucket
+newBucket' :: ({ "Name" :: Maybe (BucketName), "CreationDate" :: Maybe (CreationDate) } -> { "Name" :: Maybe (BucketName), "CreationDate" :: Maybe (CreationDate) }) -> Bucket
 ```
 
 Constructs Bucket's fields from required parameters
@@ -736,7 +736,7 @@ Encode BucketLocationConstraint
 
 ``` purescript
 newtype BucketLoggingStatus
-  = BucketLoggingStatus { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) }
+  = BucketLoggingStatus { "LoggingEnabled" :: Maybe (LoggingEnabled) }
 ```
 
 ##### Instances
@@ -759,7 +759,7 @@ Constructs BucketLoggingStatus from required parameters
 #### `newBucketLoggingStatus'`
 
 ``` purescript
-newBucketLoggingStatus' :: ({ "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) } -> { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) }) -> BucketLoggingStatus
+newBucketLoggingStatus' :: ({ "LoggingEnabled" :: Maybe (LoggingEnabled) } -> { "LoggingEnabled" :: Maybe (LoggingEnabled) }) -> BucketLoggingStatus
 ```
 
 Constructs BucketLoggingStatus's fields from required parameters
@@ -864,7 +864,7 @@ Constructs CORSConfiguration's fields from required parameters
 
 ``` purescript
 newtype CORSRule
-  = CORSRule { "AllowedHeaders" :: NullOrUndefined (AllowedHeaders), "AllowedMethods" :: AllowedMethods, "AllowedOrigins" :: AllowedOrigins, "ExposeHeaders" :: NullOrUndefined (ExposeHeaders), "MaxAgeSeconds" :: NullOrUndefined (MaxAgeSeconds) }
+  = CORSRule { "AllowedHeaders" :: Maybe (AllowedHeaders), "AllowedMethods" :: AllowedMethods, "AllowedOrigins" :: AllowedOrigins, "ExposeHeaders" :: Maybe (ExposeHeaders), "MaxAgeSeconds" :: Maybe (MaxAgeSeconds) }
 ```
 
 ##### Instances
@@ -887,7 +887,7 @@ Constructs CORSRule from required parameters
 #### `newCORSRule'`
 
 ``` purescript
-newCORSRule' :: AllowedMethods -> AllowedOrigins -> ({ "AllowedHeaders" :: NullOrUndefined (AllowedHeaders), "AllowedMethods" :: AllowedMethods, "AllowedOrigins" :: AllowedOrigins, "ExposeHeaders" :: NullOrUndefined (ExposeHeaders), "MaxAgeSeconds" :: NullOrUndefined (MaxAgeSeconds) } -> { "AllowedHeaders" :: NullOrUndefined (AllowedHeaders), "AllowedMethods" :: AllowedMethods, "AllowedOrigins" :: AllowedOrigins, "ExposeHeaders" :: NullOrUndefined (ExposeHeaders), "MaxAgeSeconds" :: NullOrUndefined (MaxAgeSeconds) }) -> CORSRule
+newCORSRule' :: AllowedMethods -> AllowedOrigins -> ({ "AllowedHeaders" :: Maybe (AllowedHeaders), "AllowedMethods" :: AllowedMethods, "AllowedOrigins" :: AllowedOrigins, "ExposeHeaders" :: Maybe (ExposeHeaders), "MaxAgeSeconds" :: Maybe (MaxAgeSeconds) } -> { "AllowedHeaders" :: Maybe (AllowedHeaders), "AllowedMethods" :: AllowedMethods, "AllowedOrigins" :: AllowedOrigins, "ExposeHeaders" :: Maybe (ExposeHeaders), "MaxAgeSeconds" :: Maybe (MaxAgeSeconds) }) -> CORSRule
 ```
 
 Constructs CORSRule's fields from required parameters
@@ -912,7 +912,7 @@ Encode CORSRules
 
 ``` purescript
 newtype CSVInput
-  = CSVInput { "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo), "Comments" :: NullOrUndefined (Comments), "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter), "RecordDelimiter" :: NullOrUndefined (RecordDelimiter), "FieldDelimiter" :: NullOrUndefined (FieldDelimiter), "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) }
+  = CSVInput { "FileHeaderInfo" :: Maybe (FileHeaderInfo), "Comments" :: Maybe (Comments), "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter), "RecordDelimiter" :: Maybe (RecordDelimiter), "FieldDelimiter" :: Maybe (FieldDelimiter), "QuoteCharacter" :: Maybe (QuoteCharacter) }
 ```
 
 Describes how a CSV-formatted input object is formatted.
@@ -937,7 +937,7 @@ Constructs CSVInput from required parameters
 #### `newCSVInput'`
 
 ``` purescript
-newCSVInput' :: ({ "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo), "Comments" :: NullOrUndefined (Comments), "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter), "RecordDelimiter" :: NullOrUndefined (RecordDelimiter), "FieldDelimiter" :: NullOrUndefined (FieldDelimiter), "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) } -> { "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo), "Comments" :: NullOrUndefined (Comments), "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter), "RecordDelimiter" :: NullOrUndefined (RecordDelimiter), "FieldDelimiter" :: NullOrUndefined (FieldDelimiter), "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) }) -> CSVInput
+newCSVInput' :: ({ "FileHeaderInfo" :: Maybe (FileHeaderInfo), "Comments" :: Maybe (Comments), "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter), "RecordDelimiter" :: Maybe (RecordDelimiter), "FieldDelimiter" :: Maybe (FieldDelimiter), "QuoteCharacter" :: Maybe (QuoteCharacter) } -> { "FileHeaderInfo" :: Maybe (FileHeaderInfo), "Comments" :: Maybe (Comments), "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter), "RecordDelimiter" :: Maybe (RecordDelimiter), "FieldDelimiter" :: Maybe (FieldDelimiter), "QuoteCharacter" :: Maybe (QuoteCharacter) }) -> CSVInput
 ```
 
 Constructs CSVInput's fields from required parameters
@@ -946,7 +946,7 @@ Constructs CSVInput's fields from required parameters
 
 ``` purescript
 newtype CSVOutput
-  = CSVOutput { "QuoteFields" :: NullOrUndefined (QuoteFields), "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter), "RecordDelimiter" :: NullOrUndefined (RecordDelimiter), "FieldDelimiter" :: NullOrUndefined (FieldDelimiter), "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) }
+  = CSVOutput { "QuoteFields" :: Maybe (QuoteFields), "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter), "RecordDelimiter" :: Maybe (RecordDelimiter), "FieldDelimiter" :: Maybe (FieldDelimiter), "QuoteCharacter" :: Maybe (QuoteCharacter) }
 ```
 
 Describes how CSV-formatted results are formatted.
@@ -971,7 +971,7 @@ Constructs CSVOutput from required parameters
 #### `newCSVOutput'`
 
 ``` purescript
-newCSVOutput' :: ({ "QuoteFields" :: NullOrUndefined (QuoteFields), "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter), "RecordDelimiter" :: NullOrUndefined (RecordDelimiter), "FieldDelimiter" :: NullOrUndefined (FieldDelimiter), "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) } -> { "QuoteFields" :: NullOrUndefined (QuoteFields), "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter), "RecordDelimiter" :: NullOrUndefined (RecordDelimiter), "FieldDelimiter" :: NullOrUndefined (FieldDelimiter), "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) }) -> CSVOutput
+newCSVOutput' :: ({ "QuoteFields" :: Maybe (QuoteFields), "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter), "RecordDelimiter" :: Maybe (RecordDelimiter), "FieldDelimiter" :: Maybe (FieldDelimiter), "QuoteCharacter" :: Maybe (QuoteCharacter) } -> { "QuoteFields" :: Maybe (QuoteFields), "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter), "RecordDelimiter" :: Maybe (RecordDelimiter), "FieldDelimiter" :: Maybe (FieldDelimiter), "QuoteCharacter" :: Maybe (QuoteCharacter) }) -> CSVOutput
 ```
 
 Constructs CSVOutput's fields from required parameters
@@ -1012,7 +1012,7 @@ Encode CloudFunction
 
 ``` purescript
 newtype CloudFunctionConfiguration
-  = CloudFunctionConfiguration { "Id" :: NullOrUndefined (NotificationId), "Event" :: NullOrUndefined (Event), "Events" :: NullOrUndefined (EventList), "CloudFunction" :: NullOrUndefined (CloudFunction), "InvocationRole" :: NullOrUndefined (CloudFunctionInvocationRole) }
+  = CloudFunctionConfiguration { "Id" :: Maybe (NotificationId), "Event" :: Maybe (Event), "Events" :: Maybe (EventList), "CloudFunction" :: Maybe (CloudFunction), "InvocationRole" :: Maybe (CloudFunctionInvocationRole) }
 ```
 
 ##### Instances
@@ -1035,7 +1035,7 @@ Constructs CloudFunctionConfiguration from required parameters
 #### `newCloudFunctionConfiguration'`
 
 ``` purescript
-newCloudFunctionConfiguration' :: ({ "Id" :: NullOrUndefined (NotificationId), "Event" :: NullOrUndefined (Event), "Events" :: NullOrUndefined (EventList), "CloudFunction" :: NullOrUndefined (CloudFunction), "InvocationRole" :: NullOrUndefined (CloudFunctionInvocationRole) } -> { "Id" :: NullOrUndefined (NotificationId), "Event" :: NullOrUndefined (Event), "Events" :: NullOrUndefined (EventList), "CloudFunction" :: NullOrUndefined (CloudFunction), "InvocationRole" :: NullOrUndefined (CloudFunctionInvocationRole) }) -> CloudFunctionConfiguration
+newCloudFunctionConfiguration' :: ({ "Id" :: Maybe (NotificationId), "Event" :: Maybe (Event), "Events" :: Maybe (EventList), "CloudFunction" :: Maybe (CloudFunction), "InvocationRole" :: Maybe (CloudFunctionInvocationRole) } -> { "Id" :: Maybe (NotificationId), "Event" :: Maybe (Event), "Events" :: Maybe (EventList), "CloudFunction" :: Maybe (CloudFunction), "InvocationRole" :: Maybe (CloudFunctionInvocationRole) }) -> CloudFunctionConfiguration
 ```
 
 Constructs CloudFunctionConfiguration's fields from required parameters
@@ -1092,7 +1092,7 @@ Encode Comments
 
 ``` purescript
 newtype CommonPrefix
-  = CommonPrefix { "Prefix" :: NullOrUndefined (Prefix) }
+  = CommonPrefix { "Prefix" :: Maybe (Prefix) }
 ```
 
 ##### Instances
@@ -1115,7 +1115,7 @@ Constructs CommonPrefix from required parameters
 #### `newCommonPrefix'`
 
 ``` purescript
-newCommonPrefix' :: ({ "Prefix" :: NullOrUndefined (Prefix) } -> { "Prefix" :: NullOrUndefined (Prefix) }) -> CommonPrefix
+newCommonPrefix' :: ({ "Prefix" :: Maybe (Prefix) } -> { "Prefix" :: Maybe (Prefix) }) -> CommonPrefix
 ```
 
 Constructs CommonPrefix's fields from required parameters
@@ -1140,7 +1140,7 @@ Encode CommonPrefixList
 
 ``` purescript
 newtype CompleteMultipartUploadOutput
-  = CompleteMultipartUploadOutput { "Location" :: NullOrUndefined (Location), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "Expiration" :: NullOrUndefined (Expiration), "ETag" :: NullOrUndefined (ETag), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = CompleteMultipartUploadOutput { "Location" :: Maybe (Location), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "Expiration" :: Maybe (Expiration), "ETag" :: Maybe (ETag), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "VersionId" :: Maybe (ObjectVersionId), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -1163,7 +1163,7 @@ Constructs CompleteMultipartUploadOutput from required parameters
 #### `newCompleteMultipartUploadOutput'`
 
 ``` purescript
-newCompleteMultipartUploadOutput' :: ({ "Location" :: NullOrUndefined (Location), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "Expiration" :: NullOrUndefined (Expiration), "ETag" :: NullOrUndefined (ETag), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "Location" :: NullOrUndefined (Location), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "Expiration" :: NullOrUndefined (Expiration), "ETag" :: NullOrUndefined (ETag), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> CompleteMultipartUploadOutput
+newCompleteMultipartUploadOutput' :: ({ "Location" :: Maybe (Location), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "Expiration" :: Maybe (Expiration), "ETag" :: Maybe (ETag), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "VersionId" :: Maybe (ObjectVersionId), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) } -> { "Location" :: Maybe (Location), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "Expiration" :: Maybe (Expiration), "ETag" :: Maybe (ETag), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "VersionId" :: Maybe (ObjectVersionId), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }) -> CompleteMultipartUploadOutput
 ```
 
 Constructs CompleteMultipartUploadOutput's fields from required parameters
@@ -1172,7 +1172,7 @@ Constructs CompleteMultipartUploadOutput's fields from required parameters
 
 ``` purescript
 newtype CompleteMultipartUploadRequest
-  = CompleteMultipartUploadRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "MultipartUpload" :: NullOrUndefined (CompletedMultipartUpload), "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = CompleteMultipartUploadRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "MultipartUpload" :: Maybe (CompletedMultipartUpload), "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -1195,7 +1195,7 @@ Constructs CompleteMultipartUploadRequest from required parameters
 #### `newCompleteMultipartUploadRequest'`
 
 ``` purescript
-newCompleteMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "MultipartUpload" :: NullOrUndefined (CompletedMultipartUpload), "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "MultipartUpload" :: NullOrUndefined (CompletedMultipartUpload), "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> CompleteMultipartUploadRequest
+newCompleteMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "MultipartUpload" :: Maybe (CompletedMultipartUpload), "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "MultipartUpload" :: Maybe (CompletedMultipartUpload), "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) }) -> CompleteMultipartUploadRequest
 ```
 
 Constructs CompleteMultipartUploadRequest's fields from required parameters
@@ -1204,7 +1204,7 @@ Constructs CompleteMultipartUploadRequest's fields from required parameters
 
 ``` purescript
 newtype CompletedMultipartUpload
-  = CompletedMultipartUpload { "Parts" :: NullOrUndefined (CompletedPartList) }
+  = CompletedMultipartUpload { "Parts" :: Maybe (CompletedPartList) }
 ```
 
 ##### Instances
@@ -1227,7 +1227,7 @@ Constructs CompletedMultipartUpload from required parameters
 #### `newCompletedMultipartUpload'`
 
 ``` purescript
-newCompletedMultipartUpload' :: ({ "Parts" :: NullOrUndefined (CompletedPartList) } -> { "Parts" :: NullOrUndefined (CompletedPartList) }) -> CompletedMultipartUpload
+newCompletedMultipartUpload' :: ({ "Parts" :: Maybe (CompletedPartList) } -> { "Parts" :: Maybe (CompletedPartList) }) -> CompletedMultipartUpload
 ```
 
 Constructs CompletedMultipartUpload's fields from required parameters
@@ -1236,7 +1236,7 @@ Constructs CompletedMultipartUpload's fields from required parameters
 
 ``` purescript
 newtype CompletedPart
-  = CompletedPart { "ETag" :: NullOrUndefined (ETag), "PartNumber" :: NullOrUndefined (PartNumber) }
+  = CompletedPart { "ETag" :: Maybe (ETag), "PartNumber" :: Maybe (PartNumber) }
 ```
 
 ##### Instances
@@ -1259,7 +1259,7 @@ Constructs CompletedPart from required parameters
 #### `newCompletedPart'`
 
 ``` purescript
-newCompletedPart' :: ({ "ETag" :: NullOrUndefined (ETag), "PartNumber" :: NullOrUndefined (PartNumber) } -> { "ETag" :: NullOrUndefined (ETag), "PartNumber" :: NullOrUndefined (PartNumber) }) -> CompletedPart
+newCompletedPart' :: ({ "ETag" :: Maybe (ETag), "PartNumber" :: Maybe (PartNumber) } -> { "ETag" :: Maybe (ETag), "PartNumber" :: Maybe (PartNumber) }) -> CompletedPart
 ```
 
 Constructs CompletedPart's fields from required parameters
@@ -1284,7 +1284,7 @@ Encode CompletedPartList
 
 ``` purescript
 newtype Condition
-  = Condition { "HttpErrorCodeReturnedEquals" :: NullOrUndefined (HttpErrorCodeReturnedEquals), "KeyPrefixEquals" :: NullOrUndefined (KeyPrefixEquals) }
+  = Condition { "HttpErrorCodeReturnedEquals" :: Maybe (HttpErrorCodeReturnedEquals), "KeyPrefixEquals" :: Maybe (KeyPrefixEquals) }
 ```
 
 ##### Instances
@@ -1307,7 +1307,7 @@ Constructs Condition from required parameters
 #### `newCondition'`
 
 ``` purescript
-newCondition' :: ({ "HttpErrorCodeReturnedEquals" :: NullOrUndefined (HttpErrorCodeReturnedEquals), "KeyPrefixEquals" :: NullOrUndefined (KeyPrefixEquals) } -> { "HttpErrorCodeReturnedEquals" :: NullOrUndefined (HttpErrorCodeReturnedEquals), "KeyPrefixEquals" :: NullOrUndefined (KeyPrefixEquals) }) -> Condition
+newCondition' :: ({ "HttpErrorCodeReturnedEquals" :: Maybe (HttpErrorCodeReturnedEquals), "KeyPrefixEquals" :: Maybe (KeyPrefixEquals) } -> { "HttpErrorCodeReturnedEquals" :: Maybe (HttpErrorCodeReturnedEquals), "KeyPrefixEquals" :: Maybe (KeyPrefixEquals) }) -> Condition
 ```
 
 Constructs Condition's fields from required parameters
@@ -1444,7 +1444,7 @@ Encode ContentType
 
 ``` purescript
 newtype CopyObjectOutput
-  = CopyObjectOutput { "CopyObjectResult" :: NullOrUndefined (CopyObjectResult), "Expiration" :: NullOrUndefined (Expiration), "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId), "VersionId" :: NullOrUndefined (ObjectVersionId), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = CopyObjectOutput { "CopyObjectResult" :: Maybe (CopyObjectResult), "Expiration" :: Maybe (Expiration), "CopySourceVersionId" :: Maybe (CopySourceVersionId), "VersionId" :: Maybe (ObjectVersionId), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -1467,7 +1467,7 @@ Constructs CopyObjectOutput from required parameters
 #### `newCopyObjectOutput'`
 
 ``` purescript
-newCopyObjectOutput' :: ({ "CopyObjectResult" :: NullOrUndefined (CopyObjectResult), "Expiration" :: NullOrUndefined (Expiration), "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId), "VersionId" :: NullOrUndefined (ObjectVersionId), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "CopyObjectResult" :: NullOrUndefined (CopyObjectResult), "Expiration" :: NullOrUndefined (Expiration), "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId), "VersionId" :: NullOrUndefined (ObjectVersionId), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> CopyObjectOutput
+newCopyObjectOutput' :: ({ "CopyObjectResult" :: Maybe (CopyObjectResult), "Expiration" :: Maybe (Expiration), "CopySourceVersionId" :: Maybe (CopySourceVersionId), "VersionId" :: Maybe (ObjectVersionId), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) } -> { "CopyObjectResult" :: Maybe (CopyObjectResult), "Expiration" :: Maybe (Expiration), "CopySourceVersionId" :: Maybe (CopySourceVersionId), "VersionId" :: Maybe (ObjectVersionId), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }) -> CopyObjectOutput
 ```
 
 Constructs CopyObjectOutput's fields from required parameters
@@ -1476,7 +1476,7 @@ Constructs CopyObjectOutput's fields from required parameters
 
 ``` purescript
 newtype CopyObjectRequest
-  = CopyObjectRequest { "ACL" :: NullOrUndefined (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "CopySource" :: CopySource, "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch), "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "MetadataDirective" :: NullOrUndefined (MetadataDirective), "TaggingDirective" :: NullOrUndefined (TaggingDirective), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) }
+  = CopyObjectRequest { "ACL" :: Maybe (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "CopySource" :: CopySource, "CopySourceIfMatch" :: Maybe (CopySourceIfMatch), "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "MetadataDirective" :: Maybe (MetadataDirective), "TaggingDirective" :: Maybe (TaggingDirective), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) }
 ```
 
 ##### Instances
@@ -1499,7 +1499,7 @@ Constructs CopyObjectRequest from required parameters
 #### `newCopyObjectRequest'`
 
 ``` purescript
-newCopyObjectRequest' :: BucketName -> CopySource -> ObjectKey -> ({ "ACL" :: NullOrUndefined (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "CopySource" :: CopySource, "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch), "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "MetadataDirective" :: NullOrUndefined (MetadataDirective), "TaggingDirective" :: NullOrUndefined (TaggingDirective), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) } -> { "ACL" :: NullOrUndefined (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "CopySource" :: CopySource, "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch), "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "MetadataDirective" :: NullOrUndefined (MetadataDirective), "TaggingDirective" :: NullOrUndefined (TaggingDirective), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) }) -> CopyObjectRequest
+newCopyObjectRequest' :: BucketName -> CopySource -> ObjectKey -> ({ "ACL" :: Maybe (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "CopySource" :: CopySource, "CopySourceIfMatch" :: Maybe (CopySourceIfMatch), "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "MetadataDirective" :: Maybe (MetadataDirective), "TaggingDirective" :: Maybe (TaggingDirective), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) } -> { "ACL" :: Maybe (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "CopySource" :: CopySource, "CopySourceIfMatch" :: Maybe (CopySourceIfMatch), "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "MetadataDirective" :: Maybe (MetadataDirective), "TaggingDirective" :: Maybe (TaggingDirective), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) }) -> CopyObjectRequest
 ```
 
 Constructs CopyObjectRequest's fields from required parameters
@@ -1508,7 +1508,7 @@ Constructs CopyObjectRequest's fields from required parameters
 
 ``` purescript
 newtype CopyObjectResult
-  = CopyObjectResult { "ETag" :: NullOrUndefined (ETag), "LastModified" :: NullOrUndefined (LastModified) }
+  = CopyObjectResult { "ETag" :: Maybe (ETag), "LastModified" :: Maybe (LastModified) }
 ```
 
 ##### Instances
@@ -1531,7 +1531,7 @@ Constructs CopyObjectResult from required parameters
 #### `newCopyObjectResult'`
 
 ``` purescript
-newCopyObjectResult' :: ({ "ETag" :: NullOrUndefined (ETag), "LastModified" :: NullOrUndefined (LastModified) } -> { "ETag" :: NullOrUndefined (ETag), "LastModified" :: NullOrUndefined (LastModified) }) -> CopyObjectResult
+newCopyObjectResult' :: ({ "ETag" :: Maybe (ETag), "LastModified" :: Maybe (LastModified) } -> { "ETag" :: Maybe (ETag), "LastModified" :: Maybe (LastModified) }) -> CopyObjectResult
 ```
 
 Constructs CopyObjectResult's fields from required parameters
@@ -1540,7 +1540,7 @@ Constructs CopyObjectResult's fields from required parameters
 
 ``` purescript
 newtype CopyPartResult
-  = CopyPartResult { "ETag" :: NullOrUndefined (ETag), "LastModified" :: NullOrUndefined (LastModified) }
+  = CopyPartResult { "ETag" :: Maybe (ETag), "LastModified" :: Maybe (LastModified) }
 ```
 
 ##### Instances
@@ -1563,7 +1563,7 @@ Constructs CopyPartResult from required parameters
 #### `newCopyPartResult'`
 
 ``` purescript
-newCopyPartResult' :: ({ "ETag" :: NullOrUndefined (ETag), "LastModified" :: NullOrUndefined (LastModified) } -> { "ETag" :: NullOrUndefined (ETag), "LastModified" :: NullOrUndefined (LastModified) }) -> CopyPartResult
+newCopyPartResult' :: ({ "ETag" :: Maybe (ETag), "LastModified" :: Maybe (LastModified) } -> { "ETag" :: Maybe (ETag), "LastModified" :: Maybe (LastModified) }) -> CopyPartResult
 ```
 
 Constructs CopyPartResult's fields from required parameters
@@ -1732,7 +1732,7 @@ Encode CopySourceVersionId
 
 ``` purescript
 newtype CreateBucketConfiguration
-  = CreateBucketConfiguration { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) }
+  = CreateBucketConfiguration { "LocationConstraint" :: Maybe (BucketLocationConstraint) }
 ```
 
 ##### Instances
@@ -1755,7 +1755,7 @@ Constructs CreateBucketConfiguration from required parameters
 #### `newCreateBucketConfiguration'`
 
 ``` purescript
-newCreateBucketConfiguration' :: ({ "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) } -> { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) }) -> CreateBucketConfiguration
+newCreateBucketConfiguration' :: ({ "LocationConstraint" :: Maybe (BucketLocationConstraint) } -> { "LocationConstraint" :: Maybe (BucketLocationConstraint) }) -> CreateBucketConfiguration
 ```
 
 Constructs CreateBucketConfiguration's fields from required parameters
@@ -1764,7 +1764,7 @@ Constructs CreateBucketConfiguration's fields from required parameters
 
 ``` purescript
 newtype CreateBucketOutput
-  = CreateBucketOutput { "Location" :: NullOrUndefined (Location) }
+  = CreateBucketOutput { "Location" :: Maybe (Location) }
 ```
 
 ##### Instances
@@ -1787,7 +1787,7 @@ Constructs CreateBucketOutput from required parameters
 #### `newCreateBucketOutput'`
 
 ``` purescript
-newCreateBucketOutput' :: ({ "Location" :: NullOrUndefined (Location) } -> { "Location" :: NullOrUndefined (Location) }) -> CreateBucketOutput
+newCreateBucketOutput' :: ({ "Location" :: Maybe (Location) } -> { "Location" :: Maybe (Location) }) -> CreateBucketOutput
 ```
 
 Constructs CreateBucketOutput's fields from required parameters
@@ -1796,7 +1796,7 @@ Constructs CreateBucketOutput's fields from required parameters
 
 ``` purescript
 newtype CreateBucketRequest
-  = CreateBucketRequest { "ACL" :: NullOrUndefined (BucketCannedACL), "Bucket" :: BucketName, "CreateBucketConfiguration" :: NullOrUndefined (CreateBucketConfiguration), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) }
+  = CreateBucketRequest { "ACL" :: Maybe (BucketCannedACL), "Bucket" :: BucketName, "CreateBucketConfiguration" :: Maybe (CreateBucketConfiguration), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP) }
 ```
 
 ##### Instances
@@ -1819,7 +1819,7 @@ Constructs CreateBucketRequest from required parameters
 #### `newCreateBucketRequest'`
 
 ``` purescript
-newCreateBucketRequest' :: BucketName -> ({ "ACL" :: NullOrUndefined (BucketCannedACL), "Bucket" :: BucketName, "CreateBucketConfiguration" :: NullOrUndefined (CreateBucketConfiguration), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) } -> { "ACL" :: NullOrUndefined (BucketCannedACL), "Bucket" :: BucketName, "CreateBucketConfiguration" :: NullOrUndefined (CreateBucketConfiguration), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) }) -> CreateBucketRequest
+newCreateBucketRequest' :: BucketName -> ({ "ACL" :: Maybe (BucketCannedACL), "Bucket" :: BucketName, "CreateBucketConfiguration" :: Maybe (CreateBucketConfiguration), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP) } -> { "ACL" :: Maybe (BucketCannedACL), "Bucket" :: BucketName, "CreateBucketConfiguration" :: Maybe (CreateBucketConfiguration), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP) }) -> CreateBucketRequest
 ```
 
 Constructs CreateBucketRequest's fields from required parameters
@@ -1828,7 +1828,7 @@ Constructs CreateBucketRequest's fields from required parameters
 
 ``` purescript
 newtype CreateMultipartUploadOutput
-  = CreateMultipartUploadOutput { "AbortDate" :: NullOrUndefined (AbortDate), "AbortRuleId" :: NullOrUndefined (AbortRuleId), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "UploadId" :: NullOrUndefined (MultipartUploadId), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = CreateMultipartUploadOutput { "AbortDate" :: Maybe (AbortDate), "AbortRuleId" :: Maybe (AbortRuleId), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "UploadId" :: Maybe (MultipartUploadId), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -1851,7 +1851,7 @@ Constructs CreateMultipartUploadOutput from required parameters
 #### `newCreateMultipartUploadOutput'`
 
 ``` purescript
-newCreateMultipartUploadOutput' :: ({ "AbortDate" :: NullOrUndefined (AbortDate), "AbortRuleId" :: NullOrUndefined (AbortRuleId), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "UploadId" :: NullOrUndefined (MultipartUploadId), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "AbortDate" :: NullOrUndefined (AbortDate), "AbortRuleId" :: NullOrUndefined (AbortRuleId), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "UploadId" :: NullOrUndefined (MultipartUploadId), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> CreateMultipartUploadOutput
+newCreateMultipartUploadOutput' :: ({ "AbortDate" :: Maybe (AbortDate), "AbortRuleId" :: Maybe (AbortRuleId), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "UploadId" :: Maybe (MultipartUploadId), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) } -> { "AbortDate" :: Maybe (AbortDate), "AbortRuleId" :: Maybe (AbortRuleId), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "UploadId" :: Maybe (MultipartUploadId), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }) -> CreateMultipartUploadOutput
 ```
 
 Constructs CreateMultipartUploadOutput's fields from required parameters
@@ -1860,7 +1860,7 @@ Constructs CreateMultipartUploadOutput's fields from required parameters
 
 ``` purescript
 newtype CreateMultipartUploadRequest
-  = CreateMultipartUploadRequest { "ACL" :: NullOrUndefined (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) }
+  = CreateMultipartUploadRequest { "ACL" :: Maybe (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) }
 ```
 
 ##### Instances
@@ -1883,7 +1883,7 @@ Constructs CreateMultipartUploadRequest from required parameters
 #### `newCreateMultipartUploadRequest'`
 
 ``` purescript
-newCreateMultipartUploadRequest' :: BucketName -> ObjectKey -> ({ "ACL" :: NullOrUndefined (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) } -> { "ACL" :: NullOrUndefined (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) }) -> CreateMultipartUploadRequest
+newCreateMultipartUploadRequest' :: BucketName -> ObjectKey -> ({ "ACL" :: Maybe (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) } -> { "ACL" :: Maybe (ObjectCannedACL), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) }) -> CreateMultipartUploadRequest
 ```
 
 Constructs CreateMultipartUploadRequest's fields from required parameters
@@ -1956,7 +1956,7 @@ Encode DaysAfterInitiation
 
 ``` purescript
 newtype Delete
-  = Delete { "Objects" :: ObjectIdentifierList, "Quiet" :: NullOrUndefined (Quiet) }
+  = Delete { "Objects" :: ObjectIdentifierList, "Quiet" :: Maybe (Quiet) }
 ```
 
 ##### Instances
@@ -1979,7 +1979,7 @@ Constructs Delete from required parameters
 #### `newDelete'`
 
 ``` purescript
-newDelete' :: ObjectIdentifierList -> ({ "Objects" :: ObjectIdentifierList, "Quiet" :: NullOrUndefined (Quiet) } -> { "Objects" :: ObjectIdentifierList, "Quiet" :: NullOrUndefined (Quiet) }) -> Delete
+newDelete' :: ObjectIdentifierList -> ({ "Objects" :: ObjectIdentifierList, "Quiet" :: Maybe (Quiet) } -> { "Objects" :: ObjectIdentifierList, "Quiet" :: Maybe (Quiet) }) -> Delete
 ```
 
 Constructs Delete's fields from required parameters
@@ -2356,7 +2356,7 @@ Encode DeleteMarker
 
 ``` purescript
 newtype DeleteMarkerEntry
-  = DeleteMarkerEntry { "Owner" :: NullOrUndefined (Owner), "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "IsLatest" :: NullOrUndefined (IsLatest), "LastModified" :: NullOrUndefined (LastModified) }
+  = DeleteMarkerEntry { "Owner" :: Maybe (Owner), "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "IsLatest" :: Maybe (IsLatest), "LastModified" :: Maybe (LastModified) }
 ```
 
 ##### Instances
@@ -2379,7 +2379,7 @@ Constructs DeleteMarkerEntry from required parameters
 #### `newDeleteMarkerEntry'`
 
 ``` purescript
-newDeleteMarkerEntry' :: ({ "Owner" :: NullOrUndefined (Owner), "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "IsLatest" :: NullOrUndefined (IsLatest), "LastModified" :: NullOrUndefined (LastModified) } -> { "Owner" :: NullOrUndefined (Owner), "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "IsLatest" :: NullOrUndefined (IsLatest), "LastModified" :: NullOrUndefined (LastModified) }) -> DeleteMarkerEntry
+newDeleteMarkerEntry' :: ({ "Owner" :: Maybe (Owner), "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "IsLatest" :: Maybe (IsLatest), "LastModified" :: Maybe (LastModified) } -> { "Owner" :: Maybe (Owner), "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "IsLatest" :: Maybe (IsLatest), "LastModified" :: Maybe (LastModified) }) -> DeleteMarkerEntry
 ```
 
 Constructs DeleteMarkerEntry's fields from required parameters
@@ -2420,7 +2420,7 @@ Encode DeleteMarkers
 
 ``` purescript
 newtype DeleteObjectOutput
-  = DeleteObjectOutput { "DeleteMarker" :: NullOrUndefined (DeleteMarker), "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = DeleteObjectOutput { "DeleteMarker" :: Maybe (DeleteMarker), "VersionId" :: Maybe (ObjectVersionId), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -2443,7 +2443,7 @@ Constructs DeleteObjectOutput from required parameters
 #### `newDeleteObjectOutput'`
 
 ``` purescript
-newDeleteObjectOutput' :: ({ "DeleteMarker" :: NullOrUndefined (DeleteMarker), "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "DeleteMarker" :: NullOrUndefined (DeleteMarker), "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> DeleteObjectOutput
+newDeleteObjectOutput' :: ({ "DeleteMarker" :: Maybe (DeleteMarker), "VersionId" :: Maybe (ObjectVersionId), "RequestCharged" :: Maybe (RequestCharged) } -> { "DeleteMarker" :: Maybe (DeleteMarker), "VersionId" :: Maybe (ObjectVersionId), "RequestCharged" :: Maybe (RequestCharged) }) -> DeleteObjectOutput
 ```
 
 Constructs DeleteObjectOutput's fields from required parameters
@@ -2452,7 +2452,7 @@ Constructs DeleteObjectOutput's fields from required parameters
 
 ``` purescript
 newtype DeleteObjectRequest
-  = DeleteObjectRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "MFA" :: NullOrUndefined (MFA), "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = DeleteObjectRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "MFA" :: Maybe (MFA), "VersionId" :: Maybe (ObjectVersionId), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -2475,7 +2475,7 @@ Constructs DeleteObjectRequest from required parameters
 #### `newDeleteObjectRequest'`
 
 ``` purescript
-newDeleteObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "MFA" :: NullOrUndefined (MFA), "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "MFA" :: NullOrUndefined (MFA), "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> DeleteObjectRequest
+newDeleteObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "MFA" :: Maybe (MFA), "VersionId" :: Maybe (ObjectVersionId), "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "MFA" :: Maybe (MFA), "VersionId" :: Maybe (ObjectVersionId), "RequestPayer" :: Maybe (RequestPayer) }) -> DeleteObjectRequest
 ```
 
 Constructs DeleteObjectRequest's fields from required parameters
@@ -2484,7 +2484,7 @@ Constructs DeleteObjectRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteObjectTaggingOutput
-  = DeleteObjectTaggingOutput { "VersionId" :: NullOrUndefined (ObjectVersionId) }
+  = DeleteObjectTaggingOutput { "VersionId" :: Maybe (ObjectVersionId) }
 ```
 
 ##### Instances
@@ -2507,7 +2507,7 @@ Constructs DeleteObjectTaggingOutput from required parameters
 #### `newDeleteObjectTaggingOutput'`
 
 ``` purescript
-newDeleteObjectTaggingOutput' :: ({ "VersionId" :: NullOrUndefined (ObjectVersionId) } -> { "VersionId" :: NullOrUndefined (ObjectVersionId) }) -> DeleteObjectTaggingOutput
+newDeleteObjectTaggingOutput' :: ({ "VersionId" :: Maybe (ObjectVersionId) } -> { "VersionId" :: Maybe (ObjectVersionId) }) -> DeleteObjectTaggingOutput
 ```
 
 Constructs DeleteObjectTaggingOutput's fields from required parameters
@@ -2516,7 +2516,7 @@ Constructs DeleteObjectTaggingOutput's fields from required parameters
 
 ``` purescript
 newtype DeleteObjectTaggingRequest
-  = DeleteObjectTaggingRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) }
+  = DeleteObjectTaggingRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) }
 ```
 
 ##### Instances
@@ -2539,7 +2539,7 @@ Constructs DeleteObjectTaggingRequest from required parameters
 #### `newDeleteObjectTaggingRequest'`
 
 ``` purescript
-newDeleteObjectTaggingRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) }) -> DeleteObjectTaggingRequest
+newDeleteObjectTaggingRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) }) -> DeleteObjectTaggingRequest
 ```
 
 Constructs DeleteObjectTaggingRequest's fields from required parameters
@@ -2548,7 +2548,7 @@ Constructs DeleteObjectTaggingRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteObjectsOutput
-  = DeleteObjectsOutput { "Deleted" :: NullOrUndefined (DeletedObjects), "RequestCharged" :: NullOrUndefined (RequestCharged), "Errors" :: NullOrUndefined (Errors) }
+  = DeleteObjectsOutput { "Deleted" :: Maybe (DeletedObjects), "RequestCharged" :: Maybe (RequestCharged), "Errors" :: Maybe (Errors) }
 ```
 
 ##### Instances
@@ -2571,7 +2571,7 @@ Constructs DeleteObjectsOutput from required parameters
 #### `newDeleteObjectsOutput'`
 
 ``` purescript
-newDeleteObjectsOutput' :: ({ "Deleted" :: NullOrUndefined (DeletedObjects), "RequestCharged" :: NullOrUndefined (RequestCharged), "Errors" :: NullOrUndefined (Errors) } -> { "Deleted" :: NullOrUndefined (DeletedObjects), "RequestCharged" :: NullOrUndefined (RequestCharged), "Errors" :: NullOrUndefined (Errors) }) -> DeleteObjectsOutput
+newDeleteObjectsOutput' :: ({ "Deleted" :: Maybe (DeletedObjects), "RequestCharged" :: Maybe (RequestCharged), "Errors" :: Maybe (Errors) } -> { "Deleted" :: Maybe (DeletedObjects), "RequestCharged" :: Maybe (RequestCharged), "Errors" :: Maybe (Errors) }) -> DeleteObjectsOutput
 ```
 
 Constructs DeleteObjectsOutput's fields from required parameters
@@ -2580,7 +2580,7 @@ Constructs DeleteObjectsOutput's fields from required parameters
 
 ``` purescript
 newtype DeleteObjectsRequest
-  = DeleteObjectsRequest { "Bucket" :: BucketName, "Delete" :: Delete, "MFA" :: NullOrUndefined (MFA), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = DeleteObjectsRequest { "Bucket" :: BucketName, "Delete" :: Delete, "MFA" :: Maybe (MFA), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -2603,7 +2603,7 @@ Constructs DeleteObjectsRequest from required parameters
 #### `newDeleteObjectsRequest'`
 
 ``` purescript
-newDeleteObjectsRequest' :: BucketName -> Delete -> ({ "Bucket" :: BucketName, "Delete" :: Delete, "MFA" :: NullOrUndefined (MFA), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Delete" :: Delete, "MFA" :: NullOrUndefined (MFA), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> DeleteObjectsRequest
+newDeleteObjectsRequest' :: BucketName -> Delete -> ({ "Bucket" :: BucketName, "Delete" :: Delete, "MFA" :: Maybe (MFA), "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Delete" :: Delete, "MFA" :: Maybe (MFA), "RequestPayer" :: Maybe (RequestPayer) }) -> DeleteObjectsRequest
 ```
 
 Constructs DeleteObjectsRequest's fields from required parameters
@@ -2612,7 +2612,7 @@ Constructs DeleteObjectsRequest's fields from required parameters
 
 ``` purescript
 newtype DeletedObject
-  = DeletedObject { "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "DeleteMarker" :: NullOrUndefined (DeleteMarker), "DeleteMarkerVersionId" :: NullOrUndefined (DeleteMarkerVersionId) }
+  = DeletedObject { "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "DeleteMarker" :: Maybe (DeleteMarker), "DeleteMarkerVersionId" :: Maybe (DeleteMarkerVersionId) }
 ```
 
 ##### Instances
@@ -2635,7 +2635,7 @@ Constructs DeletedObject from required parameters
 #### `newDeletedObject'`
 
 ``` purescript
-newDeletedObject' :: ({ "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "DeleteMarker" :: NullOrUndefined (DeleteMarker), "DeleteMarkerVersionId" :: NullOrUndefined (DeleteMarkerVersionId) } -> { "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "DeleteMarker" :: NullOrUndefined (DeleteMarker), "DeleteMarkerVersionId" :: NullOrUndefined (DeleteMarkerVersionId) }) -> DeletedObject
+newDeletedObject' :: ({ "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "DeleteMarker" :: Maybe (DeleteMarker), "DeleteMarkerVersionId" :: Maybe (DeleteMarkerVersionId) } -> { "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "DeleteMarker" :: Maybe (DeleteMarker), "DeleteMarkerVersionId" :: Maybe (DeleteMarkerVersionId) }) -> DeletedObject
 ```
 
 Constructs DeletedObject's fields from required parameters
@@ -2692,7 +2692,7 @@ Encode Description
 
 ``` purescript
 newtype Destination
-  = Destination { "Bucket" :: BucketName, "Account" :: NullOrUndefined (AccountId), "StorageClass" :: NullOrUndefined (StorageClass), "AccessControlTranslation" :: NullOrUndefined (AccessControlTranslation), "EncryptionConfiguration" :: NullOrUndefined (EncryptionConfiguration) }
+  = Destination { "Bucket" :: BucketName, "Account" :: Maybe (AccountId), "StorageClass" :: Maybe (StorageClass), "AccessControlTranslation" :: Maybe (AccessControlTranslation), "EncryptionConfiguration" :: Maybe (EncryptionConfiguration) }
 ```
 
 Container for replication destination information.
@@ -2717,7 +2717,7 @@ Constructs Destination from required parameters
 #### `newDestination'`
 
 ``` purescript
-newDestination' :: BucketName -> ({ "Bucket" :: BucketName, "Account" :: NullOrUndefined (AccountId), "StorageClass" :: NullOrUndefined (StorageClass), "AccessControlTranslation" :: NullOrUndefined (AccessControlTranslation), "EncryptionConfiguration" :: NullOrUndefined (EncryptionConfiguration) } -> { "Bucket" :: BucketName, "Account" :: NullOrUndefined (AccountId), "StorageClass" :: NullOrUndefined (StorageClass), "AccessControlTranslation" :: NullOrUndefined (AccessControlTranslation), "EncryptionConfiguration" :: NullOrUndefined (EncryptionConfiguration) }) -> Destination
+newDestination' :: BucketName -> ({ "Bucket" :: BucketName, "Account" :: Maybe (AccountId), "StorageClass" :: Maybe (StorageClass), "AccessControlTranslation" :: Maybe (AccessControlTranslation), "EncryptionConfiguration" :: Maybe (EncryptionConfiguration) } -> { "Bucket" :: BucketName, "Account" :: Maybe (AccountId), "StorageClass" :: Maybe (StorageClass), "AccessControlTranslation" :: Maybe (AccessControlTranslation), "EncryptionConfiguration" :: Maybe (EncryptionConfiguration) }) -> Destination
 ```
 
 Constructs Destination's fields from required parameters
@@ -2792,7 +2792,7 @@ Encode EncodingType
 
 ``` purescript
 newtype Encryption
-  = Encryption { "EncryptionType" :: ServerSideEncryption, "KMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "KMSContext" :: NullOrUndefined (KMSContext) }
+  = Encryption { "EncryptionType" :: ServerSideEncryption, "KMSKeyId" :: Maybe (SSEKMSKeyId), "KMSContext" :: Maybe (KMSContext) }
 ```
 
 Describes the server-side encryption that will be applied to the restore results.
@@ -2817,7 +2817,7 @@ Constructs Encryption from required parameters
 #### `newEncryption'`
 
 ``` purescript
-newEncryption' :: ServerSideEncryption -> ({ "EncryptionType" :: ServerSideEncryption, "KMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "KMSContext" :: NullOrUndefined (KMSContext) } -> { "EncryptionType" :: ServerSideEncryption, "KMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "KMSContext" :: NullOrUndefined (KMSContext) }) -> Encryption
+newEncryption' :: ServerSideEncryption -> ({ "EncryptionType" :: ServerSideEncryption, "KMSKeyId" :: Maybe (SSEKMSKeyId), "KMSContext" :: Maybe (KMSContext) } -> { "EncryptionType" :: ServerSideEncryption, "KMSKeyId" :: Maybe (SSEKMSKeyId), "KMSContext" :: Maybe (KMSContext) }) -> Encryption
 ```
 
 Constructs Encryption's fields from required parameters
@@ -2826,7 +2826,7 @@ Constructs Encryption's fields from required parameters
 
 ``` purescript
 newtype EncryptionConfiguration
-  = EncryptionConfiguration { "ReplicaKmsKeyID" :: NullOrUndefined (ReplicaKmsKeyID) }
+  = EncryptionConfiguration { "ReplicaKmsKeyID" :: Maybe (ReplicaKmsKeyID) }
 ```
 
 Container for information regarding encryption based configuration for replicas.
@@ -2851,7 +2851,7 @@ Constructs EncryptionConfiguration from required parameters
 #### `newEncryptionConfiguration'`
 
 ``` purescript
-newEncryptionConfiguration' :: ({ "ReplicaKmsKeyID" :: NullOrUndefined (ReplicaKmsKeyID) } -> { "ReplicaKmsKeyID" :: NullOrUndefined (ReplicaKmsKeyID) }) -> EncryptionConfiguration
+newEncryptionConfiguration' :: ({ "ReplicaKmsKeyID" :: Maybe (ReplicaKmsKeyID) } -> { "ReplicaKmsKeyID" :: Maybe (ReplicaKmsKeyID) }) -> EncryptionConfiguration
 ```
 
 Constructs EncryptionConfiguration's fields from required parameters
@@ -2860,7 +2860,7 @@ Constructs EncryptionConfiguration's fields from required parameters
 
 ``` purescript
 newtype Error
-  = Error { "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "Code" :: NullOrUndefined (Code), "Message" :: NullOrUndefined (Message) }
+  = Error { "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "Code" :: Maybe (Code), "Message" :: Maybe (Message) }
 ```
 
 ##### Instances
@@ -2883,7 +2883,7 @@ Constructs Error from required parameters
 #### `newError'`
 
 ``` purescript
-newError' :: ({ "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "Code" :: NullOrUndefined (Code), "Message" :: NullOrUndefined (Message) } -> { "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "Code" :: NullOrUndefined (Code), "Message" :: NullOrUndefined (Message) }) -> Error
+newError' :: ({ "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "Code" :: Maybe (Code), "Message" :: Maybe (Message) } -> { "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "Code" :: Maybe (Code), "Message" :: Maybe (Message) }) -> Error
 ```
 
 Constructs Error's fields from required parameters
@@ -3150,7 +3150,7 @@ Encode FileHeaderInfo
 
 ``` purescript
 newtype FilterRule
-  = FilterRule { "Name" :: NullOrUndefined (FilterRuleName), "Value" :: NullOrUndefined (FilterRuleValue) }
+  = FilterRule { "Name" :: Maybe (FilterRuleName), "Value" :: Maybe (FilterRuleValue) }
 ```
 
 Container for key value pair that defines the criteria for the filter rule.
@@ -3175,7 +3175,7 @@ Constructs FilterRule from required parameters
 #### `newFilterRule'`
 
 ``` purescript
-newFilterRule' :: ({ "Name" :: NullOrUndefined (FilterRuleName), "Value" :: NullOrUndefined (FilterRuleValue) } -> { "Name" :: NullOrUndefined (FilterRuleName), "Value" :: NullOrUndefined (FilterRuleValue) }) -> FilterRule
+newFilterRule' :: ({ "Name" :: Maybe (FilterRuleName), "Value" :: Maybe (FilterRuleValue) } -> { "Name" :: Maybe (FilterRuleName), "Value" :: Maybe (FilterRuleValue) }) -> FilterRule
 ```
 
 Constructs FilterRule's fields from required parameters
@@ -3234,7 +3234,7 @@ Encode FilterRuleValue
 
 ``` purescript
 newtype GetBucketAccelerateConfigurationOutput
-  = GetBucketAccelerateConfigurationOutput { "Status" :: NullOrUndefined (BucketAccelerateStatus) }
+  = GetBucketAccelerateConfigurationOutput { "Status" :: Maybe (BucketAccelerateStatus) }
 ```
 
 ##### Instances
@@ -3257,7 +3257,7 @@ Constructs GetBucketAccelerateConfigurationOutput from required parameters
 #### `newGetBucketAccelerateConfigurationOutput'`
 
 ``` purescript
-newGetBucketAccelerateConfigurationOutput' :: ({ "Status" :: NullOrUndefined (BucketAccelerateStatus) } -> { "Status" :: NullOrUndefined (BucketAccelerateStatus) }) -> GetBucketAccelerateConfigurationOutput
+newGetBucketAccelerateConfigurationOutput' :: ({ "Status" :: Maybe (BucketAccelerateStatus) } -> { "Status" :: Maybe (BucketAccelerateStatus) }) -> GetBucketAccelerateConfigurationOutput
 ```
 
 Constructs GetBucketAccelerateConfigurationOutput's fields from required parameters
@@ -3298,7 +3298,7 @@ Constructs GetBucketAccelerateConfigurationRequest's fields from required parame
 
 ``` purescript
 newtype GetBucketAclOutput
-  = GetBucketAclOutput { "Owner" :: NullOrUndefined (Owner), "Grants" :: NullOrUndefined (Grants) }
+  = GetBucketAclOutput { "Owner" :: Maybe (Owner), "Grants" :: Maybe (Grants) }
 ```
 
 ##### Instances
@@ -3321,7 +3321,7 @@ Constructs GetBucketAclOutput from required parameters
 #### `newGetBucketAclOutput'`
 
 ``` purescript
-newGetBucketAclOutput' :: ({ "Owner" :: NullOrUndefined (Owner), "Grants" :: NullOrUndefined (Grants) } -> { "Owner" :: NullOrUndefined (Owner), "Grants" :: NullOrUndefined (Grants) }) -> GetBucketAclOutput
+newGetBucketAclOutput' :: ({ "Owner" :: Maybe (Owner), "Grants" :: Maybe (Grants) } -> { "Owner" :: Maybe (Owner), "Grants" :: Maybe (Grants) }) -> GetBucketAclOutput
 ```
 
 Constructs GetBucketAclOutput's fields from required parameters
@@ -3362,7 +3362,7 @@ Constructs GetBucketAclRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketAnalyticsConfigurationOutput
-  = GetBucketAnalyticsConfigurationOutput { "AnalyticsConfiguration" :: NullOrUndefined (AnalyticsConfiguration) }
+  = GetBucketAnalyticsConfigurationOutput { "AnalyticsConfiguration" :: Maybe (AnalyticsConfiguration) }
 ```
 
 ##### Instances
@@ -3385,7 +3385,7 @@ Constructs GetBucketAnalyticsConfigurationOutput from required parameters
 #### `newGetBucketAnalyticsConfigurationOutput'`
 
 ``` purescript
-newGetBucketAnalyticsConfigurationOutput' :: ({ "AnalyticsConfiguration" :: NullOrUndefined (AnalyticsConfiguration) } -> { "AnalyticsConfiguration" :: NullOrUndefined (AnalyticsConfiguration) }) -> GetBucketAnalyticsConfigurationOutput
+newGetBucketAnalyticsConfigurationOutput' :: ({ "AnalyticsConfiguration" :: Maybe (AnalyticsConfiguration) } -> { "AnalyticsConfiguration" :: Maybe (AnalyticsConfiguration) }) -> GetBucketAnalyticsConfigurationOutput
 ```
 
 Constructs GetBucketAnalyticsConfigurationOutput's fields from required parameters
@@ -3426,7 +3426,7 @@ Constructs GetBucketAnalyticsConfigurationRequest's fields from required paramet
 
 ``` purescript
 newtype GetBucketCorsOutput
-  = GetBucketCorsOutput { "CORSRules" :: NullOrUndefined (CORSRules) }
+  = GetBucketCorsOutput { "CORSRules" :: Maybe (CORSRules) }
 ```
 
 ##### Instances
@@ -3449,7 +3449,7 @@ Constructs GetBucketCorsOutput from required parameters
 #### `newGetBucketCorsOutput'`
 
 ``` purescript
-newGetBucketCorsOutput' :: ({ "CORSRules" :: NullOrUndefined (CORSRules) } -> { "CORSRules" :: NullOrUndefined (CORSRules) }) -> GetBucketCorsOutput
+newGetBucketCorsOutput' :: ({ "CORSRules" :: Maybe (CORSRules) } -> { "CORSRules" :: Maybe (CORSRules) }) -> GetBucketCorsOutput
 ```
 
 Constructs GetBucketCorsOutput's fields from required parameters
@@ -3490,7 +3490,7 @@ Constructs GetBucketCorsRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketEncryptionOutput
-  = GetBucketEncryptionOutput { "ServerSideEncryptionConfiguration" :: NullOrUndefined (ServerSideEncryptionConfiguration) }
+  = GetBucketEncryptionOutput { "ServerSideEncryptionConfiguration" :: Maybe (ServerSideEncryptionConfiguration) }
 ```
 
 ##### Instances
@@ -3513,7 +3513,7 @@ Constructs GetBucketEncryptionOutput from required parameters
 #### `newGetBucketEncryptionOutput'`
 
 ``` purescript
-newGetBucketEncryptionOutput' :: ({ "ServerSideEncryptionConfiguration" :: NullOrUndefined (ServerSideEncryptionConfiguration) } -> { "ServerSideEncryptionConfiguration" :: NullOrUndefined (ServerSideEncryptionConfiguration) }) -> GetBucketEncryptionOutput
+newGetBucketEncryptionOutput' :: ({ "ServerSideEncryptionConfiguration" :: Maybe (ServerSideEncryptionConfiguration) } -> { "ServerSideEncryptionConfiguration" :: Maybe (ServerSideEncryptionConfiguration) }) -> GetBucketEncryptionOutput
 ```
 
 Constructs GetBucketEncryptionOutput's fields from required parameters
@@ -3554,7 +3554,7 @@ Constructs GetBucketEncryptionRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketInventoryConfigurationOutput
-  = GetBucketInventoryConfigurationOutput { "InventoryConfiguration" :: NullOrUndefined (InventoryConfiguration) }
+  = GetBucketInventoryConfigurationOutput { "InventoryConfiguration" :: Maybe (InventoryConfiguration) }
 ```
 
 ##### Instances
@@ -3577,7 +3577,7 @@ Constructs GetBucketInventoryConfigurationOutput from required parameters
 #### `newGetBucketInventoryConfigurationOutput'`
 
 ``` purescript
-newGetBucketInventoryConfigurationOutput' :: ({ "InventoryConfiguration" :: NullOrUndefined (InventoryConfiguration) } -> { "InventoryConfiguration" :: NullOrUndefined (InventoryConfiguration) }) -> GetBucketInventoryConfigurationOutput
+newGetBucketInventoryConfigurationOutput' :: ({ "InventoryConfiguration" :: Maybe (InventoryConfiguration) } -> { "InventoryConfiguration" :: Maybe (InventoryConfiguration) }) -> GetBucketInventoryConfigurationOutput
 ```
 
 Constructs GetBucketInventoryConfigurationOutput's fields from required parameters
@@ -3618,7 +3618,7 @@ Constructs GetBucketInventoryConfigurationRequest's fields from required paramet
 
 ``` purescript
 newtype GetBucketLifecycleConfigurationOutput
-  = GetBucketLifecycleConfigurationOutput { "Rules" :: NullOrUndefined (LifecycleRules) }
+  = GetBucketLifecycleConfigurationOutput { "Rules" :: Maybe (LifecycleRules) }
 ```
 
 ##### Instances
@@ -3641,7 +3641,7 @@ Constructs GetBucketLifecycleConfigurationOutput from required parameters
 #### `newGetBucketLifecycleConfigurationOutput'`
 
 ``` purescript
-newGetBucketLifecycleConfigurationOutput' :: ({ "Rules" :: NullOrUndefined (LifecycleRules) } -> { "Rules" :: NullOrUndefined (LifecycleRules) }) -> GetBucketLifecycleConfigurationOutput
+newGetBucketLifecycleConfigurationOutput' :: ({ "Rules" :: Maybe (LifecycleRules) } -> { "Rules" :: Maybe (LifecycleRules) }) -> GetBucketLifecycleConfigurationOutput
 ```
 
 Constructs GetBucketLifecycleConfigurationOutput's fields from required parameters
@@ -3682,7 +3682,7 @@ Constructs GetBucketLifecycleConfigurationRequest's fields from required paramet
 
 ``` purescript
 newtype GetBucketLifecycleOutput
-  = GetBucketLifecycleOutput { "Rules" :: NullOrUndefined (Rules) }
+  = GetBucketLifecycleOutput { "Rules" :: Maybe (Rules) }
 ```
 
 ##### Instances
@@ -3705,7 +3705,7 @@ Constructs GetBucketLifecycleOutput from required parameters
 #### `newGetBucketLifecycleOutput'`
 
 ``` purescript
-newGetBucketLifecycleOutput' :: ({ "Rules" :: NullOrUndefined (Rules) } -> { "Rules" :: NullOrUndefined (Rules) }) -> GetBucketLifecycleOutput
+newGetBucketLifecycleOutput' :: ({ "Rules" :: Maybe (Rules) } -> { "Rules" :: Maybe (Rules) }) -> GetBucketLifecycleOutput
 ```
 
 Constructs GetBucketLifecycleOutput's fields from required parameters
@@ -3746,7 +3746,7 @@ Constructs GetBucketLifecycleRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketLocationOutput
-  = GetBucketLocationOutput { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) }
+  = GetBucketLocationOutput { "LocationConstraint" :: Maybe (BucketLocationConstraint) }
 ```
 
 ##### Instances
@@ -3769,7 +3769,7 @@ Constructs GetBucketLocationOutput from required parameters
 #### `newGetBucketLocationOutput'`
 
 ``` purescript
-newGetBucketLocationOutput' :: ({ "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) } -> { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) }) -> GetBucketLocationOutput
+newGetBucketLocationOutput' :: ({ "LocationConstraint" :: Maybe (BucketLocationConstraint) } -> { "LocationConstraint" :: Maybe (BucketLocationConstraint) }) -> GetBucketLocationOutput
 ```
 
 Constructs GetBucketLocationOutput's fields from required parameters
@@ -3810,7 +3810,7 @@ Constructs GetBucketLocationRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketLoggingOutput
-  = GetBucketLoggingOutput { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) }
+  = GetBucketLoggingOutput { "LoggingEnabled" :: Maybe (LoggingEnabled) }
 ```
 
 ##### Instances
@@ -3833,7 +3833,7 @@ Constructs GetBucketLoggingOutput from required parameters
 #### `newGetBucketLoggingOutput'`
 
 ``` purescript
-newGetBucketLoggingOutput' :: ({ "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) } -> { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) }) -> GetBucketLoggingOutput
+newGetBucketLoggingOutput' :: ({ "LoggingEnabled" :: Maybe (LoggingEnabled) } -> { "LoggingEnabled" :: Maybe (LoggingEnabled) }) -> GetBucketLoggingOutput
 ```
 
 Constructs GetBucketLoggingOutput's fields from required parameters
@@ -3874,7 +3874,7 @@ Constructs GetBucketLoggingRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketMetricsConfigurationOutput
-  = GetBucketMetricsConfigurationOutput { "MetricsConfiguration" :: NullOrUndefined (MetricsConfiguration) }
+  = GetBucketMetricsConfigurationOutput { "MetricsConfiguration" :: Maybe (MetricsConfiguration) }
 ```
 
 ##### Instances
@@ -3897,7 +3897,7 @@ Constructs GetBucketMetricsConfigurationOutput from required parameters
 #### `newGetBucketMetricsConfigurationOutput'`
 
 ``` purescript
-newGetBucketMetricsConfigurationOutput' :: ({ "MetricsConfiguration" :: NullOrUndefined (MetricsConfiguration) } -> { "MetricsConfiguration" :: NullOrUndefined (MetricsConfiguration) }) -> GetBucketMetricsConfigurationOutput
+newGetBucketMetricsConfigurationOutput' :: ({ "MetricsConfiguration" :: Maybe (MetricsConfiguration) } -> { "MetricsConfiguration" :: Maybe (MetricsConfiguration) }) -> GetBucketMetricsConfigurationOutput
 ```
 
 Constructs GetBucketMetricsConfigurationOutput's fields from required parameters
@@ -3970,7 +3970,7 @@ Constructs GetBucketNotificationConfigurationRequest's fields from required para
 
 ``` purescript
 newtype GetBucketPolicyOutput
-  = GetBucketPolicyOutput { "Policy" :: NullOrUndefined (Policy) }
+  = GetBucketPolicyOutput { "Policy" :: Maybe (Policy) }
 ```
 
 ##### Instances
@@ -3993,7 +3993,7 @@ Constructs GetBucketPolicyOutput from required parameters
 #### `newGetBucketPolicyOutput'`
 
 ``` purescript
-newGetBucketPolicyOutput' :: ({ "Policy" :: NullOrUndefined (Policy) } -> { "Policy" :: NullOrUndefined (Policy) }) -> GetBucketPolicyOutput
+newGetBucketPolicyOutput' :: ({ "Policy" :: Maybe (Policy) } -> { "Policy" :: Maybe (Policy) }) -> GetBucketPolicyOutput
 ```
 
 Constructs GetBucketPolicyOutput's fields from required parameters
@@ -4034,7 +4034,7 @@ Constructs GetBucketPolicyRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketReplicationOutput
-  = GetBucketReplicationOutput { "ReplicationConfiguration" :: NullOrUndefined (ReplicationConfiguration) }
+  = GetBucketReplicationOutput { "ReplicationConfiguration" :: Maybe (ReplicationConfiguration) }
 ```
 
 ##### Instances
@@ -4057,7 +4057,7 @@ Constructs GetBucketReplicationOutput from required parameters
 #### `newGetBucketReplicationOutput'`
 
 ``` purescript
-newGetBucketReplicationOutput' :: ({ "ReplicationConfiguration" :: NullOrUndefined (ReplicationConfiguration) } -> { "ReplicationConfiguration" :: NullOrUndefined (ReplicationConfiguration) }) -> GetBucketReplicationOutput
+newGetBucketReplicationOutput' :: ({ "ReplicationConfiguration" :: Maybe (ReplicationConfiguration) } -> { "ReplicationConfiguration" :: Maybe (ReplicationConfiguration) }) -> GetBucketReplicationOutput
 ```
 
 Constructs GetBucketReplicationOutput's fields from required parameters
@@ -4098,7 +4098,7 @@ Constructs GetBucketReplicationRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketRequestPaymentOutput
-  = GetBucketRequestPaymentOutput { "Payer" :: NullOrUndefined (Payer) }
+  = GetBucketRequestPaymentOutput { "Payer" :: Maybe (Payer) }
 ```
 
 ##### Instances
@@ -4121,7 +4121,7 @@ Constructs GetBucketRequestPaymentOutput from required parameters
 #### `newGetBucketRequestPaymentOutput'`
 
 ``` purescript
-newGetBucketRequestPaymentOutput' :: ({ "Payer" :: NullOrUndefined (Payer) } -> { "Payer" :: NullOrUndefined (Payer) }) -> GetBucketRequestPaymentOutput
+newGetBucketRequestPaymentOutput' :: ({ "Payer" :: Maybe (Payer) } -> { "Payer" :: Maybe (Payer) }) -> GetBucketRequestPaymentOutput
 ```
 
 Constructs GetBucketRequestPaymentOutput's fields from required parameters
@@ -4226,7 +4226,7 @@ Constructs GetBucketTaggingRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketVersioningOutput
-  = GetBucketVersioningOutput { "Status" :: NullOrUndefined (BucketVersioningStatus), "MFADelete" :: NullOrUndefined (MFADeleteStatus) }
+  = GetBucketVersioningOutput { "Status" :: Maybe (BucketVersioningStatus), "MFADelete" :: Maybe (MFADeleteStatus) }
 ```
 
 ##### Instances
@@ -4249,7 +4249,7 @@ Constructs GetBucketVersioningOutput from required parameters
 #### `newGetBucketVersioningOutput'`
 
 ``` purescript
-newGetBucketVersioningOutput' :: ({ "Status" :: NullOrUndefined (BucketVersioningStatus), "MFADelete" :: NullOrUndefined (MFADeleteStatus) } -> { "Status" :: NullOrUndefined (BucketVersioningStatus), "MFADelete" :: NullOrUndefined (MFADeleteStatus) }) -> GetBucketVersioningOutput
+newGetBucketVersioningOutput' :: ({ "Status" :: Maybe (BucketVersioningStatus), "MFADelete" :: Maybe (MFADeleteStatus) } -> { "Status" :: Maybe (BucketVersioningStatus), "MFADelete" :: Maybe (MFADeleteStatus) }) -> GetBucketVersioningOutput
 ```
 
 Constructs GetBucketVersioningOutput's fields from required parameters
@@ -4290,7 +4290,7 @@ Constructs GetBucketVersioningRequest's fields from required parameters
 
 ``` purescript
 newtype GetBucketWebsiteOutput
-  = GetBucketWebsiteOutput { "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo), "IndexDocument" :: NullOrUndefined (IndexDocument), "ErrorDocument" :: NullOrUndefined (ErrorDocument), "RoutingRules" :: NullOrUndefined (RoutingRules) }
+  = GetBucketWebsiteOutput { "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo), "IndexDocument" :: Maybe (IndexDocument), "ErrorDocument" :: Maybe (ErrorDocument), "RoutingRules" :: Maybe (RoutingRules) }
 ```
 
 ##### Instances
@@ -4313,7 +4313,7 @@ Constructs GetBucketWebsiteOutput from required parameters
 #### `newGetBucketWebsiteOutput'`
 
 ``` purescript
-newGetBucketWebsiteOutput' :: ({ "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo), "IndexDocument" :: NullOrUndefined (IndexDocument), "ErrorDocument" :: NullOrUndefined (ErrorDocument), "RoutingRules" :: NullOrUndefined (RoutingRules) } -> { "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo), "IndexDocument" :: NullOrUndefined (IndexDocument), "ErrorDocument" :: NullOrUndefined (ErrorDocument), "RoutingRules" :: NullOrUndefined (RoutingRules) }) -> GetBucketWebsiteOutput
+newGetBucketWebsiteOutput' :: ({ "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo), "IndexDocument" :: Maybe (IndexDocument), "ErrorDocument" :: Maybe (ErrorDocument), "RoutingRules" :: Maybe (RoutingRules) } -> { "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo), "IndexDocument" :: Maybe (IndexDocument), "ErrorDocument" :: Maybe (ErrorDocument), "RoutingRules" :: Maybe (RoutingRules) }) -> GetBucketWebsiteOutput
 ```
 
 Constructs GetBucketWebsiteOutput's fields from required parameters
@@ -4354,7 +4354,7 @@ Constructs GetBucketWebsiteRequest's fields from required parameters
 
 ``` purescript
 newtype GetObjectAclOutput
-  = GetObjectAclOutput { "Owner" :: NullOrUndefined (Owner), "Grants" :: NullOrUndefined (Grants), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = GetObjectAclOutput { "Owner" :: Maybe (Owner), "Grants" :: Maybe (Grants), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -4377,7 +4377,7 @@ Constructs GetObjectAclOutput from required parameters
 #### `newGetObjectAclOutput'`
 
 ``` purescript
-newGetObjectAclOutput' :: ({ "Owner" :: NullOrUndefined (Owner), "Grants" :: NullOrUndefined (Grants), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "Owner" :: NullOrUndefined (Owner), "Grants" :: NullOrUndefined (Grants), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> GetObjectAclOutput
+newGetObjectAclOutput' :: ({ "Owner" :: Maybe (Owner), "Grants" :: Maybe (Grants), "RequestCharged" :: Maybe (RequestCharged) } -> { "Owner" :: Maybe (Owner), "Grants" :: Maybe (Grants), "RequestCharged" :: Maybe (RequestCharged) }) -> GetObjectAclOutput
 ```
 
 Constructs GetObjectAclOutput's fields from required parameters
@@ -4386,7 +4386,7 @@ Constructs GetObjectAclOutput's fields from required parameters
 
 ``` purescript
 newtype GetObjectAclRequest
-  = GetObjectAclRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = GetObjectAclRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -4409,7 +4409,7 @@ Constructs GetObjectAclRequest from required parameters
 #### `newGetObjectAclRequest'`
 
 ``` purescript
-newGetObjectAclRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> GetObjectAclRequest
+newGetObjectAclRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "RequestPayer" :: Maybe (RequestPayer) }) -> GetObjectAclRequest
 ```
 
 Constructs GetObjectAclRequest's fields from required parameters
@@ -4418,7 +4418,7 @@ Constructs GetObjectAclRequest's fields from required parameters
 
 ``` purescript
 newtype GetObjectOutput
-  = GetObjectOutput { "Body" :: NullOrUndefined (Body), "DeleteMarker" :: NullOrUndefined (DeleteMarker), "AcceptRanges" :: NullOrUndefined (AcceptRanges), "Expiration" :: NullOrUndefined (Expiration), "Restore" :: NullOrUndefined (Restore), "LastModified" :: NullOrUndefined (LastModified), "ContentLength" :: NullOrUndefined (ContentLength), "ETag" :: NullOrUndefined (ETag), "MissingMeta" :: NullOrUndefined (MissingMeta), "VersionId" :: NullOrUndefined (ObjectVersionId), "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentRange" :: NullOrUndefined (ContentRange), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "Metadata" :: NullOrUndefined (Metadata), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged), "ReplicationStatus" :: NullOrUndefined (ReplicationStatus), "PartsCount" :: NullOrUndefined (PartsCount), "TagCount" :: NullOrUndefined (TagCount) }
+  = GetObjectOutput { "Body" :: Maybe (Body), "DeleteMarker" :: Maybe (DeleteMarker), "AcceptRanges" :: Maybe (AcceptRanges), "Expiration" :: Maybe (Expiration), "Restore" :: Maybe (Restore), "LastModified" :: Maybe (LastModified), "ContentLength" :: Maybe (ContentLength), "ETag" :: Maybe (ETag), "MissingMeta" :: Maybe (MissingMeta), "VersionId" :: Maybe (ObjectVersionId), "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentRange" :: Maybe (ContentRange), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "Metadata" :: Maybe (Metadata), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged), "ReplicationStatus" :: Maybe (ReplicationStatus), "PartsCount" :: Maybe (PartsCount), "TagCount" :: Maybe (TagCount) }
 ```
 
 ##### Instances
@@ -4441,7 +4441,7 @@ Constructs GetObjectOutput from required parameters
 #### `newGetObjectOutput'`
 
 ``` purescript
-newGetObjectOutput' :: ({ "Body" :: NullOrUndefined (Body), "DeleteMarker" :: NullOrUndefined (DeleteMarker), "AcceptRanges" :: NullOrUndefined (AcceptRanges), "Expiration" :: NullOrUndefined (Expiration), "Restore" :: NullOrUndefined (Restore), "LastModified" :: NullOrUndefined (LastModified), "ContentLength" :: NullOrUndefined (ContentLength), "ETag" :: NullOrUndefined (ETag), "MissingMeta" :: NullOrUndefined (MissingMeta), "VersionId" :: NullOrUndefined (ObjectVersionId), "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentRange" :: NullOrUndefined (ContentRange), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "Metadata" :: NullOrUndefined (Metadata), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged), "ReplicationStatus" :: NullOrUndefined (ReplicationStatus), "PartsCount" :: NullOrUndefined (PartsCount), "TagCount" :: NullOrUndefined (TagCount) } -> { "Body" :: NullOrUndefined (Body), "DeleteMarker" :: NullOrUndefined (DeleteMarker), "AcceptRanges" :: NullOrUndefined (AcceptRanges), "Expiration" :: NullOrUndefined (Expiration), "Restore" :: NullOrUndefined (Restore), "LastModified" :: NullOrUndefined (LastModified), "ContentLength" :: NullOrUndefined (ContentLength), "ETag" :: NullOrUndefined (ETag), "MissingMeta" :: NullOrUndefined (MissingMeta), "VersionId" :: NullOrUndefined (ObjectVersionId), "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentRange" :: NullOrUndefined (ContentRange), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "Metadata" :: NullOrUndefined (Metadata), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged), "ReplicationStatus" :: NullOrUndefined (ReplicationStatus), "PartsCount" :: NullOrUndefined (PartsCount), "TagCount" :: NullOrUndefined (TagCount) }) -> GetObjectOutput
+newGetObjectOutput' :: ({ "Body" :: Maybe (Body), "DeleteMarker" :: Maybe (DeleteMarker), "AcceptRanges" :: Maybe (AcceptRanges), "Expiration" :: Maybe (Expiration), "Restore" :: Maybe (Restore), "LastModified" :: Maybe (LastModified), "ContentLength" :: Maybe (ContentLength), "ETag" :: Maybe (ETag), "MissingMeta" :: Maybe (MissingMeta), "VersionId" :: Maybe (ObjectVersionId), "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentRange" :: Maybe (ContentRange), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "Metadata" :: Maybe (Metadata), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged), "ReplicationStatus" :: Maybe (ReplicationStatus), "PartsCount" :: Maybe (PartsCount), "TagCount" :: Maybe (TagCount) } -> { "Body" :: Maybe (Body), "DeleteMarker" :: Maybe (DeleteMarker), "AcceptRanges" :: Maybe (AcceptRanges), "Expiration" :: Maybe (Expiration), "Restore" :: Maybe (Restore), "LastModified" :: Maybe (LastModified), "ContentLength" :: Maybe (ContentLength), "ETag" :: Maybe (ETag), "MissingMeta" :: Maybe (MissingMeta), "VersionId" :: Maybe (ObjectVersionId), "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentRange" :: Maybe (ContentRange), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "Metadata" :: Maybe (Metadata), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged), "ReplicationStatus" :: Maybe (ReplicationStatus), "PartsCount" :: Maybe (PartsCount), "TagCount" :: Maybe (TagCount) }) -> GetObjectOutput
 ```
 
 Constructs GetObjectOutput's fields from required parameters
@@ -4450,7 +4450,7 @@ Constructs GetObjectOutput's fields from required parameters
 
 ``` purescript
 newtype GetObjectRequest
-  = GetObjectRequest { "Bucket" :: BucketName, "IfMatch" :: NullOrUndefined (IfMatch), "IfModifiedSince" :: NullOrUndefined (IfModifiedSince), "IfNoneMatch" :: NullOrUndefined (IfNoneMatch), "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: NullOrUndefined (Range), "ResponseCacheControl" :: NullOrUndefined (ResponseCacheControl), "ResponseContentDisposition" :: NullOrUndefined (ResponseContentDisposition), "ResponseContentEncoding" :: NullOrUndefined (ResponseContentEncoding), "ResponseContentLanguage" :: NullOrUndefined (ResponseContentLanguage), "ResponseContentType" :: NullOrUndefined (ResponseContentType), "ResponseExpires" :: NullOrUndefined (ResponseExpires), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "PartNumber" :: NullOrUndefined (PartNumber) }
+  = GetObjectRequest { "Bucket" :: BucketName, "IfMatch" :: Maybe (IfMatch), "IfModifiedSince" :: Maybe (IfModifiedSince), "IfNoneMatch" :: Maybe (IfNoneMatch), "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: Maybe (Range), "ResponseCacheControl" :: Maybe (ResponseCacheControl), "ResponseContentDisposition" :: Maybe (ResponseContentDisposition), "ResponseContentEncoding" :: Maybe (ResponseContentEncoding), "ResponseContentLanguage" :: Maybe (ResponseContentLanguage), "ResponseContentType" :: Maybe (ResponseContentType), "ResponseExpires" :: Maybe (ResponseExpires), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "PartNumber" :: Maybe (PartNumber) }
 ```
 
 ##### Instances
@@ -4473,7 +4473,7 @@ Constructs GetObjectRequest from required parameters
 #### `newGetObjectRequest'`
 
 ``` purescript
-newGetObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "IfMatch" :: NullOrUndefined (IfMatch), "IfModifiedSince" :: NullOrUndefined (IfModifiedSince), "IfNoneMatch" :: NullOrUndefined (IfNoneMatch), "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: NullOrUndefined (Range), "ResponseCacheControl" :: NullOrUndefined (ResponseCacheControl), "ResponseContentDisposition" :: NullOrUndefined (ResponseContentDisposition), "ResponseContentEncoding" :: NullOrUndefined (ResponseContentEncoding), "ResponseContentLanguage" :: NullOrUndefined (ResponseContentLanguage), "ResponseContentType" :: NullOrUndefined (ResponseContentType), "ResponseExpires" :: NullOrUndefined (ResponseExpires), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "PartNumber" :: NullOrUndefined (PartNumber) } -> { "Bucket" :: BucketName, "IfMatch" :: NullOrUndefined (IfMatch), "IfModifiedSince" :: NullOrUndefined (IfModifiedSince), "IfNoneMatch" :: NullOrUndefined (IfNoneMatch), "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: NullOrUndefined (Range), "ResponseCacheControl" :: NullOrUndefined (ResponseCacheControl), "ResponseContentDisposition" :: NullOrUndefined (ResponseContentDisposition), "ResponseContentEncoding" :: NullOrUndefined (ResponseContentEncoding), "ResponseContentLanguage" :: NullOrUndefined (ResponseContentLanguage), "ResponseContentType" :: NullOrUndefined (ResponseContentType), "ResponseExpires" :: NullOrUndefined (ResponseExpires), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "PartNumber" :: NullOrUndefined (PartNumber) }) -> GetObjectRequest
+newGetObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "IfMatch" :: Maybe (IfMatch), "IfModifiedSince" :: Maybe (IfModifiedSince), "IfNoneMatch" :: Maybe (IfNoneMatch), "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: Maybe (Range), "ResponseCacheControl" :: Maybe (ResponseCacheControl), "ResponseContentDisposition" :: Maybe (ResponseContentDisposition), "ResponseContentEncoding" :: Maybe (ResponseContentEncoding), "ResponseContentLanguage" :: Maybe (ResponseContentLanguage), "ResponseContentType" :: Maybe (ResponseContentType), "ResponseExpires" :: Maybe (ResponseExpires), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "PartNumber" :: Maybe (PartNumber) } -> { "Bucket" :: BucketName, "IfMatch" :: Maybe (IfMatch), "IfModifiedSince" :: Maybe (IfModifiedSince), "IfNoneMatch" :: Maybe (IfNoneMatch), "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: Maybe (Range), "ResponseCacheControl" :: Maybe (ResponseCacheControl), "ResponseContentDisposition" :: Maybe (ResponseContentDisposition), "ResponseContentEncoding" :: Maybe (ResponseContentEncoding), "ResponseContentLanguage" :: Maybe (ResponseContentLanguage), "ResponseContentType" :: Maybe (ResponseContentType), "ResponseExpires" :: Maybe (ResponseExpires), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "PartNumber" :: Maybe (PartNumber) }) -> GetObjectRequest
 ```
 
 Constructs GetObjectRequest's fields from required parameters
@@ -4482,7 +4482,7 @@ Constructs GetObjectRequest's fields from required parameters
 
 ``` purescript
 newtype GetObjectTaggingOutput
-  = GetObjectTaggingOutput { "VersionId" :: NullOrUndefined (ObjectVersionId), "TagSet" :: TagSet }
+  = GetObjectTaggingOutput { "VersionId" :: Maybe (ObjectVersionId), "TagSet" :: TagSet }
 ```
 
 ##### Instances
@@ -4505,7 +4505,7 @@ Constructs GetObjectTaggingOutput from required parameters
 #### `newGetObjectTaggingOutput'`
 
 ``` purescript
-newGetObjectTaggingOutput' :: TagSet -> ({ "VersionId" :: NullOrUndefined (ObjectVersionId), "TagSet" :: TagSet } -> { "VersionId" :: NullOrUndefined (ObjectVersionId), "TagSet" :: TagSet }) -> GetObjectTaggingOutput
+newGetObjectTaggingOutput' :: TagSet -> ({ "VersionId" :: Maybe (ObjectVersionId), "TagSet" :: TagSet } -> { "VersionId" :: Maybe (ObjectVersionId), "TagSet" :: TagSet }) -> GetObjectTaggingOutput
 ```
 
 Constructs GetObjectTaggingOutput's fields from required parameters
@@ -4514,7 +4514,7 @@ Constructs GetObjectTaggingOutput's fields from required parameters
 
 ``` purescript
 newtype GetObjectTaggingRequest
-  = GetObjectTaggingRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) }
+  = GetObjectTaggingRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) }
 ```
 
 ##### Instances
@@ -4537,7 +4537,7 @@ Constructs GetObjectTaggingRequest from required parameters
 #### `newGetObjectTaggingRequest'`
 
 ``` purescript
-newGetObjectTaggingRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) }) -> GetObjectTaggingRequest
+newGetObjectTaggingRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) }) -> GetObjectTaggingRequest
 ```
 
 Constructs GetObjectTaggingRequest's fields from required parameters
@@ -4546,7 +4546,7 @@ Constructs GetObjectTaggingRequest's fields from required parameters
 
 ``` purescript
 newtype GetObjectTorrentOutput
-  = GetObjectTorrentOutput { "Body" :: NullOrUndefined (Body), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = GetObjectTorrentOutput { "Body" :: Maybe (Body), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -4569,7 +4569,7 @@ Constructs GetObjectTorrentOutput from required parameters
 #### `newGetObjectTorrentOutput'`
 
 ``` purescript
-newGetObjectTorrentOutput' :: ({ "Body" :: NullOrUndefined (Body), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "Body" :: NullOrUndefined (Body), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> GetObjectTorrentOutput
+newGetObjectTorrentOutput' :: ({ "Body" :: Maybe (Body), "RequestCharged" :: Maybe (RequestCharged) } -> { "Body" :: Maybe (Body), "RequestCharged" :: Maybe (RequestCharged) }) -> GetObjectTorrentOutput
 ```
 
 Constructs GetObjectTorrentOutput's fields from required parameters
@@ -4578,7 +4578,7 @@ Constructs GetObjectTorrentOutput's fields from required parameters
 
 ``` purescript
 newtype GetObjectTorrentRequest
-  = GetObjectTorrentRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = GetObjectTorrentRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -4601,7 +4601,7 @@ Constructs GetObjectTorrentRequest from required parameters
 #### `newGetObjectTorrentRequest'`
 
 ``` purescript
-newGetObjectTorrentRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> GetObjectTorrentRequest
+newGetObjectTorrentRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "RequestPayer" :: Maybe (RequestPayer) }) -> GetObjectTorrentRequest
 ```
 
 Constructs GetObjectTorrentRequest's fields from required parameters
@@ -4642,7 +4642,7 @@ Constructs GlacierJobParameters's fields from required parameters
 
 ``` purescript
 newtype Grant
-  = Grant { "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (Permission) }
+  = Grant { "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (Permission) }
 ```
 
 ##### Instances
@@ -4665,7 +4665,7 @@ Constructs Grant from required parameters
 #### `newGrant'`
 
 ``` purescript
-newGrant' :: ({ "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (Permission) } -> { "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (Permission) }) -> Grant
+newGrant' :: ({ "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (Permission) } -> { "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (Permission) }) -> Grant
 ```
 
 Constructs Grant's fields from required parameters
@@ -4754,7 +4754,7 @@ Encode GrantWriteACP
 
 ``` purescript
 newtype Grantee
-  = Grantee { "DisplayName" :: NullOrUndefined (DisplayName), "EmailAddress" :: NullOrUndefined (EmailAddress), "ID" :: NullOrUndefined (ID), "Type" :: Type, "URI" :: NullOrUndefined (URI) }
+  = Grantee { "DisplayName" :: Maybe (DisplayName), "EmailAddress" :: Maybe (EmailAddress), "ID" :: Maybe (ID), "Type" :: Type, "URI" :: Maybe (URI) }
 ```
 
 ##### Instances
@@ -4777,7 +4777,7 @@ Constructs Grantee from required parameters
 #### `newGrantee'`
 
 ``` purescript
-newGrantee' :: Type -> ({ "DisplayName" :: NullOrUndefined (DisplayName), "EmailAddress" :: NullOrUndefined (EmailAddress), "ID" :: NullOrUndefined (ID), "Type" :: Type, "URI" :: NullOrUndefined (URI) } -> { "DisplayName" :: NullOrUndefined (DisplayName), "EmailAddress" :: NullOrUndefined (EmailAddress), "ID" :: NullOrUndefined (ID), "Type" :: Type, "URI" :: NullOrUndefined (URI) }) -> Grantee
+newGrantee' :: Type -> ({ "DisplayName" :: Maybe (DisplayName), "EmailAddress" :: Maybe (EmailAddress), "ID" :: Maybe (ID), "Type" :: Type, "URI" :: Maybe (URI) } -> { "DisplayName" :: Maybe (DisplayName), "EmailAddress" :: Maybe (EmailAddress), "ID" :: Maybe (ID), "Type" :: Type, "URI" :: Maybe (URI) }) -> Grantee
 ```
 
 Constructs Grantee's fields from required parameters
@@ -4834,7 +4834,7 @@ Constructs HeadBucketRequest's fields from required parameters
 
 ``` purescript
 newtype HeadObjectOutput
-  = HeadObjectOutput { "DeleteMarker" :: NullOrUndefined (DeleteMarker), "AcceptRanges" :: NullOrUndefined (AcceptRanges), "Expiration" :: NullOrUndefined (Expiration), "Restore" :: NullOrUndefined (Restore), "LastModified" :: NullOrUndefined (LastModified), "ContentLength" :: NullOrUndefined (ContentLength), "ETag" :: NullOrUndefined (ETag), "MissingMeta" :: NullOrUndefined (MissingMeta), "VersionId" :: NullOrUndefined (ObjectVersionId), "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "Metadata" :: NullOrUndefined (Metadata), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged), "ReplicationStatus" :: NullOrUndefined (ReplicationStatus), "PartsCount" :: NullOrUndefined (PartsCount) }
+  = HeadObjectOutput { "DeleteMarker" :: Maybe (DeleteMarker), "AcceptRanges" :: Maybe (AcceptRanges), "Expiration" :: Maybe (Expiration), "Restore" :: Maybe (Restore), "LastModified" :: Maybe (LastModified), "ContentLength" :: Maybe (ContentLength), "ETag" :: Maybe (ETag), "MissingMeta" :: Maybe (MissingMeta), "VersionId" :: Maybe (ObjectVersionId), "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "Metadata" :: Maybe (Metadata), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged), "ReplicationStatus" :: Maybe (ReplicationStatus), "PartsCount" :: Maybe (PartsCount) }
 ```
 
 ##### Instances
@@ -4857,7 +4857,7 @@ Constructs HeadObjectOutput from required parameters
 #### `newHeadObjectOutput'`
 
 ``` purescript
-newHeadObjectOutput' :: ({ "DeleteMarker" :: NullOrUndefined (DeleteMarker), "AcceptRanges" :: NullOrUndefined (AcceptRanges), "Expiration" :: NullOrUndefined (Expiration), "Restore" :: NullOrUndefined (Restore), "LastModified" :: NullOrUndefined (LastModified), "ContentLength" :: NullOrUndefined (ContentLength), "ETag" :: NullOrUndefined (ETag), "MissingMeta" :: NullOrUndefined (MissingMeta), "VersionId" :: NullOrUndefined (ObjectVersionId), "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "Metadata" :: NullOrUndefined (Metadata), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged), "ReplicationStatus" :: NullOrUndefined (ReplicationStatus), "PartsCount" :: NullOrUndefined (PartsCount) } -> { "DeleteMarker" :: NullOrUndefined (DeleteMarker), "AcceptRanges" :: NullOrUndefined (AcceptRanges), "Expiration" :: NullOrUndefined (Expiration), "Restore" :: NullOrUndefined (Restore), "LastModified" :: NullOrUndefined (LastModified), "ContentLength" :: NullOrUndefined (ContentLength), "ETag" :: NullOrUndefined (ETag), "MissingMeta" :: NullOrUndefined (MissingMeta), "VersionId" :: NullOrUndefined (ObjectVersionId), "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "Metadata" :: NullOrUndefined (Metadata), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged), "ReplicationStatus" :: NullOrUndefined (ReplicationStatus), "PartsCount" :: NullOrUndefined (PartsCount) }) -> HeadObjectOutput
+newHeadObjectOutput' :: ({ "DeleteMarker" :: Maybe (DeleteMarker), "AcceptRanges" :: Maybe (AcceptRanges), "Expiration" :: Maybe (Expiration), "Restore" :: Maybe (Restore), "LastModified" :: Maybe (LastModified), "ContentLength" :: Maybe (ContentLength), "ETag" :: Maybe (ETag), "MissingMeta" :: Maybe (MissingMeta), "VersionId" :: Maybe (ObjectVersionId), "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "Metadata" :: Maybe (Metadata), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged), "ReplicationStatus" :: Maybe (ReplicationStatus), "PartsCount" :: Maybe (PartsCount) } -> { "DeleteMarker" :: Maybe (DeleteMarker), "AcceptRanges" :: Maybe (AcceptRanges), "Expiration" :: Maybe (Expiration), "Restore" :: Maybe (Restore), "LastModified" :: Maybe (LastModified), "ContentLength" :: Maybe (ContentLength), "ETag" :: Maybe (ETag), "MissingMeta" :: Maybe (MissingMeta), "VersionId" :: Maybe (ObjectVersionId), "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "Metadata" :: Maybe (Metadata), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged), "ReplicationStatus" :: Maybe (ReplicationStatus), "PartsCount" :: Maybe (PartsCount) }) -> HeadObjectOutput
 ```
 
 Constructs HeadObjectOutput's fields from required parameters
@@ -4866,7 +4866,7 @@ Constructs HeadObjectOutput's fields from required parameters
 
 ``` purescript
 newtype HeadObjectRequest
-  = HeadObjectRequest { "Bucket" :: BucketName, "IfMatch" :: NullOrUndefined (IfMatch), "IfModifiedSince" :: NullOrUndefined (IfModifiedSince), "IfNoneMatch" :: NullOrUndefined (IfNoneMatch), "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: NullOrUndefined (Range), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "PartNumber" :: NullOrUndefined (PartNumber) }
+  = HeadObjectRequest { "Bucket" :: BucketName, "IfMatch" :: Maybe (IfMatch), "IfModifiedSince" :: Maybe (IfModifiedSince), "IfNoneMatch" :: Maybe (IfNoneMatch), "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: Maybe (Range), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "PartNumber" :: Maybe (PartNumber) }
 ```
 
 ##### Instances
@@ -4889,7 +4889,7 @@ Constructs HeadObjectRequest from required parameters
 #### `newHeadObjectRequest'`
 
 ``` purescript
-newHeadObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "IfMatch" :: NullOrUndefined (IfMatch), "IfModifiedSince" :: NullOrUndefined (IfModifiedSince), "IfNoneMatch" :: NullOrUndefined (IfNoneMatch), "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: NullOrUndefined (Range), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "PartNumber" :: NullOrUndefined (PartNumber) } -> { "Bucket" :: BucketName, "IfMatch" :: NullOrUndefined (IfMatch), "IfModifiedSince" :: NullOrUndefined (IfModifiedSince), "IfNoneMatch" :: NullOrUndefined (IfNoneMatch), "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: NullOrUndefined (Range), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer), "PartNumber" :: NullOrUndefined (PartNumber) }) -> HeadObjectRequest
+newHeadObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "IfMatch" :: Maybe (IfMatch), "IfModifiedSince" :: Maybe (IfModifiedSince), "IfNoneMatch" :: Maybe (IfNoneMatch), "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: Maybe (Range), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "PartNumber" :: Maybe (PartNumber) } -> { "Bucket" :: BucketName, "IfMatch" :: Maybe (IfMatch), "IfModifiedSince" :: Maybe (IfModifiedSince), "IfNoneMatch" :: Maybe (IfNoneMatch), "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince), "Key" :: ObjectKey, "Range" :: Maybe (Range), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer), "PartNumber" :: Maybe (PartNumber) }) -> HeadObjectRequest
 ```
 
 Constructs HeadObjectRequest's fields from required parameters
@@ -5074,7 +5074,7 @@ Encode Initiated
 
 ``` purescript
 newtype Initiator
-  = Initiator { "ID" :: NullOrUndefined (ID), "DisplayName" :: NullOrUndefined (DisplayName) }
+  = Initiator { "ID" :: Maybe (ID), "DisplayName" :: Maybe (DisplayName) }
 ```
 
 ##### Instances
@@ -5097,7 +5097,7 @@ Constructs Initiator from required parameters
 #### `newInitiator'`
 
 ``` purescript
-newInitiator' :: ({ "ID" :: NullOrUndefined (ID), "DisplayName" :: NullOrUndefined (DisplayName) } -> { "ID" :: NullOrUndefined (ID), "DisplayName" :: NullOrUndefined (DisplayName) }) -> Initiator
+newInitiator' :: ({ "ID" :: Maybe (ID), "DisplayName" :: Maybe (DisplayName) } -> { "ID" :: Maybe (ID), "DisplayName" :: Maybe (DisplayName) }) -> Initiator
 ```
 
 Constructs Initiator's fields from required parameters
@@ -5106,7 +5106,7 @@ Constructs Initiator's fields from required parameters
 
 ``` purescript
 newtype InputSerialization
-  = InputSerialization { "CSV" :: NullOrUndefined (CSVInput) }
+  = InputSerialization { "CSV" :: Maybe (CSVInput) }
 ```
 
 Describes the serialization format of the object.
@@ -5131,7 +5131,7 @@ Constructs InputSerialization from required parameters
 #### `newInputSerialization'`
 
 ``` purescript
-newInputSerialization' :: ({ "CSV" :: NullOrUndefined (CSVInput) } -> { "CSV" :: NullOrUndefined (CSVInput) }) -> InputSerialization
+newInputSerialization' :: ({ "CSV" :: Maybe (CSVInput) } -> { "CSV" :: Maybe (CSVInput) }) -> InputSerialization
 ```
 
 Constructs InputSerialization's fields from required parameters
@@ -5140,7 +5140,7 @@ Constructs InputSerialization's fields from required parameters
 
 ``` purescript
 newtype InventoryConfiguration
-  = InventoryConfiguration { "Destination" :: InventoryDestination, "IsEnabled" :: IsEnabled, "Filter" :: NullOrUndefined (InventoryFilter), "Id" :: InventoryId, "IncludedObjectVersions" :: InventoryIncludedObjectVersions, "OptionalFields" :: NullOrUndefined (InventoryOptionalFields), "Schedule" :: InventorySchedule }
+  = InventoryConfiguration { "Destination" :: InventoryDestination, "IsEnabled" :: IsEnabled, "Filter" :: Maybe (InventoryFilter), "Id" :: InventoryId, "IncludedObjectVersions" :: InventoryIncludedObjectVersions, "OptionalFields" :: Maybe (InventoryOptionalFields), "Schedule" :: InventorySchedule }
 ```
 
 ##### Instances
@@ -5163,7 +5163,7 @@ Constructs InventoryConfiguration from required parameters
 #### `newInventoryConfiguration'`
 
 ``` purescript
-newInventoryConfiguration' :: InventoryDestination -> InventoryId -> InventoryIncludedObjectVersions -> IsEnabled -> InventorySchedule -> ({ "Destination" :: InventoryDestination, "IsEnabled" :: IsEnabled, "Filter" :: NullOrUndefined (InventoryFilter), "Id" :: InventoryId, "IncludedObjectVersions" :: InventoryIncludedObjectVersions, "OptionalFields" :: NullOrUndefined (InventoryOptionalFields), "Schedule" :: InventorySchedule } -> { "Destination" :: InventoryDestination, "IsEnabled" :: IsEnabled, "Filter" :: NullOrUndefined (InventoryFilter), "Id" :: InventoryId, "IncludedObjectVersions" :: InventoryIncludedObjectVersions, "OptionalFields" :: NullOrUndefined (InventoryOptionalFields), "Schedule" :: InventorySchedule }) -> InventoryConfiguration
+newInventoryConfiguration' :: InventoryDestination -> InventoryId -> InventoryIncludedObjectVersions -> IsEnabled -> InventorySchedule -> ({ "Destination" :: InventoryDestination, "IsEnabled" :: IsEnabled, "Filter" :: Maybe (InventoryFilter), "Id" :: InventoryId, "IncludedObjectVersions" :: InventoryIncludedObjectVersions, "OptionalFields" :: Maybe (InventoryOptionalFields), "Schedule" :: InventorySchedule } -> { "Destination" :: InventoryDestination, "IsEnabled" :: IsEnabled, "Filter" :: Maybe (InventoryFilter), "Id" :: InventoryId, "IncludedObjectVersions" :: InventoryIncludedObjectVersions, "OptionalFields" :: Maybe (InventoryOptionalFields), "Schedule" :: InventorySchedule }) -> InventoryConfiguration
 ```
 
 Constructs InventoryConfiguration's fields from required parameters
@@ -5220,7 +5220,7 @@ Constructs InventoryDestination's fields from required parameters
 
 ``` purescript
 newtype InventoryEncryption
-  = InventoryEncryption { "SSES3" :: NullOrUndefined (SSES3), "SSEKMS" :: NullOrUndefined (SSEKMS) }
+  = InventoryEncryption { "SSES3" :: Maybe (SSES3), "SSEKMS" :: Maybe (SSEKMS) }
 ```
 
 Contains the type of server-side encryption used to encrypt the inventory results.
@@ -5245,7 +5245,7 @@ Constructs InventoryEncryption from required parameters
 #### `newInventoryEncryption'`
 
 ``` purescript
-newInventoryEncryption' :: ({ "SSES3" :: NullOrUndefined (SSES3), "SSEKMS" :: NullOrUndefined (SSEKMS) } -> { "SSES3" :: NullOrUndefined (SSES3), "SSEKMS" :: NullOrUndefined (SSEKMS) }) -> InventoryEncryption
+newInventoryEncryption' :: ({ "SSES3" :: Maybe (SSES3), "SSEKMS" :: Maybe (SSEKMS) } -> { "SSES3" :: Maybe (SSES3), "SSEKMS" :: Maybe (SSEKMS) }) -> InventoryEncryption
 ```
 
 Constructs InventoryEncryption's fields from required parameters
@@ -5382,7 +5382,7 @@ Encode InventoryOptionalFields
 
 ``` purescript
 newtype InventoryS3BucketDestination
-  = InventoryS3BucketDestination { "AccountId" :: NullOrUndefined (AccountId), "Bucket" :: BucketName, "Format" :: InventoryFormat, "Prefix" :: NullOrUndefined (Prefix), "Encryption" :: NullOrUndefined (InventoryEncryption) }
+  = InventoryS3BucketDestination { "AccountId" :: Maybe (AccountId), "Bucket" :: BucketName, "Format" :: InventoryFormat, "Prefix" :: Maybe (Prefix), "Encryption" :: Maybe (InventoryEncryption) }
 ```
 
 ##### Instances
@@ -5405,7 +5405,7 @@ Constructs InventoryS3BucketDestination from required parameters
 #### `newInventoryS3BucketDestination'`
 
 ``` purescript
-newInventoryS3BucketDestination' :: BucketName -> InventoryFormat -> ({ "AccountId" :: NullOrUndefined (AccountId), "Bucket" :: BucketName, "Format" :: InventoryFormat, "Prefix" :: NullOrUndefined (Prefix), "Encryption" :: NullOrUndefined (InventoryEncryption) } -> { "AccountId" :: NullOrUndefined (AccountId), "Bucket" :: BucketName, "Format" :: InventoryFormat, "Prefix" :: NullOrUndefined (Prefix), "Encryption" :: NullOrUndefined (InventoryEncryption) }) -> InventoryS3BucketDestination
+newInventoryS3BucketDestination' :: BucketName -> InventoryFormat -> ({ "AccountId" :: Maybe (AccountId), "Bucket" :: BucketName, "Format" :: InventoryFormat, "Prefix" :: Maybe (Prefix), "Encryption" :: Maybe (InventoryEncryption) } -> { "AccountId" :: Maybe (AccountId), "Bucket" :: BucketName, "Format" :: InventoryFormat, "Prefix" :: Maybe (Prefix), "Encryption" :: Maybe (InventoryEncryption) }) -> InventoryS3BucketDestination
 ```
 
 Constructs InventoryS3BucketDestination's fields from required parameters
@@ -5574,7 +5574,7 @@ Encode LambdaFunctionArn
 
 ``` purescript
 newtype LambdaFunctionConfiguration
-  = LambdaFunctionConfiguration { "Id" :: NullOrUndefined (NotificationId), "LambdaFunctionArn" :: LambdaFunctionArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) }
+  = LambdaFunctionConfiguration { "Id" :: Maybe (NotificationId), "LambdaFunctionArn" :: LambdaFunctionArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) }
 ```
 
 Container for specifying the AWS Lambda notification configuration.
@@ -5599,7 +5599,7 @@ Constructs LambdaFunctionConfiguration from required parameters
 #### `newLambdaFunctionConfiguration'`
 
 ``` purescript
-newLambdaFunctionConfiguration' :: EventList -> LambdaFunctionArn -> ({ "Id" :: NullOrUndefined (NotificationId), "LambdaFunctionArn" :: LambdaFunctionArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } -> { "Id" :: NullOrUndefined (NotificationId), "LambdaFunctionArn" :: LambdaFunctionArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) }) -> LambdaFunctionConfiguration
+newLambdaFunctionConfiguration' :: EventList -> LambdaFunctionArn -> ({ "Id" :: Maybe (NotificationId), "LambdaFunctionArn" :: LambdaFunctionArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) } -> { "Id" :: Maybe (NotificationId), "LambdaFunctionArn" :: LambdaFunctionArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) }) -> LambdaFunctionConfiguration
 ```
 
 Constructs LambdaFunctionConfiguration's fields from required parameters
@@ -5672,7 +5672,7 @@ Constructs LifecycleConfiguration's fields from required parameters
 
 ``` purescript
 newtype LifecycleExpiration
-  = LifecycleExpiration { "Date" :: NullOrUndefined (Date), "Days" :: NullOrUndefined (Days), "ExpiredObjectDeleteMarker" :: NullOrUndefined (ExpiredObjectDeleteMarker) }
+  = LifecycleExpiration { "Date" :: Maybe (Date), "Days" :: Maybe (Days), "ExpiredObjectDeleteMarker" :: Maybe (ExpiredObjectDeleteMarker) }
 ```
 
 ##### Instances
@@ -5695,7 +5695,7 @@ Constructs LifecycleExpiration from required parameters
 #### `newLifecycleExpiration'`
 
 ``` purescript
-newLifecycleExpiration' :: ({ "Date" :: NullOrUndefined (Date), "Days" :: NullOrUndefined (Days), "ExpiredObjectDeleteMarker" :: NullOrUndefined (ExpiredObjectDeleteMarker) } -> { "Date" :: NullOrUndefined (Date), "Days" :: NullOrUndefined (Days), "ExpiredObjectDeleteMarker" :: NullOrUndefined (ExpiredObjectDeleteMarker) }) -> LifecycleExpiration
+newLifecycleExpiration' :: ({ "Date" :: Maybe (Date), "Days" :: Maybe (Days), "ExpiredObjectDeleteMarker" :: Maybe (ExpiredObjectDeleteMarker) } -> { "Date" :: Maybe (Date), "Days" :: Maybe (Days), "ExpiredObjectDeleteMarker" :: Maybe (ExpiredObjectDeleteMarker) }) -> LifecycleExpiration
 ```
 
 Constructs LifecycleExpiration's fields from required parameters
@@ -5704,7 +5704,7 @@ Constructs LifecycleExpiration's fields from required parameters
 
 ``` purescript
 newtype LifecycleRule
-  = LifecycleRule { "Expiration" :: NullOrUndefined (LifecycleExpiration), "ID" :: NullOrUndefined (ID), "Prefix" :: NullOrUndefined (Prefix), "Filter" :: NullOrUndefined (LifecycleRuleFilter), "Status" :: ExpirationStatus, "Transitions" :: NullOrUndefined (TransitionList), "NoncurrentVersionTransitions" :: NullOrUndefined (NoncurrentVersionTransitionList), "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) }
+  = LifecycleRule { "Expiration" :: Maybe (LifecycleExpiration), "ID" :: Maybe (ID), "Prefix" :: Maybe (Prefix), "Filter" :: Maybe (LifecycleRuleFilter), "Status" :: ExpirationStatus, "Transitions" :: Maybe (TransitionList), "NoncurrentVersionTransitions" :: Maybe (NoncurrentVersionTransitionList), "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) }
 ```
 
 ##### Instances
@@ -5727,7 +5727,7 @@ Constructs LifecycleRule from required parameters
 #### `newLifecycleRule'`
 
 ``` purescript
-newLifecycleRule' :: ExpirationStatus -> ({ "Expiration" :: NullOrUndefined (LifecycleExpiration), "ID" :: NullOrUndefined (ID), "Prefix" :: NullOrUndefined (Prefix), "Filter" :: NullOrUndefined (LifecycleRuleFilter), "Status" :: ExpirationStatus, "Transitions" :: NullOrUndefined (TransitionList), "NoncurrentVersionTransitions" :: NullOrUndefined (NoncurrentVersionTransitionList), "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) } -> { "Expiration" :: NullOrUndefined (LifecycleExpiration), "ID" :: NullOrUndefined (ID), "Prefix" :: NullOrUndefined (Prefix), "Filter" :: NullOrUndefined (LifecycleRuleFilter), "Status" :: ExpirationStatus, "Transitions" :: NullOrUndefined (TransitionList), "NoncurrentVersionTransitions" :: NullOrUndefined (NoncurrentVersionTransitionList), "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) }) -> LifecycleRule
+newLifecycleRule' :: ExpirationStatus -> ({ "Expiration" :: Maybe (LifecycleExpiration), "ID" :: Maybe (ID), "Prefix" :: Maybe (Prefix), "Filter" :: Maybe (LifecycleRuleFilter), "Status" :: ExpirationStatus, "Transitions" :: Maybe (TransitionList), "NoncurrentVersionTransitions" :: Maybe (NoncurrentVersionTransitionList), "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) } -> { "Expiration" :: Maybe (LifecycleExpiration), "ID" :: Maybe (ID), "Prefix" :: Maybe (Prefix), "Filter" :: Maybe (LifecycleRuleFilter), "Status" :: ExpirationStatus, "Transitions" :: Maybe (TransitionList), "NoncurrentVersionTransitions" :: Maybe (NoncurrentVersionTransitionList), "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) }) -> LifecycleRule
 ```
 
 Constructs LifecycleRule's fields from required parameters
@@ -5736,7 +5736,7 @@ Constructs LifecycleRule's fields from required parameters
 
 ``` purescript
 newtype LifecycleRuleAndOperator
-  = LifecycleRuleAndOperator { "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) }
+  = LifecycleRuleAndOperator { "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) }
 ```
 
 This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.
@@ -5761,7 +5761,7 @@ Constructs LifecycleRuleAndOperator from required parameters
 #### `newLifecycleRuleAndOperator'`
 
 ``` purescript
-newLifecycleRuleAndOperator' :: ({ "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) } -> { "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) }) -> LifecycleRuleAndOperator
+newLifecycleRuleAndOperator' :: ({ "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) } -> { "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) }) -> LifecycleRuleAndOperator
 ```
 
 Constructs LifecycleRuleAndOperator's fields from required parameters
@@ -5770,7 +5770,7 @@ Constructs LifecycleRuleAndOperator's fields from required parameters
 
 ``` purescript
 newtype LifecycleRuleFilter
-  = LifecycleRuleFilter { "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (LifecycleRuleAndOperator) }
+  = LifecycleRuleFilter { "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (LifecycleRuleAndOperator) }
 ```
 
 The Filter is used to identify objects that a Lifecycle Rule applies to. A Filter must have exactly one of Prefix, Tag, or And specified.
@@ -5795,7 +5795,7 @@ Constructs LifecycleRuleFilter from required parameters
 #### `newLifecycleRuleFilter'`
 
 ``` purescript
-newLifecycleRuleFilter' :: ({ "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (LifecycleRuleAndOperator) } -> { "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (LifecycleRuleAndOperator) }) -> LifecycleRuleFilter
+newLifecycleRuleFilter' :: ({ "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (LifecycleRuleAndOperator) } -> { "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (LifecycleRuleAndOperator) }) -> LifecycleRuleFilter
 ```
 
 Constructs LifecycleRuleFilter's fields from required parameters
@@ -5820,7 +5820,7 @@ Encode LifecycleRules
 
 ``` purescript
 newtype ListBucketAnalyticsConfigurationsOutput
-  = ListBucketAnalyticsConfigurationsOutput { "IsTruncated" :: NullOrUndefined (IsTruncated), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "AnalyticsConfigurationList" :: NullOrUndefined (AnalyticsConfigurationList) }
+  = ListBucketAnalyticsConfigurationsOutput { "IsTruncated" :: Maybe (IsTruncated), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "AnalyticsConfigurationList" :: Maybe (AnalyticsConfigurationList) }
 ```
 
 ##### Instances
@@ -5843,7 +5843,7 @@ Constructs ListBucketAnalyticsConfigurationsOutput from required parameters
 #### `newListBucketAnalyticsConfigurationsOutput'`
 
 ``` purescript
-newListBucketAnalyticsConfigurationsOutput' :: ({ "IsTruncated" :: NullOrUndefined (IsTruncated), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "AnalyticsConfigurationList" :: NullOrUndefined (AnalyticsConfigurationList) } -> { "IsTruncated" :: NullOrUndefined (IsTruncated), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "AnalyticsConfigurationList" :: NullOrUndefined (AnalyticsConfigurationList) }) -> ListBucketAnalyticsConfigurationsOutput
+newListBucketAnalyticsConfigurationsOutput' :: ({ "IsTruncated" :: Maybe (IsTruncated), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "AnalyticsConfigurationList" :: Maybe (AnalyticsConfigurationList) } -> { "IsTruncated" :: Maybe (IsTruncated), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "AnalyticsConfigurationList" :: Maybe (AnalyticsConfigurationList) }) -> ListBucketAnalyticsConfigurationsOutput
 ```
 
 Constructs ListBucketAnalyticsConfigurationsOutput's fields from required parameters
@@ -5852,7 +5852,7 @@ Constructs ListBucketAnalyticsConfigurationsOutput's fields from required parame
 
 ``` purescript
 newtype ListBucketAnalyticsConfigurationsRequest
-  = ListBucketAnalyticsConfigurationsRequest { "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) }
+  = ListBucketAnalyticsConfigurationsRequest { "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -5875,7 +5875,7 @@ Constructs ListBucketAnalyticsConfigurationsRequest from required parameters
 #### `newListBucketAnalyticsConfigurationsRequest'`
 
 ``` purescript
-newListBucketAnalyticsConfigurationsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) } -> { "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) }) -> ListBucketAnalyticsConfigurationsRequest
+newListBucketAnalyticsConfigurationsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) } -> { "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) }) -> ListBucketAnalyticsConfigurationsRequest
 ```
 
 Constructs ListBucketAnalyticsConfigurationsRequest's fields from required parameters
@@ -5884,7 +5884,7 @@ Constructs ListBucketAnalyticsConfigurationsRequest's fields from required param
 
 ``` purescript
 newtype ListBucketInventoryConfigurationsOutput
-  = ListBucketInventoryConfigurationsOutput { "ContinuationToken" :: NullOrUndefined (Token), "InventoryConfigurationList" :: NullOrUndefined (InventoryConfigurationList), "IsTruncated" :: NullOrUndefined (IsTruncated), "NextContinuationToken" :: NullOrUndefined (NextToken) }
+  = ListBucketInventoryConfigurationsOutput { "ContinuationToken" :: Maybe (Token), "InventoryConfigurationList" :: Maybe (InventoryConfigurationList), "IsTruncated" :: Maybe (IsTruncated), "NextContinuationToken" :: Maybe (NextToken) }
 ```
 
 ##### Instances
@@ -5907,7 +5907,7 @@ Constructs ListBucketInventoryConfigurationsOutput from required parameters
 #### `newListBucketInventoryConfigurationsOutput'`
 
 ``` purescript
-newListBucketInventoryConfigurationsOutput' :: ({ "ContinuationToken" :: NullOrUndefined (Token), "InventoryConfigurationList" :: NullOrUndefined (InventoryConfigurationList), "IsTruncated" :: NullOrUndefined (IsTruncated), "NextContinuationToken" :: NullOrUndefined (NextToken) } -> { "ContinuationToken" :: NullOrUndefined (Token), "InventoryConfigurationList" :: NullOrUndefined (InventoryConfigurationList), "IsTruncated" :: NullOrUndefined (IsTruncated), "NextContinuationToken" :: NullOrUndefined (NextToken) }) -> ListBucketInventoryConfigurationsOutput
+newListBucketInventoryConfigurationsOutput' :: ({ "ContinuationToken" :: Maybe (Token), "InventoryConfigurationList" :: Maybe (InventoryConfigurationList), "IsTruncated" :: Maybe (IsTruncated), "NextContinuationToken" :: Maybe (NextToken) } -> { "ContinuationToken" :: Maybe (Token), "InventoryConfigurationList" :: Maybe (InventoryConfigurationList), "IsTruncated" :: Maybe (IsTruncated), "NextContinuationToken" :: Maybe (NextToken) }) -> ListBucketInventoryConfigurationsOutput
 ```
 
 Constructs ListBucketInventoryConfigurationsOutput's fields from required parameters
@@ -5916,7 +5916,7 @@ Constructs ListBucketInventoryConfigurationsOutput's fields from required parame
 
 ``` purescript
 newtype ListBucketInventoryConfigurationsRequest
-  = ListBucketInventoryConfigurationsRequest { "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) }
+  = ListBucketInventoryConfigurationsRequest { "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -5939,7 +5939,7 @@ Constructs ListBucketInventoryConfigurationsRequest from required parameters
 #### `newListBucketInventoryConfigurationsRequest'`
 
 ``` purescript
-newListBucketInventoryConfigurationsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) } -> { "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) }) -> ListBucketInventoryConfigurationsRequest
+newListBucketInventoryConfigurationsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) } -> { "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) }) -> ListBucketInventoryConfigurationsRequest
 ```
 
 Constructs ListBucketInventoryConfigurationsRequest's fields from required parameters
@@ -5948,7 +5948,7 @@ Constructs ListBucketInventoryConfigurationsRequest's fields from required param
 
 ``` purescript
 newtype ListBucketMetricsConfigurationsOutput
-  = ListBucketMetricsConfigurationsOutput { "IsTruncated" :: NullOrUndefined (IsTruncated), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "MetricsConfigurationList" :: NullOrUndefined (MetricsConfigurationList) }
+  = ListBucketMetricsConfigurationsOutput { "IsTruncated" :: Maybe (IsTruncated), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "MetricsConfigurationList" :: Maybe (MetricsConfigurationList) }
 ```
 
 ##### Instances
@@ -5971,7 +5971,7 @@ Constructs ListBucketMetricsConfigurationsOutput from required parameters
 #### `newListBucketMetricsConfigurationsOutput'`
 
 ``` purescript
-newListBucketMetricsConfigurationsOutput' :: ({ "IsTruncated" :: NullOrUndefined (IsTruncated), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "MetricsConfigurationList" :: NullOrUndefined (MetricsConfigurationList) } -> { "IsTruncated" :: NullOrUndefined (IsTruncated), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "MetricsConfigurationList" :: NullOrUndefined (MetricsConfigurationList) }) -> ListBucketMetricsConfigurationsOutput
+newListBucketMetricsConfigurationsOutput' :: ({ "IsTruncated" :: Maybe (IsTruncated), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "MetricsConfigurationList" :: Maybe (MetricsConfigurationList) } -> { "IsTruncated" :: Maybe (IsTruncated), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "MetricsConfigurationList" :: Maybe (MetricsConfigurationList) }) -> ListBucketMetricsConfigurationsOutput
 ```
 
 Constructs ListBucketMetricsConfigurationsOutput's fields from required parameters
@@ -5980,7 +5980,7 @@ Constructs ListBucketMetricsConfigurationsOutput's fields from required paramete
 
 ``` purescript
 newtype ListBucketMetricsConfigurationsRequest
-  = ListBucketMetricsConfigurationsRequest { "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) }
+  = ListBucketMetricsConfigurationsRequest { "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) }
 ```
 
 ##### Instances
@@ -6003,7 +6003,7 @@ Constructs ListBucketMetricsConfigurationsRequest from required parameters
 #### `newListBucketMetricsConfigurationsRequest'`
 
 ``` purescript
-newListBucketMetricsConfigurationsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) } -> { "Bucket" :: BucketName, "ContinuationToken" :: NullOrUndefined (Token) }) -> ListBucketMetricsConfigurationsRequest
+newListBucketMetricsConfigurationsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) } -> { "Bucket" :: BucketName, "ContinuationToken" :: Maybe (Token) }) -> ListBucketMetricsConfigurationsRequest
 ```
 
 Constructs ListBucketMetricsConfigurationsRequest's fields from required parameters
@@ -6012,7 +6012,7 @@ Constructs ListBucketMetricsConfigurationsRequest's fields from required paramet
 
 ``` purescript
 newtype ListBucketsOutput
-  = ListBucketsOutput { "Buckets" :: NullOrUndefined (Buckets), "Owner" :: NullOrUndefined (Owner) }
+  = ListBucketsOutput { "Buckets" :: Maybe (Buckets), "Owner" :: Maybe (Owner) }
 ```
 
 ##### Instances
@@ -6035,7 +6035,7 @@ Constructs ListBucketsOutput from required parameters
 #### `newListBucketsOutput'`
 
 ``` purescript
-newListBucketsOutput' :: ({ "Buckets" :: NullOrUndefined (Buckets), "Owner" :: NullOrUndefined (Owner) } -> { "Buckets" :: NullOrUndefined (Buckets), "Owner" :: NullOrUndefined (Owner) }) -> ListBucketsOutput
+newListBucketsOutput' :: ({ "Buckets" :: Maybe (Buckets), "Owner" :: Maybe (Owner) } -> { "Buckets" :: Maybe (Buckets), "Owner" :: Maybe (Owner) }) -> ListBucketsOutput
 ```
 
 Constructs ListBucketsOutput's fields from required parameters
@@ -6044,7 +6044,7 @@ Constructs ListBucketsOutput's fields from required parameters
 
 ``` purescript
 newtype ListMultipartUploadsOutput
-  = ListMultipartUploadsOutput { "Bucket" :: NullOrUndefined (BucketName), "KeyMarker" :: NullOrUndefined (KeyMarker), "UploadIdMarker" :: NullOrUndefined (UploadIdMarker), "NextKeyMarker" :: NullOrUndefined (NextKeyMarker), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "NextUploadIdMarker" :: NullOrUndefined (NextUploadIdMarker), "MaxUploads" :: NullOrUndefined (MaxUploads), "IsTruncated" :: NullOrUndefined (IsTruncated), "Uploads" :: NullOrUndefined (MultipartUploadList), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) }
+  = ListMultipartUploadsOutput { "Bucket" :: Maybe (BucketName), "KeyMarker" :: Maybe (KeyMarker), "UploadIdMarker" :: Maybe (UploadIdMarker), "NextKeyMarker" :: Maybe (NextKeyMarker), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "NextUploadIdMarker" :: Maybe (NextUploadIdMarker), "MaxUploads" :: Maybe (MaxUploads), "IsTruncated" :: Maybe (IsTruncated), "Uploads" :: Maybe (MultipartUploadList), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) }
 ```
 
 ##### Instances
@@ -6067,7 +6067,7 @@ Constructs ListMultipartUploadsOutput from required parameters
 #### `newListMultipartUploadsOutput'`
 
 ``` purescript
-newListMultipartUploadsOutput' :: ({ "Bucket" :: NullOrUndefined (BucketName), "KeyMarker" :: NullOrUndefined (KeyMarker), "UploadIdMarker" :: NullOrUndefined (UploadIdMarker), "NextKeyMarker" :: NullOrUndefined (NextKeyMarker), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "NextUploadIdMarker" :: NullOrUndefined (NextUploadIdMarker), "MaxUploads" :: NullOrUndefined (MaxUploads), "IsTruncated" :: NullOrUndefined (IsTruncated), "Uploads" :: NullOrUndefined (MultipartUploadList), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) } -> { "Bucket" :: NullOrUndefined (BucketName), "KeyMarker" :: NullOrUndefined (KeyMarker), "UploadIdMarker" :: NullOrUndefined (UploadIdMarker), "NextKeyMarker" :: NullOrUndefined (NextKeyMarker), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "NextUploadIdMarker" :: NullOrUndefined (NextUploadIdMarker), "MaxUploads" :: NullOrUndefined (MaxUploads), "IsTruncated" :: NullOrUndefined (IsTruncated), "Uploads" :: NullOrUndefined (MultipartUploadList), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) }) -> ListMultipartUploadsOutput
+newListMultipartUploadsOutput' :: ({ "Bucket" :: Maybe (BucketName), "KeyMarker" :: Maybe (KeyMarker), "UploadIdMarker" :: Maybe (UploadIdMarker), "NextKeyMarker" :: Maybe (NextKeyMarker), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "NextUploadIdMarker" :: Maybe (NextUploadIdMarker), "MaxUploads" :: Maybe (MaxUploads), "IsTruncated" :: Maybe (IsTruncated), "Uploads" :: Maybe (MultipartUploadList), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) } -> { "Bucket" :: Maybe (BucketName), "KeyMarker" :: Maybe (KeyMarker), "UploadIdMarker" :: Maybe (UploadIdMarker), "NextKeyMarker" :: Maybe (NextKeyMarker), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "NextUploadIdMarker" :: Maybe (NextUploadIdMarker), "MaxUploads" :: Maybe (MaxUploads), "IsTruncated" :: Maybe (IsTruncated), "Uploads" :: Maybe (MultipartUploadList), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) }) -> ListMultipartUploadsOutput
 ```
 
 Constructs ListMultipartUploadsOutput's fields from required parameters
@@ -6076,7 +6076,7 @@ Constructs ListMultipartUploadsOutput's fields from required parameters
 
 ``` purescript
 newtype ListMultipartUploadsRequest
-  = ListMultipartUploadsRequest { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "KeyMarker" :: NullOrUndefined (KeyMarker), "MaxUploads" :: NullOrUndefined (MaxUploads), "Prefix" :: NullOrUndefined (Prefix), "UploadIdMarker" :: NullOrUndefined (UploadIdMarker) }
+  = ListMultipartUploadsRequest { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "KeyMarker" :: Maybe (KeyMarker), "MaxUploads" :: Maybe (MaxUploads), "Prefix" :: Maybe (Prefix), "UploadIdMarker" :: Maybe (UploadIdMarker) }
 ```
 
 ##### Instances
@@ -6099,7 +6099,7 @@ Constructs ListMultipartUploadsRequest from required parameters
 #### `newListMultipartUploadsRequest'`
 
 ``` purescript
-newListMultipartUploadsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "KeyMarker" :: NullOrUndefined (KeyMarker), "MaxUploads" :: NullOrUndefined (MaxUploads), "Prefix" :: NullOrUndefined (Prefix), "UploadIdMarker" :: NullOrUndefined (UploadIdMarker) } -> { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "KeyMarker" :: NullOrUndefined (KeyMarker), "MaxUploads" :: NullOrUndefined (MaxUploads), "Prefix" :: NullOrUndefined (Prefix), "UploadIdMarker" :: NullOrUndefined (UploadIdMarker) }) -> ListMultipartUploadsRequest
+newListMultipartUploadsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "KeyMarker" :: Maybe (KeyMarker), "MaxUploads" :: Maybe (MaxUploads), "Prefix" :: Maybe (Prefix), "UploadIdMarker" :: Maybe (UploadIdMarker) } -> { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "KeyMarker" :: Maybe (KeyMarker), "MaxUploads" :: Maybe (MaxUploads), "Prefix" :: Maybe (Prefix), "UploadIdMarker" :: Maybe (UploadIdMarker) }) -> ListMultipartUploadsRequest
 ```
 
 Constructs ListMultipartUploadsRequest's fields from required parameters
@@ -6108,7 +6108,7 @@ Constructs ListMultipartUploadsRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectVersionsOutput
-  = ListObjectVersionsOutput { "IsTruncated" :: NullOrUndefined (IsTruncated), "KeyMarker" :: NullOrUndefined (KeyMarker), "VersionIdMarker" :: NullOrUndefined (VersionIdMarker), "NextKeyMarker" :: NullOrUndefined (NextKeyMarker), "NextVersionIdMarker" :: NullOrUndefined (NextVersionIdMarker), "Versions" :: NullOrUndefined (ObjectVersionList), "DeleteMarkers" :: NullOrUndefined (DeleteMarkers), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) }
+  = ListObjectVersionsOutput { "IsTruncated" :: Maybe (IsTruncated), "KeyMarker" :: Maybe (KeyMarker), "VersionIdMarker" :: Maybe (VersionIdMarker), "NextKeyMarker" :: Maybe (NextKeyMarker), "NextVersionIdMarker" :: Maybe (NextVersionIdMarker), "Versions" :: Maybe (ObjectVersionList), "DeleteMarkers" :: Maybe (DeleteMarkers), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) }
 ```
 
 ##### Instances
@@ -6131,7 +6131,7 @@ Constructs ListObjectVersionsOutput from required parameters
 #### `newListObjectVersionsOutput'`
 
 ``` purescript
-newListObjectVersionsOutput' :: ({ "IsTruncated" :: NullOrUndefined (IsTruncated), "KeyMarker" :: NullOrUndefined (KeyMarker), "VersionIdMarker" :: NullOrUndefined (VersionIdMarker), "NextKeyMarker" :: NullOrUndefined (NextKeyMarker), "NextVersionIdMarker" :: NullOrUndefined (NextVersionIdMarker), "Versions" :: NullOrUndefined (ObjectVersionList), "DeleteMarkers" :: NullOrUndefined (DeleteMarkers), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) } -> { "IsTruncated" :: NullOrUndefined (IsTruncated), "KeyMarker" :: NullOrUndefined (KeyMarker), "VersionIdMarker" :: NullOrUndefined (VersionIdMarker), "NextKeyMarker" :: NullOrUndefined (NextKeyMarker), "NextVersionIdMarker" :: NullOrUndefined (NextVersionIdMarker), "Versions" :: NullOrUndefined (ObjectVersionList), "DeleteMarkers" :: NullOrUndefined (DeleteMarkers), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) }) -> ListObjectVersionsOutput
+newListObjectVersionsOutput' :: ({ "IsTruncated" :: Maybe (IsTruncated), "KeyMarker" :: Maybe (KeyMarker), "VersionIdMarker" :: Maybe (VersionIdMarker), "NextKeyMarker" :: Maybe (NextKeyMarker), "NextVersionIdMarker" :: Maybe (NextVersionIdMarker), "Versions" :: Maybe (ObjectVersionList), "DeleteMarkers" :: Maybe (DeleteMarkers), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) } -> { "IsTruncated" :: Maybe (IsTruncated), "KeyMarker" :: Maybe (KeyMarker), "VersionIdMarker" :: Maybe (VersionIdMarker), "NextKeyMarker" :: Maybe (NextKeyMarker), "NextVersionIdMarker" :: Maybe (NextVersionIdMarker), "Versions" :: Maybe (ObjectVersionList), "DeleteMarkers" :: Maybe (DeleteMarkers), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) }) -> ListObjectVersionsOutput
 ```
 
 Constructs ListObjectVersionsOutput's fields from required parameters
@@ -6140,7 +6140,7 @@ Constructs ListObjectVersionsOutput's fields from required parameters
 
 ``` purescript
 newtype ListObjectVersionsRequest
-  = ListObjectVersionsRequest { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "KeyMarker" :: NullOrUndefined (KeyMarker), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "VersionIdMarker" :: NullOrUndefined (VersionIdMarker) }
+  = ListObjectVersionsRequest { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "KeyMarker" :: Maybe (KeyMarker), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "VersionIdMarker" :: Maybe (VersionIdMarker) }
 ```
 
 ##### Instances
@@ -6163,7 +6163,7 @@ Constructs ListObjectVersionsRequest from required parameters
 #### `newListObjectVersionsRequest'`
 
 ``` purescript
-newListObjectVersionsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "KeyMarker" :: NullOrUndefined (KeyMarker), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "VersionIdMarker" :: NullOrUndefined (VersionIdMarker) } -> { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "KeyMarker" :: NullOrUndefined (KeyMarker), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "VersionIdMarker" :: NullOrUndefined (VersionIdMarker) }) -> ListObjectVersionsRequest
+newListObjectVersionsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "KeyMarker" :: Maybe (KeyMarker), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "VersionIdMarker" :: Maybe (VersionIdMarker) } -> { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "KeyMarker" :: Maybe (KeyMarker), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "VersionIdMarker" :: Maybe (VersionIdMarker) }) -> ListObjectVersionsRequest
 ```
 
 Constructs ListObjectVersionsRequest's fields from required parameters
@@ -6172,7 +6172,7 @@ Constructs ListObjectVersionsRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectsOutput
-  = ListObjectsOutput { "IsTruncated" :: NullOrUndefined (IsTruncated), "Marker" :: NullOrUndefined (Marker), "NextMarker" :: NullOrUndefined (NextMarker), "Contents" :: NullOrUndefined (ObjectList), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) }
+  = ListObjectsOutput { "IsTruncated" :: Maybe (IsTruncated), "Marker" :: Maybe (Marker), "NextMarker" :: Maybe (NextMarker), "Contents" :: Maybe (ObjectList), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) }
 ```
 
 ##### Instances
@@ -6195,7 +6195,7 @@ Constructs ListObjectsOutput from required parameters
 #### `newListObjectsOutput'`
 
 ``` purescript
-newListObjectsOutput' :: ({ "IsTruncated" :: NullOrUndefined (IsTruncated), "Marker" :: NullOrUndefined (Marker), "NextMarker" :: NullOrUndefined (NextMarker), "Contents" :: NullOrUndefined (ObjectList), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) } -> { "IsTruncated" :: NullOrUndefined (IsTruncated), "Marker" :: NullOrUndefined (Marker), "NextMarker" :: NullOrUndefined (NextMarker), "Contents" :: NullOrUndefined (ObjectList), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType) }) -> ListObjectsOutput
+newListObjectsOutput' :: ({ "IsTruncated" :: Maybe (IsTruncated), "Marker" :: Maybe (Marker), "NextMarker" :: Maybe (NextMarker), "Contents" :: Maybe (ObjectList), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) } -> { "IsTruncated" :: Maybe (IsTruncated), "Marker" :: Maybe (Marker), "NextMarker" :: Maybe (NextMarker), "Contents" :: Maybe (ObjectList), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType) }) -> ListObjectsOutput
 ```
 
 Constructs ListObjectsOutput's fields from required parameters
@@ -6204,7 +6204,7 @@ Constructs ListObjectsOutput's fields from required parameters
 
 ``` purescript
 newtype ListObjectsRequest
-  = ListObjectsRequest { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "Marker" :: NullOrUndefined (Marker), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = ListObjectsRequest { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "Marker" :: Maybe (Marker), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -6227,7 +6227,7 @@ Constructs ListObjectsRequest from required parameters
 #### `newListObjectsRequest'`
 
 ``` purescript
-newListObjectsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "Marker" :: NullOrUndefined (Marker), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "Marker" :: NullOrUndefined (Marker), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> ListObjectsRequest
+newListObjectsRequest' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "Marker" :: Maybe (Marker), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "Marker" :: Maybe (Marker), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "RequestPayer" :: Maybe (RequestPayer) }) -> ListObjectsRequest
 ```
 
 Constructs ListObjectsRequest's fields from required parameters
@@ -6236,7 +6236,7 @@ Constructs ListObjectsRequest's fields from required parameters
 
 ``` purescript
 newtype ListObjectsV2Output
-  = ListObjectsV2Output { "IsTruncated" :: NullOrUndefined (IsTruncated), "Contents" :: NullOrUndefined (ObjectList), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType), "KeyCount" :: NullOrUndefined (KeyCount), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "StartAfter" :: NullOrUndefined (StartAfter) }
+  = ListObjectsV2Output { "IsTruncated" :: Maybe (IsTruncated), "Contents" :: Maybe (ObjectList), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType), "KeyCount" :: Maybe (KeyCount), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "StartAfter" :: Maybe (StartAfter) }
 ```
 
 ##### Instances
@@ -6259,7 +6259,7 @@ Constructs ListObjectsV2Output from required parameters
 #### `newListObjectsV2Output'`
 
 ``` purescript
-newListObjectsV2Output' :: ({ "IsTruncated" :: NullOrUndefined (IsTruncated), "Contents" :: NullOrUndefined (ObjectList), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType), "KeyCount" :: NullOrUndefined (KeyCount), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "StartAfter" :: NullOrUndefined (StartAfter) } -> { "IsTruncated" :: NullOrUndefined (IsTruncated), "Contents" :: NullOrUndefined (ObjectList), "Name" :: NullOrUndefined (BucketName), "Prefix" :: NullOrUndefined (Prefix), "Delimiter" :: NullOrUndefined (Delimiter), "MaxKeys" :: NullOrUndefined (MaxKeys), "CommonPrefixes" :: NullOrUndefined (CommonPrefixList), "EncodingType" :: NullOrUndefined (EncodingType), "KeyCount" :: NullOrUndefined (KeyCount), "ContinuationToken" :: NullOrUndefined (Token), "NextContinuationToken" :: NullOrUndefined (NextToken), "StartAfter" :: NullOrUndefined (StartAfter) }) -> ListObjectsV2Output
+newListObjectsV2Output' :: ({ "IsTruncated" :: Maybe (IsTruncated), "Contents" :: Maybe (ObjectList), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType), "KeyCount" :: Maybe (KeyCount), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "StartAfter" :: Maybe (StartAfter) } -> { "IsTruncated" :: Maybe (IsTruncated), "Contents" :: Maybe (ObjectList), "Name" :: Maybe (BucketName), "Prefix" :: Maybe (Prefix), "Delimiter" :: Maybe (Delimiter), "MaxKeys" :: Maybe (MaxKeys), "CommonPrefixes" :: Maybe (CommonPrefixList), "EncodingType" :: Maybe (EncodingType), "KeyCount" :: Maybe (KeyCount), "ContinuationToken" :: Maybe (Token), "NextContinuationToken" :: Maybe (NextToken), "StartAfter" :: Maybe (StartAfter) }) -> ListObjectsV2Output
 ```
 
 Constructs ListObjectsV2Output's fields from required parameters
@@ -6268,7 +6268,7 @@ Constructs ListObjectsV2Output's fields from required parameters
 
 ``` purescript
 newtype ListObjectsV2Request
-  = ListObjectsV2Request { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "ContinuationToken" :: NullOrUndefined (Token), "FetchOwner" :: NullOrUndefined (FetchOwner), "StartAfter" :: NullOrUndefined (StartAfter), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = ListObjectsV2Request { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "ContinuationToken" :: Maybe (Token), "FetchOwner" :: Maybe (FetchOwner), "StartAfter" :: Maybe (StartAfter), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -6291,7 +6291,7 @@ Constructs ListObjectsV2Request from required parameters
 #### `newListObjectsV2Request'`
 
 ``` purescript
-newListObjectsV2Request' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "ContinuationToken" :: NullOrUndefined (Token), "FetchOwner" :: NullOrUndefined (FetchOwner), "StartAfter" :: NullOrUndefined (StartAfter), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Delimiter" :: NullOrUndefined (Delimiter), "EncodingType" :: NullOrUndefined (EncodingType), "MaxKeys" :: NullOrUndefined (MaxKeys), "Prefix" :: NullOrUndefined (Prefix), "ContinuationToken" :: NullOrUndefined (Token), "FetchOwner" :: NullOrUndefined (FetchOwner), "StartAfter" :: NullOrUndefined (StartAfter), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> ListObjectsV2Request
+newListObjectsV2Request' :: BucketName -> ({ "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "ContinuationToken" :: Maybe (Token), "FetchOwner" :: Maybe (FetchOwner), "StartAfter" :: Maybe (StartAfter), "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Delimiter" :: Maybe (Delimiter), "EncodingType" :: Maybe (EncodingType), "MaxKeys" :: Maybe (MaxKeys), "Prefix" :: Maybe (Prefix), "ContinuationToken" :: Maybe (Token), "FetchOwner" :: Maybe (FetchOwner), "StartAfter" :: Maybe (StartAfter), "RequestPayer" :: Maybe (RequestPayer) }) -> ListObjectsV2Request
 ```
 
 Constructs ListObjectsV2Request's fields from required parameters
@@ -6300,7 +6300,7 @@ Constructs ListObjectsV2Request's fields from required parameters
 
 ``` purescript
 newtype ListPartsOutput
-  = ListPartsOutput { "AbortDate" :: NullOrUndefined (AbortDate), "AbortRuleId" :: NullOrUndefined (AbortRuleId), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "UploadId" :: NullOrUndefined (MultipartUploadId), "PartNumberMarker" :: NullOrUndefined (PartNumberMarker), "NextPartNumberMarker" :: NullOrUndefined (NextPartNumberMarker), "MaxParts" :: NullOrUndefined (MaxParts), "IsTruncated" :: NullOrUndefined (IsTruncated), "Parts" :: NullOrUndefined (Parts), "Initiator" :: NullOrUndefined (Initiator), "Owner" :: NullOrUndefined (Owner), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = ListPartsOutput { "AbortDate" :: Maybe (AbortDate), "AbortRuleId" :: Maybe (AbortRuleId), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "UploadId" :: Maybe (MultipartUploadId), "PartNumberMarker" :: Maybe (PartNumberMarker), "NextPartNumberMarker" :: Maybe (NextPartNumberMarker), "MaxParts" :: Maybe (MaxParts), "IsTruncated" :: Maybe (IsTruncated), "Parts" :: Maybe (Parts), "Initiator" :: Maybe (Initiator), "Owner" :: Maybe (Owner), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -6323,7 +6323,7 @@ Constructs ListPartsOutput from required parameters
 #### `newListPartsOutput'`
 
 ``` purescript
-newListPartsOutput' :: ({ "AbortDate" :: NullOrUndefined (AbortDate), "AbortRuleId" :: NullOrUndefined (AbortRuleId), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "UploadId" :: NullOrUndefined (MultipartUploadId), "PartNumberMarker" :: NullOrUndefined (PartNumberMarker), "NextPartNumberMarker" :: NullOrUndefined (NextPartNumberMarker), "MaxParts" :: NullOrUndefined (MaxParts), "IsTruncated" :: NullOrUndefined (IsTruncated), "Parts" :: NullOrUndefined (Parts), "Initiator" :: NullOrUndefined (Initiator), "Owner" :: NullOrUndefined (Owner), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "AbortDate" :: NullOrUndefined (AbortDate), "AbortRuleId" :: NullOrUndefined (AbortRuleId), "Bucket" :: NullOrUndefined (BucketName), "Key" :: NullOrUndefined (ObjectKey), "UploadId" :: NullOrUndefined (MultipartUploadId), "PartNumberMarker" :: NullOrUndefined (PartNumberMarker), "NextPartNumberMarker" :: NullOrUndefined (NextPartNumberMarker), "MaxParts" :: NullOrUndefined (MaxParts), "IsTruncated" :: NullOrUndefined (IsTruncated), "Parts" :: NullOrUndefined (Parts), "Initiator" :: NullOrUndefined (Initiator), "Owner" :: NullOrUndefined (Owner), "StorageClass" :: NullOrUndefined (StorageClass), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> ListPartsOutput
+newListPartsOutput' :: ({ "AbortDate" :: Maybe (AbortDate), "AbortRuleId" :: Maybe (AbortRuleId), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "UploadId" :: Maybe (MultipartUploadId), "PartNumberMarker" :: Maybe (PartNumberMarker), "NextPartNumberMarker" :: Maybe (NextPartNumberMarker), "MaxParts" :: Maybe (MaxParts), "IsTruncated" :: Maybe (IsTruncated), "Parts" :: Maybe (Parts), "Initiator" :: Maybe (Initiator), "Owner" :: Maybe (Owner), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged) } -> { "AbortDate" :: Maybe (AbortDate), "AbortRuleId" :: Maybe (AbortRuleId), "Bucket" :: Maybe (BucketName), "Key" :: Maybe (ObjectKey), "UploadId" :: Maybe (MultipartUploadId), "PartNumberMarker" :: Maybe (PartNumberMarker), "NextPartNumberMarker" :: Maybe (NextPartNumberMarker), "MaxParts" :: Maybe (MaxParts), "IsTruncated" :: Maybe (IsTruncated), "Parts" :: Maybe (Parts), "Initiator" :: Maybe (Initiator), "Owner" :: Maybe (Owner), "StorageClass" :: Maybe (StorageClass), "RequestCharged" :: Maybe (RequestCharged) }) -> ListPartsOutput
 ```
 
 Constructs ListPartsOutput's fields from required parameters
@@ -6332,7 +6332,7 @@ Constructs ListPartsOutput's fields from required parameters
 
 ``` purescript
 newtype ListPartsRequest
-  = ListPartsRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "MaxParts" :: NullOrUndefined (MaxParts), "PartNumberMarker" :: NullOrUndefined (PartNumberMarker), "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = ListPartsRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "MaxParts" :: Maybe (MaxParts), "PartNumberMarker" :: Maybe (PartNumberMarker), "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -6355,7 +6355,7 @@ Constructs ListPartsRequest from required parameters
 #### `newListPartsRequest'`
 
 ``` purescript
-newListPartsRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "MaxParts" :: NullOrUndefined (MaxParts), "PartNumberMarker" :: NullOrUndefined (PartNumberMarker), "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "MaxParts" :: NullOrUndefined (MaxParts), "PartNumberMarker" :: NullOrUndefined (PartNumberMarker), "UploadId" :: MultipartUploadId, "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> ListPartsRequest
+newListPartsRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "MaxParts" :: Maybe (MaxParts), "PartNumberMarker" :: Maybe (PartNumberMarker), "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "MaxParts" :: Maybe (MaxParts), "PartNumberMarker" :: Maybe (PartNumberMarker), "UploadId" :: MultipartUploadId, "RequestPayer" :: Maybe (RequestPayer) }) -> ListPartsRequest
 ```
 
 Constructs ListPartsRequest's fields from required parameters
@@ -6396,7 +6396,7 @@ Encode LocationPrefix
 
 ``` purescript
 newtype LoggingEnabled
-  = LoggingEnabled { "TargetBucket" :: NullOrUndefined (TargetBucket), "TargetGrants" :: NullOrUndefined (TargetGrants), "TargetPrefix" :: NullOrUndefined (TargetPrefix) }
+  = LoggingEnabled { "TargetBucket" :: Maybe (TargetBucket), "TargetGrants" :: Maybe (TargetGrants), "TargetPrefix" :: Maybe (TargetPrefix) }
 ```
 
 ##### Instances
@@ -6419,7 +6419,7 @@ Constructs LoggingEnabled from required parameters
 #### `newLoggingEnabled'`
 
 ``` purescript
-newLoggingEnabled' :: ({ "TargetBucket" :: NullOrUndefined (TargetBucket), "TargetGrants" :: NullOrUndefined (TargetGrants), "TargetPrefix" :: NullOrUndefined (TargetPrefix) } -> { "TargetBucket" :: NullOrUndefined (TargetBucket), "TargetGrants" :: NullOrUndefined (TargetGrants), "TargetPrefix" :: NullOrUndefined (TargetPrefix) }) -> LoggingEnabled
+newLoggingEnabled' :: ({ "TargetBucket" :: Maybe (TargetBucket), "TargetGrants" :: Maybe (TargetGrants), "TargetPrefix" :: Maybe (TargetPrefix) } -> { "TargetBucket" :: Maybe (TargetBucket), "TargetGrants" :: Maybe (TargetGrants), "TargetPrefix" :: Maybe (TargetPrefix) }) -> LoggingEnabled
 ```
 
 Constructs LoggingEnabled's fields from required parameters
@@ -6604,7 +6604,7 @@ Encode MetadataDirective
 
 ``` purescript
 newtype MetadataEntry
-  = MetadataEntry { "Name" :: NullOrUndefined (MetadataKey), "Value" :: NullOrUndefined (MetadataValue) }
+  = MetadataEntry { "Name" :: Maybe (MetadataKey), "Value" :: Maybe (MetadataValue) }
 ```
 
 A metadata key-value pair to store with an object.
@@ -6629,7 +6629,7 @@ Constructs MetadataEntry from required parameters
 #### `newMetadataEntry'`
 
 ``` purescript
-newMetadataEntry' :: ({ "Name" :: NullOrUndefined (MetadataKey), "Value" :: NullOrUndefined (MetadataValue) } -> { "Name" :: NullOrUndefined (MetadataKey), "Value" :: NullOrUndefined (MetadataValue) }) -> MetadataEntry
+newMetadataEntry' :: ({ "Name" :: Maybe (MetadataKey), "Value" :: Maybe (MetadataValue) } -> { "Name" :: Maybe (MetadataKey), "Value" :: Maybe (MetadataValue) }) -> MetadataEntry
 ```
 
 Constructs MetadataEntry's fields from required parameters
@@ -6670,7 +6670,7 @@ Encode MetadataValue
 
 ``` purescript
 newtype MetricsAndOperator
-  = MetricsAndOperator { "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) }
+  = MetricsAndOperator { "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) }
 ```
 
 ##### Instances
@@ -6693,7 +6693,7 @@ Constructs MetricsAndOperator from required parameters
 #### `newMetricsAndOperator'`
 
 ``` purescript
-newMetricsAndOperator' :: ({ "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) } -> { "Prefix" :: NullOrUndefined (Prefix), "Tags" :: NullOrUndefined (TagSet) }) -> MetricsAndOperator
+newMetricsAndOperator' :: ({ "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) } -> { "Prefix" :: Maybe (Prefix), "Tags" :: Maybe (TagSet) }) -> MetricsAndOperator
 ```
 
 Constructs MetricsAndOperator's fields from required parameters
@@ -6702,7 +6702,7 @@ Constructs MetricsAndOperator's fields from required parameters
 
 ``` purescript
 newtype MetricsConfiguration
-  = MetricsConfiguration { "Id" :: MetricsId, "Filter" :: NullOrUndefined (MetricsFilter) }
+  = MetricsConfiguration { "Id" :: MetricsId, "Filter" :: Maybe (MetricsFilter) }
 ```
 
 ##### Instances
@@ -6725,7 +6725,7 @@ Constructs MetricsConfiguration from required parameters
 #### `newMetricsConfiguration'`
 
 ``` purescript
-newMetricsConfiguration' :: MetricsId -> ({ "Id" :: MetricsId, "Filter" :: NullOrUndefined (MetricsFilter) } -> { "Id" :: MetricsId, "Filter" :: NullOrUndefined (MetricsFilter) }) -> MetricsConfiguration
+newMetricsConfiguration' :: MetricsId -> ({ "Id" :: MetricsId, "Filter" :: Maybe (MetricsFilter) } -> { "Id" :: MetricsId, "Filter" :: Maybe (MetricsFilter) }) -> MetricsConfiguration
 ```
 
 Constructs MetricsConfiguration's fields from required parameters
@@ -6750,7 +6750,7 @@ Encode MetricsConfigurationList
 
 ``` purescript
 newtype MetricsFilter
-  = MetricsFilter { "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (MetricsAndOperator) }
+  = MetricsFilter { "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (MetricsAndOperator) }
 ```
 
 ##### Instances
@@ -6773,7 +6773,7 @@ Constructs MetricsFilter from required parameters
 #### `newMetricsFilter'`
 
 ``` purescript
-newMetricsFilter' :: ({ "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (MetricsAndOperator) } -> { "Prefix" :: NullOrUndefined (Prefix), "Tag" :: NullOrUndefined (Tag), "And" :: NullOrUndefined (MetricsAndOperator) }) -> MetricsFilter
+newMetricsFilter' :: ({ "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (MetricsAndOperator) } -> { "Prefix" :: Maybe (Prefix), "Tag" :: Maybe (Tag), "And" :: Maybe (MetricsAndOperator) }) -> MetricsFilter
 ```
 
 Constructs MetricsFilter's fields from required parameters
@@ -6814,7 +6814,7 @@ Encode MissingMeta
 
 ``` purescript
 newtype MultipartUpload
-  = MultipartUpload { "UploadId" :: NullOrUndefined (MultipartUploadId), "Key" :: NullOrUndefined (ObjectKey), "Initiated" :: NullOrUndefined (Initiated), "StorageClass" :: NullOrUndefined (StorageClass), "Owner" :: NullOrUndefined (Owner), "Initiator" :: NullOrUndefined (Initiator) }
+  = MultipartUpload { "UploadId" :: Maybe (MultipartUploadId), "Key" :: Maybe (ObjectKey), "Initiated" :: Maybe (Initiated), "StorageClass" :: Maybe (StorageClass), "Owner" :: Maybe (Owner), "Initiator" :: Maybe (Initiator) }
 ```
 
 ##### Instances
@@ -6837,7 +6837,7 @@ Constructs MultipartUpload from required parameters
 #### `newMultipartUpload'`
 
 ``` purescript
-newMultipartUpload' :: ({ "UploadId" :: NullOrUndefined (MultipartUploadId), "Key" :: NullOrUndefined (ObjectKey), "Initiated" :: NullOrUndefined (Initiated), "StorageClass" :: NullOrUndefined (StorageClass), "Owner" :: NullOrUndefined (Owner), "Initiator" :: NullOrUndefined (Initiator) } -> { "UploadId" :: NullOrUndefined (MultipartUploadId), "Key" :: NullOrUndefined (ObjectKey), "Initiated" :: NullOrUndefined (Initiated), "StorageClass" :: NullOrUndefined (StorageClass), "Owner" :: NullOrUndefined (Owner), "Initiator" :: NullOrUndefined (Initiator) }) -> MultipartUpload
+newMultipartUpload' :: ({ "UploadId" :: Maybe (MultipartUploadId), "Key" :: Maybe (ObjectKey), "Initiated" :: Maybe (Initiated), "StorageClass" :: Maybe (StorageClass), "Owner" :: Maybe (Owner), "Initiator" :: Maybe (Initiator) } -> { "UploadId" :: Maybe (MultipartUploadId), "Key" :: Maybe (ObjectKey), "Initiated" :: Maybe (Initiated), "StorageClass" :: Maybe (StorageClass), "Owner" :: Maybe (Owner), "Initiator" :: Maybe (Initiator) }) -> MultipartUpload
 ```
 
 Constructs MultipartUpload's fields from required parameters
@@ -7028,7 +7028,7 @@ Encode NoSuchUpload
 
 ``` purescript
 newtype NoncurrentVersionExpiration
-  = NoncurrentVersionExpiration { "NoncurrentDays" :: NullOrUndefined (Days) }
+  = NoncurrentVersionExpiration { "NoncurrentDays" :: Maybe (Days) }
 ```
 
 Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.
@@ -7053,7 +7053,7 @@ Constructs NoncurrentVersionExpiration from required parameters
 #### `newNoncurrentVersionExpiration'`
 
 ``` purescript
-newNoncurrentVersionExpiration' :: ({ "NoncurrentDays" :: NullOrUndefined (Days) } -> { "NoncurrentDays" :: NullOrUndefined (Days) }) -> NoncurrentVersionExpiration
+newNoncurrentVersionExpiration' :: ({ "NoncurrentDays" :: Maybe (Days) } -> { "NoncurrentDays" :: Maybe (Days) }) -> NoncurrentVersionExpiration
 ```
 
 Constructs NoncurrentVersionExpiration's fields from required parameters
@@ -7062,7 +7062,7 @@ Constructs NoncurrentVersionExpiration's fields from required parameters
 
 ``` purescript
 newtype NoncurrentVersionTransition
-  = NoncurrentVersionTransition { "NoncurrentDays" :: NullOrUndefined (Days), "StorageClass" :: NullOrUndefined (TransitionStorageClass) }
+  = NoncurrentVersionTransition { "NoncurrentDays" :: Maybe (Days), "StorageClass" :: Maybe (TransitionStorageClass) }
 ```
 
 Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA or GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA or GLACIER storage class at a specific period in the object's lifetime.
@@ -7087,7 +7087,7 @@ Constructs NoncurrentVersionTransition from required parameters
 #### `newNoncurrentVersionTransition'`
 
 ``` purescript
-newNoncurrentVersionTransition' :: ({ "NoncurrentDays" :: NullOrUndefined (Days), "StorageClass" :: NullOrUndefined (TransitionStorageClass) } -> { "NoncurrentDays" :: NullOrUndefined (Days), "StorageClass" :: NullOrUndefined (TransitionStorageClass) }) -> NoncurrentVersionTransition
+newNoncurrentVersionTransition' :: ({ "NoncurrentDays" :: Maybe (Days), "StorageClass" :: Maybe (TransitionStorageClass) } -> { "NoncurrentDays" :: Maybe (Days), "StorageClass" :: Maybe (TransitionStorageClass) }) -> NoncurrentVersionTransition
 ```
 
 Constructs NoncurrentVersionTransition's fields from required parameters
@@ -7112,7 +7112,7 @@ Encode NoncurrentVersionTransitionList
 
 ``` purescript
 newtype NotificationConfiguration
-  = NotificationConfiguration { "TopicConfigurations" :: NullOrUndefined (TopicConfigurationList), "QueueConfigurations" :: NullOrUndefined (QueueConfigurationList), "LambdaFunctionConfigurations" :: NullOrUndefined (LambdaFunctionConfigurationList) }
+  = NotificationConfiguration { "TopicConfigurations" :: Maybe (TopicConfigurationList), "QueueConfigurations" :: Maybe (QueueConfigurationList), "LambdaFunctionConfigurations" :: Maybe (LambdaFunctionConfigurationList) }
 ```
 
 Container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off on the bucket.
@@ -7137,7 +7137,7 @@ Constructs NotificationConfiguration from required parameters
 #### `newNotificationConfiguration'`
 
 ``` purescript
-newNotificationConfiguration' :: ({ "TopicConfigurations" :: NullOrUndefined (TopicConfigurationList), "QueueConfigurations" :: NullOrUndefined (QueueConfigurationList), "LambdaFunctionConfigurations" :: NullOrUndefined (LambdaFunctionConfigurationList) } -> { "TopicConfigurations" :: NullOrUndefined (TopicConfigurationList), "QueueConfigurations" :: NullOrUndefined (QueueConfigurationList), "LambdaFunctionConfigurations" :: NullOrUndefined (LambdaFunctionConfigurationList) }) -> NotificationConfiguration
+newNotificationConfiguration' :: ({ "TopicConfigurations" :: Maybe (TopicConfigurationList), "QueueConfigurations" :: Maybe (QueueConfigurationList), "LambdaFunctionConfigurations" :: Maybe (LambdaFunctionConfigurationList) } -> { "TopicConfigurations" :: Maybe (TopicConfigurationList), "QueueConfigurations" :: Maybe (QueueConfigurationList), "LambdaFunctionConfigurations" :: Maybe (LambdaFunctionConfigurationList) }) -> NotificationConfiguration
 ```
 
 Constructs NotificationConfiguration's fields from required parameters
@@ -7146,7 +7146,7 @@ Constructs NotificationConfiguration's fields from required parameters
 
 ``` purescript
 newtype NotificationConfigurationDeprecated
-  = NotificationConfigurationDeprecated { "TopicConfiguration" :: NullOrUndefined (TopicConfigurationDeprecated), "QueueConfiguration" :: NullOrUndefined (QueueConfigurationDeprecated), "CloudFunctionConfiguration" :: NullOrUndefined (CloudFunctionConfiguration) }
+  = NotificationConfigurationDeprecated { "TopicConfiguration" :: Maybe (TopicConfigurationDeprecated), "QueueConfiguration" :: Maybe (QueueConfigurationDeprecated), "CloudFunctionConfiguration" :: Maybe (CloudFunctionConfiguration) }
 ```
 
 ##### Instances
@@ -7169,7 +7169,7 @@ Constructs NotificationConfigurationDeprecated from required parameters
 #### `newNotificationConfigurationDeprecated'`
 
 ``` purescript
-newNotificationConfigurationDeprecated' :: ({ "TopicConfiguration" :: NullOrUndefined (TopicConfigurationDeprecated), "QueueConfiguration" :: NullOrUndefined (QueueConfigurationDeprecated), "CloudFunctionConfiguration" :: NullOrUndefined (CloudFunctionConfiguration) } -> { "TopicConfiguration" :: NullOrUndefined (TopicConfigurationDeprecated), "QueueConfiguration" :: NullOrUndefined (QueueConfigurationDeprecated), "CloudFunctionConfiguration" :: NullOrUndefined (CloudFunctionConfiguration) }) -> NotificationConfigurationDeprecated
+newNotificationConfigurationDeprecated' :: ({ "TopicConfiguration" :: Maybe (TopicConfigurationDeprecated), "QueueConfiguration" :: Maybe (QueueConfigurationDeprecated), "CloudFunctionConfiguration" :: Maybe (CloudFunctionConfiguration) } -> { "TopicConfiguration" :: Maybe (TopicConfigurationDeprecated), "QueueConfiguration" :: Maybe (QueueConfigurationDeprecated), "CloudFunctionConfiguration" :: Maybe (CloudFunctionConfiguration) }) -> NotificationConfigurationDeprecated
 ```
 
 Constructs NotificationConfigurationDeprecated's fields from required parameters
@@ -7178,7 +7178,7 @@ Constructs NotificationConfigurationDeprecated's fields from required parameters
 
 ``` purescript
 newtype NotificationConfigurationFilter
-  = NotificationConfigurationFilter { "Key" :: NullOrUndefined (S3KeyFilter) }
+  = NotificationConfigurationFilter { "Key" :: Maybe (S3KeyFilter) }
 ```
 
 Container for object key name filtering rules. For information about key name filtering, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
@@ -7203,7 +7203,7 @@ Constructs NotificationConfigurationFilter from required parameters
 #### `newNotificationConfigurationFilter'`
 
 ``` purescript
-newNotificationConfigurationFilter' :: ({ "Key" :: NullOrUndefined (S3KeyFilter) } -> { "Key" :: NullOrUndefined (S3KeyFilter) }) -> NotificationConfigurationFilter
+newNotificationConfigurationFilter' :: ({ "Key" :: Maybe (S3KeyFilter) } -> { "Key" :: Maybe (S3KeyFilter) }) -> NotificationConfigurationFilter
 ```
 
 Constructs NotificationConfigurationFilter's fields from required parameters
@@ -7230,7 +7230,7 @@ Encode NotificationId
 
 ``` purescript
 newtype Object
-  = Object { "Key" :: NullOrUndefined (ObjectKey), "LastModified" :: NullOrUndefined (LastModified), "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size), "StorageClass" :: NullOrUndefined (ObjectStorageClass), "Owner" :: NullOrUndefined (Owner) }
+  = Object { "Key" :: Maybe (ObjectKey), "LastModified" :: Maybe (LastModified), "ETag" :: Maybe (ETag), "Size" :: Maybe (Size), "StorageClass" :: Maybe (ObjectStorageClass), "Owner" :: Maybe (Owner) }
 ```
 
 ##### Instances
@@ -7253,7 +7253,7 @@ Constructs Object from required parameters
 #### `newObject'`
 
 ``` purescript
-newObject' :: ({ "Key" :: NullOrUndefined (ObjectKey), "LastModified" :: NullOrUndefined (LastModified), "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size), "StorageClass" :: NullOrUndefined (ObjectStorageClass), "Owner" :: NullOrUndefined (Owner) } -> { "Key" :: NullOrUndefined (ObjectKey), "LastModified" :: NullOrUndefined (LastModified), "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size), "StorageClass" :: NullOrUndefined (ObjectStorageClass), "Owner" :: NullOrUndefined (Owner) }) -> Object
+newObject' :: ({ "Key" :: Maybe (ObjectKey), "LastModified" :: Maybe (LastModified), "ETag" :: Maybe (ETag), "Size" :: Maybe (Size), "StorageClass" :: Maybe (ObjectStorageClass), "Owner" :: Maybe (Owner) } -> { "Key" :: Maybe (ObjectKey), "LastModified" :: Maybe (LastModified), "ETag" :: Maybe (ETag), "Size" :: Maybe (Size), "StorageClass" :: Maybe (ObjectStorageClass), "Owner" :: Maybe (Owner) }) -> Object
 ```
 
 Constructs Object's fields from required parameters
@@ -7296,7 +7296,7 @@ Encode ObjectCannedACL
 
 ``` purescript
 newtype ObjectIdentifier
-  = ObjectIdentifier { "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) }
+  = ObjectIdentifier { "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) }
 ```
 
 ##### Instances
@@ -7319,7 +7319,7 @@ Constructs ObjectIdentifier from required parameters
 #### `newObjectIdentifier'`
 
 ``` purescript
-newObjectIdentifier' :: ObjectKey -> ({ "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) } -> { "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId) }) -> ObjectIdentifier
+newObjectIdentifier' :: ObjectKey -> ({ "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) } -> { "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId) }) -> ObjectIdentifier
 ```
 
 Constructs ObjectIdentifier's fields from required parameters
@@ -7410,7 +7410,7 @@ Encode ObjectStorageClass
 
 ``` purescript
 newtype ObjectVersion
-  = ObjectVersion { "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size), "StorageClass" :: NullOrUndefined (ObjectVersionStorageClass), "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "IsLatest" :: NullOrUndefined (IsLatest), "LastModified" :: NullOrUndefined (LastModified), "Owner" :: NullOrUndefined (Owner) }
+  = ObjectVersion { "ETag" :: Maybe (ETag), "Size" :: Maybe (Size), "StorageClass" :: Maybe (ObjectVersionStorageClass), "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "IsLatest" :: Maybe (IsLatest), "LastModified" :: Maybe (LastModified), "Owner" :: Maybe (Owner) }
 ```
 
 ##### Instances
@@ -7433,7 +7433,7 @@ Constructs ObjectVersion from required parameters
 #### `newObjectVersion'`
 
 ``` purescript
-newObjectVersion' :: ({ "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size), "StorageClass" :: NullOrUndefined (ObjectVersionStorageClass), "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "IsLatest" :: NullOrUndefined (IsLatest), "LastModified" :: NullOrUndefined (LastModified), "Owner" :: NullOrUndefined (Owner) } -> { "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size), "StorageClass" :: NullOrUndefined (ObjectVersionStorageClass), "Key" :: NullOrUndefined (ObjectKey), "VersionId" :: NullOrUndefined (ObjectVersionId), "IsLatest" :: NullOrUndefined (IsLatest), "LastModified" :: NullOrUndefined (LastModified), "Owner" :: NullOrUndefined (Owner) }) -> ObjectVersion
+newObjectVersion' :: ({ "ETag" :: Maybe (ETag), "Size" :: Maybe (Size), "StorageClass" :: Maybe (ObjectVersionStorageClass), "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "IsLatest" :: Maybe (IsLatest), "LastModified" :: Maybe (LastModified), "Owner" :: Maybe (Owner) } -> { "ETag" :: Maybe (ETag), "Size" :: Maybe (Size), "StorageClass" :: Maybe (ObjectVersionStorageClass), "Key" :: Maybe (ObjectKey), "VersionId" :: Maybe (ObjectVersionId), "IsLatest" :: Maybe (IsLatest), "LastModified" :: Maybe (LastModified), "Owner" :: Maybe (Owner) }) -> ObjectVersion
 ```
 
 Constructs ObjectVersion's fields from required parameters
@@ -7490,7 +7490,7 @@ Encode ObjectVersionStorageClass
 
 ``` purescript
 newtype OutputLocation
-  = OutputLocation { "S3" :: NullOrUndefined (S3Location) }
+  = OutputLocation { "S3" :: Maybe (S3Location) }
 ```
 
 Describes the location where the restore job's output is stored.
@@ -7515,7 +7515,7 @@ Constructs OutputLocation from required parameters
 #### `newOutputLocation'`
 
 ``` purescript
-newOutputLocation' :: ({ "S3" :: NullOrUndefined (S3Location) } -> { "S3" :: NullOrUndefined (S3Location) }) -> OutputLocation
+newOutputLocation' :: ({ "S3" :: Maybe (S3Location) } -> { "S3" :: Maybe (S3Location) }) -> OutputLocation
 ```
 
 Constructs OutputLocation's fields from required parameters
@@ -7524,7 +7524,7 @@ Constructs OutputLocation's fields from required parameters
 
 ``` purescript
 newtype OutputSerialization
-  = OutputSerialization { "CSV" :: NullOrUndefined (CSVOutput) }
+  = OutputSerialization { "CSV" :: Maybe (CSVOutput) }
 ```
 
 Describes how results of the Select job are serialized.
@@ -7549,7 +7549,7 @@ Constructs OutputSerialization from required parameters
 #### `newOutputSerialization'`
 
 ``` purescript
-newOutputSerialization' :: ({ "CSV" :: NullOrUndefined (CSVOutput) } -> { "CSV" :: NullOrUndefined (CSVOutput) }) -> OutputSerialization
+newOutputSerialization' :: ({ "CSV" :: Maybe (CSVOutput) } -> { "CSV" :: Maybe (CSVOutput) }) -> OutputSerialization
 ```
 
 Constructs OutputSerialization's fields from required parameters
@@ -7558,7 +7558,7 @@ Constructs OutputSerialization's fields from required parameters
 
 ``` purescript
 newtype Owner
-  = Owner { "DisplayName" :: NullOrUndefined (DisplayName), "ID" :: NullOrUndefined (ID) }
+  = Owner { "DisplayName" :: Maybe (DisplayName), "ID" :: Maybe (ID) }
 ```
 
 ##### Instances
@@ -7581,7 +7581,7 @@ Constructs Owner from required parameters
 #### `newOwner'`
 
 ``` purescript
-newOwner' :: ({ "DisplayName" :: NullOrUndefined (DisplayName), "ID" :: NullOrUndefined (ID) } -> { "DisplayName" :: NullOrUndefined (DisplayName), "ID" :: NullOrUndefined (ID) }) -> Owner
+newOwner' :: ({ "DisplayName" :: Maybe (DisplayName), "ID" :: Maybe (ID) } -> { "DisplayName" :: Maybe (DisplayName), "ID" :: Maybe (ID) }) -> Owner
 ```
 
 Constructs Owner's fields from required parameters
@@ -7606,7 +7606,7 @@ Encode OwnerOverride
 
 ``` purescript
 newtype Part
-  = Part { "PartNumber" :: NullOrUndefined (PartNumber), "LastModified" :: NullOrUndefined (LastModified), "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size) }
+  = Part { "PartNumber" :: Maybe (PartNumber), "LastModified" :: Maybe (LastModified), "ETag" :: Maybe (ETag), "Size" :: Maybe (Size) }
 ```
 
 ##### Instances
@@ -7629,7 +7629,7 @@ Constructs Part from required parameters
 #### `newPart'`
 
 ``` purescript
-newPart' :: ({ "PartNumber" :: NullOrUndefined (PartNumber), "LastModified" :: NullOrUndefined (LastModified), "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size) } -> { "PartNumber" :: NullOrUndefined (PartNumber), "LastModified" :: NullOrUndefined (LastModified), "ETag" :: NullOrUndefined (ETag), "Size" :: NullOrUndefined (Size) }) -> Part
+newPart' :: ({ "PartNumber" :: Maybe (PartNumber), "LastModified" :: Maybe (LastModified), "ETag" :: Maybe (ETag), "Size" :: Maybe (Size) } -> { "PartNumber" :: Maybe (PartNumber), "LastModified" :: Maybe (LastModified), "ETag" :: Maybe (ETag), "Size" :: Maybe (Size) }) -> Part
 ```
 
 Constructs Part's fields from required parameters
@@ -7814,7 +7814,7 @@ Constructs PutBucketAccelerateConfigurationRequest's fields from required parame
 
 ``` purescript
 newtype PutBucketAclRequest
-  = PutBucketAclRequest { "ACL" :: NullOrUndefined (BucketCannedACL), "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) }
+  = PutBucketAclRequest { "ACL" :: Maybe (BucketCannedACL), "AccessControlPolicy" :: Maybe (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP) }
 ```
 
 ##### Instances
@@ -7837,7 +7837,7 @@ Constructs PutBucketAclRequest from required parameters
 #### `newPutBucketAclRequest'`
 
 ``` purescript
-newPutBucketAclRequest' :: BucketName -> ({ "ACL" :: NullOrUndefined (BucketCannedACL), "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) } -> { "ACL" :: NullOrUndefined (BucketCannedACL), "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) }) -> PutBucketAclRequest
+newPutBucketAclRequest' :: BucketName -> ({ "ACL" :: Maybe (BucketCannedACL), "AccessControlPolicy" :: Maybe (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP) } -> { "ACL" :: Maybe (BucketCannedACL), "AccessControlPolicy" :: Maybe (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP) }) -> PutBucketAclRequest
 ```
 
 Constructs PutBucketAclRequest's fields from required parameters
@@ -7878,7 +7878,7 @@ Constructs PutBucketAnalyticsConfigurationRequest's fields from required paramet
 
 ``` purescript
 newtype PutBucketCorsRequest
-  = PutBucketCorsRequest { "Bucket" :: BucketName, "CORSConfiguration" :: CORSConfiguration, "ContentMD5" :: NullOrUndefined (ContentMD5) }
+  = PutBucketCorsRequest { "Bucket" :: BucketName, "CORSConfiguration" :: CORSConfiguration, "ContentMD5" :: Maybe (ContentMD5) }
 ```
 
 ##### Instances
@@ -7901,7 +7901,7 @@ Constructs PutBucketCorsRequest from required parameters
 #### `newPutBucketCorsRequest'`
 
 ``` purescript
-newPutBucketCorsRequest' :: BucketName -> CORSConfiguration -> ({ "Bucket" :: BucketName, "CORSConfiguration" :: CORSConfiguration, "ContentMD5" :: NullOrUndefined (ContentMD5) } -> { "Bucket" :: BucketName, "CORSConfiguration" :: CORSConfiguration, "ContentMD5" :: NullOrUndefined (ContentMD5) }) -> PutBucketCorsRequest
+newPutBucketCorsRequest' :: BucketName -> CORSConfiguration -> ({ "Bucket" :: BucketName, "CORSConfiguration" :: CORSConfiguration, "ContentMD5" :: Maybe (ContentMD5) } -> { "Bucket" :: BucketName, "CORSConfiguration" :: CORSConfiguration, "ContentMD5" :: Maybe (ContentMD5) }) -> PutBucketCorsRequest
 ```
 
 Constructs PutBucketCorsRequest's fields from required parameters
@@ -7910,7 +7910,7 @@ Constructs PutBucketCorsRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketEncryptionRequest
-  = PutBucketEncryptionRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ServerSideEncryptionConfiguration" :: ServerSideEncryptionConfiguration }
+  = PutBucketEncryptionRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ServerSideEncryptionConfiguration" :: ServerSideEncryptionConfiguration }
 ```
 
 ##### Instances
@@ -7933,7 +7933,7 @@ Constructs PutBucketEncryptionRequest from required parameters
 #### `newPutBucketEncryptionRequest'`
 
 ``` purescript
-newPutBucketEncryptionRequest' :: BucketName -> ServerSideEncryptionConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ServerSideEncryptionConfiguration" :: ServerSideEncryptionConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ServerSideEncryptionConfiguration" :: ServerSideEncryptionConfiguration }) -> PutBucketEncryptionRequest
+newPutBucketEncryptionRequest' :: BucketName -> ServerSideEncryptionConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ServerSideEncryptionConfiguration" :: ServerSideEncryptionConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ServerSideEncryptionConfiguration" :: ServerSideEncryptionConfiguration }) -> PutBucketEncryptionRequest
 ```
 
 Constructs PutBucketEncryptionRequest's fields from required parameters
@@ -7974,7 +7974,7 @@ Constructs PutBucketInventoryConfigurationRequest's fields from required paramet
 
 ``` purescript
 newtype PutBucketLifecycleConfigurationRequest
-  = PutBucketLifecycleConfigurationRequest { "Bucket" :: BucketName, "LifecycleConfiguration" :: NullOrUndefined (BucketLifecycleConfiguration) }
+  = PutBucketLifecycleConfigurationRequest { "Bucket" :: BucketName, "LifecycleConfiguration" :: Maybe (BucketLifecycleConfiguration) }
 ```
 
 ##### Instances
@@ -7997,7 +7997,7 @@ Constructs PutBucketLifecycleConfigurationRequest from required parameters
 #### `newPutBucketLifecycleConfigurationRequest'`
 
 ``` purescript
-newPutBucketLifecycleConfigurationRequest' :: BucketName -> ({ "Bucket" :: BucketName, "LifecycleConfiguration" :: NullOrUndefined (BucketLifecycleConfiguration) } -> { "Bucket" :: BucketName, "LifecycleConfiguration" :: NullOrUndefined (BucketLifecycleConfiguration) }) -> PutBucketLifecycleConfigurationRequest
+newPutBucketLifecycleConfigurationRequest' :: BucketName -> ({ "Bucket" :: BucketName, "LifecycleConfiguration" :: Maybe (BucketLifecycleConfiguration) } -> { "Bucket" :: BucketName, "LifecycleConfiguration" :: Maybe (BucketLifecycleConfiguration) }) -> PutBucketLifecycleConfigurationRequest
 ```
 
 Constructs PutBucketLifecycleConfigurationRequest's fields from required parameters
@@ -8006,7 +8006,7 @@ Constructs PutBucketLifecycleConfigurationRequest's fields from required paramet
 
 ``` purescript
 newtype PutBucketLifecycleRequest
-  = PutBucketLifecycleRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "LifecycleConfiguration" :: NullOrUndefined (LifecycleConfiguration) }
+  = PutBucketLifecycleRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "LifecycleConfiguration" :: Maybe (LifecycleConfiguration) }
 ```
 
 ##### Instances
@@ -8029,7 +8029,7 @@ Constructs PutBucketLifecycleRequest from required parameters
 #### `newPutBucketLifecycleRequest'`
 
 ``` purescript
-newPutBucketLifecycleRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "LifecycleConfiguration" :: NullOrUndefined (LifecycleConfiguration) } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "LifecycleConfiguration" :: NullOrUndefined (LifecycleConfiguration) }) -> PutBucketLifecycleRequest
+newPutBucketLifecycleRequest' :: BucketName -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "LifecycleConfiguration" :: Maybe (LifecycleConfiguration) } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "LifecycleConfiguration" :: Maybe (LifecycleConfiguration) }) -> PutBucketLifecycleRequest
 ```
 
 Constructs PutBucketLifecycleRequest's fields from required parameters
@@ -8038,7 +8038,7 @@ Constructs PutBucketLifecycleRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketLoggingRequest
-  = PutBucketLoggingRequest { "Bucket" :: BucketName, "BucketLoggingStatus" :: BucketLoggingStatus, "ContentMD5" :: NullOrUndefined (ContentMD5) }
+  = PutBucketLoggingRequest { "Bucket" :: BucketName, "BucketLoggingStatus" :: BucketLoggingStatus, "ContentMD5" :: Maybe (ContentMD5) }
 ```
 
 ##### Instances
@@ -8061,7 +8061,7 @@ Constructs PutBucketLoggingRequest from required parameters
 #### `newPutBucketLoggingRequest'`
 
 ``` purescript
-newPutBucketLoggingRequest' :: BucketName -> BucketLoggingStatus -> ({ "Bucket" :: BucketName, "BucketLoggingStatus" :: BucketLoggingStatus, "ContentMD5" :: NullOrUndefined (ContentMD5) } -> { "Bucket" :: BucketName, "BucketLoggingStatus" :: BucketLoggingStatus, "ContentMD5" :: NullOrUndefined (ContentMD5) }) -> PutBucketLoggingRequest
+newPutBucketLoggingRequest' :: BucketName -> BucketLoggingStatus -> ({ "Bucket" :: BucketName, "BucketLoggingStatus" :: BucketLoggingStatus, "ContentMD5" :: Maybe (ContentMD5) } -> { "Bucket" :: BucketName, "BucketLoggingStatus" :: BucketLoggingStatus, "ContentMD5" :: Maybe (ContentMD5) }) -> PutBucketLoggingRequest
 ```
 
 Constructs PutBucketLoggingRequest's fields from required parameters
@@ -8134,7 +8134,7 @@ Constructs PutBucketNotificationConfigurationRequest's fields from required para
 
 ``` purescript
 newtype PutBucketNotificationRequest
-  = PutBucketNotificationRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "NotificationConfiguration" :: NotificationConfigurationDeprecated }
+  = PutBucketNotificationRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "NotificationConfiguration" :: NotificationConfigurationDeprecated }
 ```
 
 ##### Instances
@@ -8157,7 +8157,7 @@ Constructs PutBucketNotificationRequest from required parameters
 #### `newPutBucketNotificationRequest'`
 
 ``` purescript
-newPutBucketNotificationRequest' :: BucketName -> NotificationConfigurationDeprecated -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "NotificationConfiguration" :: NotificationConfigurationDeprecated } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "NotificationConfiguration" :: NotificationConfigurationDeprecated }) -> PutBucketNotificationRequest
+newPutBucketNotificationRequest' :: BucketName -> NotificationConfigurationDeprecated -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "NotificationConfiguration" :: NotificationConfigurationDeprecated } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "NotificationConfiguration" :: NotificationConfigurationDeprecated }) -> PutBucketNotificationRequest
 ```
 
 Constructs PutBucketNotificationRequest's fields from required parameters
@@ -8166,7 +8166,7 @@ Constructs PutBucketNotificationRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketPolicyRequest
-  = PutBucketPolicyRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ConfirmRemoveSelfBucketAccess" :: NullOrUndefined (ConfirmRemoveSelfBucketAccess), "Policy" :: Policy }
+  = PutBucketPolicyRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ConfirmRemoveSelfBucketAccess" :: Maybe (ConfirmRemoveSelfBucketAccess), "Policy" :: Policy }
 ```
 
 ##### Instances
@@ -8189,7 +8189,7 @@ Constructs PutBucketPolicyRequest from required parameters
 #### `newPutBucketPolicyRequest'`
 
 ``` purescript
-newPutBucketPolicyRequest' :: BucketName -> Policy -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ConfirmRemoveSelfBucketAccess" :: NullOrUndefined (ConfirmRemoveSelfBucketAccess), "Policy" :: Policy } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ConfirmRemoveSelfBucketAccess" :: NullOrUndefined (ConfirmRemoveSelfBucketAccess), "Policy" :: Policy }) -> PutBucketPolicyRequest
+newPutBucketPolicyRequest' :: BucketName -> Policy -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ConfirmRemoveSelfBucketAccess" :: Maybe (ConfirmRemoveSelfBucketAccess), "Policy" :: Policy } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ConfirmRemoveSelfBucketAccess" :: Maybe (ConfirmRemoveSelfBucketAccess), "Policy" :: Policy }) -> PutBucketPolicyRequest
 ```
 
 Constructs PutBucketPolicyRequest's fields from required parameters
@@ -8198,7 +8198,7 @@ Constructs PutBucketPolicyRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketReplicationRequest
-  = PutBucketReplicationRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ReplicationConfiguration" :: ReplicationConfiguration }
+  = PutBucketReplicationRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ReplicationConfiguration" :: ReplicationConfiguration }
 ```
 
 ##### Instances
@@ -8221,7 +8221,7 @@ Constructs PutBucketReplicationRequest from required parameters
 #### `newPutBucketReplicationRequest'`
 
 ``` purescript
-newPutBucketReplicationRequest' :: BucketName -> ReplicationConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ReplicationConfiguration" :: ReplicationConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "ReplicationConfiguration" :: ReplicationConfiguration }) -> PutBucketReplicationRequest
+newPutBucketReplicationRequest' :: BucketName -> ReplicationConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ReplicationConfiguration" :: ReplicationConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "ReplicationConfiguration" :: ReplicationConfiguration }) -> PutBucketReplicationRequest
 ```
 
 Constructs PutBucketReplicationRequest's fields from required parameters
@@ -8230,7 +8230,7 @@ Constructs PutBucketReplicationRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketRequestPaymentRequest
-  = PutBucketRequestPaymentRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "RequestPaymentConfiguration" :: RequestPaymentConfiguration }
+  = PutBucketRequestPaymentRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "RequestPaymentConfiguration" :: RequestPaymentConfiguration }
 ```
 
 ##### Instances
@@ -8253,7 +8253,7 @@ Constructs PutBucketRequestPaymentRequest from required parameters
 #### `newPutBucketRequestPaymentRequest'`
 
 ``` purescript
-newPutBucketRequestPaymentRequest' :: BucketName -> RequestPaymentConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "RequestPaymentConfiguration" :: RequestPaymentConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "RequestPaymentConfiguration" :: RequestPaymentConfiguration }) -> PutBucketRequestPaymentRequest
+newPutBucketRequestPaymentRequest' :: BucketName -> RequestPaymentConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "RequestPaymentConfiguration" :: RequestPaymentConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "RequestPaymentConfiguration" :: RequestPaymentConfiguration }) -> PutBucketRequestPaymentRequest
 ```
 
 Constructs PutBucketRequestPaymentRequest's fields from required parameters
@@ -8262,7 +8262,7 @@ Constructs PutBucketRequestPaymentRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketTaggingRequest
-  = PutBucketTaggingRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "Tagging" :: Tagging }
+  = PutBucketTaggingRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "Tagging" :: Tagging }
 ```
 
 ##### Instances
@@ -8285,7 +8285,7 @@ Constructs PutBucketTaggingRequest from required parameters
 #### `newPutBucketTaggingRequest'`
 
 ``` purescript
-newPutBucketTaggingRequest' :: BucketName -> Tagging -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "Tagging" :: Tagging } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "Tagging" :: Tagging }) -> PutBucketTaggingRequest
+newPutBucketTaggingRequest' :: BucketName -> Tagging -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "Tagging" :: Tagging } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "Tagging" :: Tagging }) -> PutBucketTaggingRequest
 ```
 
 Constructs PutBucketTaggingRequest's fields from required parameters
@@ -8294,7 +8294,7 @@ Constructs PutBucketTaggingRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketVersioningRequest
-  = PutBucketVersioningRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "MFA" :: NullOrUndefined (MFA), "VersioningConfiguration" :: VersioningConfiguration }
+  = PutBucketVersioningRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "MFA" :: Maybe (MFA), "VersioningConfiguration" :: VersioningConfiguration }
 ```
 
 ##### Instances
@@ -8317,7 +8317,7 @@ Constructs PutBucketVersioningRequest from required parameters
 #### `newPutBucketVersioningRequest'`
 
 ``` purescript
-newPutBucketVersioningRequest' :: BucketName -> VersioningConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "MFA" :: NullOrUndefined (MFA), "VersioningConfiguration" :: VersioningConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "MFA" :: NullOrUndefined (MFA), "VersioningConfiguration" :: VersioningConfiguration }) -> PutBucketVersioningRequest
+newPutBucketVersioningRequest' :: BucketName -> VersioningConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "MFA" :: Maybe (MFA), "VersioningConfiguration" :: VersioningConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "MFA" :: Maybe (MFA), "VersioningConfiguration" :: VersioningConfiguration }) -> PutBucketVersioningRequest
 ```
 
 Constructs PutBucketVersioningRequest's fields from required parameters
@@ -8326,7 +8326,7 @@ Constructs PutBucketVersioningRequest's fields from required parameters
 
 ``` purescript
 newtype PutBucketWebsiteRequest
-  = PutBucketWebsiteRequest { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "WebsiteConfiguration" :: WebsiteConfiguration }
+  = PutBucketWebsiteRequest { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "WebsiteConfiguration" :: WebsiteConfiguration }
 ```
 
 ##### Instances
@@ -8349,7 +8349,7 @@ Constructs PutBucketWebsiteRequest from required parameters
 #### `newPutBucketWebsiteRequest'`
 
 ``` purescript
-newPutBucketWebsiteRequest' :: BucketName -> WebsiteConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "WebsiteConfiguration" :: WebsiteConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "WebsiteConfiguration" :: WebsiteConfiguration }) -> PutBucketWebsiteRequest
+newPutBucketWebsiteRequest' :: BucketName -> WebsiteConfiguration -> ({ "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "WebsiteConfiguration" :: WebsiteConfiguration } -> { "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "WebsiteConfiguration" :: WebsiteConfiguration }) -> PutBucketWebsiteRequest
 ```
 
 Constructs PutBucketWebsiteRequest's fields from required parameters
@@ -8358,7 +8358,7 @@ Constructs PutBucketWebsiteRequest's fields from required parameters
 
 ``` purescript
 newtype PutObjectAclOutput
-  = PutObjectAclOutput { "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = PutObjectAclOutput { "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -8381,7 +8381,7 @@ Constructs PutObjectAclOutput from required parameters
 #### `newPutObjectAclOutput'`
 
 ``` purescript
-newPutObjectAclOutput' :: ({ "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> PutObjectAclOutput
+newPutObjectAclOutput' :: ({ "RequestCharged" :: Maybe (RequestCharged) } -> { "RequestCharged" :: Maybe (RequestCharged) }) -> PutObjectAclOutput
 ```
 
 Constructs PutObjectAclOutput's fields from required parameters
@@ -8390,7 +8390,7 @@ Constructs PutObjectAclOutput's fields from required parameters
 
 ``` purescript
 newtype PutObjectAclRequest
-  = PutObjectAclRequest { "ACL" :: NullOrUndefined (ObjectCannedACL), "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "RequestPayer" :: NullOrUndefined (RequestPayer), "VersionId" :: NullOrUndefined (ObjectVersionId) }
+  = PutObjectAclRequest { "ACL" :: Maybe (ObjectCannedACL), "AccessControlPolicy" :: Maybe (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "RequestPayer" :: Maybe (RequestPayer), "VersionId" :: Maybe (ObjectVersionId) }
 ```
 
 ##### Instances
@@ -8413,7 +8413,7 @@ Constructs PutObjectAclRequest from required parameters
 #### `newPutObjectAclRequest'`
 
 ``` purescript
-newPutObjectAclRequest' :: BucketName -> ObjectKey -> ({ "ACL" :: NullOrUndefined (ObjectCannedACL), "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "RequestPayer" :: NullOrUndefined (RequestPayer), "VersionId" :: NullOrUndefined (ObjectVersionId) } -> { "ACL" :: NullOrUndefined (ObjectCannedACL), "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: NullOrUndefined (ContentMD5), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWrite" :: NullOrUndefined (GrantWrite), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "RequestPayer" :: NullOrUndefined (RequestPayer), "VersionId" :: NullOrUndefined (ObjectVersionId) }) -> PutObjectAclRequest
+newPutObjectAclRequest' :: BucketName -> ObjectKey -> ({ "ACL" :: Maybe (ObjectCannedACL), "AccessControlPolicy" :: Maybe (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "RequestPayer" :: Maybe (RequestPayer), "VersionId" :: Maybe (ObjectVersionId) } -> { "ACL" :: Maybe (ObjectCannedACL), "AccessControlPolicy" :: Maybe (AccessControlPolicy), "Bucket" :: BucketName, "ContentMD5" :: Maybe (ContentMD5), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWrite" :: Maybe (GrantWrite), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "RequestPayer" :: Maybe (RequestPayer), "VersionId" :: Maybe (ObjectVersionId) }) -> PutObjectAclRequest
 ```
 
 Constructs PutObjectAclRequest's fields from required parameters
@@ -8422,7 +8422,7 @@ Constructs PutObjectAclRequest's fields from required parameters
 
 ``` purescript
 newtype PutObjectOutput
-  = PutObjectOutput { "Expiration" :: NullOrUndefined (Expiration), "ETag" :: NullOrUndefined (ETag), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = PutObjectOutput { "Expiration" :: Maybe (Expiration), "ETag" :: Maybe (ETag), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -8445,7 +8445,7 @@ Constructs PutObjectOutput from required parameters
 #### `newPutObjectOutput'`
 
 ``` purescript
-newPutObjectOutput' :: ({ "Expiration" :: NullOrUndefined (Expiration), "ETag" :: NullOrUndefined (ETag), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "Expiration" :: NullOrUndefined (Expiration), "ETag" :: NullOrUndefined (ETag), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "VersionId" :: NullOrUndefined (ObjectVersionId), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> PutObjectOutput
+newPutObjectOutput' :: ({ "Expiration" :: Maybe (Expiration), "ETag" :: Maybe (ETag), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) } -> { "Expiration" :: Maybe (Expiration), "ETag" :: Maybe (ETag), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "VersionId" :: Maybe (ObjectVersionId), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }) -> PutObjectOutput
 ```
 
 Constructs PutObjectOutput's fields from required parameters
@@ -8454,7 +8454,7 @@ Constructs PutObjectOutput's fields from required parameters
 
 ``` purescript
 newtype PutObjectRequest
-  = PutObjectRequest { "ACL" :: NullOrUndefined (ObjectCannedACL), "Body" :: NullOrUndefined (Body), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentLength" :: NullOrUndefined (ContentLength), "ContentMD5" :: NullOrUndefined (ContentMD5), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) }
+  = PutObjectRequest { "ACL" :: Maybe (ObjectCannedACL), "Body" :: Maybe (Body), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentLength" :: Maybe (ContentLength), "ContentMD5" :: Maybe (ContentMD5), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) }
 ```
 
 ##### Instances
@@ -8477,7 +8477,7 @@ Constructs PutObjectRequest from required parameters
 #### `newPutObjectRequest'`
 
 ``` purescript
-newPutObjectRequest' :: BucketName -> ObjectKey -> ({ "ACL" :: NullOrUndefined (ObjectCannedACL), "Body" :: NullOrUndefined (Body), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentLength" :: NullOrUndefined (ContentLength), "ContentMD5" :: NullOrUndefined (ContentMD5), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) } -> { "ACL" :: NullOrUndefined (ObjectCannedACL), "Body" :: NullOrUndefined (Body), "Bucket" :: BucketName, "CacheControl" :: NullOrUndefined (CacheControl), "ContentDisposition" :: NullOrUndefined (ContentDisposition), "ContentEncoding" :: NullOrUndefined (ContentEncoding), "ContentLanguage" :: NullOrUndefined (ContentLanguage), "ContentLength" :: NullOrUndefined (ContentLength), "ContentMD5" :: NullOrUndefined (ContentMD5), "ContentType" :: NullOrUndefined (ContentType), "Expires" :: NullOrUndefined (Expires), "GrantFullControl" :: NullOrUndefined (GrantFullControl), "GrantRead" :: NullOrUndefined (GrantRead), "GrantReadACP" :: NullOrUndefined (GrantReadACP), "GrantWriteACP" :: NullOrUndefined (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: NullOrUndefined (Metadata), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "StorageClass" :: NullOrUndefined (StorageClass), "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestPayer" :: NullOrUndefined (RequestPayer), "Tagging" :: NullOrUndefined (TaggingHeader) }) -> PutObjectRequest
+newPutObjectRequest' :: BucketName -> ObjectKey -> ({ "ACL" :: Maybe (ObjectCannedACL), "Body" :: Maybe (Body), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentLength" :: Maybe (ContentLength), "ContentMD5" :: Maybe (ContentMD5), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) } -> { "ACL" :: Maybe (ObjectCannedACL), "Body" :: Maybe (Body), "Bucket" :: BucketName, "CacheControl" :: Maybe (CacheControl), "ContentDisposition" :: Maybe (ContentDisposition), "ContentEncoding" :: Maybe (ContentEncoding), "ContentLanguage" :: Maybe (ContentLanguage), "ContentLength" :: Maybe (ContentLength), "ContentMD5" :: Maybe (ContentMD5), "ContentType" :: Maybe (ContentType), "Expires" :: Maybe (Expires), "GrantFullControl" :: Maybe (GrantFullControl), "GrantRead" :: Maybe (GrantRead), "GrantReadACP" :: Maybe (GrantReadACP), "GrantWriteACP" :: Maybe (GrantWriteACP), "Key" :: ObjectKey, "Metadata" :: Maybe (Metadata), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "StorageClass" :: Maybe (StorageClass), "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestPayer" :: Maybe (RequestPayer), "Tagging" :: Maybe (TaggingHeader) }) -> PutObjectRequest
 ```
 
 Constructs PutObjectRequest's fields from required parameters
@@ -8486,7 +8486,7 @@ Constructs PutObjectRequest's fields from required parameters
 
 ``` purescript
 newtype PutObjectTaggingOutput
-  = PutObjectTaggingOutput { "VersionId" :: NullOrUndefined (ObjectVersionId) }
+  = PutObjectTaggingOutput { "VersionId" :: Maybe (ObjectVersionId) }
 ```
 
 ##### Instances
@@ -8509,7 +8509,7 @@ Constructs PutObjectTaggingOutput from required parameters
 #### `newPutObjectTaggingOutput'`
 
 ``` purescript
-newPutObjectTaggingOutput' :: ({ "VersionId" :: NullOrUndefined (ObjectVersionId) } -> { "VersionId" :: NullOrUndefined (ObjectVersionId) }) -> PutObjectTaggingOutput
+newPutObjectTaggingOutput' :: ({ "VersionId" :: Maybe (ObjectVersionId) } -> { "VersionId" :: Maybe (ObjectVersionId) }) -> PutObjectTaggingOutput
 ```
 
 Constructs PutObjectTaggingOutput's fields from required parameters
@@ -8518,7 +8518,7 @@ Constructs PutObjectTaggingOutput's fields from required parameters
 
 ``` purescript
 newtype PutObjectTaggingRequest
-  = PutObjectTaggingRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "ContentMD5" :: NullOrUndefined (ContentMD5), "Tagging" :: Tagging }
+  = PutObjectTaggingRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "ContentMD5" :: Maybe (ContentMD5), "Tagging" :: Tagging }
 ```
 
 ##### Instances
@@ -8541,7 +8541,7 @@ Constructs PutObjectTaggingRequest from required parameters
 #### `newPutObjectTaggingRequest'`
 
 ``` purescript
-newPutObjectTaggingRequest' :: BucketName -> ObjectKey -> Tagging -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "ContentMD5" :: NullOrUndefined (ContentMD5), "Tagging" :: Tagging } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "ContentMD5" :: NullOrUndefined (ContentMD5), "Tagging" :: Tagging }) -> PutObjectTaggingRequest
+newPutObjectTaggingRequest' :: BucketName -> ObjectKey -> Tagging -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "ContentMD5" :: Maybe (ContentMD5), "Tagging" :: Tagging } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "ContentMD5" :: Maybe (ContentMD5), "Tagging" :: Tagging }) -> PutObjectTaggingRequest
 ```
 
 Constructs PutObjectTaggingRequest's fields from required parameters
@@ -8566,7 +8566,7 @@ Encode QueueArn
 
 ``` purescript
 newtype QueueConfiguration
-  = QueueConfiguration { "Id" :: NullOrUndefined (NotificationId), "QueueArn" :: QueueArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) }
+  = QueueConfiguration { "Id" :: Maybe (NotificationId), "QueueArn" :: QueueArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) }
 ```
 
 Container for specifying an configuration when you want Amazon S3 to publish events to an Amazon Simple Queue Service (Amazon SQS) queue.
@@ -8591,7 +8591,7 @@ Constructs QueueConfiguration from required parameters
 #### `newQueueConfiguration'`
 
 ``` purescript
-newQueueConfiguration' :: EventList -> QueueArn -> ({ "Id" :: NullOrUndefined (NotificationId), "QueueArn" :: QueueArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } -> { "Id" :: NullOrUndefined (NotificationId), "QueueArn" :: QueueArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) }) -> QueueConfiguration
+newQueueConfiguration' :: EventList -> QueueArn -> ({ "Id" :: Maybe (NotificationId), "QueueArn" :: QueueArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) } -> { "Id" :: Maybe (NotificationId), "QueueArn" :: QueueArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) }) -> QueueConfiguration
 ```
 
 Constructs QueueConfiguration's fields from required parameters
@@ -8600,7 +8600,7 @@ Constructs QueueConfiguration's fields from required parameters
 
 ``` purescript
 newtype QueueConfigurationDeprecated
-  = QueueConfigurationDeprecated { "Id" :: NullOrUndefined (NotificationId), "Event" :: NullOrUndefined (Event), "Events" :: NullOrUndefined (EventList), "Queue" :: NullOrUndefined (QueueArn) }
+  = QueueConfigurationDeprecated { "Id" :: Maybe (NotificationId), "Event" :: Maybe (Event), "Events" :: Maybe (EventList), "Queue" :: Maybe (QueueArn) }
 ```
 
 ##### Instances
@@ -8623,7 +8623,7 @@ Constructs QueueConfigurationDeprecated from required parameters
 #### `newQueueConfigurationDeprecated'`
 
 ``` purescript
-newQueueConfigurationDeprecated' :: ({ "Id" :: NullOrUndefined (NotificationId), "Event" :: NullOrUndefined (Event), "Events" :: NullOrUndefined (EventList), "Queue" :: NullOrUndefined (QueueArn) } -> { "Id" :: NullOrUndefined (NotificationId), "Event" :: NullOrUndefined (Event), "Events" :: NullOrUndefined (EventList), "Queue" :: NullOrUndefined (QueueArn) }) -> QueueConfigurationDeprecated
+newQueueConfigurationDeprecated' :: ({ "Id" :: Maybe (NotificationId), "Event" :: Maybe (Event), "Events" :: Maybe (EventList), "Queue" :: Maybe (QueueArn) } -> { "Id" :: Maybe (NotificationId), "Event" :: Maybe (Event), "Events" :: Maybe (EventList), "Queue" :: Maybe (QueueArn) }) -> QueueConfigurationDeprecated
 ```
 
 Constructs QueueConfigurationDeprecated's fields from required parameters
@@ -8744,7 +8744,7 @@ Encode RecordDelimiter
 
 ``` purescript
 newtype Redirect
-  = Redirect { "HostName" :: NullOrUndefined (HostName), "HttpRedirectCode" :: NullOrUndefined (HttpRedirectCode), "Protocol" :: NullOrUndefined (Protocol), "ReplaceKeyPrefixWith" :: NullOrUndefined (ReplaceKeyPrefixWith), "ReplaceKeyWith" :: NullOrUndefined (ReplaceKeyWith) }
+  = Redirect { "HostName" :: Maybe (HostName), "HttpRedirectCode" :: Maybe (HttpRedirectCode), "Protocol" :: Maybe (Protocol), "ReplaceKeyPrefixWith" :: Maybe (ReplaceKeyPrefixWith), "ReplaceKeyWith" :: Maybe (ReplaceKeyWith) }
 ```
 
 ##### Instances
@@ -8767,7 +8767,7 @@ Constructs Redirect from required parameters
 #### `newRedirect'`
 
 ``` purescript
-newRedirect' :: ({ "HostName" :: NullOrUndefined (HostName), "HttpRedirectCode" :: NullOrUndefined (HttpRedirectCode), "Protocol" :: NullOrUndefined (Protocol), "ReplaceKeyPrefixWith" :: NullOrUndefined (ReplaceKeyPrefixWith), "ReplaceKeyWith" :: NullOrUndefined (ReplaceKeyWith) } -> { "HostName" :: NullOrUndefined (HostName), "HttpRedirectCode" :: NullOrUndefined (HttpRedirectCode), "Protocol" :: NullOrUndefined (Protocol), "ReplaceKeyPrefixWith" :: NullOrUndefined (ReplaceKeyPrefixWith), "ReplaceKeyWith" :: NullOrUndefined (ReplaceKeyWith) }) -> Redirect
+newRedirect' :: ({ "HostName" :: Maybe (HostName), "HttpRedirectCode" :: Maybe (HttpRedirectCode), "Protocol" :: Maybe (Protocol), "ReplaceKeyPrefixWith" :: Maybe (ReplaceKeyPrefixWith), "ReplaceKeyWith" :: Maybe (ReplaceKeyWith) } -> { "HostName" :: Maybe (HostName), "HttpRedirectCode" :: Maybe (HttpRedirectCode), "Protocol" :: Maybe (Protocol), "ReplaceKeyPrefixWith" :: Maybe (ReplaceKeyPrefixWith), "ReplaceKeyWith" :: Maybe (ReplaceKeyWith) }) -> Redirect
 ```
 
 Constructs Redirect's fields from required parameters
@@ -8776,7 +8776,7 @@ Constructs Redirect's fields from required parameters
 
 ``` purescript
 newtype RedirectAllRequestsTo
-  = RedirectAllRequestsTo { "HostName" :: HostName, "Protocol" :: NullOrUndefined (Protocol) }
+  = RedirectAllRequestsTo { "HostName" :: HostName, "Protocol" :: Maybe (Protocol) }
 ```
 
 ##### Instances
@@ -8799,7 +8799,7 @@ Constructs RedirectAllRequestsTo from required parameters
 #### `newRedirectAllRequestsTo'`
 
 ``` purescript
-newRedirectAllRequestsTo' :: HostName -> ({ "HostName" :: HostName, "Protocol" :: NullOrUndefined (Protocol) } -> { "HostName" :: HostName, "Protocol" :: NullOrUndefined (Protocol) }) -> RedirectAllRequestsTo
+newRedirectAllRequestsTo' :: HostName -> ({ "HostName" :: HostName, "Protocol" :: Maybe (Protocol) } -> { "HostName" :: HostName, "Protocol" :: Maybe (Protocol) }) -> RedirectAllRequestsTo
 ```
 
 Constructs RedirectAllRequestsTo's fields from required parameters
@@ -8890,7 +8890,7 @@ Constructs ReplicationConfiguration's fields from required parameters
 
 ``` purescript
 newtype ReplicationRule
-  = ReplicationRule { "ID" :: NullOrUndefined (ID), "Prefix" :: Prefix, "Status" :: ReplicationRuleStatus, "SourceSelectionCriteria" :: NullOrUndefined (SourceSelectionCriteria), "Destination" :: Destination }
+  = ReplicationRule { "ID" :: Maybe (ID), "Prefix" :: Prefix, "Status" :: ReplicationRuleStatus, "SourceSelectionCriteria" :: Maybe (SourceSelectionCriteria), "Destination" :: Destination }
 ```
 
 Container for information about a particular replication rule.
@@ -8915,7 +8915,7 @@ Constructs ReplicationRule from required parameters
 #### `newReplicationRule'`
 
 ``` purescript
-newReplicationRule' :: Destination -> Prefix -> ReplicationRuleStatus -> ({ "ID" :: NullOrUndefined (ID), "Prefix" :: Prefix, "Status" :: ReplicationRuleStatus, "SourceSelectionCriteria" :: NullOrUndefined (SourceSelectionCriteria), "Destination" :: Destination } -> { "ID" :: NullOrUndefined (ID), "Prefix" :: Prefix, "Status" :: ReplicationRuleStatus, "SourceSelectionCriteria" :: NullOrUndefined (SourceSelectionCriteria), "Destination" :: Destination }) -> ReplicationRule
+newReplicationRule' :: Destination -> Prefix -> ReplicationRuleStatus -> ({ "ID" :: Maybe (ID), "Prefix" :: Prefix, "Status" :: ReplicationRuleStatus, "SourceSelectionCriteria" :: Maybe (SourceSelectionCriteria), "Destination" :: Destination } -> { "ID" :: Maybe (ID), "Prefix" :: Prefix, "Status" :: ReplicationRuleStatus, "SourceSelectionCriteria" :: Maybe (SourceSelectionCriteria), "Destination" :: Destination }) -> ReplicationRule
 ```
 
 Constructs ReplicationRule's fields from required parameters
@@ -9152,7 +9152,7 @@ Encode Restore
 
 ``` purescript
 newtype RestoreObjectOutput
-  = RestoreObjectOutput { "RequestCharged" :: NullOrUndefined (RequestCharged), "RestoreOutputPath" :: NullOrUndefined (RestoreOutputPath) }
+  = RestoreObjectOutput { "RequestCharged" :: Maybe (RequestCharged), "RestoreOutputPath" :: Maybe (RestoreOutputPath) }
 ```
 
 ##### Instances
@@ -9175,7 +9175,7 @@ Constructs RestoreObjectOutput from required parameters
 #### `newRestoreObjectOutput'`
 
 ``` purescript
-newRestoreObjectOutput' :: ({ "RequestCharged" :: NullOrUndefined (RequestCharged), "RestoreOutputPath" :: NullOrUndefined (RestoreOutputPath) } -> { "RequestCharged" :: NullOrUndefined (RequestCharged), "RestoreOutputPath" :: NullOrUndefined (RestoreOutputPath) }) -> RestoreObjectOutput
+newRestoreObjectOutput' :: ({ "RequestCharged" :: Maybe (RequestCharged), "RestoreOutputPath" :: Maybe (RestoreOutputPath) } -> { "RequestCharged" :: Maybe (RequestCharged), "RestoreOutputPath" :: Maybe (RestoreOutputPath) }) -> RestoreObjectOutput
 ```
 
 Constructs RestoreObjectOutput's fields from required parameters
@@ -9184,7 +9184,7 @@ Constructs RestoreObjectOutput's fields from required parameters
 
 ``` purescript
 newtype RestoreObjectRequest
-  = RestoreObjectRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "RestoreRequest" :: NullOrUndefined (RestoreRequest), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = RestoreObjectRequest { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "RestoreRequest" :: Maybe (RestoreRequest), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -9207,7 +9207,7 @@ Constructs RestoreObjectRequest from required parameters
 #### `newRestoreObjectRequest'`
 
 ``` purescript
-newRestoreObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "RestoreRequest" :: NullOrUndefined (RestoreRequest), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: NullOrUndefined (ObjectVersionId), "RestoreRequest" :: NullOrUndefined (RestoreRequest), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> RestoreObjectRequest
+newRestoreObjectRequest' :: BucketName -> ObjectKey -> ({ "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "RestoreRequest" :: Maybe (RestoreRequest), "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "Key" :: ObjectKey, "VersionId" :: Maybe (ObjectVersionId), "RestoreRequest" :: Maybe (RestoreRequest), "RequestPayer" :: Maybe (RequestPayer) }) -> RestoreObjectRequest
 ```
 
 Constructs RestoreObjectRequest's fields from required parameters
@@ -9232,7 +9232,7 @@ Encode RestoreOutputPath
 
 ``` purescript
 newtype RestoreRequest
-  = RestoreRequest { "Days" :: NullOrUndefined (Days), "GlacierJobParameters" :: NullOrUndefined (GlacierJobParameters), "Type" :: NullOrUndefined (RestoreRequestType), "Tier" :: NullOrUndefined (Tier), "Description" :: NullOrUndefined (Description), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) }
+  = RestoreRequest { "Days" :: Maybe (Days), "GlacierJobParameters" :: Maybe (GlacierJobParameters), "Type" :: Maybe (RestoreRequestType), "Tier" :: Maybe (Tier), "Description" :: Maybe (Description), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) }
 ```
 
 Container for restore job parameters.
@@ -9257,7 +9257,7 @@ Constructs RestoreRequest from required parameters
 #### `newRestoreRequest'`
 
 ``` purescript
-newRestoreRequest' :: ({ "Days" :: NullOrUndefined (Days), "GlacierJobParameters" :: NullOrUndefined (GlacierJobParameters), "Type" :: NullOrUndefined (RestoreRequestType), "Tier" :: NullOrUndefined (Tier), "Description" :: NullOrUndefined (Description), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) } -> { "Days" :: NullOrUndefined (Days), "GlacierJobParameters" :: NullOrUndefined (GlacierJobParameters), "Type" :: NullOrUndefined (RestoreRequestType), "Tier" :: NullOrUndefined (Tier), "Description" :: NullOrUndefined (Description), "SelectParameters" :: NullOrUndefined (SelectParameters), "OutputLocation" :: NullOrUndefined (OutputLocation) }) -> RestoreRequest
+newRestoreRequest' :: ({ "Days" :: Maybe (Days), "GlacierJobParameters" :: Maybe (GlacierJobParameters), "Type" :: Maybe (RestoreRequestType), "Tier" :: Maybe (Tier), "Description" :: Maybe (Description), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) } -> { "Days" :: Maybe (Days), "GlacierJobParameters" :: Maybe (GlacierJobParameters), "Type" :: Maybe (RestoreRequestType), "Tier" :: Maybe (Tier), "Description" :: Maybe (Description), "SelectParameters" :: Maybe (SelectParameters), "OutputLocation" :: Maybe (OutputLocation) }) -> RestoreRequest
 ```
 
 Constructs RestoreRequest's fields from required parameters
@@ -9298,7 +9298,7 @@ Encode Role
 
 ``` purescript
 newtype RoutingRule
-  = RoutingRule { "Condition" :: NullOrUndefined (Condition), "Redirect" :: Redirect }
+  = RoutingRule { "Condition" :: Maybe (Condition), "Redirect" :: Redirect }
 ```
 
 ##### Instances
@@ -9321,7 +9321,7 @@ Constructs RoutingRule from required parameters
 #### `newRoutingRule'`
 
 ``` purescript
-newRoutingRule' :: Redirect -> ({ "Condition" :: NullOrUndefined (Condition), "Redirect" :: Redirect } -> { "Condition" :: NullOrUndefined (Condition), "Redirect" :: Redirect }) -> RoutingRule
+newRoutingRule' :: Redirect -> ({ "Condition" :: Maybe (Condition), "Redirect" :: Redirect } -> { "Condition" :: Maybe (Condition), "Redirect" :: Redirect }) -> RoutingRule
 ```
 
 Constructs RoutingRule's fields from required parameters
@@ -9346,7 +9346,7 @@ Encode RoutingRules
 
 ``` purescript
 newtype Rule
-  = Rule { "Expiration" :: NullOrUndefined (LifecycleExpiration), "ID" :: NullOrUndefined (ID), "Prefix" :: Prefix, "Status" :: ExpirationStatus, "Transition" :: NullOrUndefined (Transition), "NoncurrentVersionTransition" :: NullOrUndefined (NoncurrentVersionTransition), "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) }
+  = Rule { "Expiration" :: Maybe (LifecycleExpiration), "ID" :: Maybe (ID), "Prefix" :: Prefix, "Status" :: ExpirationStatus, "Transition" :: Maybe (Transition), "NoncurrentVersionTransition" :: Maybe (NoncurrentVersionTransition), "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) }
 ```
 
 ##### Instances
@@ -9369,7 +9369,7 @@ Constructs Rule from required parameters
 #### `newRule'`
 
 ``` purescript
-newRule' :: Prefix -> ExpirationStatus -> ({ "Expiration" :: NullOrUndefined (LifecycleExpiration), "ID" :: NullOrUndefined (ID), "Prefix" :: Prefix, "Status" :: ExpirationStatus, "Transition" :: NullOrUndefined (Transition), "NoncurrentVersionTransition" :: NullOrUndefined (NoncurrentVersionTransition), "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) } -> { "Expiration" :: NullOrUndefined (LifecycleExpiration), "ID" :: NullOrUndefined (ID), "Prefix" :: Prefix, "Status" :: ExpirationStatus, "Transition" :: NullOrUndefined (Transition), "NoncurrentVersionTransition" :: NullOrUndefined (NoncurrentVersionTransition), "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) }) -> Rule
+newRule' :: Prefix -> ExpirationStatus -> ({ "Expiration" :: Maybe (LifecycleExpiration), "ID" :: Maybe (ID), "Prefix" :: Prefix, "Status" :: ExpirationStatus, "Transition" :: Maybe (Transition), "NoncurrentVersionTransition" :: Maybe (NoncurrentVersionTransition), "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) } -> { "Expiration" :: Maybe (LifecycleExpiration), "ID" :: Maybe (ID), "Prefix" :: Prefix, "Status" :: ExpirationStatus, "Transition" :: Maybe (Transition), "NoncurrentVersionTransition" :: Maybe (NoncurrentVersionTransition), "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration), "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) }) -> Rule
 ```
 
 Constructs Rule's fields from required parameters
@@ -9394,7 +9394,7 @@ Encode Rules
 
 ``` purescript
 newtype S3KeyFilter
-  = S3KeyFilter { "FilterRules" :: NullOrUndefined (FilterRuleList) }
+  = S3KeyFilter { "FilterRules" :: Maybe (FilterRuleList) }
 ```
 
 Container for object key name prefix and suffix filtering rules.
@@ -9419,7 +9419,7 @@ Constructs S3KeyFilter from required parameters
 #### `newS3KeyFilter'`
 
 ``` purescript
-newS3KeyFilter' :: ({ "FilterRules" :: NullOrUndefined (FilterRuleList) } -> { "FilterRules" :: NullOrUndefined (FilterRuleList) }) -> S3KeyFilter
+newS3KeyFilter' :: ({ "FilterRules" :: Maybe (FilterRuleList) } -> { "FilterRules" :: Maybe (FilterRuleList) }) -> S3KeyFilter
 ```
 
 Constructs S3KeyFilter's fields from required parameters
@@ -9428,7 +9428,7 @@ Constructs S3KeyFilter's fields from required parameters
 
 ``` purescript
 newtype S3Location
-  = S3Location { "BucketName" :: BucketName, "Prefix" :: LocationPrefix, "Encryption" :: NullOrUndefined (Encryption), "CannedACL" :: NullOrUndefined (ObjectCannedACL), "AccessControlList" :: NullOrUndefined (Grants), "Tagging" :: NullOrUndefined (Tagging), "UserMetadata" :: NullOrUndefined (UserMetadata), "StorageClass" :: NullOrUndefined (StorageClass) }
+  = S3Location { "BucketName" :: BucketName, "Prefix" :: LocationPrefix, "Encryption" :: Maybe (Encryption), "CannedACL" :: Maybe (ObjectCannedACL), "AccessControlList" :: Maybe (Grants), "Tagging" :: Maybe (Tagging), "UserMetadata" :: Maybe (UserMetadata), "StorageClass" :: Maybe (StorageClass) }
 ```
 
 Describes an S3 location that will receive the results of the restore request.
@@ -9453,7 +9453,7 @@ Constructs S3Location from required parameters
 #### `newS3Location'`
 
 ``` purescript
-newS3Location' :: BucketName -> LocationPrefix -> ({ "BucketName" :: BucketName, "Prefix" :: LocationPrefix, "Encryption" :: NullOrUndefined (Encryption), "CannedACL" :: NullOrUndefined (ObjectCannedACL), "AccessControlList" :: NullOrUndefined (Grants), "Tagging" :: NullOrUndefined (Tagging), "UserMetadata" :: NullOrUndefined (UserMetadata), "StorageClass" :: NullOrUndefined (StorageClass) } -> { "BucketName" :: BucketName, "Prefix" :: LocationPrefix, "Encryption" :: NullOrUndefined (Encryption), "CannedACL" :: NullOrUndefined (ObjectCannedACL), "AccessControlList" :: NullOrUndefined (Grants), "Tagging" :: NullOrUndefined (Tagging), "UserMetadata" :: NullOrUndefined (UserMetadata), "StorageClass" :: NullOrUndefined (StorageClass) }) -> S3Location
+newS3Location' :: BucketName -> LocationPrefix -> ({ "BucketName" :: BucketName, "Prefix" :: LocationPrefix, "Encryption" :: Maybe (Encryption), "CannedACL" :: Maybe (ObjectCannedACL), "AccessControlList" :: Maybe (Grants), "Tagging" :: Maybe (Tagging), "UserMetadata" :: Maybe (UserMetadata), "StorageClass" :: Maybe (StorageClass) } -> { "BucketName" :: BucketName, "Prefix" :: LocationPrefix, "Encryption" :: Maybe (Encryption), "CannedACL" :: Maybe (ObjectCannedACL), "AccessControlList" :: Maybe (Grants), "Tagging" :: Maybe (Tagging), "UserMetadata" :: Maybe (UserMetadata), "StorageClass" :: Maybe (StorageClass) }) -> S3Location
 ```
 
 Constructs S3Location's fields from required parameters
@@ -9628,7 +9628,7 @@ Encode ServerSideEncryption
 
 ``` purescript
 newtype ServerSideEncryptionByDefault
-  = ServerSideEncryptionByDefault { "SSEAlgorithm" :: ServerSideEncryption, "KMSMasterKeyID" :: NullOrUndefined (SSEKMSKeyId) }
+  = ServerSideEncryptionByDefault { "SSEAlgorithm" :: ServerSideEncryption, "KMSMasterKeyID" :: Maybe (SSEKMSKeyId) }
 ```
 
 Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify any server-side encryption, this default encryption will be applied.
@@ -9653,7 +9653,7 @@ Constructs ServerSideEncryptionByDefault from required parameters
 #### `newServerSideEncryptionByDefault'`
 
 ``` purescript
-newServerSideEncryptionByDefault' :: ServerSideEncryption -> ({ "SSEAlgorithm" :: ServerSideEncryption, "KMSMasterKeyID" :: NullOrUndefined (SSEKMSKeyId) } -> { "SSEAlgorithm" :: ServerSideEncryption, "KMSMasterKeyID" :: NullOrUndefined (SSEKMSKeyId) }) -> ServerSideEncryptionByDefault
+newServerSideEncryptionByDefault' :: ServerSideEncryption -> ({ "SSEAlgorithm" :: ServerSideEncryption, "KMSMasterKeyID" :: Maybe (SSEKMSKeyId) } -> { "SSEAlgorithm" :: ServerSideEncryption, "KMSMasterKeyID" :: Maybe (SSEKMSKeyId) }) -> ServerSideEncryptionByDefault
 ```
 
 Constructs ServerSideEncryptionByDefault's fields from required parameters
@@ -9696,7 +9696,7 @@ Constructs ServerSideEncryptionConfiguration's fields from required parameters
 
 ``` purescript
 newtype ServerSideEncryptionRule
-  = ServerSideEncryptionRule { "ApplyServerSideEncryptionByDefault" :: NullOrUndefined (ServerSideEncryptionByDefault) }
+  = ServerSideEncryptionRule { "ApplyServerSideEncryptionByDefault" :: Maybe (ServerSideEncryptionByDefault) }
 ```
 
 Container for information about a particular server-side encryption configuration rule.
@@ -9721,7 +9721,7 @@ Constructs ServerSideEncryptionRule from required parameters
 #### `newServerSideEncryptionRule'`
 
 ``` purescript
-newServerSideEncryptionRule' :: ({ "ApplyServerSideEncryptionByDefault" :: NullOrUndefined (ServerSideEncryptionByDefault) } -> { "ApplyServerSideEncryptionByDefault" :: NullOrUndefined (ServerSideEncryptionByDefault) }) -> ServerSideEncryptionRule
+newServerSideEncryptionRule' :: ({ "ApplyServerSideEncryptionByDefault" :: Maybe (ServerSideEncryptionByDefault) } -> { "ApplyServerSideEncryptionByDefault" :: Maybe (ServerSideEncryptionByDefault) }) -> ServerSideEncryptionRule
 ```
 
 Constructs ServerSideEncryptionRule's fields from required parameters
@@ -9762,7 +9762,7 @@ Encode Size
 
 ``` purescript
 newtype SourceSelectionCriteria
-  = SourceSelectionCriteria { "SseKmsEncryptedObjects" :: NullOrUndefined (SseKmsEncryptedObjects) }
+  = SourceSelectionCriteria { "SseKmsEncryptedObjects" :: Maybe (SseKmsEncryptedObjects) }
 ```
 
 Container for filters that define which source objects should be replicated.
@@ -9787,7 +9787,7 @@ Constructs SourceSelectionCriteria from required parameters
 #### `newSourceSelectionCriteria'`
 
 ``` purescript
-newSourceSelectionCriteria' :: ({ "SseKmsEncryptedObjects" :: NullOrUndefined (SseKmsEncryptedObjects) } -> { "SseKmsEncryptedObjects" :: NullOrUndefined (SseKmsEncryptedObjects) }) -> SourceSelectionCriteria
+newSourceSelectionCriteria' :: ({ "SseKmsEncryptedObjects" :: Maybe (SseKmsEncryptedObjects) } -> { "SseKmsEncryptedObjects" :: Maybe (SseKmsEncryptedObjects) }) -> SourceSelectionCriteria
 ```
 
 Constructs SourceSelectionCriteria's fields from required parameters
@@ -9878,7 +9878,7 @@ Encode StorageClass
 
 ``` purescript
 newtype StorageClassAnalysis
-  = StorageClassAnalysis { "DataExport" :: NullOrUndefined (StorageClassAnalysisDataExport) }
+  = StorageClassAnalysis { "DataExport" :: Maybe (StorageClassAnalysisDataExport) }
 ```
 
 ##### Instances
@@ -9901,7 +9901,7 @@ Constructs StorageClassAnalysis from required parameters
 #### `newStorageClassAnalysis'`
 
 ``` purescript
-newStorageClassAnalysis' :: ({ "DataExport" :: NullOrUndefined (StorageClassAnalysisDataExport) } -> { "DataExport" :: NullOrUndefined (StorageClassAnalysisDataExport) }) -> StorageClassAnalysis
+newStorageClassAnalysis' :: ({ "DataExport" :: Maybe (StorageClassAnalysisDataExport) } -> { "DataExport" :: Maybe (StorageClassAnalysisDataExport) }) -> StorageClassAnalysis
 ```
 
 Constructs StorageClassAnalysis's fields from required parameters
@@ -10118,7 +10118,7 @@ Encode TargetBucket
 
 ``` purescript
 newtype TargetGrant
-  = TargetGrant { "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (BucketLogsPermission) }
+  = TargetGrant { "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (BucketLogsPermission) }
 ```
 
 ##### Instances
@@ -10141,7 +10141,7 @@ Constructs TargetGrant from required parameters
 #### `newTargetGrant'`
 
 ``` purescript
-newTargetGrant' :: ({ "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (BucketLogsPermission) } -> { "Grantee" :: NullOrUndefined (Grantee), "Permission" :: NullOrUndefined (BucketLogsPermission) }) -> TargetGrant
+newTargetGrant' :: ({ "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (BucketLogsPermission) } -> { "Grantee" :: Maybe (Grantee), "Permission" :: Maybe (BucketLogsPermission) }) -> TargetGrant
 ```
 
 Constructs TargetGrant's fields from required parameters
@@ -10230,7 +10230,7 @@ Encode TopicArn
 
 ``` purescript
 newtype TopicConfiguration
-  = TopicConfiguration { "Id" :: NullOrUndefined (NotificationId), "TopicArn" :: TopicArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) }
+  = TopicConfiguration { "Id" :: Maybe (NotificationId), "TopicArn" :: TopicArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) }
 ```
 
 Container for specifying the configuration when you want Amazon S3 to publish events to an Amazon Simple Notification Service (Amazon SNS) topic.
@@ -10255,7 +10255,7 @@ Constructs TopicConfiguration from required parameters
 #### `newTopicConfiguration'`
 
 ``` purescript
-newTopicConfiguration' :: EventList -> TopicArn -> ({ "Id" :: NullOrUndefined (NotificationId), "TopicArn" :: TopicArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } -> { "Id" :: NullOrUndefined (NotificationId), "TopicArn" :: TopicArn, "Events" :: EventList, "Filter" :: NullOrUndefined (NotificationConfigurationFilter) }) -> TopicConfiguration
+newTopicConfiguration' :: EventList -> TopicArn -> ({ "Id" :: Maybe (NotificationId), "TopicArn" :: TopicArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) } -> { "Id" :: Maybe (NotificationId), "TopicArn" :: TopicArn, "Events" :: EventList, "Filter" :: Maybe (NotificationConfigurationFilter) }) -> TopicConfiguration
 ```
 
 Constructs TopicConfiguration's fields from required parameters
@@ -10264,7 +10264,7 @@ Constructs TopicConfiguration's fields from required parameters
 
 ``` purescript
 newtype TopicConfigurationDeprecated
-  = TopicConfigurationDeprecated { "Id" :: NullOrUndefined (NotificationId), "Events" :: NullOrUndefined (EventList), "Event" :: NullOrUndefined (Event), "Topic" :: NullOrUndefined (TopicArn) }
+  = TopicConfigurationDeprecated { "Id" :: Maybe (NotificationId), "Events" :: Maybe (EventList), "Event" :: Maybe (Event), "Topic" :: Maybe (TopicArn) }
 ```
 
 ##### Instances
@@ -10287,7 +10287,7 @@ Constructs TopicConfigurationDeprecated from required parameters
 #### `newTopicConfigurationDeprecated'`
 
 ``` purescript
-newTopicConfigurationDeprecated' :: ({ "Id" :: NullOrUndefined (NotificationId), "Events" :: NullOrUndefined (EventList), "Event" :: NullOrUndefined (Event), "Topic" :: NullOrUndefined (TopicArn) } -> { "Id" :: NullOrUndefined (NotificationId), "Events" :: NullOrUndefined (EventList), "Event" :: NullOrUndefined (Event), "Topic" :: NullOrUndefined (TopicArn) }) -> TopicConfigurationDeprecated
+newTopicConfigurationDeprecated' :: ({ "Id" :: Maybe (NotificationId), "Events" :: Maybe (EventList), "Event" :: Maybe (Event), "Topic" :: Maybe (TopicArn) } -> { "Id" :: Maybe (NotificationId), "Events" :: Maybe (EventList), "Event" :: Maybe (Event), "Topic" :: Maybe (TopicArn) }) -> TopicConfigurationDeprecated
 ```
 
 Constructs TopicConfigurationDeprecated's fields from required parameters
@@ -10312,7 +10312,7 @@ Encode TopicConfigurationList
 
 ``` purescript
 newtype Transition
-  = Transition { "Date" :: NullOrUndefined (Date), "Days" :: NullOrUndefined (Days), "StorageClass" :: NullOrUndefined (TransitionStorageClass) }
+  = Transition { "Date" :: Maybe (Date), "Days" :: Maybe (Days), "StorageClass" :: Maybe (TransitionStorageClass) }
 ```
 
 ##### Instances
@@ -10335,7 +10335,7 @@ Constructs Transition from required parameters
 #### `newTransition'`
 
 ``` purescript
-newTransition' :: ({ "Date" :: NullOrUndefined (Date), "Days" :: NullOrUndefined (Days), "StorageClass" :: NullOrUndefined (TransitionStorageClass) } -> { "Date" :: NullOrUndefined (Date), "Days" :: NullOrUndefined (Days), "StorageClass" :: NullOrUndefined (TransitionStorageClass) }) -> Transition
+newTransition' :: ({ "Date" :: Maybe (Date), "Days" :: Maybe (Days), "StorageClass" :: Maybe (TransitionStorageClass) } -> { "Date" :: Maybe (Date), "Days" :: Maybe (Days), "StorageClass" :: Maybe (TransitionStorageClass) }) -> Transition
 ```
 
 Constructs Transition's fields from required parameters
@@ -10424,7 +10424,7 @@ Encode UploadIdMarker
 
 ``` purescript
 newtype UploadPartCopyOutput
-  = UploadPartCopyOutput { "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId), "CopyPartResult" :: NullOrUndefined (CopyPartResult), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = UploadPartCopyOutput { "CopySourceVersionId" :: Maybe (CopySourceVersionId), "CopyPartResult" :: Maybe (CopyPartResult), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -10447,7 +10447,7 @@ Constructs UploadPartCopyOutput from required parameters
 #### `newUploadPartCopyOutput'`
 
 ``` purescript
-newUploadPartCopyOutput' :: ({ "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId), "CopyPartResult" :: NullOrUndefined (CopyPartResult), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId), "CopyPartResult" :: NullOrUndefined (CopyPartResult), "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> UploadPartCopyOutput
+newUploadPartCopyOutput' :: ({ "CopySourceVersionId" :: Maybe (CopySourceVersionId), "CopyPartResult" :: Maybe (CopyPartResult), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) } -> { "CopySourceVersionId" :: Maybe (CopySourceVersionId), "CopyPartResult" :: Maybe (CopyPartResult), "ServerSideEncryption" :: Maybe (ServerSideEncryption), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }) -> UploadPartCopyOutput
 ```
 
 Constructs UploadPartCopyOutput's fields from required parameters
@@ -10456,7 +10456,7 @@ Constructs UploadPartCopyOutput's fields from required parameters
 
 ``` purescript
 newtype UploadPartCopyRequest
-  = UploadPartCopyRequest { "Bucket" :: BucketName, "CopySource" :: CopySource, "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch), "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince), "CopySourceRange" :: NullOrUndefined (CopySourceRange), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = UploadPartCopyRequest { "Bucket" :: BucketName, "CopySource" :: CopySource, "CopySourceIfMatch" :: Maybe (CopySourceIfMatch), "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince), "CopySourceRange" :: Maybe (CopySourceRange), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -10479,7 +10479,7 @@ Constructs UploadPartCopyRequest from required parameters
 #### `newUploadPartCopyRequest'`
 
 ``` purescript
-newUploadPartCopyRequest' :: BucketName -> CopySource -> ObjectKey -> PartNumber -> MultipartUploadId -> ({ "Bucket" :: BucketName, "CopySource" :: CopySource, "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch), "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince), "CopySourceRange" :: NullOrUndefined (CopySourceRange), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Bucket" :: BucketName, "CopySource" :: CopySource, "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch), "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince), "CopySourceRange" :: NullOrUndefined (CopySourceRange), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> UploadPartCopyRequest
+newUploadPartCopyRequest' :: BucketName -> CopySource -> ObjectKey -> PartNumber -> MultipartUploadId -> ({ "Bucket" :: BucketName, "CopySource" :: CopySource, "CopySourceIfMatch" :: Maybe (CopySourceIfMatch), "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince), "CopySourceRange" :: Maybe (CopySourceRange), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer) } -> { "Bucket" :: BucketName, "CopySource" :: CopySource, "CopySourceIfMatch" :: Maybe (CopySourceIfMatch), "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince), "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch), "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince), "CopySourceRange" :: Maybe (CopySourceRange), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm), "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey), "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer) }) -> UploadPartCopyRequest
 ```
 
 Constructs UploadPartCopyRequest's fields from required parameters
@@ -10488,7 +10488,7 @@ Constructs UploadPartCopyRequest's fields from required parameters
 
 ``` purescript
 newtype UploadPartOutput
-  = UploadPartOutput { "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "ETag" :: NullOrUndefined (ETag), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }
+  = UploadPartOutput { "ServerSideEncryption" :: Maybe (ServerSideEncryption), "ETag" :: Maybe (ETag), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }
 ```
 
 ##### Instances
@@ -10511,7 +10511,7 @@ Constructs UploadPartOutput from required parameters
 #### `newUploadPartOutput'`
 
 ``` purescript
-newUploadPartOutput' :: ({ "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "ETag" :: NullOrUndefined (ETag), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) } -> { "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption), "ETag" :: NullOrUndefined (ETag), "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId), "RequestCharged" :: NullOrUndefined (RequestCharged) }) -> UploadPartOutput
+newUploadPartOutput' :: ({ "ServerSideEncryption" :: Maybe (ServerSideEncryption), "ETag" :: Maybe (ETag), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) } -> { "ServerSideEncryption" :: Maybe (ServerSideEncryption), "ETag" :: Maybe (ETag), "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "SSEKMSKeyId" :: Maybe (SSEKMSKeyId), "RequestCharged" :: Maybe (RequestCharged) }) -> UploadPartOutput
 ```
 
 Constructs UploadPartOutput's fields from required parameters
@@ -10520,7 +10520,7 @@ Constructs UploadPartOutput's fields from required parameters
 
 ``` purescript
 newtype UploadPartRequest
-  = UploadPartRequest { "Body" :: NullOrUndefined (Body), "Bucket" :: BucketName, "ContentLength" :: NullOrUndefined (ContentLength), "ContentMD5" :: NullOrUndefined (ContentMD5), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer) }
+  = UploadPartRequest { "Body" :: Maybe (Body), "Bucket" :: BucketName, "ContentLength" :: Maybe (ContentLength), "ContentMD5" :: Maybe (ContentMD5), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer) }
 ```
 
 ##### Instances
@@ -10543,7 +10543,7 @@ Constructs UploadPartRequest from required parameters
 #### `newUploadPartRequest'`
 
 ``` purescript
-newUploadPartRequest' :: BucketName -> ObjectKey -> PartNumber -> MultipartUploadId -> ({ "Body" :: NullOrUndefined (Body), "Bucket" :: BucketName, "ContentLength" :: NullOrUndefined (ContentLength), "ContentMD5" :: NullOrUndefined (ContentMD5), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer) } -> { "Body" :: NullOrUndefined (Body), "Bucket" :: BucketName, "ContentLength" :: NullOrUndefined (ContentLength), "ContentMD5" :: NullOrUndefined (ContentMD5), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm), "SSECustomerKey" :: NullOrUndefined (SSECustomerKey), "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5), "RequestPayer" :: NullOrUndefined (RequestPayer) }) -> UploadPartRequest
+newUploadPartRequest' :: BucketName -> ObjectKey -> PartNumber -> MultipartUploadId -> ({ "Body" :: Maybe (Body), "Bucket" :: BucketName, "ContentLength" :: Maybe (ContentLength), "ContentMD5" :: Maybe (ContentMD5), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer) } -> { "Body" :: Maybe (Body), "Bucket" :: BucketName, "ContentLength" :: Maybe (ContentLength), "ContentMD5" :: Maybe (ContentMD5), "Key" :: ObjectKey, "PartNumber" :: PartNumber, "UploadId" :: MultipartUploadId, "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm), "SSECustomerKey" :: Maybe (SSECustomerKey), "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5), "RequestPayer" :: Maybe (RequestPayer) }) -> UploadPartRequest
 ```
 
 Constructs UploadPartRequest's fields from required parameters
@@ -10600,7 +10600,7 @@ Encode VersionIdMarker
 
 ``` purescript
 newtype VersioningConfiguration
-  = VersioningConfiguration { "MFADelete" :: NullOrUndefined (MFADelete), "Status" :: NullOrUndefined (BucketVersioningStatus) }
+  = VersioningConfiguration { "MFADelete" :: Maybe (MFADelete), "Status" :: Maybe (BucketVersioningStatus) }
 ```
 
 ##### Instances
@@ -10623,7 +10623,7 @@ Constructs VersioningConfiguration from required parameters
 #### `newVersioningConfiguration'`
 
 ``` purescript
-newVersioningConfiguration' :: ({ "MFADelete" :: NullOrUndefined (MFADelete), "Status" :: NullOrUndefined (BucketVersioningStatus) } -> { "MFADelete" :: NullOrUndefined (MFADelete), "Status" :: NullOrUndefined (BucketVersioningStatus) }) -> VersioningConfiguration
+newVersioningConfiguration' :: ({ "MFADelete" :: Maybe (MFADelete), "Status" :: Maybe (BucketVersioningStatus) } -> { "MFADelete" :: Maybe (MFADelete), "Status" :: Maybe (BucketVersioningStatus) }) -> VersioningConfiguration
 ```
 
 Constructs VersioningConfiguration's fields from required parameters
@@ -10632,7 +10632,7 @@ Constructs VersioningConfiguration's fields from required parameters
 
 ``` purescript
 newtype WebsiteConfiguration
-  = WebsiteConfiguration { "ErrorDocument" :: NullOrUndefined (ErrorDocument), "IndexDocument" :: NullOrUndefined (IndexDocument), "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo), "RoutingRules" :: NullOrUndefined (RoutingRules) }
+  = WebsiteConfiguration { "ErrorDocument" :: Maybe (ErrorDocument), "IndexDocument" :: Maybe (IndexDocument), "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo), "RoutingRules" :: Maybe (RoutingRules) }
 ```
 
 ##### Instances
@@ -10655,7 +10655,7 @@ Constructs WebsiteConfiguration from required parameters
 #### `newWebsiteConfiguration'`
 
 ``` purescript
-newWebsiteConfiguration' :: ({ "ErrorDocument" :: NullOrUndefined (ErrorDocument), "IndexDocument" :: NullOrUndefined (IndexDocument), "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo), "RoutingRules" :: NullOrUndefined (RoutingRules) } -> { "ErrorDocument" :: NullOrUndefined (ErrorDocument), "IndexDocument" :: NullOrUndefined (IndexDocument), "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo), "RoutingRules" :: NullOrUndefined (RoutingRules) }) -> WebsiteConfiguration
+newWebsiteConfiguration' :: ({ "ErrorDocument" :: Maybe (ErrorDocument), "IndexDocument" :: Maybe (IndexDocument), "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo), "RoutingRules" :: Maybe (RoutingRules) } -> { "ErrorDocument" :: Maybe (ErrorDocument), "IndexDocument" :: Maybe (IndexDocument), "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo), "RoutingRules" :: Maybe (RoutingRules) }) -> WebsiteConfiguration
 ```
 
 Constructs WebsiteConfiguration's fields from required parameters

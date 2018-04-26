@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -29,7 +28,7 @@ instance encodeAbortDate :: Encode AbortDate where encode = genericEncode option
 
 -- | Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload.
 newtype AbortIncompleteMultipartUpload = AbortIncompleteMultipartUpload 
-  { "DaysAfterInitiation" :: NullOrUndefined (DaysAfterInitiation)
+  { "DaysAfterInitiation" :: Maybe (DaysAfterInitiation)
   }
 derive instance newtypeAbortIncompleteMultipartUpload :: Newtype AbortIncompleteMultipartUpload _
 derive instance repGenericAbortIncompleteMultipartUpload :: Generic AbortIncompleteMultipartUpload _
@@ -39,17 +38,17 @@ instance encodeAbortIncompleteMultipartUpload :: Encode AbortIncompleteMultipart
 
 -- | Constructs AbortIncompleteMultipartUpload from required parameters
 newAbortIncompleteMultipartUpload :: AbortIncompleteMultipartUpload
-newAbortIncompleteMultipartUpload  = AbortIncompleteMultipartUpload { "DaysAfterInitiation": (NullOrUndefined Nothing) }
+newAbortIncompleteMultipartUpload  = AbortIncompleteMultipartUpload { "DaysAfterInitiation": Nothing }
 
 -- | Constructs AbortIncompleteMultipartUpload's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAbortIncompleteMultipartUpload' :: ( { "DaysAfterInitiation" :: NullOrUndefined (DaysAfterInitiation) } -> {"DaysAfterInitiation" :: NullOrUndefined (DaysAfterInitiation) } ) -> AbortIncompleteMultipartUpload
-newAbortIncompleteMultipartUpload'  customize = (AbortIncompleteMultipartUpload <<< customize) { "DaysAfterInitiation": (NullOrUndefined Nothing) }
+newAbortIncompleteMultipartUpload' :: ( { "DaysAfterInitiation" :: Maybe (DaysAfterInitiation) } -> {"DaysAfterInitiation" :: Maybe (DaysAfterInitiation) } ) -> AbortIncompleteMultipartUpload
+newAbortIncompleteMultipartUpload'  customize = (AbortIncompleteMultipartUpload <<< customize) { "DaysAfterInitiation": Nothing }
 
 
 
 newtype AbortMultipartUploadOutput = AbortMultipartUploadOutput 
-  { "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeAbortMultipartUploadOutput :: Newtype AbortMultipartUploadOutput _
 derive instance repGenericAbortMultipartUploadOutput :: Generic AbortMultipartUploadOutput _
@@ -59,12 +58,12 @@ instance encodeAbortMultipartUploadOutput :: Encode AbortMultipartUploadOutput w
 
 -- | Constructs AbortMultipartUploadOutput from required parameters
 newAbortMultipartUploadOutput :: AbortMultipartUploadOutput
-newAbortMultipartUploadOutput  = AbortMultipartUploadOutput { "RequestCharged": (NullOrUndefined Nothing) }
+newAbortMultipartUploadOutput  = AbortMultipartUploadOutput { "RequestCharged": Nothing }
 
 -- | Constructs AbortMultipartUploadOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAbortMultipartUploadOutput' :: ( { "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> AbortMultipartUploadOutput
-newAbortMultipartUploadOutput'  customize = (AbortMultipartUploadOutput <<< customize) { "RequestCharged": (NullOrUndefined Nothing) }
+newAbortMultipartUploadOutput' :: ( { "RequestCharged" :: Maybe (RequestCharged) } -> {"RequestCharged" :: Maybe (RequestCharged) } ) -> AbortMultipartUploadOutput
+newAbortMultipartUploadOutput'  customize = (AbortMultipartUploadOutput <<< customize) { "RequestCharged": Nothing }
 
 
 
@@ -72,7 +71,7 @@ newtype AbortMultipartUploadRequest = AbortMultipartUploadRequest
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
   , "UploadId" :: (MultipartUploadId)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeAbortMultipartUploadRequest :: Newtype AbortMultipartUploadRequest _
 derive instance repGenericAbortMultipartUploadRequest :: Generic AbortMultipartUploadRequest _
@@ -82,12 +81,12 @@ instance encodeAbortMultipartUploadRequest :: Encode AbortMultipartUploadRequest
 
 -- | Constructs AbortMultipartUploadRequest from required parameters
 newAbortMultipartUploadRequest :: BucketName -> ObjectKey -> MultipartUploadId -> AbortMultipartUploadRequest
-newAbortMultipartUploadRequest _Bucket _Key _UploadId = AbortMultipartUploadRequest { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "RequestPayer": (NullOrUndefined Nothing) }
+newAbortMultipartUploadRequest _Bucket _Key _UploadId = AbortMultipartUploadRequest { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "RequestPayer": Nothing }
 
 -- | Constructs AbortMultipartUploadRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAbortMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> AbortMultipartUploadRequest
-newAbortMultipartUploadRequest' _Bucket _Key _UploadId customize = (AbortMultipartUploadRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "RequestPayer": (NullOrUndefined Nothing) }
+newAbortMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: Maybe (RequestPayer) } ) -> AbortMultipartUploadRequest
+newAbortMultipartUploadRequest' _Bucket _Key _UploadId customize = (AbortMultipartUploadRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "RequestPayer": Nothing }
 
 
 
@@ -101,7 +100,7 @@ instance encodeAbortRuleId :: Encode AbortRuleId where encode = genericEncode op
 
 
 newtype AccelerateConfiguration = AccelerateConfiguration 
-  { "Status" :: NullOrUndefined (BucketAccelerateStatus)
+  { "Status" :: Maybe (BucketAccelerateStatus)
   }
 derive instance newtypeAccelerateConfiguration :: Newtype AccelerateConfiguration _
 derive instance repGenericAccelerateConfiguration :: Generic AccelerateConfiguration _
@@ -111,12 +110,12 @@ instance encodeAccelerateConfiguration :: Encode AccelerateConfiguration where e
 
 -- | Constructs AccelerateConfiguration from required parameters
 newAccelerateConfiguration :: AccelerateConfiguration
-newAccelerateConfiguration  = AccelerateConfiguration { "Status": (NullOrUndefined Nothing) }
+newAccelerateConfiguration  = AccelerateConfiguration { "Status": Nothing }
 
 -- | Constructs AccelerateConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccelerateConfiguration' :: ( { "Status" :: NullOrUndefined (BucketAccelerateStatus) } -> {"Status" :: NullOrUndefined (BucketAccelerateStatus) } ) -> AccelerateConfiguration
-newAccelerateConfiguration'  customize = (AccelerateConfiguration <<< customize) { "Status": (NullOrUndefined Nothing) }
+newAccelerateConfiguration' :: ( { "Status" :: Maybe (BucketAccelerateStatus) } -> {"Status" :: Maybe (BucketAccelerateStatus) } ) -> AccelerateConfiguration
+newAccelerateConfiguration'  customize = (AccelerateConfiguration <<< customize) { "Status": Nothing }
 
 
 
@@ -130,8 +129,8 @@ instance encodeAcceptRanges :: Encode AcceptRanges where encode = genericEncode 
 
 
 newtype AccessControlPolicy = AccessControlPolicy 
-  { "Grants" :: NullOrUndefined (Grants)
-  , "Owner" :: NullOrUndefined (Owner)
+  { "Grants" :: Maybe (Grants)
+  , "Owner" :: Maybe (Owner)
   }
 derive instance newtypeAccessControlPolicy :: Newtype AccessControlPolicy _
 derive instance repGenericAccessControlPolicy :: Generic AccessControlPolicy _
@@ -141,12 +140,12 @@ instance encodeAccessControlPolicy :: Encode AccessControlPolicy where encode = 
 
 -- | Constructs AccessControlPolicy from required parameters
 newAccessControlPolicy :: AccessControlPolicy
-newAccessControlPolicy  = AccessControlPolicy { "Grants": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing) }
+newAccessControlPolicy  = AccessControlPolicy { "Grants": Nothing, "Owner": Nothing }
 
 -- | Constructs AccessControlPolicy's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccessControlPolicy' :: ( { "Grants" :: NullOrUndefined (Grants) , "Owner" :: NullOrUndefined (Owner) } -> {"Grants" :: NullOrUndefined (Grants) , "Owner" :: NullOrUndefined (Owner) } ) -> AccessControlPolicy
-newAccessControlPolicy'  customize = (AccessControlPolicy <<< customize) { "Grants": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing) }
+newAccessControlPolicy' :: ( { "Grants" :: Maybe (Grants) , "Owner" :: Maybe (Owner) } -> {"Grants" :: Maybe (Grants) , "Owner" :: Maybe (Owner) } ) -> AccessControlPolicy
+newAccessControlPolicy'  customize = (AccessControlPolicy <<< customize) { "Grants": Nothing, "Owner": Nothing }
 
 
 
@@ -235,8 +234,8 @@ instance encodeAllowedOrigins :: Encode AllowedOrigins where encode = genericEnc
 
 
 newtype AnalyticsAndOperator = AnalyticsAndOperator 
-  { "Prefix" :: NullOrUndefined (Prefix)
-  , "Tags" :: NullOrUndefined (TagSet)
+  { "Prefix" :: Maybe (Prefix)
+  , "Tags" :: Maybe (TagSet)
   }
 derive instance newtypeAnalyticsAndOperator :: Newtype AnalyticsAndOperator _
 derive instance repGenericAnalyticsAndOperator :: Generic AnalyticsAndOperator _
@@ -246,18 +245,18 @@ instance encodeAnalyticsAndOperator :: Encode AnalyticsAndOperator where encode 
 
 -- | Constructs AnalyticsAndOperator from required parameters
 newAnalyticsAndOperator :: AnalyticsAndOperator
-newAnalyticsAndOperator  = AnalyticsAndOperator { "Prefix": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newAnalyticsAndOperator  = AnalyticsAndOperator { "Prefix": Nothing, "Tags": Nothing }
 
 -- | Constructs AnalyticsAndOperator's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAnalyticsAndOperator' :: ( { "Prefix" :: NullOrUndefined (Prefix) , "Tags" :: NullOrUndefined (TagSet) } -> {"Prefix" :: NullOrUndefined (Prefix) , "Tags" :: NullOrUndefined (TagSet) } ) -> AnalyticsAndOperator
-newAnalyticsAndOperator'  customize = (AnalyticsAndOperator <<< customize) { "Prefix": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newAnalyticsAndOperator' :: ( { "Prefix" :: Maybe (Prefix) , "Tags" :: Maybe (TagSet) } -> {"Prefix" :: Maybe (Prefix) , "Tags" :: Maybe (TagSet) } ) -> AnalyticsAndOperator
+newAnalyticsAndOperator'  customize = (AnalyticsAndOperator <<< customize) { "Prefix": Nothing, "Tags": Nothing }
 
 
 
 newtype AnalyticsConfiguration = AnalyticsConfiguration 
   { "Id" :: (AnalyticsId)
-  , "Filter" :: NullOrUndefined (AnalyticsFilter)
+  , "Filter" :: Maybe (AnalyticsFilter)
   , "StorageClassAnalysis" :: (StorageClassAnalysis)
   }
 derive instance newtypeAnalyticsConfiguration :: Newtype AnalyticsConfiguration _
@@ -268,12 +267,12 @@ instance encodeAnalyticsConfiguration :: Encode AnalyticsConfiguration where enc
 
 -- | Constructs AnalyticsConfiguration from required parameters
 newAnalyticsConfiguration :: AnalyticsId -> StorageClassAnalysis -> AnalyticsConfiguration
-newAnalyticsConfiguration _Id _StorageClassAnalysis = AnalyticsConfiguration { "Id": _Id, "StorageClassAnalysis": _StorageClassAnalysis, "Filter": (NullOrUndefined Nothing) }
+newAnalyticsConfiguration _Id _StorageClassAnalysis = AnalyticsConfiguration { "Id": _Id, "StorageClassAnalysis": _StorageClassAnalysis, "Filter": Nothing }
 
 -- | Constructs AnalyticsConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAnalyticsConfiguration' :: AnalyticsId -> StorageClassAnalysis -> ( { "Id" :: (AnalyticsId) , "Filter" :: NullOrUndefined (AnalyticsFilter) , "StorageClassAnalysis" :: (StorageClassAnalysis) } -> {"Id" :: (AnalyticsId) , "Filter" :: NullOrUndefined (AnalyticsFilter) , "StorageClassAnalysis" :: (StorageClassAnalysis) } ) -> AnalyticsConfiguration
-newAnalyticsConfiguration' _Id _StorageClassAnalysis customize = (AnalyticsConfiguration <<< customize) { "Id": _Id, "StorageClassAnalysis": _StorageClassAnalysis, "Filter": (NullOrUndefined Nothing) }
+newAnalyticsConfiguration' :: AnalyticsId -> StorageClassAnalysis -> ( { "Id" :: (AnalyticsId) , "Filter" :: Maybe (AnalyticsFilter) , "StorageClassAnalysis" :: (StorageClassAnalysis) } -> {"Id" :: (AnalyticsId) , "Filter" :: Maybe (AnalyticsFilter) , "StorageClassAnalysis" :: (StorageClassAnalysis) } ) -> AnalyticsConfiguration
+newAnalyticsConfiguration' _Id _StorageClassAnalysis customize = (AnalyticsConfiguration <<< customize) { "Id": _Id, "StorageClassAnalysis": _StorageClassAnalysis, "Filter": Nothing }
 
 
 
@@ -307,9 +306,9 @@ newAnalyticsExportDestination' _S3BucketDestination customize = (AnalyticsExport
 
 
 newtype AnalyticsFilter = AnalyticsFilter 
-  { "Prefix" :: NullOrUndefined (Prefix)
-  , "Tag" :: NullOrUndefined (Tag)
-  , "And" :: NullOrUndefined (AnalyticsAndOperator)
+  { "Prefix" :: Maybe (Prefix)
+  , "Tag" :: Maybe (Tag)
+  , "And" :: Maybe (AnalyticsAndOperator)
   }
 derive instance newtypeAnalyticsFilter :: Newtype AnalyticsFilter _
 derive instance repGenericAnalyticsFilter :: Generic AnalyticsFilter _
@@ -319,12 +318,12 @@ instance encodeAnalyticsFilter :: Encode AnalyticsFilter where encode = genericE
 
 -- | Constructs AnalyticsFilter from required parameters
 newAnalyticsFilter :: AnalyticsFilter
-newAnalyticsFilter  = AnalyticsFilter { "And": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newAnalyticsFilter  = AnalyticsFilter { "And": Nothing, "Prefix": Nothing, "Tag": Nothing }
 
 -- | Constructs AnalyticsFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAnalyticsFilter' :: ( { "Prefix" :: NullOrUndefined (Prefix) , "Tag" :: NullOrUndefined (Tag) , "And" :: NullOrUndefined (AnalyticsAndOperator) } -> {"Prefix" :: NullOrUndefined (Prefix) , "Tag" :: NullOrUndefined (Tag) , "And" :: NullOrUndefined (AnalyticsAndOperator) } ) -> AnalyticsFilter
-newAnalyticsFilter'  customize = (AnalyticsFilter <<< customize) { "And": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newAnalyticsFilter' :: ( { "Prefix" :: Maybe (Prefix) , "Tag" :: Maybe (Tag) , "And" :: Maybe (AnalyticsAndOperator) } -> {"Prefix" :: Maybe (Prefix) , "Tag" :: Maybe (Tag) , "And" :: Maybe (AnalyticsAndOperator) } ) -> AnalyticsFilter
+newAnalyticsFilter'  customize = (AnalyticsFilter <<< customize) { "And": Nothing, "Prefix": Nothing, "Tag": Nothing }
 
 
 
@@ -339,9 +338,9 @@ instance encodeAnalyticsId :: Encode AnalyticsId where encode = genericEncode op
 
 newtype AnalyticsS3BucketDestination = AnalyticsS3BucketDestination 
   { "Format" :: (AnalyticsS3ExportFileFormat)
-  , "BucketAccountId" :: NullOrUndefined (AccountId)
+  , "BucketAccountId" :: Maybe (AccountId)
   , "Bucket" :: (BucketName)
-  , "Prefix" :: NullOrUndefined (Prefix)
+  , "Prefix" :: Maybe (Prefix)
   }
 derive instance newtypeAnalyticsS3BucketDestination :: Newtype AnalyticsS3BucketDestination _
 derive instance repGenericAnalyticsS3BucketDestination :: Generic AnalyticsS3BucketDestination _
@@ -351,12 +350,12 @@ instance encodeAnalyticsS3BucketDestination :: Encode AnalyticsS3BucketDestinati
 
 -- | Constructs AnalyticsS3BucketDestination from required parameters
 newAnalyticsS3BucketDestination :: BucketName -> AnalyticsS3ExportFileFormat -> AnalyticsS3BucketDestination
-newAnalyticsS3BucketDestination _Bucket _Format = AnalyticsS3BucketDestination { "Bucket": _Bucket, "Format": _Format, "BucketAccountId": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newAnalyticsS3BucketDestination _Bucket _Format = AnalyticsS3BucketDestination { "Bucket": _Bucket, "Format": _Format, "BucketAccountId": Nothing, "Prefix": Nothing }
 
 -- | Constructs AnalyticsS3BucketDestination's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAnalyticsS3BucketDestination' :: BucketName -> AnalyticsS3ExportFileFormat -> ( { "Format" :: (AnalyticsS3ExportFileFormat) , "BucketAccountId" :: NullOrUndefined (AccountId) , "Bucket" :: (BucketName) , "Prefix" :: NullOrUndefined (Prefix) } -> {"Format" :: (AnalyticsS3ExportFileFormat) , "BucketAccountId" :: NullOrUndefined (AccountId) , "Bucket" :: (BucketName) , "Prefix" :: NullOrUndefined (Prefix) } ) -> AnalyticsS3BucketDestination
-newAnalyticsS3BucketDestination' _Bucket _Format customize = (AnalyticsS3BucketDestination <<< customize) { "Bucket": _Bucket, "Format": _Format, "BucketAccountId": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newAnalyticsS3BucketDestination' :: BucketName -> AnalyticsS3ExportFileFormat -> ( { "Format" :: (AnalyticsS3ExportFileFormat) , "BucketAccountId" :: Maybe (AccountId) , "Bucket" :: (BucketName) , "Prefix" :: Maybe (Prefix) } -> {"Format" :: (AnalyticsS3ExportFileFormat) , "BucketAccountId" :: Maybe (AccountId) , "Bucket" :: (BucketName) , "Prefix" :: Maybe (Prefix) } ) -> AnalyticsS3BucketDestination
+newAnalyticsS3BucketDestination' _Bucket _Format customize = (AnalyticsS3BucketDestination <<< customize) { "Bucket": _Bucket, "Format": _Format, "BucketAccountId": Nothing, "Prefix": Nothing }
 
 
 
@@ -379,8 +378,8 @@ instance encodeBody :: Encode Body where encode = genericEncode options
 
 
 newtype Bucket = Bucket 
-  { "Name" :: NullOrUndefined (BucketName)
-  , "CreationDate" :: NullOrUndefined (CreationDate)
+  { "Name" :: Maybe (BucketName)
+  , "CreationDate" :: Maybe (CreationDate)
   }
 derive instance newtypeBucket :: Newtype Bucket _
 derive instance repGenericBucket :: Generic Bucket _
@@ -390,12 +389,12 @@ instance encodeBucket :: Encode Bucket where encode = genericEncode options
 
 -- | Constructs Bucket from required parameters
 newBucket :: Bucket
-newBucket  = Bucket { "CreationDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newBucket  = Bucket { "CreationDate": Nothing, "Name": Nothing }
 
 -- | Constructs Bucket's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBucket' :: ( { "Name" :: NullOrUndefined (BucketName) , "CreationDate" :: NullOrUndefined (CreationDate) } -> {"Name" :: NullOrUndefined (BucketName) , "CreationDate" :: NullOrUndefined (CreationDate) } ) -> Bucket
-newBucket'  customize = (Bucket <<< customize) { "CreationDate": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newBucket' :: ( { "Name" :: Maybe (BucketName) , "CreationDate" :: Maybe (CreationDate) } -> {"Name" :: Maybe (BucketName) , "CreationDate" :: Maybe (CreationDate) } ) -> Bucket
+newBucket'  customize = (Bucket <<< customize) { "CreationDate": Nothing, "Name": Nothing }
 
 
 
@@ -466,7 +465,7 @@ instance encodeBucketLocationConstraint :: Encode BucketLocationConstraint where
 
 
 newtype BucketLoggingStatus = BucketLoggingStatus 
-  { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled)
+  { "LoggingEnabled" :: Maybe (LoggingEnabled)
   }
 derive instance newtypeBucketLoggingStatus :: Newtype BucketLoggingStatus _
 derive instance repGenericBucketLoggingStatus :: Generic BucketLoggingStatus _
@@ -476,12 +475,12 @@ instance encodeBucketLoggingStatus :: Encode BucketLoggingStatus where encode = 
 
 -- | Constructs BucketLoggingStatus from required parameters
 newBucketLoggingStatus :: BucketLoggingStatus
-newBucketLoggingStatus  = BucketLoggingStatus { "LoggingEnabled": (NullOrUndefined Nothing) }
+newBucketLoggingStatus  = BucketLoggingStatus { "LoggingEnabled": Nothing }
 
 -- | Constructs BucketLoggingStatus's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBucketLoggingStatus' :: ( { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) } -> {"LoggingEnabled" :: NullOrUndefined (LoggingEnabled) } ) -> BucketLoggingStatus
-newBucketLoggingStatus'  customize = (BucketLoggingStatus <<< customize) { "LoggingEnabled": (NullOrUndefined Nothing) }
+newBucketLoggingStatus' :: ( { "LoggingEnabled" :: Maybe (LoggingEnabled) } -> {"LoggingEnabled" :: Maybe (LoggingEnabled) } ) -> BucketLoggingStatus
+newBucketLoggingStatus'  customize = (BucketLoggingStatus <<< customize) { "LoggingEnabled": Nothing }
 
 
 
@@ -542,11 +541,11 @@ newCORSConfiguration' _CORSRules customize = (CORSConfiguration <<< customize) {
 
 
 newtype CORSRule = CORSRule 
-  { "AllowedHeaders" :: NullOrUndefined (AllowedHeaders)
+  { "AllowedHeaders" :: Maybe (AllowedHeaders)
   , "AllowedMethods" :: (AllowedMethods)
   , "AllowedOrigins" :: (AllowedOrigins)
-  , "ExposeHeaders" :: NullOrUndefined (ExposeHeaders)
-  , "MaxAgeSeconds" :: NullOrUndefined (MaxAgeSeconds)
+  , "ExposeHeaders" :: Maybe (ExposeHeaders)
+  , "MaxAgeSeconds" :: Maybe (MaxAgeSeconds)
   }
 derive instance newtypeCORSRule :: Newtype CORSRule _
 derive instance repGenericCORSRule :: Generic CORSRule _
@@ -556,12 +555,12 @@ instance encodeCORSRule :: Encode CORSRule where encode = genericEncode options
 
 -- | Constructs CORSRule from required parameters
 newCORSRule :: AllowedMethods -> AllowedOrigins -> CORSRule
-newCORSRule _AllowedMethods _AllowedOrigins = CORSRule { "AllowedMethods": _AllowedMethods, "AllowedOrigins": _AllowedOrigins, "AllowedHeaders": (NullOrUndefined Nothing), "ExposeHeaders": (NullOrUndefined Nothing), "MaxAgeSeconds": (NullOrUndefined Nothing) }
+newCORSRule _AllowedMethods _AllowedOrigins = CORSRule { "AllowedMethods": _AllowedMethods, "AllowedOrigins": _AllowedOrigins, "AllowedHeaders": Nothing, "ExposeHeaders": Nothing, "MaxAgeSeconds": Nothing }
 
 -- | Constructs CORSRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCORSRule' :: AllowedMethods -> AllowedOrigins -> ( { "AllowedHeaders" :: NullOrUndefined (AllowedHeaders) , "AllowedMethods" :: (AllowedMethods) , "AllowedOrigins" :: (AllowedOrigins) , "ExposeHeaders" :: NullOrUndefined (ExposeHeaders) , "MaxAgeSeconds" :: NullOrUndefined (MaxAgeSeconds) } -> {"AllowedHeaders" :: NullOrUndefined (AllowedHeaders) , "AllowedMethods" :: (AllowedMethods) , "AllowedOrigins" :: (AllowedOrigins) , "ExposeHeaders" :: NullOrUndefined (ExposeHeaders) , "MaxAgeSeconds" :: NullOrUndefined (MaxAgeSeconds) } ) -> CORSRule
-newCORSRule' _AllowedMethods _AllowedOrigins customize = (CORSRule <<< customize) { "AllowedMethods": _AllowedMethods, "AllowedOrigins": _AllowedOrigins, "AllowedHeaders": (NullOrUndefined Nothing), "ExposeHeaders": (NullOrUndefined Nothing), "MaxAgeSeconds": (NullOrUndefined Nothing) }
+newCORSRule' :: AllowedMethods -> AllowedOrigins -> ( { "AllowedHeaders" :: Maybe (AllowedHeaders) , "AllowedMethods" :: (AllowedMethods) , "AllowedOrigins" :: (AllowedOrigins) , "ExposeHeaders" :: Maybe (ExposeHeaders) , "MaxAgeSeconds" :: Maybe (MaxAgeSeconds) } -> {"AllowedHeaders" :: Maybe (AllowedHeaders) , "AllowedMethods" :: (AllowedMethods) , "AllowedOrigins" :: (AllowedOrigins) , "ExposeHeaders" :: Maybe (ExposeHeaders) , "MaxAgeSeconds" :: Maybe (MaxAgeSeconds) } ) -> CORSRule
+newCORSRule' _AllowedMethods _AllowedOrigins customize = (CORSRule <<< customize) { "AllowedMethods": _AllowedMethods, "AllowedOrigins": _AllowedOrigins, "AllowedHeaders": Nothing, "ExposeHeaders": Nothing, "MaxAgeSeconds": Nothing }
 
 
 
@@ -576,12 +575,12 @@ instance encodeCORSRules :: Encode CORSRules where encode = genericEncode option
 
 -- | Describes how a CSV-formatted input object is formatted.
 newtype CSVInput = CSVInput 
-  { "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo)
-  , "Comments" :: NullOrUndefined (Comments)
-  , "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter)
-  , "RecordDelimiter" :: NullOrUndefined (RecordDelimiter)
-  , "FieldDelimiter" :: NullOrUndefined (FieldDelimiter)
-  , "QuoteCharacter" :: NullOrUndefined (QuoteCharacter)
+  { "FileHeaderInfo" :: Maybe (FileHeaderInfo)
+  , "Comments" :: Maybe (Comments)
+  , "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter)
+  , "RecordDelimiter" :: Maybe (RecordDelimiter)
+  , "FieldDelimiter" :: Maybe (FieldDelimiter)
+  , "QuoteCharacter" :: Maybe (QuoteCharacter)
   }
 derive instance newtypeCSVInput :: Newtype CSVInput _
 derive instance repGenericCSVInput :: Generic CSVInput _
@@ -591,22 +590,22 @@ instance encodeCSVInput :: Encode CSVInput where encode = genericEncode options
 
 -- | Constructs CSVInput from required parameters
 newCSVInput :: CSVInput
-newCSVInput  = CSVInput { "Comments": (NullOrUndefined Nothing), "FieldDelimiter": (NullOrUndefined Nothing), "FileHeaderInfo": (NullOrUndefined Nothing), "QuoteCharacter": (NullOrUndefined Nothing), "QuoteEscapeCharacter": (NullOrUndefined Nothing), "RecordDelimiter": (NullOrUndefined Nothing) }
+newCSVInput  = CSVInput { "Comments": Nothing, "FieldDelimiter": Nothing, "FileHeaderInfo": Nothing, "QuoteCharacter": Nothing, "QuoteEscapeCharacter": Nothing, "RecordDelimiter": Nothing }
 
 -- | Constructs CSVInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCSVInput' :: ( { "FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo) , "Comments" :: NullOrUndefined (Comments) , "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter) , "RecordDelimiter" :: NullOrUndefined (RecordDelimiter) , "FieldDelimiter" :: NullOrUndefined (FieldDelimiter) , "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) } -> {"FileHeaderInfo" :: NullOrUndefined (FileHeaderInfo) , "Comments" :: NullOrUndefined (Comments) , "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter) , "RecordDelimiter" :: NullOrUndefined (RecordDelimiter) , "FieldDelimiter" :: NullOrUndefined (FieldDelimiter) , "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) } ) -> CSVInput
-newCSVInput'  customize = (CSVInput <<< customize) { "Comments": (NullOrUndefined Nothing), "FieldDelimiter": (NullOrUndefined Nothing), "FileHeaderInfo": (NullOrUndefined Nothing), "QuoteCharacter": (NullOrUndefined Nothing), "QuoteEscapeCharacter": (NullOrUndefined Nothing), "RecordDelimiter": (NullOrUndefined Nothing) }
+newCSVInput' :: ( { "FileHeaderInfo" :: Maybe (FileHeaderInfo) , "Comments" :: Maybe (Comments) , "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter) , "RecordDelimiter" :: Maybe (RecordDelimiter) , "FieldDelimiter" :: Maybe (FieldDelimiter) , "QuoteCharacter" :: Maybe (QuoteCharacter) } -> {"FileHeaderInfo" :: Maybe (FileHeaderInfo) , "Comments" :: Maybe (Comments) , "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter) , "RecordDelimiter" :: Maybe (RecordDelimiter) , "FieldDelimiter" :: Maybe (FieldDelimiter) , "QuoteCharacter" :: Maybe (QuoteCharacter) } ) -> CSVInput
+newCSVInput'  customize = (CSVInput <<< customize) { "Comments": Nothing, "FieldDelimiter": Nothing, "FileHeaderInfo": Nothing, "QuoteCharacter": Nothing, "QuoteEscapeCharacter": Nothing, "RecordDelimiter": Nothing }
 
 
 
 -- | Describes how CSV-formatted results are formatted.
 newtype CSVOutput = CSVOutput 
-  { "QuoteFields" :: NullOrUndefined (QuoteFields)
-  , "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter)
-  , "RecordDelimiter" :: NullOrUndefined (RecordDelimiter)
-  , "FieldDelimiter" :: NullOrUndefined (FieldDelimiter)
-  , "QuoteCharacter" :: NullOrUndefined (QuoteCharacter)
+  { "QuoteFields" :: Maybe (QuoteFields)
+  , "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter)
+  , "RecordDelimiter" :: Maybe (RecordDelimiter)
+  , "FieldDelimiter" :: Maybe (FieldDelimiter)
+  , "QuoteCharacter" :: Maybe (QuoteCharacter)
   }
 derive instance newtypeCSVOutput :: Newtype CSVOutput _
 derive instance repGenericCSVOutput :: Generic CSVOutput _
@@ -616,12 +615,12 @@ instance encodeCSVOutput :: Encode CSVOutput where encode = genericEncode option
 
 -- | Constructs CSVOutput from required parameters
 newCSVOutput :: CSVOutput
-newCSVOutput  = CSVOutput { "FieldDelimiter": (NullOrUndefined Nothing), "QuoteCharacter": (NullOrUndefined Nothing), "QuoteEscapeCharacter": (NullOrUndefined Nothing), "QuoteFields": (NullOrUndefined Nothing), "RecordDelimiter": (NullOrUndefined Nothing) }
+newCSVOutput  = CSVOutput { "FieldDelimiter": Nothing, "QuoteCharacter": Nothing, "QuoteEscapeCharacter": Nothing, "QuoteFields": Nothing, "RecordDelimiter": Nothing }
 
 -- | Constructs CSVOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCSVOutput' :: ( { "QuoteFields" :: NullOrUndefined (QuoteFields) , "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter) , "RecordDelimiter" :: NullOrUndefined (RecordDelimiter) , "FieldDelimiter" :: NullOrUndefined (FieldDelimiter) , "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) } -> {"QuoteFields" :: NullOrUndefined (QuoteFields) , "QuoteEscapeCharacter" :: NullOrUndefined (QuoteEscapeCharacter) , "RecordDelimiter" :: NullOrUndefined (RecordDelimiter) , "FieldDelimiter" :: NullOrUndefined (FieldDelimiter) , "QuoteCharacter" :: NullOrUndefined (QuoteCharacter) } ) -> CSVOutput
-newCSVOutput'  customize = (CSVOutput <<< customize) { "FieldDelimiter": (NullOrUndefined Nothing), "QuoteCharacter": (NullOrUndefined Nothing), "QuoteEscapeCharacter": (NullOrUndefined Nothing), "QuoteFields": (NullOrUndefined Nothing), "RecordDelimiter": (NullOrUndefined Nothing) }
+newCSVOutput' :: ( { "QuoteFields" :: Maybe (QuoteFields) , "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter) , "RecordDelimiter" :: Maybe (RecordDelimiter) , "FieldDelimiter" :: Maybe (FieldDelimiter) , "QuoteCharacter" :: Maybe (QuoteCharacter) } -> {"QuoteFields" :: Maybe (QuoteFields) , "QuoteEscapeCharacter" :: Maybe (QuoteEscapeCharacter) , "RecordDelimiter" :: Maybe (RecordDelimiter) , "FieldDelimiter" :: Maybe (FieldDelimiter) , "QuoteCharacter" :: Maybe (QuoteCharacter) } ) -> CSVOutput
+newCSVOutput'  customize = (CSVOutput <<< customize) { "FieldDelimiter": Nothing, "QuoteCharacter": Nothing, "QuoteEscapeCharacter": Nothing, "QuoteFields": Nothing, "RecordDelimiter": Nothing }
 
 
 
@@ -644,11 +643,11 @@ instance encodeCloudFunction :: Encode CloudFunction where encode = genericEncod
 
 
 newtype CloudFunctionConfiguration = CloudFunctionConfiguration 
-  { "Id" :: NullOrUndefined (NotificationId)
-  , "Event" :: NullOrUndefined (Event)
-  , "Events" :: NullOrUndefined (EventList)
-  , "CloudFunction" :: NullOrUndefined (CloudFunction)
-  , "InvocationRole" :: NullOrUndefined (CloudFunctionInvocationRole)
+  { "Id" :: Maybe (NotificationId)
+  , "Event" :: Maybe (Event)
+  , "Events" :: Maybe (EventList)
+  , "CloudFunction" :: Maybe (CloudFunction)
+  , "InvocationRole" :: Maybe (CloudFunctionInvocationRole)
   }
 derive instance newtypeCloudFunctionConfiguration :: Newtype CloudFunctionConfiguration _
 derive instance repGenericCloudFunctionConfiguration :: Generic CloudFunctionConfiguration _
@@ -658,12 +657,12 @@ instance encodeCloudFunctionConfiguration :: Encode CloudFunctionConfiguration w
 
 -- | Constructs CloudFunctionConfiguration from required parameters
 newCloudFunctionConfiguration :: CloudFunctionConfiguration
-newCloudFunctionConfiguration  = CloudFunctionConfiguration { "CloudFunction": (NullOrUndefined Nothing), "Event": (NullOrUndefined Nothing), "Events": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InvocationRole": (NullOrUndefined Nothing) }
+newCloudFunctionConfiguration  = CloudFunctionConfiguration { "CloudFunction": Nothing, "Event": Nothing, "Events": Nothing, "Id": Nothing, "InvocationRole": Nothing }
 
 -- | Constructs CloudFunctionConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCloudFunctionConfiguration' :: ( { "Id" :: NullOrUndefined (NotificationId) , "Event" :: NullOrUndefined (Event) , "Events" :: NullOrUndefined (EventList) , "CloudFunction" :: NullOrUndefined (CloudFunction) , "InvocationRole" :: NullOrUndefined (CloudFunctionInvocationRole) } -> {"Id" :: NullOrUndefined (NotificationId) , "Event" :: NullOrUndefined (Event) , "Events" :: NullOrUndefined (EventList) , "CloudFunction" :: NullOrUndefined (CloudFunction) , "InvocationRole" :: NullOrUndefined (CloudFunctionInvocationRole) } ) -> CloudFunctionConfiguration
-newCloudFunctionConfiguration'  customize = (CloudFunctionConfiguration <<< customize) { "CloudFunction": (NullOrUndefined Nothing), "Event": (NullOrUndefined Nothing), "Events": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "InvocationRole": (NullOrUndefined Nothing) }
+newCloudFunctionConfiguration' :: ( { "Id" :: Maybe (NotificationId) , "Event" :: Maybe (Event) , "Events" :: Maybe (EventList) , "CloudFunction" :: Maybe (CloudFunction) , "InvocationRole" :: Maybe (CloudFunctionInvocationRole) } -> {"Id" :: Maybe (NotificationId) , "Event" :: Maybe (Event) , "Events" :: Maybe (EventList) , "CloudFunction" :: Maybe (CloudFunction) , "InvocationRole" :: Maybe (CloudFunctionInvocationRole) } ) -> CloudFunctionConfiguration
+newCloudFunctionConfiguration'  customize = (CloudFunctionConfiguration <<< customize) { "CloudFunction": Nothing, "Event": Nothing, "Events": Nothing, "Id": Nothing, "InvocationRole": Nothing }
 
 
 
@@ -695,7 +694,7 @@ instance encodeComments :: Encode Comments where encode = genericEncode options
 
 
 newtype CommonPrefix = CommonPrefix 
-  { "Prefix" :: NullOrUndefined (Prefix)
+  { "Prefix" :: Maybe (Prefix)
   }
 derive instance newtypeCommonPrefix :: Newtype CommonPrefix _
 derive instance repGenericCommonPrefix :: Generic CommonPrefix _
@@ -705,12 +704,12 @@ instance encodeCommonPrefix :: Encode CommonPrefix where encode = genericEncode 
 
 -- | Constructs CommonPrefix from required parameters
 newCommonPrefix :: CommonPrefix
-newCommonPrefix  = CommonPrefix { "Prefix": (NullOrUndefined Nothing) }
+newCommonPrefix  = CommonPrefix { "Prefix": Nothing }
 
 -- | Constructs CommonPrefix's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCommonPrefix' :: ( { "Prefix" :: NullOrUndefined (Prefix) } -> {"Prefix" :: NullOrUndefined (Prefix) } ) -> CommonPrefix
-newCommonPrefix'  customize = (CommonPrefix <<< customize) { "Prefix": (NullOrUndefined Nothing) }
+newCommonPrefix' :: ( { "Prefix" :: Maybe (Prefix) } -> {"Prefix" :: Maybe (Prefix) } ) -> CommonPrefix
+newCommonPrefix'  customize = (CommonPrefix <<< customize) { "Prefix": Nothing }
 
 
 
@@ -724,15 +723,15 @@ instance encodeCommonPrefixList :: Encode CommonPrefixList where encode = generi
 
 
 newtype CompleteMultipartUploadOutput = CompleteMultipartUploadOutput 
-  { "Location" :: NullOrUndefined (Location)
-  , "Bucket" :: NullOrUndefined (BucketName)
-  , "Key" :: NullOrUndefined (ObjectKey)
-  , "Expiration" :: NullOrUndefined (Expiration)
-  , "ETag" :: NullOrUndefined (ETag)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "Location" :: Maybe (Location)
+  , "Bucket" :: Maybe (BucketName)
+  , "Key" :: Maybe (ObjectKey)
+  , "Expiration" :: Maybe (Expiration)
+  , "ETag" :: Maybe (ETag)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeCompleteMultipartUploadOutput :: Newtype CompleteMultipartUploadOutput _
 derive instance repGenericCompleteMultipartUploadOutput :: Generic CompleteMultipartUploadOutput _
@@ -742,21 +741,21 @@ instance encodeCompleteMultipartUploadOutput :: Encode CompleteMultipartUploadOu
 
 -- | Constructs CompleteMultipartUploadOutput from required parameters
 newCompleteMultipartUploadOutput :: CompleteMultipartUploadOutput
-newCompleteMultipartUploadOutput  = CompleteMultipartUploadOutput { "Bucket": (NullOrUndefined Nothing), "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "Location": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newCompleteMultipartUploadOutput  = CompleteMultipartUploadOutput { "Bucket": Nothing, "ETag": Nothing, "Expiration": Nothing, "Key": Nothing, "Location": Nothing, "RequestCharged": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "VersionId": Nothing }
 
 -- | Constructs CompleteMultipartUploadOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCompleteMultipartUploadOutput' :: ( { "Location" :: NullOrUndefined (Location) , "Bucket" :: NullOrUndefined (BucketName) , "Key" :: NullOrUndefined (ObjectKey) , "Expiration" :: NullOrUndefined (Expiration) , "ETag" :: NullOrUndefined (ETag) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"Location" :: NullOrUndefined (Location) , "Bucket" :: NullOrUndefined (BucketName) , "Key" :: NullOrUndefined (ObjectKey) , "Expiration" :: NullOrUndefined (Expiration) , "ETag" :: NullOrUndefined (ETag) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> CompleteMultipartUploadOutput
-newCompleteMultipartUploadOutput'  customize = (CompleteMultipartUploadOutput <<< customize) { "Bucket": (NullOrUndefined Nothing), "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "Location": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newCompleteMultipartUploadOutput' :: ( { "Location" :: Maybe (Location) , "Bucket" :: Maybe (BucketName) , "Key" :: Maybe (ObjectKey) , "Expiration" :: Maybe (Expiration) , "ETag" :: Maybe (ETag) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "VersionId" :: Maybe (ObjectVersionId) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } -> {"Location" :: Maybe (Location) , "Bucket" :: Maybe (BucketName) , "Key" :: Maybe (ObjectKey) , "Expiration" :: Maybe (Expiration) , "ETag" :: Maybe (ETag) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "VersionId" :: Maybe (ObjectVersionId) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } ) -> CompleteMultipartUploadOutput
+newCompleteMultipartUploadOutput'  customize = (CompleteMultipartUploadOutput <<< customize) { "Bucket": Nothing, "ETag": Nothing, "Expiration": Nothing, "Key": Nothing, "Location": Nothing, "RequestCharged": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "VersionId": Nothing }
 
 
 
 newtype CompleteMultipartUploadRequest = CompleteMultipartUploadRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "MultipartUpload" :: NullOrUndefined (CompletedMultipartUpload)
+  , "MultipartUpload" :: Maybe (CompletedMultipartUpload)
   , "UploadId" :: (MultipartUploadId)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeCompleteMultipartUploadRequest :: Newtype CompleteMultipartUploadRequest _
 derive instance repGenericCompleteMultipartUploadRequest :: Generic CompleteMultipartUploadRequest _
@@ -766,17 +765,17 @@ instance encodeCompleteMultipartUploadRequest :: Encode CompleteMultipartUploadR
 
 -- | Constructs CompleteMultipartUploadRequest from required parameters
 newCompleteMultipartUploadRequest :: BucketName -> ObjectKey -> MultipartUploadId -> CompleteMultipartUploadRequest
-newCompleteMultipartUploadRequest _Bucket _Key _UploadId = CompleteMultipartUploadRequest { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MultipartUpload": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newCompleteMultipartUploadRequest _Bucket _Key _UploadId = CompleteMultipartUploadRequest { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MultipartUpload": Nothing, "RequestPayer": Nothing }
 
 -- | Constructs CompleteMultipartUploadRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCompleteMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MultipartUpload" :: NullOrUndefined (CompletedMultipartUpload) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MultipartUpload" :: NullOrUndefined (CompletedMultipartUpload) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> CompleteMultipartUploadRequest
-newCompleteMultipartUploadRequest' _Bucket _Key _UploadId customize = (CompleteMultipartUploadRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MultipartUpload": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newCompleteMultipartUploadRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MultipartUpload" :: Maybe (CompletedMultipartUpload) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MultipartUpload" :: Maybe (CompletedMultipartUpload) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: Maybe (RequestPayer) } ) -> CompleteMultipartUploadRequest
+newCompleteMultipartUploadRequest' _Bucket _Key _UploadId customize = (CompleteMultipartUploadRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MultipartUpload": Nothing, "RequestPayer": Nothing }
 
 
 
 newtype CompletedMultipartUpload = CompletedMultipartUpload 
-  { "Parts" :: NullOrUndefined (CompletedPartList)
+  { "Parts" :: Maybe (CompletedPartList)
   }
 derive instance newtypeCompletedMultipartUpload :: Newtype CompletedMultipartUpload _
 derive instance repGenericCompletedMultipartUpload :: Generic CompletedMultipartUpload _
@@ -786,18 +785,18 @@ instance encodeCompletedMultipartUpload :: Encode CompletedMultipartUpload where
 
 -- | Constructs CompletedMultipartUpload from required parameters
 newCompletedMultipartUpload :: CompletedMultipartUpload
-newCompletedMultipartUpload  = CompletedMultipartUpload { "Parts": (NullOrUndefined Nothing) }
+newCompletedMultipartUpload  = CompletedMultipartUpload { "Parts": Nothing }
 
 -- | Constructs CompletedMultipartUpload's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCompletedMultipartUpload' :: ( { "Parts" :: NullOrUndefined (CompletedPartList) } -> {"Parts" :: NullOrUndefined (CompletedPartList) } ) -> CompletedMultipartUpload
-newCompletedMultipartUpload'  customize = (CompletedMultipartUpload <<< customize) { "Parts": (NullOrUndefined Nothing) }
+newCompletedMultipartUpload' :: ( { "Parts" :: Maybe (CompletedPartList) } -> {"Parts" :: Maybe (CompletedPartList) } ) -> CompletedMultipartUpload
+newCompletedMultipartUpload'  customize = (CompletedMultipartUpload <<< customize) { "Parts": Nothing }
 
 
 
 newtype CompletedPart = CompletedPart 
-  { "ETag" :: NullOrUndefined (ETag)
-  , "PartNumber" :: NullOrUndefined (PartNumber)
+  { "ETag" :: Maybe (ETag)
+  , "PartNumber" :: Maybe (PartNumber)
   }
 derive instance newtypeCompletedPart :: Newtype CompletedPart _
 derive instance repGenericCompletedPart :: Generic CompletedPart _
@@ -807,12 +806,12 @@ instance encodeCompletedPart :: Encode CompletedPart where encode = genericEncod
 
 -- | Constructs CompletedPart from required parameters
 newCompletedPart :: CompletedPart
-newCompletedPart  = CompletedPart { "ETag": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing) }
+newCompletedPart  = CompletedPart { "ETag": Nothing, "PartNumber": Nothing }
 
 -- | Constructs CompletedPart's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCompletedPart' :: ( { "ETag" :: NullOrUndefined (ETag) , "PartNumber" :: NullOrUndefined (PartNumber) } -> {"ETag" :: NullOrUndefined (ETag) , "PartNumber" :: NullOrUndefined (PartNumber) } ) -> CompletedPart
-newCompletedPart'  customize = (CompletedPart <<< customize) { "ETag": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing) }
+newCompletedPart' :: ( { "ETag" :: Maybe (ETag) , "PartNumber" :: Maybe (PartNumber) } -> {"ETag" :: Maybe (ETag) , "PartNumber" :: Maybe (PartNumber) } ) -> CompletedPart
+newCompletedPart'  customize = (CompletedPart <<< customize) { "ETag": Nothing, "PartNumber": Nothing }
 
 
 
@@ -826,8 +825,8 @@ instance encodeCompletedPartList :: Encode CompletedPartList where encode = gene
 
 
 newtype Condition = Condition 
-  { "HttpErrorCodeReturnedEquals" :: NullOrUndefined (HttpErrorCodeReturnedEquals)
-  , "KeyPrefixEquals" :: NullOrUndefined (KeyPrefixEquals)
+  { "HttpErrorCodeReturnedEquals" :: Maybe (HttpErrorCodeReturnedEquals)
+  , "KeyPrefixEquals" :: Maybe (KeyPrefixEquals)
   }
 derive instance newtypeCondition :: Newtype Condition _
 derive instance repGenericCondition :: Generic Condition _
@@ -837,12 +836,12 @@ instance encodeCondition :: Encode Condition where encode = genericEncode option
 
 -- | Constructs Condition from required parameters
 newCondition :: Condition
-newCondition  = Condition { "HttpErrorCodeReturnedEquals": (NullOrUndefined Nothing), "KeyPrefixEquals": (NullOrUndefined Nothing) }
+newCondition  = Condition { "HttpErrorCodeReturnedEquals": Nothing, "KeyPrefixEquals": Nothing }
 
 -- | Constructs Condition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCondition' :: ( { "HttpErrorCodeReturnedEquals" :: NullOrUndefined (HttpErrorCodeReturnedEquals) , "KeyPrefixEquals" :: NullOrUndefined (KeyPrefixEquals) } -> {"HttpErrorCodeReturnedEquals" :: NullOrUndefined (HttpErrorCodeReturnedEquals) , "KeyPrefixEquals" :: NullOrUndefined (KeyPrefixEquals) } ) -> Condition
-newCondition'  customize = (Condition <<< customize) { "HttpErrorCodeReturnedEquals": (NullOrUndefined Nothing), "KeyPrefixEquals": (NullOrUndefined Nothing) }
+newCondition' :: ( { "HttpErrorCodeReturnedEquals" :: Maybe (HttpErrorCodeReturnedEquals) , "KeyPrefixEquals" :: Maybe (KeyPrefixEquals) } -> {"HttpErrorCodeReturnedEquals" :: Maybe (HttpErrorCodeReturnedEquals) , "KeyPrefixEquals" :: Maybe (KeyPrefixEquals) } ) -> Condition
+newCondition'  customize = (Condition <<< customize) { "HttpErrorCodeReturnedEquals": Nothing, "KeyPrefixEquals": Nothing }
 
 
 
@@ -919,15 +918,15 @@ instance encodeContentType :: Encode ContentType where encode = genericEncode op
 
 
 newtype CopyObjectOutput = CopyObjectOutput 
-  { "CopyObjectResult" :: NullOrUndefined (CopyObjectResult)
-  , "Expiration" :: NullOrUndefined (Expiration)
-  , "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "CopyObjectResult" :: Maybe (CopyObjectResult)
+  , "Expiration" :: Maybe (Expiration)
+  , "CopySourceVersionId" :: Maybe (CopySourceVersionId)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeCopyObjectOutput :: Newtype CopyObjectOutput _
 derive instance repGenericCopyObjectOutput :: Generic CopyObjectOutput _
@@ -937,49 +936,49 @@ instance encodeCopyObjectOutput :: Encode CopyObjectOutput where encode = generi
 
 -- | Constructs CopyObjectOutput from required parameters
 newCopyObjectOutput :: CopyObjectOutput
-newCopyObjectOutput  = CopyObjectOutput { "CopyObjectResult": (NullOrUndefined Nothing), "CopySourceVersionId": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newCopyObjectOutput  = CopyObjectOutput { "CopyObjectResult": Nothing, "CopySourceVersionId": Nothing, "Expiration": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "VersionId": Nothing }
 
 -- | Constructs CopyObjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopyObjectOutput' :: ( { "CopyObjectResult" :: NullOrUndefined (CopyObjectResult) , "Expiration" :: NullOrUndefined (Expiration) , "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"CopyObjectResult" :: NullOrUndefined (CopyObjectResult) , "Expiration" :: NullOrUndefined (Expiration) , "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> CopyObjectOutput
-newCopyObjectOutput'  customize = (CopyObjectOutput <<< customize) { "CopyObjectResult": (NullOrUndefined Nothing), "CopySourceVersionId": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newCopyObjectOutput' :: ( { "CopyObjectResult" :: Maybe (CopyObjectResult) , "Expiration" :: Maybe (Expiration) , "CopySourceVersionId" :: Maybe (CopySourceVersionId) , "VersionId" :: Maybe (ObjectVersionId) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } -> {"CopyObjectResult" :: Maybe (CopyObjectResult) , "Expiration" :: Maybe (Expiration) , "CopySourceVersionId" :: Maybe (CopySourceVersionId) , "VersionId" :: Maybe (ObjectVersionId) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } ) -> CopyObjectOutput
+newCopyObjectOutput'  customize = (CopyObjectOutput <<< customize) { "CopyObjectResult": Nothing, "CopySourceVersionId": Nothing, "Expiration": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "VersionId": Nothing }
 
 
 
 newtype CopyObjectRequest = CopyObjectRequest 
-  { "ACL" :: NullOrUndefined (ObjectCannedACL)
+  { "ACL" :: Maybe (ObjectCannedACL)
   , "Bucket" :: (BucketName)
-  , "CacheControl" :: NullOrUndefined (CacheControl)
-  , "ContentDisposition" :: NullOrUndefined (ContentDisposition)
-  , "ContentEncoding" :: NullOrUndefined (ContentEncoding)
-  , "ContentLanguage" :: NullOrUndefined (ContentLanguage)
-  , "ContentType" :: NullOrUndefined (ContentType)
+  , "CacheControl" :: Maybe (CacheControl)
+  , "ContentDisposition" :: Maybe (ContentDisposition)
+  , "ContentEncoding" :: Maybe (ContentEncoding)
+  , "ContentLanguage" :: Maybe (ContentLanguage)
+  , "ContentType" :: Maybe (ContentType)
   , "CopySource" :: (CopySource)
-  , "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch)
-  , "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince)
-  , "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch)
-  , "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince)
-  , "Expires" :: NullOrUndefined (Expires)
-  , "GrantFullControl" :: NullOrUndefined (GrantFullControl)
-  , "GrantRead" :: NullOrUndefined (GrantRead)
-  , "GrantReadACP" :: NullOrUndefined (GrantReadACP)
-  , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP)
+  , "CopySourceIfMatch" :: Maybe (CopySourceIfMatch)
+  , "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince)
+  , "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch)
+  , "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince)
+  , "Expires" :: Maybe (Expires)
+  , "GrantFullControl" :: Maybe (GrantFullControl)
+  , "GrantRead" :: Maybe (GrantRead)
+  , "GrantReadACP" :: Maybe (GrantReadACP)
+  , "GrantWriteACP" :: Maybe (GrantWriteACP)
   , "Key" :: (ObjectKey)
-  , "Metadata" :: NullOrUndefined (Metadata)
-  , "MetadataDirective" :: NullOrUndefined (MetadataDirective)
-  , "TaggingDirective" :: NullOrUndefined (TaggingDirective)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm)
-  , "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey)
-  , "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
-  , "Tagging" :: NullOrUndefined (TaggingHeader)
+  , "Metadata" :: Maybe (Metadata)
+  , "MetadataDirective" :: Maybe (MetadataDirective)
+  , "TaggingDirective" :: Maybe (TaggingDirective)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKey" :: Maybe (SSECustomerKey)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm)
+  , "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey)
+  , "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5)
+  , "RequestPayer" :: Maybe (RequestPayer)
+  , "Tagging" :: Maybe (TaggingHeader)
   }
 derive instance newtypeCopyObjectRequest :: Newtype CopyObjectRequest _
 derive instance repGenericCopyObjectRequest :: Generic CopyObjectRequest _
@@ -989,18 +988,18 @@ instance encodeCopyObjectRequest :: Encode CopyObjectRequest where encode = gene
 
 -- | Constructs CopyObjectRequest from required parameters
 newCopyObjectRequest :: BucketName -> CopySource -> ObjectKey -> CopyObjectRequest
-newCopyObjectRequest _Bucket _CopySource _Key = CopyObjectRequest { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "ACL": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "CopySourceIfMatch": (NullOrUndefined Nothing), "CopySourceIfModifiedSince": (NullOrUndefined Nothing), "CopySourceIfNoneMatch": (NullOrUndefined Nothing), "CopySourceIfUnmodifiedSince": (NullOrUndefined Nothing), "CopySourceSSECustomerAlgorithm": (NullOrUndefined Nothing), "CopySourceSSECustomerKey": (NullOrUndefined Nothing), "CopySourceSSECustomerKeyMD5": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "MetadataDirective": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "TaggingDirective": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newCopyObjectRequest _Bucket _CopySource _Key = CopyObjectRequest { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "ACL": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentType": Nothing, "CopySourceIfMatch": Nothing, "CopySourceIfModifiedSince": Nothing, "CopySourceIfNoneMatch": Nothing, "CopySourceIfUnmodifiedSince": Nothing, "CopySourceSSECustomerAlgorithm": Nothing, "CopySourceSSECustomerKey": Nothing, "CopySourceSSECustomerKeyMD5": Nothing, "Expires": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWriteACP": Nothing, "Metadata": Nothing, "MetadataDirective": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "TaggingDirective": Nothing, "WebsiteRedirectLocation": Nothing }
 
 -- | Constructs CopyObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopyObjectRequest' :: BucketName -> CopySource -> ObjectKey -> ( { "ACL" :: NullOrUndefined (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentType" :: NullOrUndefined (ContentType) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince) , "Expires" :: NullOrUndefined (Expires) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: NullOrUndefined (Metadata) , "MetadataDirective" :: NullOrUndefined (MetadataDirective) , "TaggingDirective" :: NullOrUndefined (TaggingDirective) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "StorageClass" :: NullOrUndefined (StorageClass) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "Tagging" :: NullOrUndefined (TaggingHeader) } -> {"ACL" :: NullOrUndefined (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentType" :: NullOrUndefined (ContentType) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince) , "Expires" :: NullOrUndefined (Expires) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: NullOrUndefined (Metadata) , "MetadataDirective" :: NullOrUndefined (MetadataDirective) , "TaggingDirective" :: NullOrUndefined (TaggingDirective) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "StorageClass" :: NullOrUndefined (StorageClass) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "Tagging" :: NullOrUndefined (TaggingHeader) } ) -> CopyObjectRequest
-newCopyObjectRequest' _Bucket _CopySource _Key customize = (CopyObjectRequest <<< customize) { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "ACL": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "CopySourceIfMatch": (NullOrUndefined Nothing), "CopySourceIfModifiedSince": (NullOrUndefined Nothing), "CopySourceIfNoneMatch": (NullOrUndefined Nothing), "CopySourceIfUnmodifiedSince": (NullOrUndefined Nothing), "CopySourceSSECustomerAlgorithm": (NullOrUndefined Nothing), "CopySourceSSECustomerKey": (NullOrUndefined Nothing), "CopySourceSSECustomerKeyMD5": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "MetadataDirective": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "TaggingDirective": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newCopyObjectRequest' :: BucketName -> CopySource -> ObjectKey -> ( { "ACL" :: Maybe (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentType" :: Maybe (ContentType) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: Maybe (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince) , "Expires" :: Maybe (Expires) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: Maybe (Metadata) , "MetadataDirective" :: Maybe (MetadataDirective) , "TaggingDirective" :: Maybe (TaggingDirective) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "StorageClass" :: Maybe (StorageClass) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) , "Tagging" :: Maybe (TaggingHeader) } -> {"ACL" :: Maybe (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentType" :: Maybe (ContentType) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: Maybe (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince) , "Expires" :: Maybe (Expires) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: Maybe (Metadata) , "MetadataDirective" :: Maybe (MetadataDirective) , "TaggingDirective" :: Maybe (TaggingDirective) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "StorageClass" :: Maybe (StorageClass) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) , "Tagging" :: Maybe (TaggingHeader) } ) -> CopyObjectRequest
+newCopyObjectRequest' _Bucket _CopySource _Key customize = (CopyObjectRequest <<< customize) { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "ACL": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentType": Nothing, "CopySourceIfMatch": Nothing, "CopySourceIfModifiedSince": Nothing, "CopySourceIfNoneMatch": Nothing, "CopySourceIfUnmodifiedSince": Nothing, "CopySourceSSECustomerAlgorithm": Nothing, "CopySourceSSECustomerKey": Nothing, "CopySourceSSECustomerKeyMD5": Nothing, "Expires": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWriteACP": Nothing, "Metadata": Nothing, "MetadataDirective": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "TaggingDirective": Nothing, "WebsiteRedirectLocation": Nothing }
 
 
 
 newtype CopyObjectResult = CopyObjectResult 
-  { "ETag" :: NullOrUndefined (ETag)
-  , "LastModified" :: NullOrUndefined (LastModified)
+  { "ETag" :: Maybe (ETag)
+  , "LastModified" :: Maybe (LastModified)
   }
 derive instance newtypeCopyObjectResult :: Newtype CopyObjectResult _
 derive instance repGenericCopyObjectResult :: Generic CopyObjectResult _
@@ -1010,18 +1009,18 @@ instance encodeCopyObjectResult :: Encode CopyObjectResult where encode = generi
 
 -- | Constructs CopyObjectResult from required parameters
 newCopyObjectResult :: CopyObjectResult
-newCopyObjectResult  = CopyObjectResult { "ETag": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing) }
+newCopyObjectResult  = CopyObjectResult { "ETag": Nothing, "LastModified": Nothing }
 
 -- | Constructs CopyObjectResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopyObjectResult' :: ( { "ETag" :: NullOrUndefined (ETag) , "LastModified" :: NullOrUndefined (LastModified) } -> {"ETag" :: NullOrUndefined (ETag) , "LastModified" :: NullOrUndefined (LastModified) } ) -> CopyObjectResult
-newCopyObjectResult'  customize = (CopyObjectResult <<< customize) { "ETag": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing) }
+newCopyObjectResult' :: ( { "ETag" :: Maybe (ETag) , "LastModified" :: Maybe (LastModified) } -> {"ETag" :: Maybe (ETag) , "LastModified" :: Maybe (LastModified) } ) -> CopyObjectResult
+newCopyObjectResult'  customize = (CopyObjectResult <<< customize) { "ETag": Nothing, "LastModified": Nothing }
 
 
 
 newtype CopyPartResult = CopyPartResult 
-  { "ETag" :: NullOrUndefined (ETag)
-  , "LastModified" :: NullOrUndefined (LastModified)
+  { "ETag" :: Maybe (ETag)
+  , "LastModified" :: Maybe (LastModified)
   }
 derive instance newtypeCopyPartResult :: Newtype CopyPartResult _
 derive instance repGenericCopyPartResult :: Generic CopyPartResult _
@@ -1031,12 +1030,12 @@ instance encodeCopyPartResult :: Encode CopyPartResult where encode = genericEnc
 
 -- | Constructs CopyPartResult from required parameters
 newCopyPartResult :: CopyPartResult
-newCopyPartResult  = CopyPartResult { "ETag": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing) }
+newCopyPartResult  = CopyPartResult { "ETag": Nothing, "LastModified": Nothing }
 
 -- | Constructs CopyPartResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCopyPartResult' :: ( { "ETag" :: NullOrUndefined (ETag) , "LastModified" :: NullOrUndefined (LastModified) } -> {"ETag" :: NullOrUndefined (ETag) , "LastModified" :: NullOrUndefined (LastModified) } ) -> CopyPartResult
-newCopyPartResult'  customize = (CopyPartResult <<< customize) { "ETag": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing) }
+newCopyPartResult' :: ( { "ETag" :: Maybe (ETag) , "LastModified" :: Maybe (LastModified) } -> {"ETag" :: Maybe (ETag) , "LastModified" :: Maybe (LastModified) } ) -> CopyPartResult
+newCopyPartResult'  customize = (CopyPartResult <<< customize) { "ETag": Nothing, "LastModified": Nothing }
 
 
 
@@ -1131,7 +1130,7 @@ instance encodeCopySourceVersionId :: Encode CopySourceVersionId where encode = 
 
 
 newtype CreateBucketConfiguration = CreateBucketConfiguration 
-  { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint)
+  { "LocationConstraint" :: Maybe (BucketLocationConstraint)
   }
 derive instance newtypeCreateBucketConfiguration :: Newtype CreateBucketConfiguration _
 derive instance repGenericCreateBucketConfiguration :: Generic CreateBucketConfiguration _
@@ -1141,17 +1140,17 @@ instance encodeCreateBucketConfiguration :: Encode CreateBucketConfiguration whe
 
 -- | Constructs CreateBucketConfiguration from required parameters
 newCreateBucketConfiguration :: CreateBucketConfiguration
-newCreateBucketConfiguration  = CreateBucketConfiguration { "LocationConstraint": (NullOrUndefined Nothing) }
+newCreateBucketConfiguration  = CreateBucketConfiguration { "LocationConstraint": Nothing }
 
 -- | Constructs CreateBucketConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateBucketConfiguration' :: ( { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) } -> {"LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) } ) -> CreateBucketConfiguration
-newCreateBucketConfiguration'  customize = (CreateBucketConfiguration <<< customize) { "LocationConstraint": (NullOrUndefined Nothing) }
+newCreateBucketConfiguration' :: ( { "LocationConstraint" :: Maybe (BucketLocationConstraint) } -> {"LocationConstraint" :: Maybe (BucketLocationConstraint) } ) -> CreateBucketConfiguration
+newCreateBucketConfiguration'  customize = (CreateBucketConfiguration <<< customize) { "LocationConstraint": Nothing }
 
 
 
 newtype CreateBucketOutput = CreateBucketOutput 
-  { "Location" :: NullOrUndefined (Location)
+  { "Location" :: Maybe (Location)
   }
 derive instance newtypeCreateBucketOutput :: Newtype CreateBucketOutput _
 derive instance repGenericCreateBucketOutput :: Generic CreateBucketOutput _
@@ -1161,24 +1160,24 @@ instance encodeCreateBucketOutput :: Encode CreateBucketOutput where encode = ge
 
 -- | Constructs CreateBucketOutput from required parameters
 newCreateBucketOutput :: CreateBucketOutput
-newCreateBucketOutput  = CreateBucketOutput { "Location": (NullOrUndefined Nothing) }
+newCreateBucketOutput  = CreateBucketOutput { "Location": Nothing }
 
 -- | Constructs CreateBucketOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateBucketOutput' :: ( { "Location" :: NullOrUndefined (Location) } -> {"Location" :: NullOrUndefined (Location) } ) -> CreateBucketOutput
-newCreateBucketOutput'  customize = (CreateBucketOutput <<< customize) { "Location": (NullOrUndefined Nothing) }
+newCreateBucketOutput' :: ( { "Location" :: Maybe (Location) } -> {"Location" :: Maybe (Location) } ) -> CreateBucketOutput
+newCreateBucketOutput'  customize = (CreateBucketOutput <<< customize) { "Location": Nothing }
 
 
 
 newtype CreateBucketRequest = CreateBucketRequest 
-  { "ACL" :: NullOrUndefined (BucketCannedACL)
+  { "ACL" :: Maybe (BucketCannedACL)
   , "Bucket" :: (BucketName)
-  , "CreateBucketConfiguration" :: NullOrUndefined (CreateBucketConfiguration)
-  , "GrantFullControl" :: NullOrUndefined (GrantFullControl)
-  , "GrantRead" :: NullOrUndefined (GrantRead)
-  , "GrantReadACP" :: NullOrUndefined (GrantReadACP)
-  , "GrantWrite" :: NullOrUndefined (GrantWrite)
-  , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP)
+  , "CreateBucketConfiguration" :: Maybe (CreateBucketConfiguration)
+  , "GrantFullControl" :: Maybe (GrantFullControl)
+  , "GrantRead" :: Maybe (GrantRead)
+  , "GrantReadACP" :: Maybe (GrantReadACP)
+  , "GrantWrite" :: Maybe (GrantWrite)
+  , "GrantWriteACP" :: Maybe (GrantWriteACP)
   }
 derive instance newtypeCreateBucketRequest :: Newtype CreateBucketRequest _
 derive instance repGenericCreateBucketRequest :: Generic CreateBucketRequest _
@@ -1188,26 +1187,26 @@ instance encodeCreateBucketRequest :: Encode CreateBucketRequest where encode = 
 
 -- | Constructs CreateBucketRequest from required parameters
 newCreateBucketRequest :: BucketName -> CreateBucketRequest
-newCreateBucketRequest _Bucket = CreateBucketRequest { "Bucket": _Bucket, "ACL": (NullOrUndefined Nothing), "CreateBucketConfiguration": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWrite": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing) }
+newCreateBucketRequest _Bucket = CreateBucketRequest { "Bucket": _Bucket, "ACL": Nothing, "CreateBucketConfiguration": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWrite": Nothing, "GrantWriteACP": Nothing }
 
 -- | Constructs CreateBucketRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateBucketRequest' :: BucketName -> ( { "ACL" :: NullOrUndefined (BucketCannedACL) , "Bucket" :: (BucketName) , "CreateBucketConfiguration" :: NullOrUndefined (CreateBucketConfiguration) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWrite" :: NullOrUndefined (GrantWrite) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) } -> {"ACL" :: NullOrUndefined (BucketCannedACL) , "Bucket" :: (BucketName) , "CreateBucketConfiguration" :: NullOrUndefined (CreateBucketConfiguration) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWrite" :: NullOrUndefined (GrantWrite) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) } ) -> CreateBucketRequest
-newCreateBucketRequest' _Bucket customize = (CreateBucketRequest <<< customize) { "Bucket": _Bucket, "ACL": (NullOrUndefined Nothing), "CreateBucketConfiguration": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWrite": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing) }
+newCreateBucketRequest' :: BucketName -> ( { "ACL" :: Maybe (BucketCannedACL) , "Bucket" :: (BucketName) , "CreateBucketConfiguration" :: Maybe (CreateBucketConfiguration) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWrite" :: Maybe (GrantWrite) , "GrantWriteACP" :: Maybe (GrantWriteACP) } -> {"ACL" :: Maybe (BucketCannedACL) , "Bucket" :: (BucketName) , "CreateBucketConfiguration" :: Maybe (CreateBucketConfiguration) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWrite" :: Maybe (GrantWrite) , "GrantWriteACP" :: Maybe (GrantWriteACP) } ) -> CreateBucketRequest
+newCreateBucketRequest' _Bucket customize = (CreateBucketRequest <<< customize) { "Bucket": _Bucket, "ACL": Nothing, "CreateBucketConfiguration": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWrite": Nothing, "GrantWriteACP": Nothing }
 
 
 
 newtype CreateMultipartUploadOutput = CreateMultipartUploadOutput 
-  { "AbortDate" :: NullOrUndefined (AbortDate)
-  , "AbortRuleId" :: NullOrUndefined (AbortRuleId)
-  , "Bucket" :: NullOrUndefined (BucketName)
-  , "Key" :: NullOrUndefined (ObjectKey)
-  , "UploadId" :: NullOrUndefined (MultipartUploadId)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "AbortDate" :: Maybe (AbortDate)
+  , "AbortRuleId" :: Maybe (AbortRuleId)
+  , "Bucket" :: Maybe (BucketName)
+  , "Key" :: Maybe (ObjectKey)
+  , "UploadId" :: Maybe (MultipartUploadId)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeCreateMultipartUploadOutput :: Newtype CreateMultipartUploadOutput _
 derive instance repGenericCreateMultipartUploadOutput :: Generic CreateMultipartUploadOutput _
@@ -1217,39 +1216,39 @@ instance encodeCreateMultipartUploadOutput :: Encode CreateMultipartUploadOutput
 
 -- | Constructs CreateMultipartUploadOutput from required parameters
 newCreateMultipartUploadOutput :: CreateMultipartUploadOutput
-newCreateMultipartUploadOutput  = CreateMultipartUploadOutput { "AbortDate": (NullOrUndefined Nothing), "AbortRuleId": (NullOrUndefined Nothing), "Bucket": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "UploadId": (NullOrUndefined Nothing) }
+newCreateMultipartUploadOutput  = CreateMultipartUploadOutput { "AbortDate": Nothing, "AbortRuleId": Nothing, "Bucket": Nothing, "Key": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "UploadId": Nothing }
 
 -- | Constructs CreateMultipartUploadOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateMultipartUploadOutput' :: ( { "AbortDate" :: NullOrUndefined (AbortDate) , "AbortRuleId" :: NullOrUndefined (AbortRuleId) , "Bucket" :: NullOrUndefined (BucketName) , "Key" :: NullOrUndefined (ObjectKey) , "UploadId" :: NullOrUndefined (MultipartUploadId) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"AbortDate" :: NullOrUndefined (AbortDate) , "AbortRuleId" :: NullOrUndefined (AbortRuleId) , "Bucket" :: NullOrUndefined (BucketName) , "Key" :: NullOrUndefined (ObjectKey) , "UploadId" :: NullOrUndefined (MultipartUploadId) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> CreateMultipartUploadOutput
-newCreateMultipartUploadOutput'  customize = (CreateMultipartUploadOutput <<< customize) { "AbortDate": (NullOrUndefined Nothing), "AbortRuleId": (NullOrUndefined Nothing), "Bucket": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "UploadId": (NullOrUndefined Nothing) }
+newCreateMultipartUploadOutput' :: ( { "AbortDate" :: Maybe (AbortDate) , "AbortRuleId" :: Maybe (AbortRuleId) , "Bucket" :: Maybe (BucketName) , "Key" :: Maybe (ObjectKey) , "UploadId" :: Maybe (MultipartUploadId) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } -> {"AbortDate" :: Maybe (AbortDate) , "AbortRuleId" :: Maybe (AbortRuleId) , "Bucket" :: Maybe (BucketName) , "Key" :: Maybe (ObjectKey) , "UploadId" :: Maybe (MultipartUploadId) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } ) -> CreateMultipartUploadOutput
+newCreateMultipartUploadOutput'  customize = (CreateMultipartUploadOutput <<< customize) { "AbortDate": Nothing, "AbortRuleId": Nothing, "Bucket": Nothing, "Key": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "UploadId": Nothing }
 
 
 
 newtype CreateMultipartUploadRequest = CreateMultipartUploadRequest 
-  { "ACL" :: NullOrUndefined (ObjectCannedACL)
+  { "ACL" :: Maybe (ObjectCannedACL)
   , "Bucket" :: (BucketName)
-  , "CacheControl" :: NullOrUndefined (CacheControl)
-  , "ContentDisposition" :: NullOrUndefined (ContentDisposition)
-  , "ContentEncoding" :: NullOrUndefined (ContentEncoding)
-  , "ContentLanguage" :: NullOrUndefined (ContentLanguage)
-  , "ContentType" :: NullOrUndefined (ContentType)
-  , "Expires" :: NullOrUndefined (Expires)
-  , "GrantFullControl" :: NullOrUndefined (GrantFullControl)
-  , "GrantRead" :: NullOrUndefined (GrantRead)
-  , "GrantReadACP" :: NullOrUndefined (GrantReadACP)
-  , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP)
+  , "CacheControl" :: Maybe (CacheControl)
+  , "ContentDisposition" :: Maybe (ContentDisposition)
+  , "ContentEncoding" :: Maybe (ContentEncoding)
+  , "ContentLanguage" :: Maybe (ContentLanguage)
+  , "ContentType" :: Maybe (ContentType)
+  , "Expires" :: Maybe (Expires)
+  , "GrantFullControl" :: Maybe (GrantFullControl)
+  , "GrantRead" :: Maybe (GrantRead)
+  , "GrantReadACP" :: Maybe (GrantReadACP)
+  , "GrantWriteACP" :: Maybe (GrantWriteACP)
   , "Key" :: (ObjectKey)
-  , "Metadata" :: NullOrUndefined (Metadata)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
-  , "Tagging" :: NullOrUndefined (TaggingHeader)
+  , "Metadata" :: Maybe (Metadata)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKey" :: Maybe (SSECustomerKey)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestPayer" :: Maybe (RequestPayer)
+  , "Tagging" :: Maybe (TaggingHeader)
   }
 derive instance newtypeCreateMultipartUploadRequest :: Newtype CreateMultipartUploadRequest _
 derive instance repGenericCreateMultipartUploadRequest :: Generic CreateMultipartUploadRequest _
@@ -1259,12 +1258,12 @@ instance encodeCreateMultipartUploadRequest :: Encode CreateMultipartUploadReque
 
 -- | Constructs CreateMultipartUploadRequest from required parameters
 newCreateMultipartUploadRequest :: BucketName -> ObjectKey -> CreateMultipartUploadRequest
-newCreateMultipartUploadRequest _Bucket _Key = CreateMultipartUploadRequest { "Bucket": _Bucket, "Key": _Key, "ACL": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newCreateMultipartUploadRequest _Bucket _Key = CreateMultipartUploadRequest { "Bucket": _Bucket, "Key": _Key, "ACL": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentType": Nothing, "Expires": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWriteACP": Nothing, "Metadata": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "WebsiteRedirectLocation": Nothing }
 
 -- | Constructs CreateMultipartUploadRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateMultipartUploadRequest' :: BucketName -> ObjectKey -> ( { "ACL" :: NullOrUndefined (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: NullOrUndefined (Metadata) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "StorageClass" :: NullOrUndefined (StorageClass) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "Tagging" :: NullOrUndefined (TaggingHeader) } -> {"ACL" :: NullOrUndefined (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: NullOrUndefined (Metadata) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "StorageClass" :: NullOrUndefined (StorageClass) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "Tagging" :: NullOrUndefined (TaggingHeader) } ) -> CreateMultipartUploadRequest
-newCreateMultipartUploadRequest' _Bucket _Key customize = (CreateMultipartUploadRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "ACL": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newCreateMultipartUploadRequest' :: BucketName -> ObjectKey -> ( { "ACL" :: Maybe (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: Maybe (Metadata) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "StorageClass" :: Maybe (StorageClass) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestPayer" :: Maybe (RequestPayer) , "Tagging" :: Maybe (TaggingHeader) } -> {"ACL" :: Maybe (ObjectCannedACL) , "Bucket" :: (BucketName) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: Maybe (Metadata) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "StorageClass" :: Maybe (StorageClass) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestPayer" :: Maybe (RequestPayer) , "Tagging" :: Maybe (TaggingHeader) } ) -> CreateMultipartUploadRequest
+newCreateMultipartUploadRequest' _Bucket _Key customize = (CreateMultipartUploadRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "ACL": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentType": Nothing, "Expires": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWriteACP": Nothing, "Metadata": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "WebsiteRedirectLocation": Nothing }
 
 
 
@@ -1306,7 +1305,7 @@ instance encodeDaysAfterInitiation :: Encode DaysAfterInitiation where encode = 
 
 newtype Delete = Delete 
   { "Objects" :: (ObjectIdentifierList)
-  , "Quiet" :: NullOrUndefined (Quiet)
+  , "Quiet" :: Maybe (Quiet)
   }
 derive instance newtypeDelete :: Newtype Delete _
 derive instance repGenericDelete :: Generic Delete _
@@ -1316,12 +1315,12 @@ instance encodeDelete :: Encode Delete where encode = genericEncode options
 
 -- | Constructs Delete from required parameters
 newDelete :: ObjectIdentifierList -> Delete
-newDelete _Objects = Delete { "Objects": _Objects, "Quiet": (NullOrUndefined Nothing) }
+newDelete _Objects = Delete { "Objects": _Objects, "Quiet": Nothing }
 
 -- | Constructs Delete's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDelete' :: ObjectIdentifierList -> ( { "Objects" :: (ObjectIdentifierList) , "Quiet" :: NullOrUndefined (Quiet) } -> {"Objects" :: (ObjectIdentifierList) , "Quiet" :: NullOrUndefined (Quiet) } ) -> Delete
-newDelete' _Objects customize = (Delete <<< customize) { "Objects": _Objects, "Quiet": (NullOrUndefined Nothing) }
+newDelete' :: ObjectIdentifierList -> ( { "Objects" :: (ObjectIdentifierList) , "Quiet" :: Maybe (Quiet) } -> {"Objects" :: (ObjectIdentifierList) , "Quiet" :: Maybe (Quiet) } ) -> Delete
+newDelete' _Objects customize = (Delete <<< customize) { "Objects": _Objects, "Quiet": Nothing }
 
 
 
@@ -1558,11 +1557,11 @@ instance encodeDeleteMarker :: Encode DeleteMarker where encode = genericEncode 
 
 
 newtype DeleteMarkerEntry = DeleteMarkerEntry 
-  { "Owner" :: NullOrUndefined (Owner)
-  , "Key" :: NullOrUndefined (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "IsLatest" :: NullOrUndefined (IsLatest)
-  , "LastModified" :: NullOrUndefined (LastModified)
+  { "Owner" :: Maybe (Owner)
+  , "Key" :: Maybe (ObjectKey)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "IsLatest" :: Maybe (IsLatest)
+  , "LastModified" :: Maybe (LastModified)
   }
 derive instance newtypeDeleteMarkerEntry :: Newtype DeleteMarkerEntry _
 derive instance repGenericDeleteMarkerEntry :: Generic DeleteMarkerEntry _
@@ -1572,12 +1571,12 @@ instance encodeDeleteMarkerEntry :: Encode DeleteMarkerEntry where encode = gene
 
 -- | Constructs DeleteMarkerEntry from required parameters
 newDeleteMarkerEntry :: DeleteMarkerEntry
-newDeleteMarkerEntry  = DeleteMarkerEntry { "IsLatest": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteMarkerEntry  = DeleteMarkerEntry { "IsLatest": Nothing, "Key": Nothing, "LastModified": Nothing, "Owner": Nothing, "VersionId": Nothing }
 
 -- | Constructs DeleteMarkerEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteMarkerEntry' :: ( { "Owner" :: NullOrUndefined (Owner) , "Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "IsLatest" :: NullOrUndefined (IsLatest) , "LastModified" :: NullOrUndefined (LastModified) } -> {"Owner" :: NullOrUndefined (Owner) , "Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "IsLatest" :: NullOrUndefined (IsLatest) , "LastModified" :: NullOrUndefined (LastModified) } ) -> DeleteMarkerEntry
-newDeleteMarkerEntry'  customize = (DeleteMarkerEntry <<< customize) { "IsLatest": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteMarkerEntry' :: ( { "Owner" :: Maybe (Owner) , "Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "IsLatest" :: Maybe (IsLatest) , "LastModified" :: Maybe (LastModified) } -> {"Owner" :: Maybe (Owner) , "Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "IsLatest" :: Maybe (IsLatest) , "LastModified" :: Maybe (LastModified) } ) -> DeleteMarkerEntry
+newDeleteMarkerEntry'  customize = (DeleteMarkerEntry <<< customize) { "IsLatest": Nothing, "Key": Nothing, "LastModified": Nothing, "Owner": Nothing, "VersionId": Nothing }
 
 
 
@@ -1600,9 +1599,9 @@ instance encodeDeleteMarkers :: Encode DeleteMarkers where encode = genericEncod
 
 
 newtype DeleteObjectOutput = DeleteObjectOutput 
-  { "DeleteMarker" :: NullOrUndefined (DeleteMarker)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "DeleteMarker" :: Maybe (DeleteMarker)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeDeleteObjectOutput :: Newtype DeleteObjectOutput _
 derive instance repGenericDeleteObjectOutput :: Generic DeleteObjectOutput _
@@ -1612,21 +1611,21 @@ instance encodeDeleteObjectOutput :: Encode DeleteObjectOutput where encode = ge
 
 -- | Constructs DeleteObjectOutput from required parameters
 newDeleteObjectOutput :: DeleteObjectOutput
-newDeleteObjectOutput  = DeleteObjectOutput { "DeleteMarker": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectOutput  = DeleteObjectOutput { "DeleteMarker": Nothing, "RequestCharged": Nothing, "VersionId": Nothing }
 
 -- | Constructs DeleteObjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteObjectOutput' :: ( { "DeleteMarker" :: NullOrUndefined (DeleteMarker) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"DeleteMarker" :: NullOrUndefined (DeleteMarker) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> DeleteObjectOutput
-newDeleteObjectOutput'  customize = (DeleteObjectOutput <<< customize) { "DeleteMarker": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectOutput' :: ( { "DeleteMarker" :: Maybe (DeleteMarker) , "VersionId" :: Maybe (ObjectVersionId) , "RequestCharged" :: Maybe (RequestCharged) } -> {"DeleteMarker" :: Maybe (DeleteMarker) , "VersionId" :: Maybe (ObjectVersionId) , "RequestCharged" :: Maybe (RequestCharged) } ) -> DeleteObjectOutput
+newDeleteObjectOutput'  customize = (DeleteObjectOutput <<< customize) { "DeleteMarker": Nothing, "RequestCharged": Nothing, "VersionId": Nothing }
 
 
 
 newtype DeleteObjectRequest = DeleteObjectRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "MFA" :: NullOrUndefined (MFA)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "MFA" :: Maybe (MFA)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeDeleteObjectRequest :: Newtype DeleteObjectRequest _
 derive instance repGenericDeleteObjectRequest :: Generic DeleteObjectRequest _
@@ -1636,17 +1635,17 @@ instance encodeDeleteObjectRequest :: Encode DeleteObjectRequest where encode = 
 
 -- | Constructs DeleteObjectRequest from required parameters
 newDeleteObjectRequest :: BucketName -> ObjectKey -> DeleteObjectRequest
-newDeleteObjectRequest _Bucket _Key = DeleteObjectRequest { "Bucket": _Bucket, "Key": _Key, "MFA": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectRequest _Bucket _Key = DeleteObjectRequest { "Bucket": _Bucket, "Key": _Key, "MFA": Nothing, "RequestPayer": Nothing, "VersionId": Nothing }
 
 -- | Constructs DeleteObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MFA" :: NullOrUndefined (MFA) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MFA" :: NullOrUndefined (MFA) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> DeleteObjectRequest
-newDeleteObjectRequest' _Bucket _Key customize = (DeleteObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "MFA": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MFA" :: Maybe (MFA) , "VersionId" :: Maybe (ObjectVersionId) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MFA" :: Maybe (MFA) , "VersionId" :: Maybe (ObjectVersionId) , "RequestPayer" :: Maybe (RequestPayer) } ) -> DeleteObjectRequest
+newDeleteObjectRequest' _Bucket _Key customize = (DeleteObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "MFA": Nothing, "RequestPayer": Nothing, "VersionId": Nothing }
 
 
 
 newtype DeleteObjectTaggingOutput = DeleteObjectTaggingOutput 
-  { "VersionId" :: NullOrUndefined (ObjectVersionId)
+  { "VersionId" :: Maybe (ObjectVersionId)
   }
 derive instance newtypeDeleteObjectTaggingOutput :: Newtype DeleteObjectTaggingOutput _
 derive instance repGenericDeleteObjectTaggingOutput :: Generic DeleteObjectTaggingOutput _
@@ -1656,19 +1655,19 @@ instance encodeDeleteObjectTaggingOutput :: Encode DeleteObjectTaggingOutput whe
 
 -- | Constructs DeleteObjectTaggingOutput from required parameters
 newDeleteObjectTaggingOutput :: DeleteObjectTaggingOutput
-newDeleteObjectTaggingOutput  = DeleteObjectTaggingOutput { "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectTaggingOutput  = DeleteObjectTaggingOutput { "VersionId": Nothing }
 
 -- | Constructs DeleteObjectTaggingOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteObjectTaggingOutput' :: ( { "VersionId" :: NullOrUndefined (ObjectVersionId) } -> {"VersionId" :: NullOrUndefined (ObjectVersionId) } ) -> DeleteObjectTaggingOutput
-newDeleteObjectTaggingOutput'  customize = (DeleteObjectTaggingOutput <<< customize) { "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectTaggingOutput' :: ( { "VersionId" :: Maybe (ObjectVersionId) } -> {"VersionId" :: Maybe (ObjectVersionId) } ) -> DeleteObjectTaggingOutput
+newDeleteObjectTaggingOutput'  customize = (DeleteObjectTaggingOutput <<< customize) { "VersionId": Nothing }
 
 
 
 newtype DeleteObjectTaggingRequest = DeleteObjectTaggingRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
+  , "VersionId" :: Maybe (ObjectVersionId)
   }
 derive instance newtypeDeleteObjectTaggingRequest :: Newtype DeleteObjectTaggingRequest _
 derive instance repGenericDeleteObjectTaggingRequest :: Generic DeleteObjectTaggingRequest _
@@ -1678,19 +1677,19 @@ instance encodeDeleteObjectTaggingRequest :: Encode DeleteObjectTaggingRequest w
 
 -- | Constructs DeleteObjectTaggingRequest from required parameters
 newDeleteObjectTaggingRequest :: BucketName -> ObjectKey -> DeleteObjectTaggingRequest
-newDeleteObjectTaggingRequest _Bucket _Key = DeleteObjectTaggingRequest { "Bucket": _Bucket, "Key": _Key, "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectTaggingRequest _Bucket _Key = DeleteObjectTaggingRequest { "Bucket": _Bucket, "Key": _Key, "VersionId": Nothing }
 
 -- | Constructs DeleteObjectTaggingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteObjectTaggingRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) } ) -> DeleteObjectTaggingRequest
-newDeleteObjectTaggingRequest' _Bucket _Key customize = (DeleteObjectTaggingRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "VersionId": (NullOrUndefined Nothing) }
+newDeleteObjectTaggingRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) } ) -> DeleteObjectTaggingRequest
+newDeleteObjectTaggingRequest' _Bucket _Key customize = (DeleteObjectTaggingRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "VersionId": Nothing }
 
 
 
 newtype DeleteObjectsOutput = DeleteObjectsOutput 
-  { "Deleted" :: NullOrUndefined (DeletedObjects)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
-  , "Errors" :: NullOrUndefined (Errors)
+  { "Deleted" :: Maybe (DeletedObjects)
+  , "RequestCharged" :: Maybe (RequestCharged)
+  , "Errors" :: Maybe (Errors)
   }
 derive instance newtypeDeleteObjectsOutput :: Newtype DeleteObjectsOutput _
 derive instance repGenericDeleteObjectsOutput :: Generic DeleteObjectsOutput _
@@ -1700,20 +1699,20 @@ instance encodeDeleteObjectsOutput :: Encode DeleteObjectsOutput where encode = 
 
 -- | Constructs DeleteObjectsOutput from required parameters
 newDeleteObjectsOutput :: DeleteObjectsOutput
-newDeleteObjectsOutput  = DeleteObjectsOutput { "Deleted": (NullOrUndefined Nothing), "Errors": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing) }
+newDeleteObjectsOutput  = DeleteObjectsOutput { "Deleted": Nothing, "Errors": Nothing, "RequestCharged": Nothing }
 
 -- | Constructs DeleteObjectsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteObjectsOutput' :: ( { "Deleted" :: NullOrUndefined (DeletedObjects) , "RequestCharged" :: NullOrUndefined (RequestCharged) , "Errors" :: NullOrUndefined (Errors) } -> {"Deleted" :: NullOrUndefined (DeletedObjects) , "RequestCharged" :: NullOrUndefined (RequestCharged) , "Errors" :: NullOrUndefined (Errors) } ) -> DeleteObjectsOutput
-newDeleteObjectsOutput'  customize = (DeleteObjectsOutput <<< customize) { "Deleted": (NullOrUndefined Nothing), "Errors": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing) }
+newDeleteObjectsOutput' :: ( { "Deleted" :: Maybe (DeletedObjects) , "RequestCharged" :: Maybe (RequestCharged) , "Errors" :: Maybe (Errors) } -> {"Deleted" :: Maybe (DeletedObjects) , "RequestCharged" :: Maybe (RequestCharged) , "Errors" :: Maybe (Errors) } ) -> DeleteObjectsOutput
+newDeleteObjectsOutput'  customize = (DeleteObjectsOutput <<< customize) { "Deleted": Nothing, "Errors": Nothing, "RequestCharged": Nothing }
 
 
 
 newtype DeleteObjectsRequest = DeleteObjectsRequest 
   { "Bucket" :: (BucketName)
   , "Delete" :: (Delete)
-  , "MFA" :: NullOrUndefined (MFA)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "MFA" :: Maybe (MFA)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeDeleteObjectsRequest :: Newtype DeleteObjectsRequest _
 derive instance repGenericDeleteObjectsRequest :: Generic DeleteObjectsRequest _
@@ -1723,20 +1722,20 @@ instance encodeDeleteObjectsRequest :: Encode DeleteObjectsRequest where encode 
 
 -- | Constructs DeleteObjectsRequest from required parameters
 newDeleteObjectsRequest :: BucketName -> Delete -> DeleteObjectsRequest
-newDeleteObjectsRequest _Bucket _Delete = DeleteObjectsRequest { "Bucket": _Bucket, "Delete": _Delete, "MFA": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newDeleteObjectsRequest _Bucket _Delete = DeleteObjectsRequest { "Bucket": _Bucket, "Delete": _Delete, "MFA": Nothing, "RequestPayer": Nothing }
 
 -- | Constructs DeleteObjectsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteObjectsRequest' :: BucketName -> Delete -> ( { "Bucket" :: (BucketName) , "Delete" :: (Delete) , "MFA" :: NullOrUndefined (MFA) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Delete" :: (Delete) , "MFA" :: NullOrUndefined (MFA) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> DeleteObjectsRequest
-newDeleteObjectsRequest' _Bucket _Delete customize = (DeleteObjectsRequest <<< customize) { "Bucket": _Bucket, "Delete": _Delete, "MFA": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newDeleteObjectsRequest' :: BucketName -> Delete -> ( { "Bucket" :: (BucketName) , "Delete" :: (Delete) , "MFA" :: Maybe (MFA) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Delete" :: (Delete) , "MFA" :: Maybe (MFA) , "RequestPayer" :: Maybe (RequestPayer) } ) -> DeleteObjectsRequest
+newDeleteObjectsRequest' _Bucket _Delete customize = (DeleteObjectsRequest <<< customize) { "Bucket": _Bucket, "Delete": _Delete, "MFA": Nothing, "RequestPayer": Nothing }
 
 
 
 newtype DeletedObject = DeletedObject 
-  { "Key" :: NullOrUndefined (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "DeleteMarker" :: NullOrUndefined (DeleteMarker)
-  , "DeleteMarkerVersionId" :: NullOrUndefined (DeleteMarkerVersionId)
+  { "Key" :: Maybe (ObjectKey)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "DeleteMarker" :: Maybe (DeleteMarker)
+  , "DeleteMarkerVersionId" :: Maybe (DeleteMarkerVersionId)
   }
 derive instance newtypeDeletedObject :: Newtype DeletedObject _
 derive instance repGenericDeletedObject :: Generic DeletedObject _
@@ -1746,12 +1745,12 @@ instance encodeDeletedObject :: Encode DeletedObject where encode = genericEncod
 
 -- | Constructs DeletedObject from required parameters
 newDeletedObject :: DeletedObject
-newDeletedObject  = DeletedObject { "DeleteMarker": (NullOrUndefined Nothing), "DeleteMarkerVersionId": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeletedObject  = DeletedObject { "DeleteMarker": Nothing, "DeleteMarkerVersionId": Nothing, "Key": Nothing, "VersionId": Nothing }
 
 -- | Constructs DeletedObject's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeletedObject' :: ( { "Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "DeleteMarker" :: NullOrUndefined (DeleteMarker) , "DeleteMarkerVersionId" :: NullOrUndefined (DeleteMarkerVersionId) } -> {"Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "DeleteMarker" :: NullOrUndefined (DeleteMarker) , "DeleteMarkerVersionId" :: NullOrUndefined (DeleteMarkerVersionId) } ) -> DeletedObject
-newDeletedObject'  customize = (DeletedObject <<< customize) { "DeleteMarker": (NullOrUndefined Nothing), "DeleteMarkerVersionId": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newDeletedObject' :: ( { "Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "DeleteMarker" :: Maybe (DeleteMarker) , "DeleteMarkerVersionId" :: Maybe (DeleteMarkerVersionId) } -> {"Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "DeleteMarker" :: Maybe (DeleteMarker) , "DeleteMarkerVersionId" :: Maybe (DeleteMarkerVersionId) } ) -> DeletedObject
+newDeletedObject'  customize = (DeletedObject <<< customize) { "DeleteMarker": Nothing, "DeleteMarkerVersionId": Nothing, "Key": Nothing, "VersionId": Nothing }
 
 
 
@@ -1785,10 +1784,10 @@ instance encodeDescription :: Encode Description where encode = genericEncode op
 -- | Container for replication destination information.
 newtype Destination = Destination 
   { "Bucket" :: (BucketName)
-  , "Account" :: NullOrUndefined (AccountId)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "AccessControlTranslation" :: NullOrUndefined (AccessControlTranslation)
-  , "EncryptionConfiguration" :: NullOrUndefined (EncryptionConfiguration)
+  , "Account" :: Maybe (AccountId)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "AccessControlTranslation" :: Maybe (AccessControlTranslation)
+  , "EncryptionConfiguration" :: Maybe (EncryptionConfiguration)
   }
 derive instance newtypeDestination :: Newtype Destination _
 derive instance repGenericDestination :: Generic Destination _
@@ -1798,12 +1797,12 @@ instance encodeDestination :: Encode Destination where encode = genericEncode op
 
 -- | Constructs Destination from required parameters
 newDestination :: BucketName -> Destination
-newDestination _Bucket = Destination { "Bucket": _Bucket, "AccessControlTranslation": (NullOrUndefined Nothing), "Account": (NullOrUndefined Nothing), "EncryptionConfiguration": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newDestination _Bucket = Destination { "Bucket": _Bucket, "AccessControlTranslation": Nothing, "Account": Nothing, "EncryptionConfiguration": Nothing, "StorageClass": Nothing }
 
 -- | Constructs Destination's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDestination' :: BucketName -> ( { "Bucket" :: (BucketName) , "Account" :: NullOrUndefined (AccountId) , "StorageClass" :: NullOrUndefined (StorageClass) , "AccessControlTranslation" :: NullOrUndefined (AccessControlTranslation) , "EncryptionConfiguration" :: NullOrUndefined (EncryptionConfiguration) } -> {"Bucket" :: (BucketName) , "Account" :: NullOrUndefined (AccountId) , "StorageClass" :: NullOrUndefined (StorageClass) , "AccessControlTranslation" :: NullOrUndefined (AccessControlTranslation) , "EncryptionConfiguration" :: NullOrUndefined (EncryptionConfiguration) } ) -> Destination
-newDestination' _Bucket customize = (Destination <<< customize) { "Bucket": _Bucket, "AccessControlTranslation": (NullOrUndefined Nothing), "Account": (NullOrUndefined Nothing), "EncryptionConfiguration": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newDestination' :: BucketName -> ( { "Bucket" :: (BucketName) , "Account" :: Maybe (AccountId) , "StorageClass" :: Maybe (StorageClass) , "AccessControlTranslation" :: Maybe (AccessControlTranslation) , "EncryptionConfiguration" :: Maybe (EncryptionConfiguration) } -> {"Bucket" :: (BucketName) , "Account" :: Maybe (AccountId) , "StorageClass" :: Maybe (StorageClass) , "AccessControlTranslation" :: Maybe (AccessControlTranslation) , "EncryptionConfiguration" :: Maybe (EncryptionConfiguration) } ) -> Destination
+newDestination' _Bucket customize = (Destination <<< customize) { "Bucket": _Bucket, "AccessControlTranslation": Nothing, "Account": Nothing, "EncryptionConfiguration": Nothing, "StorageClass": Nothing }
 
 
 
@@ -1847,8 +1846,8 @@ instance encodeEncodingType :: Encode EncodingType where encode = genericEncode 
 -- | Describes the server-side encryption that will be applied to the restore results.
 newtype Encryption = Encryption 
   { "EncryptionType" :: (ServerSideEncryption)
-  , "KMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "KMSContext" :: NullOrUndefined (KMSContext)
+  , "KMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "KMSContext" :: Maybe (KMSContext)
   }
 derive instance newtypeEncryption :: Newtype Encryption _
 derive instance repGenericEncryption :: Generic Encryption _
@@ -1858,18 +1857,18 @@ instance encodeEncryption :: Encode Encryption where encode = genericEncode opti
 
 -- | Constructs Encryption from required parameters
 newEncryption :: ServerSideEncryption -> Encryption
-newEncryption _EncryptionType = Encryption { "EncryptionType": _EncryptionType, "KMSContext": (NullOrUndefined Nothing), "KMSKeyId": (NullOrUndefined Nothing) }
+newEncryption _EncryptionType = Encryption { "EncryptionType": _EncryptionType, "KMSContext": Nothing, "KMSKeyId": Nothing }
 
 -- | Constructs Encryption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEncryption' :: ServerSideEncryption -> ( { "EncryptionType" :: (ServerSideEncryption) , "KMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "KMSContext" :: NullOrUndefined (KMSContext) } -> {"EncryptionType" :: (ServerSideEncryption) , "KMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "KMSContext" :: NullOrUndefined (KMSContext) } ) -> Encryption
-newEncryption' _EncryptionType customize = (Encryption <<< customize) { "EncryptionType": _EncryptionType, "KMSContext": (NullOrUndefined Nothing), "KMSKeyId": (NullOrUndefined Nothing) }
+newEncryption' :: ServerSideEncryption -> ( { "EncryptionType" :: (ServerSideEncryption) , "KMSKeyId" :: Maybe (SSEKMSKeyId) , "KMSContext" :: Maybe (KMSContext) } -> {"EncryptionType" :: (ServerSideEncryption) , "KMSKeyId" :: Maybe (SSEKMSKeyId) , "KMSContext" :: Maybe (KMSContext) } ) -> Encryption
+newEncryption' _EncryptionType customize = (Encryption <<< customize) { "EncryptionType": _EncryptionType, "KMSContext": Nothing, "KMSKeyId": Nothing }
 
 
 
 -- | Container for information regarding encryption based configuration for replicas.
 newtype EncryptionConfiguration = EncryptionConfiguration 
-  { "ReplicaKmsKeyID" :: NullOrUndefined (ReplicaKmsKeyID)
+  { "ReplicaKmsKeyID" :: Maybe (ReplicaKmsKeyID)
   }
 derive instance newtypeEncryptionConfiguration :: Newtype EncryptionConfiguration _
 derive instance repGenericEncryptionConfiguration :: Generic EncryptionConfiguration _
@@ -1879,20 +1878,20 @@ instance encodeEncryptionConfiguration :: Encode EncryptionConfiguration where e
 
 -- | Constructs EncryptionConfiguration from required parameters
 newEncryptionConfiguration :: EncryptionConfiguration
-newEncryptionConfiguration  = EncryptionConfiguration { "ReplicaKmsKeyID": (NullOrUndefined Nothing) }
+newEncryptionConfiguration  = EncryptionConfiguration { "ReplicaKmsKeyID": Nothing }
 
 -- | Constructs EncryptionConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEncryptionConfiguration' :: ( { "ReplicaKmsKeyID" :: NullOrUndefined (ReplicaKmsKeyID) } -> {"ReplicaKmsKeyID" :: NullOrUndefined (ReplicaKmsKeyID) } ) -> EncryptionConfiguration
-newEncryptionConfiguration'  customize = (EncryptionConfiguration <<< customize) { "ReplicaKmsKeyID": (NullOrUndefined Nothing) }
+newEncryptionConfiguration' :: ( { "ReplicaKmsKeyID" :: Maybe (ReplicaKmsKeyID) } -> {"ReplicaKmsKeyID" :: Maybe (ReplicaKmsKeyID) } ) -> EncryptionConfiguration
+newEncryptionConfiguration'  customize = (EncryptionConfiguration <<< customize) { "ReplicaKmsKeyID": Nothing }
 
 
 
 newtype Error = Error 
-  { "Key" :: NullOrUndefined (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "Code" :: NullOrUndefined (Code)
-  , "Message" :: NullOrUndefined (Message)
+  { "Key" :: Maybe (ObjectKey)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "Code" :: Maybe (Code)
+  , "Message" :: Maybe (Message)
   }
 derive instance newtypeError :: Newtype Error _
 derive instance repGenericError :: Generic Error _
@@ -1902,12 +1901,12 @@ instance encodeError :: Encode Error where encode = genericEncode options
 
 -- | Constructs Error from required parameters
 newError :: Error
-newError  = Error { "Code": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newError  = Error { "Code": Nothing, "Key": Nothing, "Message": Nothing, "VersionId": Nothing }
 
 -- | Constructs Error's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newError' :: ( { "Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "Code" :: NullOrUndefined (Code) , "Message" :: NullOrUndefined (Message) } -> {"Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "Code" :: NullOrUndefined (Code) , "Message" :: NullOrUndefined (Message) } ) -> Error
-newError'  customize = (Error <<< customize) { "Code": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newError' :: ( { "Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "Code" :: Maybe (Code) , "Message" :: Maybe (Message) } -> {"Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "Code" :: Maybe (Code) , "Message" :: Maybe (Message) } ) -> Error
+newError'  customize = (Error <<< customize) { "Code": Nothing, "Key": Nothing, "Message": Nothing, "VersionId": Nothing }
 
 
 
@@ -2060,8 +2059,8 @@ instance encodeFileHeaderInfo :: Encode FileHeaderInfo where encode = genericEnc
 
 -- | Container for key value pair that defines the criteria for the filter rule.
 newtype FilterRule = FilterRule 
-  { "Name" :: NullOrUndefined (FilterRuleName)
-  , "Value" :: NullOrUndefined (FilterRuleValue)
+  { "Name" :: Maybe (FilterRuleName)
+  , "Value" :: Maybe (FilterRuleValue)
   }
 derive instance newtypeFilterRule :: Newtype FilterRule _
 derive instance repGenericFilterRule :: Generic FilterRule _
@@ -2071,12 +2070,12 @@ instance encodeFilterRule :: Encode FilterRule where encode = genericEncode opti
 
 -- | Constructs FilterRule from required parameters
 newFilterRule :: FilterRule
-newFilterRule  = FilterRule { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newFilterRule  = FilterRule { "Name": Nothing, "Value": Nothing }
 
 -- | Constructs FilterRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFilterRule' :: ( { "Name" :: NullOrUndefined (FilterRuleName) , "Value" :: NullOrUndefined (FilterRuleValue) } -> {"Name" :: NullOrUndefined (FilterRuleName) , "Value" :: NullOrUndefined (FilterRuleValue) } ) -> FilterRule
-newFilterRule'  customize = (FilterRule <<< customize) { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newFilterRule' :: ( { "Name" :: Maybe (FilterRuleName) , "Value" :: Maybe (FilterRuleValue) } -> {"Name" :: Maybe (FilterRuleName) , "Value" :: Maybe (FilterRuleValue) } ) -> FilterRule
+newFilterRule'  customize = (FilterRule <<< customize) { "Name": Nothing, "Value": Nothing }
 
 
 
@@ -2109,7 +2108,7 @@ instance encodeFilterRuleValue :: Encode FilterRuleValue where encode = genericE
 
 
 newtype GetBucketAccelerateConfigurationOutput = GetBucketAccelerateConfigurationOutput 
-  { "Status" :: NullOrUndefined (BucketAccelerateStatus)
+  { "Status" :: Maybe (BucketAccelerateStatus)
   }
 derive instance newtypeGetBucketAccelerateConfigurationOutput :: Newtype GetBucketAccelerateConfigurationOutput _
 derive instance repGenericGetBucketAccelerateConfigurationOutput :: Generic GetBucketAccelerateConfigurationOutput _
@@ -2119,12 +2118,12 @@ instance encodeGetBucketAccelerateConfigurationOutput :: Encode GetBucketAcceler
 
 -- | Constructs GetBucketAccelerateConfigurationOutput from required parameters
 newGetBucketAccelerateConfigurationOutput :: GetBucketAccelerateConfigurationOutput
-newGetBucketAccelerateConfigurationOutput  = GetBucketAccelerateConfigurationOutput { "Status": (NullOrUndefined Nothing) }
+newGetBucketAccelerateConfigurationOutput  = GetBucketAccelerateConfigurationOutput { "Status": Nothing }
 
 -- | Constructs GetBucketAccelerateConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketAccelerateConfigurationOutput' :: ( { "Status" :: NullOrUndefined (BucketAccelerateStatus) } -> {"Status" :: NullOrUndefined (BucketAccelerateStatus) } ) -> GetBucketAccelerateConfigurationOutput
-newGetBucketAccelerateConfigurationOutput'  customize = (GetBucketAccelerateConfigurationOutput <<< customize) { "Status": (NullOrUndefined Nothing) }
+newGetBucketAccelerateConfigurationOutput' :: ( { "Status" :: Maybe (BucketAccelerateStatus) } -> {"Status" :: Maybe (BucketAccelerateStatus) } ) -> GetBucketAccelerateConfigurationOutput
+newGetBucketAccelerateConfigurationOutput'  customize = (GetBucketAccelerateConfigurationOutput <<< customize) { "Status": Nothing }
 
 
 
@@ -2149,8 +2148,8 @@ newGetBucketAccelerateConfigurationRequest' _Bucket customize = (GetBucketAccele
 
 
 newtype GetBucketAclOutput = GetBucketAclOutput 
-  { "Owner" :: NullOrUndefined (Owner)
-  , "Grants" :: NullOrUndefined (Grants)
+  { "Owner" :: Maybe (Owner)
+  , "Grants" :: Maybe (Grants)
   }
 derive instance newtypeGetBucketAclOutput :: Newtype GetBucketAclOutput _
 derive instance repGenericGetBucketAclOutput :: Generic GetBucketAclOutput _
@@ -2160,12 +2159,12 @@ instance encodeGetBucketAclOutput :: Encode GetBucketAclOutput where encode = ge
 
 -- | Constructs GetBucketAclOutput from required parameters
 newGetBucketAclOutput :: GetBucketAclOutput
-newGetBucketAclOutput  = GetBucketAclOutput { "Grants": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing) }
+newGetBucketAclOutput  = GetBucketAclOutput { "Grants": Nothing, "Owner": Nothing }
 
 -- | Constructs GetBucketAclOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketAclOutput' :: ( { "Owner" :: NullOrUndefined (Owner) , "Grants" :: NullOrUndefined (Grants) } -> {"Owner" :: NullOrUndefined (Owner) , "Grants" :: NullOrUndefined (Grants) } ) -> GetBucketAclOutput
-newGetBucketAclOutput'  customize = (GetBucketAclOutput <<< customize) { "Grants": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing) }
+newGetBucketAclOutput' :: ( { "Owner" :: Maybe (Owner) , "Grants" :: Maybe (Grants) } -> {"Owner" :: Maybe (Owner) , "Grants" :: Maybe (Grants) } ) -> GetBucketAclOutput
+newGetBucketAclOutput'  customize = (GetBucketAclOutput <<< customize) { "Grants": Nothing, "Owner": Nothing }
 
 
 
@@ -2190,7 +2189,7 @@ newGetBucketAclRequest' _Bucket customize = (GetBucketAclRequest <<< customize) 
 
 
 newtype GetBucketAnalyticsConfigurationOutput = GetBucketAnalyticsConfigurationOutput 
-  { "AnalyticsConfiguration" :: NullOrUndefined (AnalyticsConfiguration)
+  { "AnalyticsConfiguration" :: Maybe (AnalyticsConfiguration)
   }
 derive instance newtypeGetBucketAnalyticsConfigurationOutput :: Newtype GetBucketAnalyticsConfigurationOutput _
 derive instance repGenericGetBucketAnalyticsConfigurationOutput :: Generic GetBucketAnalyticsConfigurationOutput _
@@ -2200,12 +2199,12 @@ instance encodeGetBucketAnalyticsConfigurationOutput :: Encode GetBucketAnalytic
 
 -- | Constructs GetBucketAnalyticsConfigurationOutput from required parameters
 newGetBucketAnalyticsConfigurationOutput :: GetBucketAnalyticsConfigurationOutput
-newGetBucketAnalyticsConfigurationOutput  = GetBucketAnalyticsConfigurationOutput { "AnalyticsConfiguration": (NullOrUndefined Nothing) }
+newGetBucketAnalyticsConfigurationOutput  = GetBucketAnalyticsConfigurationOutput { "AnalyticsConfiguration": Nothing }
 
 -- | Constructs GetBucketAnalyticsConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketAnalyticsConfigurationOutput' :: ( { "AnalyticsConfiguration" :: NullOrUndefined (AnalyticsConfiguration) } -> {"AnalyticsConfiguration" :: NullOrUndefined (AnalyticsConfiguration) } ) -> GetBucketAnalyticsConfigurationOutput
-newGetBucketAnalyticsConfigurationOutput'  customize = (GetBucketAnalyticsConfigurationOutput <<< customize) { "AnalyticsConfiguration": (NullOrUndefined Nothing) }
+newGetBucketAnalyticsConfigurationOutput' :: ( { "AnalyticsConfiguration" :: Maybe (AnalyticsConfiguration) } -> {"AnalyticsConfiguration" :: Maybe (AnalyticsConfiguration) } ) -> GetBucketAnalyticsConfigurationOutput
+newGetBucketAnalyticsConfigurationOutput'  customize = (GetBucketAnalyticsConfigurationOutput <<< customize) { "AnalyticsConfiguration": Nothing }
 
 
 
@@ -2231,7 +2230,7 @@ newGetBucketAnalyticsConfigurationRequest' _Bucket _Id customize = (GetBucketAna
 
 
 newtype GetBucketCorsOutput = GetBucketCorsOutput 
-  { "CORSRules" :: NullOrUndefined (CORSRules)
+  { "CORSRules" :: Maybe (CORSRules)
   }
 derive instance newtypeGetBucketCorsOutput :: Newtype GetBucketCorsOutput _
 derive instance repGenericGetBucketCorsOutput :: Generic GetBucketCorsOutput _
@@ -2241,12 +2240,12 @@ instance encodeGetBucketCorsOutput :: Encode GetBucketCorsOutput where encode = 
 
 -- | Constructs GetBucketCorsOutput from required parameters
 newGetBucketCorsOutput :: GetBucketCorsOutput
-newGetBucketCorsOutput  = GetBucketCorsOutput { "CORSRules": (NullOrUndefined Nothing) }
+newGetBucketCorsOutput  = GetBucketCorsOutput { "CORSRules": Nothing }
 
 -- | Constructs GetBucketCorsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketCorsOutput' :: ( { "CORSRules" :: NullOrUndefined (CORSRules) } -> {"CORSRules" :: NullOrUndefined (CORSRules) } ) -> GetBucketCorsOutput
-newGetBucketCorsOutput'  customize = (GetBucketCorsOutput <<< customize) { "CORSRules": (NullOrUndefined Nothing) }
+newGetBucketCorsOutput' :: ( { "CORSRules" :: Maybe (CORSRules) } -> {"CORSRules" :: Maybe (CORSRules) } ) -> GetBucketCorsOutput
+newGetBucketCorsOutput'  customize = (GetBucketCorsOutput <<< customize) { "CORSRules": Nothing }
 
 
 
@@ -2271,7 +2270,7 @@ newGetBucketCorsRequest' _Bucket customize = (GetBucketCorsRequest <<< customize
 
 
 newtype GetBucketEncryptionOutput = GetBucketEncryptionOutput 
-  { "ServerSideEncryptionConfiguration" :: NullOrUndefined (ServerSideEncryptionConfiguration)
+  { "ServerSideEncryptionConfiguration" :: Maybe (ServerSideEncryptionConfiguration)
   }
 derive instance newtypeGetBucketEncryptionOutput :: Newtype GetBucketEncryptionOutput _
 derive instance repGenericGetBucketEncryptionOutput :: Generic GetBucketEncryptionOutput _
@@ -2281,12 +2280,12 @@ instance encodeGetBucketEncryptionOutput :: Encode GetBucketEncryptionOutput whe
 
 -- | Constructs GetBucketEncryptionOutput from required parameters
 newGetBucketEncryptionOutput :: GetBucketEncryptionOutput
-newGetBucketEncryptionOutput  = GetBucketEncryptionOutput { "ServerSideEncryptionConfiguration": (NullOrUndefined Nothing) }
+newGetBucketEncryptionOutput  = GetBucketEncryptionOutput { "ServerSideEncryptionConfiguration": Nothing }
 
 -- | Constructs GetBucketEncryptionOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketEncryptionOutput' :: ( { "ServerSideEncryptionConfiguration" :: NullOrUndefined (ServerSideEncryptionConfiguration) } -> {"ServerSideEncryptionConfiguration" :: NullOrUndefined (ServerSideEncryptionConfiguration) } ) -> GetBucketEncryptionOutput
-newGetBucketEncryptionOutput'  customize = (GetBucketEncryptionOutput <<< customize) { "ServerSideEncryptionConfiguration": (NullOrUndefined Nothing) }
+newGetBucketEncryptionOutput' :: ( { "ServerSideEncryptionConfiguration" :: Maybe (ServerSideEncryptionConfiguration) } -> {"ServerSideEncryptionConfiguration" :: Maybe (ServerSideEncryptionConfiguration) } ) -> GetBucketEncryptionOutput
+newGetBucketEncryptionOutput'  customize = (GetBucketEncryptionOutput <<< customize) { "ServerSideEncryptionConfiguration": Nothing }
 
 
 
@@ -2311,7 +2310,7 @@ newGetBucketEncryptionRequest' _Bucket customize = (GetBucketEncryptionRequest <
 
 
 newtype GetBucketInventoryConfigurationOutput = GetBucketInventoryConfigurationOutput 
-  { "InventoryConfiguration" :: NullOrUndefined (InventoryConfiguration)
+  { "InventoryConfiguration" :: Maybe (InventoryConfiguration)
   }
 derive instance newtypeGetBucketInventoryConfigurationOutput :: Newtype GetBucketInventoryConfigurationOutput _
 derive instance repGenericGetBucketInventoryConfigurationOutput :: Generic GetBucketInventoryConfigurationOutput _
@@ -2321,12 +2320,12 @@ instance encodeGetBucketInventoryConfigurationOutput :: Encode GetBucketInventor
 
 -- | Constructs GetBucketInventoryConfigurationOutput from required parameters
 newGetBucketInventoryConfigurationOutput :: GetBucketInventoryConfigurationOutput
-newGetBucketInventoryConfigurationOutput  = GetBucketInventoryConfigurationOutput { "InventoryConfiguration": (NullOrUndefined Nothing) }
+newGetBucketInventoryConfigurationOutput  = GetBucketInventoryConfigurationOutput { "InventoryConfiguration": Nothing }
 
 -- | Constructs GetBucketInventoryConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketInventoryConfigurationOutput' :: ( { "InventoryConfiguration" :: NullOrUndefined (InventoryConfiguration) } -> {"InventoryConfiguration" :: NullOrUndefined (InventoryConfiguration) } ) -> GetBucketInventoryConfigurationOutput
-newGetBucketInventoryConfigurationOutput'  customize = (GetBucketInventoryConfigurationOutput <<< customize) { "InventoryConfiguration": (NullOrUndefined Nothing) }
+newGetBucketInventoryConfigurationOutput' :: ( { "InventoryConfiguration" :: Maybe (InventoryConfiguration) } -> {"InventoryConfiguration" :: Maybe (InventoryConfiguration) } ) -> GetBucketInventoryConfigurationOutput
+newGetBucketInventoryConfigurationOutput'  customize = (GetBucketInventoryConfigurationOutput <<< customize) { "InventoryConfiguration": Nothing }
 
 
 
@@ -2352,7 +2351,7 @@ newGetBucketInventoryConfigurationRequest' _Bucket _Id customize = (GetBucketInv
 
 
 newtype GetBucketLifecycleConfigurationOutput = GetBucketLifecycleConfigurationOutput 
-  { "Rules" :: NullOrUndefined (LifecycleRules)
+  { "Rules" :: Maybe (LifecycleRules)
   }
 derive instance newtypeGetBucketLifecycleConfigurationOutput :: Newtype GetBucketLifecycleConfigurationOutput _
 derive instance repGenericGetBucketLifecycleConfigurationOutput :: Generic GetBucketLifecycleConfigurationOutput _
@@ -2362,12 +2361,12 @@ instance encodeGetBucketLifecycleConfigurationOutput :: Encode GetBucketLifecycl
 
 -- | Constructs GetBucketLifecycleConfigurationOutput from required parameters
 newGetBucketLifecycleConfigurationOutput :: GetBucketLifecycleConfigurationOutput
-newGetBucketLifecycleConfigurationOutput  = GetBucketLifecycleConfigurationOutput { "Rules": (NullOrUndefined Nothing) }
+newGetBucketLifecycleConfigurationOutput  = GetBucketLifecycleConfigurationOutput { "Rules": Nothing }
 
 -- | Constructs GetBucketLifecycleConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketLifecycleConfigurationOutput' :: ( { "Rules" :: NullOrUndefined (LifecycleRules) } -> {"Rules" :: NullOrUndefined (LifecycleRules) } ) -> GetBucketLifecycleConfigurationOutput
-newGetBucketLifecycleConfigurationOutput'  customize = (GetBucketLifecycleConfigurationOutput <<< customize) { "Rules": (NullOrUndefined Nothing) }
+newGetBucketLifecycleConfigurationOutput' :: ( { "Rules" :: Maybe (LifecycleRules) } -> {"Rules" :: Maybe (LifecycleRules) } ) -> GetBucketLifecycleConfigurationOutput
+newGetBucketLifecycleConfigurationOutput'  customize = (GetBucketLifecycleConfigurationOutput <<< customize) { "Rules": Nothing }
 
 
 
@@ -2392,7 +2391,7 @@ newGetBucketLifecycleConfigurationRequest' _Bucket customize = (GetBucketLifecyc
 
 
 newtype GetBucketLifecycleOutput = GetBucketLifecycleOutput 
-  { "Rules" :: NullOrUndefined (Rules)
+  { "Rules" :: Maybe (Rules)
   }
 derive instance newtypeGetBucketLifecycleOutput :: Newtype GetBucketLifecycleOutput _
 derive instance repGenericGetBucketLifecycleOutput :: Generic GetBucketLifecycleOutput _
@@ -2402,12 +2401,12 @@ instance encodeGetBucketLifecycleOutput :: Encode GetBucketLifecycleOutput where
 
 -- | Constructs GetBucketLifecycleOutput from required parameters
 newGetBucketLifecycleOutput :: GetBucketLifecycleOutput
-newGetBucketLifecycleOutput  = GetBucketLifecycleOutput { "Rules": (NullOrUndefined Nothing) }
+newGetBucketLifecycleOutput  = GetBucketLifecycleOutput { "Rules": Nothing }
 
 -- | Constructs GetBucketLifecycleOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketLifecycleOutput' :: ( { "Rules" :: NullOrUndefined (Rules) } -> {"Rules" :: NullOrUndefined (Rules) } ) -> GetBucketLifecycleOutput
-newGetBucketLifecycleOutput'  customize = (GetBucketLifecycleOutput <<< customize) { "Rules": (NullOrUndefined Nothing) }
+newGetBucketLifecycleOutput' :: ( { "Rules" :: Maybe (Rules) } -> {"Rules" :: Maybe (Rules) } ) -> GetBucketLifecycleOutput
+newGetBucketLifecycleOutput'  customize = (GetBucketLifecycleOutput <<< customize) { "Rules": Nothing }
 
 
 
@@ -2432,7 +2431,7 @@ newGetBucketLifecycleRequest' _Bucket customize = (GetBucketLifecycleRequest <<<
 
 
 newtype GetBucketLocationOutput = GetBucketLocationOutput 
-  { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint)
+  { "LocationConstraint" :: Maybe (BucketLocationConstraint)
   }
 derive instance newtypeGetBucketLocationOutput :: Newtype GetBucketLocationOutput _
 derive instance repGenericGetBucketLocationOutput :: Generic GetBucketLocationOutput _
@@ -2442,12 +2441,12 @@ instance encodeGetBucketLocationOutput :: Encode GetBucketLocationOutput where e
 
 -- | Constructs GetBucketLocationOutput from required parameters
 newGetBucketLocationOutput :: GetBucketLocationOutput
-newGetBucketLocationOutput  = GetBucketLocationOutput { "LocationConstraint": (NullOrUndefined Nothing) }
+newGetBucketLocationOutput  = GetBucketLocationOutput { "LocationConstraint": Nothing }
 
 -- | Constructs GetBucketLocationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketLocationOutput' :: ( { "LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) } -> {"LocationConstraint" :: NullOrUndefined (BucketLocationConstraint) } ) -> GetBucketLocationOutput
-newGetBucketLocationOutput'  customize = (GetBucketLocationOutput <<< customize) { "LocationConstraint": (NullOrUndefined Nothing) }
+newGetBucketLocationOutput' :: ( { "LocationConstraint" :: Maybe (BucketLocationConstraint) } -> {"LocationConstraint" :: Maybe (BucketLocationConstraint) } ) -> GetBucketLocationOutput
+newGetBucketLocationOutput'  customize = (GetBucketLocationOutput <<< customize) { "LocationConstraint": Nothing }
 
 
 
@@ -2472,7 +2471,7 @@ newGetBucketLocationRequest' _Bucket customize = (GetBucketLocationRequest <<< c
 
 
 newtype GetBucketLoggingOutput = GetBucketLoggingOutput 
-  { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled)
+  { "LoggingEnabled" :: Maybe (LoggingEnabled)
   }
 derive instance newtypeGetBucketLoggingOutput :: Newtype GetBucketLoggingOutput _
 derive instance repGenericGetBucketLoggingOutput :: Generic GetBucketLoggingOutput _
@@ -2482,12 +2481,12 @@ instance encodeGetBucketLoggingOutput :: Encode GetBucketLoggingOutput where enc
 
 -- | Constructs GetBucketLoggingOutput from required parameters
 newGetBucketLoggingOutput :: GetBucketLoggingOutput
-newGetBucketLoggingOutput  = GetBucketLoggingOutput { "LoggingEnabled": (NullOrUndefined Nothing) }
+newGetBucketLoggingOutput  = GetBucketLoggingOutput { "LoggingEnabled": Nothing }
 
 -- | Constructs GetBucketLoggingOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketLoggingOutput' :: ( { "LoggingEnabled" :: NullOrUndefined (LoggingEnabled) } -> {"LoggingEnabled" :: NullOrUndefined (LoggingEnabled) } ) -> GetBucketLoggingOutput
-newGetBucketLoggingOutput'  customize = (GetBucketLoggingOutput <<< customize) { "LoggingEnabled": (NullOrUndefined Nothing) }
+newGetBucketLoggingOutput' :: ( { "LoggingEnabled" :: Maybe (LoggingEnabled) } -> {"LoggingEnabled" :: Maybe (LoggingEnabled) } ) -> GetBucketLoggingOutput
+newGetBucketLoggingOutput'  customize = (GetBucketLoggingOutput <<< customize) { "LoggingEnabled": Nothing }
 
 
 
@@ -2512,7 +2511,7 @@ newGetBucketLoggingRequest' _Bucket customize = (GetBucketLoggingRequest <<< cus
 
 
 newtype GetBucketMetricsConfigurationOutput = GetBucketMetricsConfigurationOutput 
-  { "MetricsConfiguration" :: NullOrUndefined (MetricsConfiguration)
+  { "MetricsConfiguration" :: Maybe (MetricsConfiguration)
   }
 derive instance newtypeGetBucketMetricsConfigurationOutput :: Newtype GetBucketMetricsConfigurationOutput _
 derive instance repGenericGetBucketMetricsConfigurationOutput :: Generic GetBucketMetricsConfigurationOutput _
@@ -2522,12 +2521,12 @@ instance encodeGetBucketMetricsConfigurationOutput :: Encode GetBucketMetricsCon
 
 -- | Constructs GetBucketMetricsConfigurationOutput from required parameters
 newGetBucketMetricsConfigurationOutput :: GetBucketMetricsConfigurationOutput
-newGetBucketMetricsConfigurationOutput  = GetBucketMetricsConfigurationOutput { "MetricsConfiguration": (NullOrUndefined Nothing) }
+newGetBucketMetricsConfigurationOutput  = GetBucketMetricsConfigurationOutput { "MetricsConfiguration": Nothing }
 
 -- | Constructs GetBucketMetricsConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketMetricsConfigurationOutput' :: ( { "MetricsConfiguration" :: NullOrUndefined (MetricsConfiguration) } -> {"MetricsConfiguration" :: NullOrUndefined (MetricsConfiguration) } ) -> GetBucketMetricsConfigurationOutput
-newGetBucketMetricsConfigurationOutput'  customize = (GetBucketMetricsConfigurationOutput <<< customize) { "MetricsConfiguration": (NullOrUndefined Nothing) }
+newGetBucketMetricsConfigurationOutput' :: ( { "MetricsConfiguration" :: Maybe (MetricsConfiguration) } -> {"MetricsConfiguration" :: Maybe (MetricsConfiguration) } ) -> GetBucketMetricsConfigurationOutput
+newGetBucketMetricsConfigurationOutput'  customize = (GetBucketMetricsConfigurationOutput <<< customize) { "MetricsConfiguration": Nothing }
 
 
 
@@ -2573,7 +2572,7 @@ newGetBucketNotificationConfigurationRequest' _Bucket customize = (GetBucketNoti
 
 
 newtype GetBucketPolicyOutput = GetBucketPolicyOutput 
-  { "Policy" :: NullOrUndefined (Policy)
+  { "Policy" :: Maybe (Policy)
   }
 derive instance newtypeGetBucketPolicyOutput :: Newtype GetBucketPolicyOutput _
 derive instance repGenericGetBucketPolicyOutput :: Generic GetBucketPolicyOutput _
@@ -2583,12 +2582,12 @@ instance encodeGetBucketPolicyOutput :: Encode GetBucketPolicyOutput where encod
 
 -- | Constructs GetBucketPolicyOutput from required parameters
 newGetBucketPolicyOutput :: GetBucketPolicyOutput
-newGetBucketPolicyOutput  = GetBucketPolicyOutput { "Policy": (NullOrUndefined Nothing) }
+newGetBucketPolicyOutput  = GetBucketPolicyOutput { "Policy": Nothing }
 
 -- | Constructs GetBucketPolicyOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketPolicyOutput' :: ( { "Policy" :: NullOrUndefined (Policy) } -> {"Policy" :: NullOrUndefined (Policy) } ) -> GetBucketPolicyOutput
-newGetBucketPolicyOutput'  customize = (GetBucketPolicyOutput <<< customize) { "Policy": (NullOrUndefined Nothing) }
+newGetBucketPolicyOutput' :: ( { "Policy" :: Maybe (Policy) } -> {"Policy" :: Maybe (Policy) } ) -> GetBucketPolicyOutput
+newGetBucketPolicyOutput'  customize = (GetBucketPolicyOutput <<< customize) { "Policy": Nothing }
 
 
 
@@ -2613,7 +2612,7 @@ newGetBucketPolicyRequest' _Bucket customize = (GetBucketPolicyRequest <<< custo
 
 
 newtype GetBucketReplicationOutput = GetBucketReplicationOutput 
-  { "ReplicationConfiguration" :: NullOrUndefined (ReplicationConfiguration)
+  { "ReplicationConfiguration" :: Maybe (ReplicationConfiguration)
   }
 derive instance newtypeGetBucketReplicationOutput :: Newtype GetBucketReplicationOutput _
 derive instance repGenericGetBucketReplicationOutput :: Generic GetBucketReplicationOutput _
@@ -2623,12 +2622,12 @@ instance encodeGetBucketReplicationOutput :: Encode GetBucketReplicationOutput w
 
 -- | Constructs GetBucketReplicationOutput from required parameters
 newGetBucketReplicationOutput :: GetBucketReplicationOutput
-newGetBucketReplicationOutput  = GetBucketReplicationOutput { "ReplicationConfiguration": (NullOrUndefined Nothing) }
+newGetBucketReplicationOutput  = GetBucketReplicationOutput { "ReplicationConfiguration": Nothing }
 
 -- | Constructs GetBucketReplicationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketReplicationOutput' :: ( { "ReplicationConfiguration" :: NullOrUndefined (ReplicationConfiguration) } -> {"ReplicationConfiguration" :: NullOrUndefined (ReplicationConfiguration) } ) -> GetBucketReplicationOutput
-newGetBucketReplicationOutput'  customize = (GetBucketReplicationOutput <<< customize) { "ReplicationConfiguration": (NullOrUndefined Nothing) }
+newGetBucketReplicationOutput' :: ( { "ReplicationConfiguration" :: Maybe (ReplicationConfiguration) } -> {"ReplicationConfiguration" :: Maybe (ReplicationConfiguration) } ) -> GetBucketReplicationOutput
+newGetBucketReplicationOutput'  customize = (GetBucketReplicationOutput <<< customize) { "ReplicationConfiguration": Nothing }
 
 
 
@@ -2653,7 +2652,7 @@ newGetBucketReplicationRequest' _Bucket customize = (GetBucketReplicationRequest
 
 
 newtype GetBucketRequestPaymentOutput = GetBucketRequestPaymentOutput 
-  { "Payer" :: NullOrUndefined (Payer)
+  { "Payer" :: Maybe (Payer)
   }
 derive instance newtypeGetBucketRequestPaymentOutput :: Newtype GetBucketRequestPaymentOutput _
 derive instance repGenericGetBucketRequestPaymentOutput :: Generic GetBucketRequestPaymentOutput _
@@ -2663,12 +2662,12 @@ instance encodeGetBucketRequestPaymentOutput :: Encode GetBucketRequestPaymentOu
 
 -- | Constructs GetBucketRequestPaymentOutput from required parameters
 newGetBucketRequestPaymentOutput :: GetBucketRequestPaymentOutput
-newGetBucketRequestPaymentOutput  = GetBucketRequestPaymentOutput { "Payer": (NullOrUndefined Nothing) }
+newGetBucketRequestPaymentOutput  = GetBucketRequestPaymentOutput { "Payer": Nothing }
 
 -- | Constructs GetBucketRequestPaymentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketRequestPaymentOutput' :: ( { "Payer" :: NullOrUndefined (Payer) } -> {"Payer" :: NullOrUndefined (Payer) } ) -> GetBucketRequestPaymentOutput
-newGetBucketRequestPaymentOutput'  customize = (GetBucketRequestPaymentOutput <<< customize) { "Payer": (NullOrUndefined Nothing) }
+newGetBucketRequestPaymentOutput' :: ( { "Payer" :: Maybe (Payer) } -> {"Payer" :: Maybe (Payer) } ) -> GetBucketRequestPaymentOutput
+newGetBucketRequestPaymentOutput'  customize = (GetBucketRequestPaymentOutput <<< customize) { "Payer": Nothing }
 
 
 
@@ -2733,8 +2732,8 @@ newGetBucketTaggingRequest' _Bucket customize = (GetBucketTaggingRequest <<< cus
 
 
 newtype GetBucketVersioningOutput = GetBucketVersioningOutput 
-  { "Status" :: NullOrUndefined (BucketVersioningStatus)
-  , "MFADelete" :: NullOrUndefined (MFADeleteStatus)
+  { "Status" :: Maybe (BucketVersioningStatus)
+  , "MFADelete" :: Maybe (MFADeleteStatus)
   }
 derive instance newtypeGetBucketVersioningOutput :: Newtype GetBucketVersioningOutput _
 derive instance repGenericGetBucketVersioningOutput :: Generic GetBucketVersioningOutput _
@@ -2744,12 +2743,12 @@ instance encodeGetBucketVersioningOutput :: Encode GetBucketVersioningOutput whe
 
 -- | Constructs GetBucketVersioningOutput from required parameters
 newGetBucketVersioningOutput :: GetBucketVersioningOutput
-newGetBucketVersioningOutput  = GetBucketVersioningOutput { "MFADelete": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newGetBucketVersioningOutput  = GetBucketVersioningOutput { "MFADelete": Nothing, "Status": Nothing }
 
 -- | Constructs GetBucketVersioningOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketVersioningOutput' :: ( { "Status" :: NullOrUndefined (BucketVersioningStatus) , "MFADelete" :: NullOrUndefined (MFADeleteStatus) } -> {"Status" :: NullOrUndefined (BucketVersioningStatus) , "MFADelete" :: NullOrUndefined (MFADeleteStatus) } ) -> GetBucketVersioningOutput
-newGetBucketVersioningOutput'  customize = (GetBucketVersioningOutput <<< customize) { "MFADelete": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newGetBucketVersioningOutput' :: ( { "Status" :: Maybe (BucketVersioningStatus) , "MFADelete" :: Maybe (MFADeleteStatus) } -> {"Status" :: Maybe (BucketVersioningStatus) , "MFADelete" :: Maybe (MFADeleteStatus) } ) -> GetBucketVersioningOutput
+newGetBucketVersioningOutput'  customize = (GetBucketVersioningOutput <<< customize) { "MFADelete": Nothing, "Status": Nothing }
 
 
 
@@ -2774,10 +2773,10 @@ newGetBucketVersioningRequest' _Bucket customize = (GetBucketVersioningRequest <
 
 
 newtype GetBucketWebsiteOutput = GetBucketWebsiteOutput 
-  { "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo)
-  , "IndexDocument" :: NullOrUndefined (IndexDocument)
-  , "ErrorDocument" :: NullOrUndefined (ErrorDocument)
-  , "RoutingRules" :: NullOrUndefined (RoutingRules)
+  { "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo)
+  , "IndexDocument" :: Maybe (IndexDocument)
+  , "ErrorDocument" :: Maybe (ErrorDocument)
+  , "RoutingRules" :: Maybe (RoutingRules)
   }
 derive instance newtypeGetBucketWebsiteOutput :: Newtype GetBucketWebsiteOutput _
 derive instance repGenericGetBucketWebsiteOutput :: Generic GetBucketWebsiteOutput _
@@ -2787,12 +2786,12 @@ instance encodeGetBucketWebsiteOutput :: Encode GetBucketWebsiteOutput where enc
 
 -- | Constructs GetBucketWebsiteOutput from required parameters
 newGetBucketWebsiteOutput :: GetBucketWebsiteOutput
-newGetBucketWebsiteOutput  = GetBucketWebsiteOutput { "ErrorDocument": (NullOrUndefined Nothing), "IndexDocument": (NullOrUndefined Nothing), "RedirectAllRequestsTo": (NullOrUndefined Nothing), "RoutingRules": (NullOrUndefined Nothing) }
+newGetBucketWebsiteOutput  = GetBucketWebsiteOutput { "ErrorDocument": Nothing, "IndexDocument": Nothing, "RedirectAllRequestsTo": Nothing, "RoutingRules": Nothing }
 
 -- | Constructs GetBucketWebsiteOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetBucketWebsiteOutput' :: ( { "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo) , "IndexDocument" :: NullOrUndefined (IndexDocument) , "ErrorDocument" :: NullOrUndefined (ErrorDocument) , "RoutingRules" :: NullOrUndefined (RoutingRules) } -> {"RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo) , "IndexDocument" :: NullOrUndefined (IndexDocument) , "ErrorDocument" :: NullOrUndefined (ErrorDocument) , "RoutingRules" :: NullOrUndefined (RoutingRules) } ) -> GetBucketWebsiteOutput
-newGetBucketWebsiteOutput'  customize = (GetBucketWebsiteOutput <<< customize) { "ErrorDocument": (NullOrUndefined Nothing), "IndexDocument": (NullOrUndefined Nothing), "RedirectAllRequestsTo": (NullOrUndefined Nothing), "RoutingRules": (NullOrUndefined Nothing) }
+newGetBucketWebsiteOutput' :: ( { "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo) , "IndexDocument" :: Maybe (IndexDocument) , "ErrorDocument" :: Maybe (ErrorDocument) , "RoutingRules" :: Maybe (RoutingRules) } -> {"RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo) , "IndexDocument" :: Maybe (IndexDocument) , "ErrorDocument" :: Maybe (ErrorDocument) , "RoutingRules" :: Maybe (RoutingRules) } ) -> GetBucketWebsiteOutput
+newGetBucketWebsiteOutput'  customize = (GetBucketWebsiteOutput <<< customize) { "ErrorDocument": Nothing, "IndexDocument": Nothing, "RedirectAllRequestsTo": Nothing, "RoutingRules": Nothing }
 
 
 
@@ -2817,9 +2816,9 @@ newGetBucketWebsiteRequest' _Bucket customize = (GetBucketWebsiteRequest <<< cus
 
 
 newtype GetObjectAclOutput = GetObjectAclOutput 
-  { "Owner" :: NullOrUndefined (Owner)
-  , "Grants" :: NullOrUndefined (Grants)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "Owner" :: Maybe (Owner)
+  , "Grants" :: Maybe (Grants)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeGetObjectAclOutput :: Newtype GetObjectAclOutput _
 derive instance repGenericGetObjectAclOutput :: Generic GetObjectAclOutput _
@@ -2829,20 +2828,20 @@ instance encodeGetObjectAclOutput :: Encode GetObjectAclOutput where encode = ge
 
 -- | Constructs GetObjectAclOutput from required parameters
 newGetObjectAclOutput :: GetObjectAclOutput
-newGetObjectAclOutput  = GetObjectAclOutput { "Grants": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing) }
+newGetObjectAclOutput  = GetObjectAclOutput { "Grants": Nothing, "Owner": Nothing, "RequestCharged": Nothing }
 
 -- | Constructs GetObjectAclOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectAclOutput' :: ( { "Owner" :: NullOrUndefined (Owner) , "Grants" :: NullOrUndefined (Grants) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"Owner" :: NullOrUndefined (Owner) , "Grants" :: NullOrUndefined (Grants) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> GetObjectAclOutput
-newGetObjectAclOutput'  customize = (GetObjectAclOutput <<< customize) { "Grants": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing) }
+newGetObjectAclOutput' :: ( { "Owner" :: Maybe (Owner) , "Grants" :: Maybe (Grants) , "RequestCharged" :: Maybe (RequestCharged) } -> {"Owner" :: Maybe (Owner) , "Grants" :: Maybe (Grants) , "RequestCharged" :: Maybe (RequestCharged) } ) -> GetObjectAclOutput
+newGetObjectAclOutput'  customize = (GetObjectAclOutput <<< customize) { "Grants": Nothing, "Owner": Nothing, "RequestCharged": Nothing }
 
 
 
 newtype GetObjectAclRequest = GetObjectAclRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeGetObjectAclRequest :: Newtype GetObjectAclRequest _
 derive instance repGenericGetObjectAclRequest :: Generic GetObjectAclRequest _
@@ -2852,44 +2851,44 @@ instance encodeGetObjectAclRequest :: Encode GetObjectAclRequest where encode = 
 
 -- | Constructs GetObjectAclRequest from required parameters
 newGetObjectAclRequest :: BucketName -> ObjectKey -> GetObjectAclRequest
-newGetObjectAclRequest _Bucket _Key = GetObjectAclRequest { "Bucket": _Bucket, "Key": _Key, "RequestPayer": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newGetObjectAclRequest _Bucket _Key = GetObjectAclRequest { "Bucket": _Bucket, "Key": _Key, "RequestPayer": Nothing, "VersionId": Nothing }
 
 -- | Constructs GetObjectAclRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectAclRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> GetObjectAclRequest
-newGetObjectAclRequest' _Bucket _Key customize = (GetObjectAclRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "RequestPayer": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newGetObjectAclRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "RequestPayer" :: Maybe (RequestPayer) } ) -> GetObjectAclRequest
+newGetObjectAclRequest' _Bucket _Key customize = (GetObjectAclRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "RequestPayer": Nothing, "VersionId": Nothing }
 
 
 
 newtype GetObjectOutput = GetObjectOutput 
-  { "Body" :: NullOrUndefined (Body)
-  , "DeleteMarker" :: NullOrUndefined (DeleteMarker)
-  , "AcceptRanges" :: NullOrUndefined (AcceptRanges)
-  , "Expiration" :: NullOrUndefined (Expiration)
-  , "Restore" :: NullOrUndefined (Restore)
-  , "LastModified" :: NullOrUndefined (LastModified)
-  , "ContentLength" :: NullOrUndefined (ContentLength)
-  , "ETag" :: NullOrUndefined (ETag)
-  , "MissingMeta" :: NullOrUndefined (MissingMeta)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "CacheControl" :: NullOrUndefined (CacheControl)
-  , "ContentDisposition" :: NullOrUndefined (ContentDisposition)
-  , "ContentEncoding" :: NullOrUndefined (ContentEncoding)
-  , "ContentLanguage" :: NullOrUndefined (ContentLanguage)
-  , "ContentRange" :: NullOrUndefined (ContentRange)
-  , "ContentType" :: NullOrUndefined (ContentType)
-  , "Expires" :: NullOrUndefined (Expires)
-  , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "Metadata" :: NullOrUndefined (Metadata)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
-  , "ReplicationStatus" :: NullOrUndefined (ReplicationStatus)
-  , "PartsCount" :: NullOrUndefined (PartsCount)
-  , "TagCount" :: NullOrUndefined (TagCount)
+  { "Body" :: Maybe (Body)
+  , "DeleteMarker" :: Maybe (DeleteMarker)
+  , "AcceptRanges" :: Maybe (AcceptRanges)
+  , "Expiration" :: Maybe (Expiration)
+  , "Restore" :: Maybe (Restore)
+  , "LastModified" :: Maybe (LastModified)
+  , "ContentLength" :: Maybe (ContentLength)
+  , "ETag" :: Maybe (ETag)
+  , "MissingMeta" :: Maybe (MissingMeta)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "CacheControl" :: Maybe (CacheControl)
+  , "ContentDisposition" :: Maybe (ContentDisposition)
+  , "ContentEncoding" :: Maybe (ContentEncoding)
+  , "ContentLanguage" :: Maybe (ContentLanguage)
+  , "ContentRange" :: Maybe (ContentRange)
+  , "ContentType" :: Maybe (ContentType)
+  , "Expires" :: Maybe (Expires)
+  , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "Metadata" :: Maybe (Metadata)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "RequestCharged" :: Maybe (RequestCharged)
+  , "ReplicationStatus" :: Maybe (ReplicationStatus)
+  , "PartsCount" :: Maybe (PartsCount)
+  , "TagCount" :: Maybe (TagCount)
   }
 derive instance newtypeGetObjectOutput :: Newtype GetObjectOutput _
 derive instance repGenericGetObjectOutput :: Generic GetObjectOutput _
@@ -2899,35 +2898,35 @@ instance encodeGetObjectOutput :: Encode GetObjectOutput where encode = genericE
 
 -- | Constructs GetObjectOutput from required parameters
 newGetObjectOutput :: GetObjectOutput
-newGetObjectOutput  = GetObjectOutput { "AcceptRanges": (NullOrUndefined Nothing), "Body": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentRange": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "DeleteMarker": (NullOrUndefined Nothing), "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "MissingMeta": (NullOrUndefined Nothing), "PartsCount": (NullOrUndefined Nothing), "ReplicationStatus": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "Restore": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "TagCount": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newGetObjectOutput  = GetObjectOutput { "AcceptRanges": Nothing, "Body": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentLength": Nothing, "ContentRange": Nothing, "ContentType": Nothing, "DeleteMarker": Nothing, "ETag": Nothing, "Expiration": Nothing, "Expires": Nothing, "LastModified": Nothing, "Metadata": Nothing, "MissingMeta": Nothing, "PartsCount": Nothing, "ReplicationStatus": Nothing, "RequestCharged": Nothing, "Restore": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "TagCount": Nothing, "VersionId": Nothing, "WebsiteRedirectLocation": Nothing }
 
 -- | Constructs GetObjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectOutput' :: ( { "Body" :: NullOrUndefined (Body) , "DeleteMarker" :: NullOrUndefined (DeleteMarker) , "AcceptRanges" :: NullOrUndefined (AcceptRanges) , "Expiration" :: NullOrUndefined (Expiration) , "Restore" :: NullOrUndefined (Restore) , "LastModified" :: NullOrUndefined (LastModified) , "ContentLength" :: NullOrUndefined (ContentLength) , "ETag" :: NullOrUndefined (ETag) , "MissingMeta" :: NullOrUndefined (MissingMeta) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentRange" :: NullOrUndefined (ContentRange) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "Metadata" :: NullOrUndefined (Metadata) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "StorageClass" :: NullOrUndefined (StorageClass) , "RequestCharged" :: NullOrUndefined (RequestCharged) , "ReplicationStatus" :: NullOrUndefined (ReplicationStatus) , "PartsCount" :: NullOrUndefined (PartsCount) , "TagCount" :: NullOrUndefined (TagCount) } -> {"Body" :: NullOrUndefined (Body) , "DeleteMarker" :: NullOrUndefined (DeleteMarker) , "AcceptRanges" :: NullOrUndefined (AcceptRanges) , "Expiration" :: NullOrUndefined (Expiration) , "Restore" :: NullOrUndefined (Restore) , "LastModified" :: NullOrUndefined (LastModified) , "ContentLength" :: NullOrUndefined (ContentLength) , "ETag" :: NullOrUndefined (ETag) , "MissingMeta" :: NullOrUndefined (MissingMeta) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentRange" :: NullOrUndefined (ContentRange) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "Metadata" :: NullOrUndefined (Metadata) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "StorageClass" :: NullOrUndefined (StorageClass) , "RequestCharged" :: NullOrUndefined (RequestCharged) , "ReplicationStatus" :: NullOrUndefined (ReplicationStatus) , "PartsCount" :: NullOrUndefined (PartsCount) , "TagCount" :: NullOrUndefined (TagCount) } ) -> GetObjectOutput
-newGetObjectOutput'  customize = (GetObjectOutput <<< customize) { "AcceptRanges": (NullOrUndefined Nothing), "Body": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentRange": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "DeleteMarker": (NullOrUndefined Nothing), "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "MissingMeta": (NullOrUndefined Nothing), "PartsCount": (NullOrUndefined Nothing), "ReplicationStatus": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "Restore": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "TagCount": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newGetObjectOutput' :: ( { "Body" :: Maybe (Body) , "DeleteMarker" :: Maybe (DeleteMarker) , "AcceptRanges" :: Maybe (AcceptRanges) , "Expiration" :: Maybe (Expiration) , "Restore" :: Maybe (Restore) , "LastModified" :: Maybe (LastModified) , "ContentLength" :: Maybe (ContentLength) , "ETag" :: Maybe (ETag) , "MissingMeta" :: Maybe (MissingMeta) , "VersionId" :: Maybe (ObjectVersionId) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentRange" :: Maybe (ContentRange) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "Metadata" :: Maybe (Metadata) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "StorageClass" :: Maybe (StorageClass) , "RequestCharged" :: Maybe (RequestCharged) , "ReplicationStatus" :: Maybe (ReplicationStatus) , "PartsCount" :: Maybe (PartsCount) , "TagCount" :: Maybe (TagCount) } -> {"Body" :: Maybe (Body) , "DeleteMarker" :: Maybe (DeleteMarker) , "AcceptRanges" :: Maybe (AcceptRanges) , "Expiration" :: Maybe (Expiration) , "Restore" :: Maybe (Restore) , "LastModified" :: Maybe (LastModified) , "ContentLength" :: Maybe (ContentLength) , "ETag" :: Maybe (ETag) , "MissingMeta" :: Maybe (MissingMeta) , "VersionId" :: Maybe (ObjectVersionId) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentRange" :: Maybe (ContentRange) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "Metadata" :: Maybe (Metadata) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "StorageClass" :: Maybe (StorageClass) , "RequestCharged" :: Maybe (RequestCharged) , "ReplicationStatus" :: Maybe (ReplicationStatus) , "PartsCount" :: Maybe (PartsCount) , "TagCount" :: Maybe (TagCount) } ) -> GetObjectOutput
+newGetObjectOutput'  customize = (GetObjectOutput <<< customize) { "AcceptRanges": Nothing, "Body": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentLength": Nothing, "ContentRange": Nothing, "ContentType": Nothing, "DeleteMarker": Nothing, "ETag": Nothing, "Expiration": Nothing, "Expires": Nothing, "LastModified": Nothing, "Metadata": Nothing, "MissingMeta": Nothing, "PartsCount": Nothing, "ReplicationStatus": Nothing, "RequestCharged": Nothing, "Restore": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "TagCount": Nothing, "VersionId": Nothing, "WebsiteRedirectLocation": Nothing }
 
 
 
 newtype GetObjectRequest = GetObjectRequest 
   { "Bucket" :: (BucketName)
-  , "IfMatch" :: NullOrUndefined (IfMatch)
-  , "IfModifiedSince" :: NullOrUndefined (IfModifiedSince)
-  , "IfNoneMatch" :: NullOrUndefined (IfNoneMatch)
-  , "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince)
+  , "IfMatch" :: Maybe (IfMatch)
+  , "IfModifiedSince" :: Maybe (IfModifiedSince)
+  , "IfNoneMatch" :: Maybe (IfNoneMatch)
+  , "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince)
   , "Key" :: (ObjectKey)
-  , "Range" :: NullOrUndefined (Range)
-  , "ResponseCacheControl" :: NullOrUndefined (ResponseCacheControl)
-  , "ResponseContentDisposition" :: NullOrUndefined (ResponseContentDisposition)
-  , "ResponseContentEncoding" :: NullOrUndefined (ResponseContentEncoding)
-  , "ResponseContentLanguage" :: NullOrUndefined (ResponseContentLanguage)
-  , "ResponseContentType" :: NullOrUndefined (ResponseContentType)
-  , "ResponseExpires" :: NullOrUndefined (ResponseExpires)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
-  , "PartNumber" :: NullOrUndefined (PartNumber)
+  , "Range" :: Maybe (Range)
+  , "ResponseCacheControl" :: Maybe (ResponseCacheControl)
+  , "ResponseContentDisposition" :: Maybe (ResponseContentDisposition)
+  , "ResponseContentEncoding" :: Maybe (ResponseContentEncoding)
+  , "ResponseContentLanguage" :: Maybe (ResponseContentLanguage)
+  , "ResponseContentType" :: Maybe (ResponseContentType)
+  , "ResponseExpires" :: Maybe (ResponseExpires)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKey" :: Maybe (SSECustomerKey)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "RequestPayer" :: Maybe (RequestPayer)
+  , "PartNumber" :: Maybe (PartNumber)
   }
 derive instance newtypeGetObjectRequest :: Newtype GetObjectRequest _
 derive instance repGenericGetObjectRequest :: Generic GetObjectRequest _
@@ -2937,17 +2936,17 @@ instance encodeGetObjectRequest :: Encode GetObjectRequest where encode = generi
 
 -- | Constructs GetObjectRequest from required parameters
 newGetObjectRequest :: BucketName -> ObjectKey -> GetObjectRequest
-newGetObjectRequest _Bucket _Key = GetObjectRequest { "Bucket": _Bucket, "Key": _Key, "IfMatch": (NullOrUndefined Nothing), "IfModifiedSince": (NullOrUndefined Nothing), "IfNoneMatch": (NullOrUndefined Nothing), "IfUnmodifiedSince": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing), "Range": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "ResponseCacheControl": (NullOrUndefined Nothing), "ResponseContentDisposition": (NullOrUndefined Nothing), "ResponseContentEncoding": (NullOrUndefined Nothing), "ResponseContentLanguage": (NullOrUndefined Nothing), "ResponseContentType": (NullOrUndefined Nothing), "ResponseExpires": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newGetObjectRequest _Bucket _Key = GetObjectRequest { "Bucket": _Bucket, "Key": _Key, "IfMatch": Nothing, "IfModifiedSince": Nothing, "IfNoneMatch": Nothing, "IfUnmodifiedSince": Nothing, "PartNumber": Nothing, "Range": Nothing, "RequestPayer": Nothing, "ResponseCacheControl": Nothing, "ResponseContentDisposition": Nothing, "ResponseContentEncoding": Nothing, "ResponseContentLanguage": Nothing, "ResponseContentType": Nothing, "ResponseExpires": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "VersionId": Nothing }
 
 -- | Constructs GetObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "IfMatch" :: NullOrUndefined (IfMatch) , "IfModifiedSince" :: NullOrUndefined (IfModifiedSince) , "IfNoneMatch" :: NullOrUndefined (IfNoneMatch) , "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: NullOrUndefined (Range) , "ResponseCacheControl" :: NullOrUndefined (ResponseCacheControl) , "ResponseContentDisposition" :: NullOrUndefined (ResponseContentDisposition) , "ResponseContentEncoding" :: NullOrUndefined (ResponseContentEncoding) , "ResponseContentLanguage" :: NullOrUndefined (ResponseContentLanguage) , "ResponseContentType" :: NullOrUndefined (ResponseContentType) , "ResponseExpires" :: NullOrUndefined (ResponseExpires) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "PartNumber" :: NullOrUndefined (PartNumber) } -> {"Bucket" :: (BucketName) , "IfMatch" :: NullOrUndefined (IfMatch) , "IfModifiedSince" :: NullOrUndefined (IfModifiedSince) , "IfNoneMatch" :: NullOrUndefined (IfNoneMatch) , "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: NullOrUndefined (Range) , "ResponseCacheControl" :: NullOrUndefined (ResponseCacheControl) , "ResponseContentDisposition" :: NullOrUndefined (ResponseContentDisposition) , "ResponseContentEncoding" :: NullOrUndefined (ResponseContentEncoding) , "ResponseContentLanguage" :: NullOrUndefined (ResponseContentLanguage) , "ResponseContentType" :: NullOrUndefined (ResponseContentType) , "ResponseExpires" :: NullOrUndefined (ResponseExpires) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "PartNumber" :: NullOrUndefined (PartNumber) } ) -> GetObjectRequest
-newGetObjectRequest' _Bucket _Key customize = (GetObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "IfMatch": (NullOrUndefined Nothing), "IfModifiedSince": (NullOrUndefined Nothing), "IfNoneMatch": (NullOrUndefined Nothing), "IfUnmodifiedSince": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing), "Range": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "ResponseCacheControl": (NullOrUndefined Nothing), "ResponseContentDisposition": (NullOrUndefined Nothing), "ResponseContentEncoding": (NullOrUndefined Nothing), "ResponseContentLanguage": (NullOrUndefined Nothing), "ResponseContentType": (NullOrUndefined Nothing), "ResponseExpires": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newGetObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "IfMatch" :: Maybe (IfMatch) , "IfModifiedSince" :: Maybe (IfModifiedSince) , "IfNoneMatch" :: Maybe (IfNoneMatch) , "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: Maybe (Range) , "ResponseCacheControl" :: Maybe (ResponseCacheControl) , "ResponseContentDisposition" :: Maybe (ResponseContentDisposition) , "ResponseContentEncoding" :: Maybe (ResponseContentEncoding) , "ResponseContentLanguage" :: Maybe (ResponseContentLanguage) , "ResponseContentType" :: Maybe (ResponseContentType) , "ResponseExpires" :: Maybe (ResponseExpires) , "VersionId" :: Maybe (ObjectVersionId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) , "PartNumber" :: Maybe (PartNumber) } -> {"Bucket" :: (BucketName) , "IfMatch" :: Maybe (IfMatch) , "IfModifiedSince" :: Maybe (IfModifiedSince) , "IfNoneMatch" :: Maybe (IfNoneMatch) , "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: Maybe (Range) , "ResponseCacheControl" :: Maybe (ResponseCacheControl) , "ResponseContentDisposition" :: Maybe (ResponseContentDisposition) , "ResponseContentEncoding" :: Maybe (ResponseContentEncoding) , "ResponseContentLanguage" :: Maybe (ResponseContentLanguage) , "ResponseContentType" :: Maybe (ResponseContentType) , "ResponseExpires" :: Maybe (ResponseExpires) , "VersionId" :: Maybe (ObjectVersionId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) , "PartNumber" :: Maybe (PartNumber) } ) -> GetObjectRequest
+newGetObjectRequest' _Bucket _Key customize = (GetObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "IfMatch": Nothing, "IfModifiedSince": Nothing, "IfNoneMatch": Nothing, "IfUnmodifiedSince": Nothing, "PartNumber": Nothing, "Range": Nothing, "RequestPayer": Nothing, "ResponseCacheControl": Nothing, "ResponseContentDisposition": Nothing, "ResponseContentEncoding": Nothing, "ResponseContentLanguage": Nothing, "ResponseContentType": Nothing, "ResponseExpires": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "VersionId": Nothing }
 
 
 
 newtype GetObjectTaggingOutput = GetObjectTaggingOutput 
-  { "VersionId" :: NullOrUndefined (ObjectVersionId)
+  { "VersionId" :: Maybe (ObjectVersionId)
   , "TagSet" :: (TagSet)
   }
 derive instance newtypeGetObjectTaggingOutput :: Newtype GetObjectTaggingOutput _
@@ -2958,19 +2957,19 @@ instance encodeGetObjectTaggingOutput :: Encode GetObjectTaggingOutput where enc
 
 -- | Constructs GetObjectTaggingOutput from required parameters
 newGetObjectTaggingOutput :: TagSet -> GetObjectTaggingOutput
-newGetObjectTaggingOutput _TagSet = GetObjectTaggingOutput { "TagSet": _TagSet, "VersionId": (NullOrUndefined Nothing) }
+newGetObjectTaggingOutput _TagSet = GetObjectTaggingOutput { "TagSet": _TagSet, "VersionId": Nothing }
 
 -- | Constructs GetObjectTaggingOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectTaggingOutput' :: TagSet -> ( { "VersionId" :: NullOrUndefined (ObjectVersionId) , "TagSet" :: (TagSet) } -> {"VersionId" :: NullOrUndefined (ObjectVersionId) , "TagSet" :: (TagSet) } ) -> GetObjectTaggingOutput
-newGetObjectTaggingOutput' _TagSet customize = (GetObjectTaggingOutput <<< customize) { "TagSet": _TagSet, "VersionId": (NullOrUndefined Nothing) }
+newGetObjectTaggingOutput' :: TagSet -> ( { "VersionId" :: Maybe (ObjectVersionId) , "TagSet" :: (TagSet) } -> {"VersionId" :: Maybe (ObjectVersionId) , "TagSet" :: (TagSet) } ) -> GetObjectTaggingOutput
+newGetObjectTaggingOutput' _TagSet customize = (GetObjectTaggingOutput <<< customize) { "TagSet": _TagSet, "VersionId": Nothing }
 
 
 
 newtype GetObjectTaggingRequest = GetObjectTaggingRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
+  , "VersionId" :: Maybe (ObjectVersionId)
   }
 derive instance newtypeGetObjectTaggingRequest :: Newtype GetObjectTaggingRequest _
 derive instance repGenericGetObjectTaggingRequest :: Generic GetObjectTaggingRequest _
@@ -2980,18 +2979,18 @@ instance encodeGetObjectTaggingRequest :: Encode GetObjectTaggingRequest where e
 
 -- | Constructs GetObjectTaggingRequest from required parameters
 newGetObjectTaggingRequest :: BucketName -> ObjectKey -> GetObjectTaggingRequest
-newGetObjectTaggingRequest _Bucket _Key = GetObjectTaggingRequest { "Bucket": _Bucket, "Key": _Key, "VersionId": (NullOrUndefined Nothing) }
+newGetObjectTaggingRequest _Bucket _Key = GetObjectTaggingRequest { "Bucket": _Bucket, "Key": _Key, "VersionId": Nothing }
 
 -- | Constructs GetObjectTaggingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectTaggingRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) } ) -> GetObjectTaggingRequest
-newGetObjectTaggingRequest' _Bucket _Key customize = (GetObjectTaggingRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "VersionId": (NullOrUndefined Nothing) }
+newGetObjectTaggingRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) } ) -> GetObjectTaggingRequest
+newGetObjectTaggingRequest' _Bucket _Key customize = (GetObjectTaggingRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "VersionId": Nothing }
 
 
 
 newtype GetObjectTorrentOutput = GetObjectTorrentOutput 
-  { "Body" :: NullOrUndefined (Body)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "Body" :: Maybe (Body)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeGetObjectTorrentOutput :: Newtype GetObjectTorrentOutput _
 derive instance repGenericGetObjectTorrentOutput :: Generic GetObjectTorrentOutput _
@@ -3001,19 +3000,19 @@ instance encodeGetObjectTorrentOutput :: Encode GetObjectTorrentOutput where enc
 
 -- | Constructs GetObjectTorrentOutput from required parameters
 newGetObjectTorrentOutput :: GetObjectTorrentOutput
-newGetObjectTorrentOutput  = GetObjectTorrentOutput { "Body": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing) }
+newGetObjectTorrentOutput  = GetObjectTorrentOutput { "Body": Nothing, "RequestCharged": Nothing }
 
 -- | Constructs GetObjectTorrentOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectTorrentOutput' :: ( { "Body" :: NullOrUndefined (Body) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"Body" :: NullOrUndefined (Body) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> GetObjectTorrentOutput
-newGetObjectTorrentOutput'  customize = (GetObjectTorrentOutput <<< customize) { "Body": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing) }
+newGetObjectTorrentOutput' :: ( { "Body" :: Maybe (Body) , "RequestCharged" :: Maybe (RequestCharged) } -> {"Body" :: Maybe (Body) , "RequestCharged" :: Maybe (RequestCharged) } ) -> GetObjectTorrentOutput
+newGetObjectTorrentOutput'  customize = (GetObjectTorrentOutput <<< customize) { "Body": Nothing, "RequestCharged": Nothing }
 
 
 
 newtype GetObjectTorrentRequest = GetObjectTorrentRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeGetObjectTorrentRequest :: Newtype GetObjectTorrentRequest _
 derive instance repGenericGetObjectTorrentRequest :: Generic GetObjectTorrentRequest _
@@ -3023,12 +3022,12 @@ instance encodeGetObjectTorrentRequest :: Encode GetObjectTorrentRequest where e
 
 -- | Constructs GetObjectTorrentRequest from required parameters
 newGetObjectTorrentRequest :: BucketName -> ObjectKey -> GetObjectTorrentRequest
-newGetObjectTorrentRequest _Bucket _Key = GetObjectTorrentRequest { "Bucket": _Bucket, "Key": _Key, "RequestPayer": (NullOrUndefined Nothing) }
+newGetObjectTorrentRequest _Bucket _Key = GetObjectTorrentRequest { "Bucket": _Bucket, "Key": _Key, "RequestPayer": Nothing }
 
 -- | Constructs GetObjectTorrentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetObjectTorrentRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> GetObjectTorrentRequest
-newGetObjectTorrentRequest' _Bucket _Key customize = (GetObjectTorrentRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "RequestPayer": (NullOrUndefined Nothing) }
+newGetObjectTorrentRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "RequestPayer" :: Maybe (RequestPayer) } ) -> GetObjectTorrentRequest
+newGetObjectTorrentRequest' _Bucket _Key customize = (GetObjectTorrentRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "RequestPayer": Nothing }
 
 
 
@@ -3053,8 +3052,8 @@ newGlacierJobParameters' _Tier customize = (GlacierJobParameters <<< customize) 
 
 
 newtype Grant = Grant 
-  { "Grantee" :: NullOrUndefined (Grantee)
-  , "Permission" :: NullOrUndefined (Permission)
+  { "Grantee" :: Maybe (Grantee)
+  , "Permission" :: Maybe (Permission)
   }
 derive instance newtypeGrant :: Newtype Grant _
 derive instance repGenericGrant :: Generic Grant _
@@ -3064,12 +3063,12 @@ instance encodeGrant :: Encode Grant where encode = genericEncode options
 
 -- | Constructs Grant from required parameters
 newGrant :: Grant
-newGrant  = Grant { "Grantee": (NullOrUndefined Nothing), "Permission": (NullOrUndefined Nothing) }
+newGrant  = Grant { "Grantee": Nothing, "Permission": Nothing }
 
 -- | Constructs Grant's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGrant' :: ( { "Grantee" :: NullOrUndefined (Grantee) , "Permission" :: NullOrUndefined (Permission) } -> {"Grantee" :: NullOrUndefined (Grantee) , "Permission" :: NullOrUndefined (Permission) } ) -> Grant
-newGrant'  customize = (Grant <<< customize) { "Grantee": (NullOrUndefined Nothing), "Permission": (NullOrUndefined Nothing) }
+newGrant' :: ( { "Grantee" :: Maybe (Grantee) , "Permission" :: Maybe (Permission) } -> {"Grantee" :: Maybe (Grantee) , "Permission" :: Maybe (Permission) } ) -> Grant
+newGrant'  customize = (Grant <<< customize) { "Grantee": Nothing, "Permission": Nothing }
 
 
 
@@ -3119,11 +3118,11 @@ instance encodeGrantWriteACP :: Encode GrantWriteACP where encode = genericEncod
 
 
 newtype Grantee = Grantee 
-  { "DisplayName" :: NullOrUndefined (DisplayName)
-  , "EmailAddress" :: NullOrUndefined (EmailAddress)
-  , "ID" :: NullOrUndefined (ID)
+  { "DisplayName" :: Maybe (DisplayName)
+  , "EmailAddress" :: Maybe (EmailAddress)
+  , "ID" :: Maybe (ID)
   , "Type" :: (Type)
-  , "URI" :: NullOrUndefined (URI)
+  , "URI" :: Maybe (URI)
   }
 derive instance newtypeGrantee :: Newtype Grantee _
 derive instance repGenericGrantee :: Generic Grantee _
@@ -3133,12 +3132,12 @@ instance encodeGrantee :: Encode Grantee where encode = genericEncode options
 
 -- | Constructs Grantee from required parameters
 newGrantee :: Type -> Grantee
-newGrantee _Type = Grantee { "Type": _Type, "DisplayName": (NullOrUndefined Nothing), "EmailAddress": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing), "URI": (NullOrUndefined Nothing) }
+newGrantee _Type = Grantee { "Type": _Type, "DisplayName": Nothing, "EmailAddress": Nothing, "ID": Nothing, "URI": Nothing }
 
 -- | Constructs Grantee's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGrantee' :: Type -> ( { "DisplayName" :: NullOrUndefined (DisplayName) , "EmailAddress" :: NullOrUndefined (EmailAddress) , "ID" :: NullOrUndefined (ID) , "Type" :: (Type) , "URI" :: NullOrUndefined (URI) } -> {"DisplayName" :: NullOrUndefined (DisplayName) , "EmailAddress" :: NullOrUndefined (EmailAddress) , "ID" :: NullOrUndefined (ID) , "Type" :: (Type) , "URI" :: NullOrUndefined (URI) } ) -> Grantee
-newGrantee' _Type customize = (Grantee <<< customize) { "Type": _Type, "DisplayName": (NullOrUndefined Nothing), "EmailAddress": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing), "URI": (NullOrUndefined Nothing) }
+newGrantee' :: Type -> ( { "DisplayName" :: Maybe (DisplayName) , "EmailAddress" :: Maybe (EmailAddress) , "ID" :: Maybe (ID) , "Type" :: (Type) , "URI" :: Maybe (URI) } -> {"DisplayName" :: Maybe (DisplayName) , "EmailAddress" :: Maybe (EmailAddress) , "ID" :: Maybe (ID) , "Type" :: (Type) , "URI" :: Maybe (URI) } ) -> Grantee
+newGrantee' _Type customize = (Grantee <<< customize) { "Type": _Type, "DisplayName": Nothing, "EmailAddress": Nothing, "ID": Nothing, "URI": Nothing }
 
 
 
@@ -3172,31 +3171,31 @@ newHeadBucketRequest' _Bucket customize = (HeadBucketRequest <<< customize) { "B
 
 
 newtype HeadObjectOutput = HeadObjectOutput 
-  { "DeleteMarker" :: NullOrUndefined (DeleteMarker)
-  , "AcceptRanges" :: NullOrUndefined (AcceptRanges)
-  , "Expiration" :: NullOrUndefined (Expiration)
-  , "Restore" :: NullOrUndefined (Restore)
-  , "LastModified" :: NullOrUndefined (LastModified)
-  , "ContentLength" :: NullOrUndefined (ContentLength)
-  , "ETag" :: NullOrUndefined (ETag)
-  , "MissingMeta" :: NullOrUndefined (MissingMeta)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "CacheControl" :: NullOrUndefined (CacheControl)
-  , "ContentDisposition" :: NullOrUndefined (ContentDisposition)
-  , "ContentEncoding" :: NullOrUndefined (ContentEncoding)
-  , "ContentLanguage" :: NullOrUndefined (ContentLanguage)
-  , "ContentType" :: NullOrUndefined (ContentType)
-  , "Expires" :: NullOrUndefined (Expires)
-  , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "Metadata" :: NullOrUndefined (Metadata)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
-  , "ReplicationStatus" :: NullOrUndefined (ReplicationStatus)
-  , "PartsCount" :: NullOrUndefined (PartsCount)
+  { "DeleteMarker" :: Maybe (DeleteMarker)
+  , "AcceptRanges" :: Maybe (AcceptRanges)
+  , "Expiration" :: Maybe (Expiration)
+  , "Restore" :: Maybe (Restore)
+  , "LastModified" :: Maybe (LastModified)
+  , "ContentLength" :: Maybe (ContentLength)
+  , "ETag" :: Maybe (ETag)
+  , "MissingMeta" :: Maybe (MissingMeta)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "CacheControl" :: Maybe (CacheControl)
+  , "ContentDisposition" :: Maybe (ContentDisposition)
+  , "ContentEncoding" :: Maybe (ContentEncoding)
+  , "ContentLanguage" :: Maybe (ContentLanguage)
+  , "ContentType" :: Maybe (ContentType)
+  , "Expires" :: Maybe (Expires)
+  , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "Metadata" :: Maybe (Metadata)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "RequestCharged" :: Maybe (RequestCharged)
+  , "ReplicationStatus" :: Maybe (ReplicationStatus)
+  , "PartsCount" :: Maybe (PartsCount)
   }
 derive instance newtypeHeadObjectOutput :: Newtype HeadObjectOutput _
 derive instance repGenericHeadObjectOutput :: Generic HeadObjectOutput _
@@ -3206,29 +3205,29 @@ instance encodeHeadObjectOutput :: Encode HeadObjectOutput where encode = generi
 
 -- | Constructs HeadObjectOutput from required parameters
 newHeadObjectOutput :: HeadObjectOutput
-newHeadObjectOutput  = HeadObjectOutput { "AcceptRanges": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "DeleteMarker": (NullOrUndefined Nothing), "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "MissingMeta": (NullOrUndefined Nothing), "PartsCount": (NullOrUndefined Nothing), "ReplicationStatus": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "Restore": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newHeadObjectOutput  = HeadObjectOutput { "AcceptRanges": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentLength": Nothing, "ContentType": Nothing, "DeleteMarker": Nothing, "ETag": Nothing, "Expiration": Nothing, "Expires": Nothing, "LastModified": Nothing, "Metadata": Nothing, "MissingMeta": Nothing, "PartsCount": Nothing, "ReplicationStatus": Nothing, "RequestCharged": Nothing, "Restore": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "VersionId": Nothing, "WebsiteRedirectLocation": Nothing }
 
 -- | Constructs HeadObjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHeadObjectOutput' :: ( { "DeleteMarker" :: NullOrUndefined (DeleteMarker) , "AcceptRanges" :: NullOrUndefined (AcceptRanges) , "Expiration" :: NullOrUndefined (Expiration) , "Restore" :: NullOrUndefined (Restore) , "LastModified" :: NullOrUndefined (LastModified) , "ContentLength" :: NullOrUndefined (ContentLength) , "ETag" :: NullOrUndefined (ETag) , "MissingMeta" :: NullOrUndefined (MissingMeta) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "Metadata" :: NullOrUndefined (Metadata) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "StorageClass" :: NullOrUndefined (StorageClass) , "RequestCharged" :: NullOrUndefined (RequestCharged) , "ReplicationStatus" :: NullOrUndefined (ReplicationStatus) , "PartsCount" :: NullOrUndefined (PartsCount) } -> {"DeleteMarker" :: NullOrUndefined (DeleteMarker) , "AcceptRanges" :: NullOrUndefined (AcceptRanges) , "Expiration" :: NullOrUndefined (Expiration) , "Restore" :: NullOrUndefined (Restore) , "LastModified" :: NullOrUndefined (LastModified) , "ContentLength" :: NullOrUndefined (ContentLength) , "ETag" :: NullOrUndefined (ETag) , "MissingMeta" :: NullOrUndefined (MissingMeta) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "Metadata" :: NullOrUndefined (Metadata) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "StorageClass" :: NullOrUndefined (StorageClass) , "RequestCharged" :: NullOrUndefined (RequestCharged) , "ReplicationStatus" :: NullOrUndefined (ReplicationStatus) , "PartsCount" :: NullOrUndefined (PartsCount) } ) -> HeadObjectOutput
-newHeadObjectOutput'  customize = (HeadObjectOutput <<< customize) { "AcceptRanges": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "DeleteMarker": (NullOrUndefined Nothing), "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "MissingMeta": (NullOrUndefined Nothing), "PartsCount": (NullOrUndefined Nothing), "ReplicationStatus": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "Restore": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newHeadObjectOutput' :: ( { "DeleteMarker" :: Maybe (DeleteMarker) , "AcceptRanges" :: Maybe (AcceptRanges) , "Expiration" :: Maybe (Expiration) , "Restore" :: Maybe (Restore) , "LastModified" :: Maybe (LastModified) , "ContentLength" :: Maybe (ContentLength) , "ETag" :: Maybe (ETag) , "MissingMeta" :: Maybe (MissingMeta) , "VersionId" :: Maybe (ObjectVersionId) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "Metadata" :: Maybe (Metadata) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "StorageClass" :: Maybe (StorageClass) , "RequestCharged" :: Maybe (RequestCharged) , "ReplicationStatus" :: Maybe (ReplicationStatus) , "PartsCount" :: Maybe (PartsCount) } -> {"DeleteMarker" :: Maybe (DeleteMarker) , "AcceptRanges" :: Maybe (AcceptRanges) , "Expiration" :: Maybe (Expiration) , "Restore" :: Maybe (Restore) , "LastModified" :: Maybe (LastModified) , "ContentLength" :: Maybe (ContentLength) , "ETag" :: Maybe (ETag) , "MissingMeta" :: Maybe (MissingMeta) , "VersionId" :: Maybe (ObjectVersionId) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "Metadata" :: Maybe (Metadata) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "StorageClass" :: Maybe (StorageClass) , "RequestCharged" :: Maybe (RequestCharged) , "ReplicationStatus" :: Maybe (ReplicationStatus) , "PartsCount" :: Maybe (PartsCount) } ) -> HeadObjectOutput
+newHeadObjectOutput'  customize = (HeadObjectOutput <<< customize) { "AcceptRanges": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentLength": Nothing, "ContentType": Nothing, "DeleteMarker": Nothing, "ETag": Nothing, "Expiration": Nothing, "Expires": Nothing, "LastModified": Nothing, "Metadata": Nothing, "MissingMeta": Nothing, "PartsCount": Nothing, "ReplicationStatus": Nothing, "RequestCharged": Nothing, "Restore": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "VersionId": Nothing, "WebsiteRedirectLocation": Nothing }
 
 
 
 newtype HeadObjectRequest = HeadObjectRequest 
   { "Bucket" :: (BucketName)
-  , "IfMatch" :: NullOrUndefined (IfMatch)
-  , "IfModifiedSince" :: NullOrUndefined (IfModifiedSince)
-  , "IfNoneMatch" :: NullOrUndefined (IfNoneMatch)
-  , "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince)
+  , "IfMatch" :: Maybe (IfMatch)
+  , "IfModifiedSince" :: Maybe (IfModifiedSince)
+  , "IfNoneMatch" :: Maybe (IfNoneMatch)
+  , "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince)
   , "Key" :: (ObjectKey)
-  , "Range" :: NullOrUndefined (Range)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
-  , "PartNumber" :: NullOrUndefined (PartNumber)
+  , "Range" :: Maybe (Range)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKey" :: Maybe (SSECustomerKey)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "RequestPayer" :: Maybe (RequestPayer)
+  , "PartNumber" :: Maybe (PartNumber)
   }
 derive instance newtypeHeadObjectRequest :: Newtype HeadObjectRequest _
 derive instance repGenericHeadObjectRequest :: Generic HeadObjectRequest _
@@ -3238,12 +3237,12 @@ instance encodeHeadObjectRequest :: Encode HeadObjectRequest where encode = gene
 
 -- | Constructs HeadObjectRequest from required parameters
 newHeadObjectRequest :: BucketName -> ObjectKey -> HeadObjectRequest
-newHeadObjectRequest _Bucket _Key = HeadObjectRequest { "Bucket": _Bucket, "Key": _Key, "IfMatch": (NullOrUndefined Nothing), "IfModifiedSince": (NullOrUndefined Nothing), "IfNoneMatch": (NullOrUndefined Nothing), "IfUnmodifiedSince": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing), "Range": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newHeadObjectRequest _Bucket _Key = HeadObjectRequest { "Bucket": _Bucket, "Key": _Key, "IfMatch": Nothing, "IfModifiedSince": Nothing, "IfNoneMatch": Nothing, "IfUnmodifiedSince": Nothing, "PartNumber": Nothing, "Range": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "VersionId": Nothing }
 
 -- | Constructs HeadObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newHeadObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "IfMatch" :: NullOrUndefined (IfMatch) , "IfModifiedSince" :: NullOrUndefined (IfModifiedSince) , "IfNoneMatch" :: NullOrUndefined (IfNoneMatch) , "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: NullOrUndefined (Range) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "PartNumber" :: NullOrUndefined (PartNumber) } -> {"Bucket" :: (BucketName) , "IfMatch" :: NullOrUndefined (IfMatch) , "IfModifiedSince" :: NullOrUndefined (IfModifiedSince) , "IfNoneMatch" :: NullOrUndefined (IfNoneMatch) , "IfUnmodifiedSince" :: NullOrUndefined (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: NullOrUndefined (Range) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "PartNumber" :: NullOrUndefined (PartNumber) } ) -> HeadObjectRequest
-newHeadObjectRequest' _Bucket _Key customize = (HeadObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "IfMatch": (NullOrUndefined Nothing), "IfModifiedSince": (NullOrUndefined Nothing), "IfNoneMatch": (NullOrUndefined Nothing), "IfUnmodifiedSince": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing), "Range": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newHeadObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "IfMatch" :: Maybe (IfMatch) , "IfModifiedSince" :: Maybe (IfModifiedSince) , "IfNoneMatch" :: Maybe (IfNoneMatch) , "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: Maybe (Range) , "VersionId" :: Maybe (ObjectVersionId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) , "PartNumber" :: Maybe (PartNumber) } -> {"Bucket" :: (BucketName) , "IfMatch" :: Maybe (IfMatch) , "IfModifiedSince" :: Maybe (IfModifiedSince) , "IfNoneMatch" :: Maybe (IfNoneMatch) , "IfUnmodifiedSince" :: Maybe (IfUnmodifiedSince) , "Key" :: (ObjectKey) , "Range" :: Maybe (Range) , "VersionId" :: Maybe (ObjectVersionId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) , "PartNumber" :: Maybe (PartNumber) } ) -> HeadObjectRequest
+newHeadObjectRequest' _Bucket _Key customize = (HeadObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "IfMatch": Nothing, "IfModifiedSince": Nothing, "IfNoneMatch": Nothing, "IfUnmodifiedSince": Nothing, "PartNumber": Nothing, "Range": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "VersionId": Nothing }
 
 
 
@@ -3349,8 +3348,8 @@ instance encodeInitiated :: Encode Initiated where encode = genericEncode option
 
 
 newtype Initiator = Initiator 
-  { "ID" :: NullOrUndefined (ID)
-  , "DisplayName" :: NullOrUndefined (DisplayName)
+  { "ID" :: Maybe (ID)
+  , "DisplayName" :: Maybe (DisplayName)
   }
 derive instance newtypeInitiator :: Newtype Initiator _
 derive instance repGenericInitiator :: Generic Initiator _
@@ -3360,18 +3359,18 @@ instance encodeInitiator :: Encode Initiator where encode = genericEncode option
 
 -- | Constructs Initiator from required parameters
 newInitiator :: Initiator
-newInitiator  = Initiator { "DisplayName": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing) }
+newInitiator  = Initiator { "DisplayName": Nothing, "ID": Nothing }
 
 -- | Constructs Initiator's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInitiator' :: ( { "ID" :: NullOrUndefined (ID) , "DisplayName" :: NullOrUndefined (DisplayName) } -> {"ID" :: NullOrUndefined (ID) , "DisplayName" :: NullOrUndefined (DisplayName) } ) -> Initiator
-newInitiator'  customize = (Initiator <<< customize) { "DisplayName": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing) }
+newInitiator' :: ( { "ID" :: Maybe (ID) , "DisplayName" :: Maybe (DisplayName) } -> {"ID" :: Maybe (ID) , "DisplayName" :: Maybe (DisplayName) } ) -> Initiator
+newInitiator'  customize = (Initiator <<< customize) { "DisplayName": Nothing, "ID": Nothing }
 
 
 
 -- | Describes the serialization format of the object.
 newtype InputSerialization = InputSerialization 
-  { "CSV" :: NullOrUndefined (CSVInput)
+  { "CSV" :: Maybe (CSVInput)
   }
 derive instance newtypeInputSerialization :: Newtype InputSerialization _
 derive instance repGenericInputSerialization :: Generic InputSerialization _
@@ -3381,22 +3380,22 @@ instance encodeInputSerialization :: Encode InputSerialization where encode = ge
 
 -- | Constructs InputSerialization from required parameters
 newInputSerialization :: InputSerialization
-newInputSerialization  = InputSerialization { "CSV": (NullOrUndefined Nothing) }
+newInputSerialization  = InputSerialization { "CSV": Nothing }
 
 -- | Constructs InputSerialization's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInputSerialization' :: ( { "CSV" :: NullOrUndefined (CSVInput) } -> {"CSV" :: NullOrUndefined (CSVInput) } ) -> InputSerialization
-newInputSerialization'  customize = (InputSerialization <<< customize) { "CSV": (NullOrUndefined Nothing) }
+newInputSerialization' :: ( { "CSV" :: Maybe (CSVInput) } -> {"CSV" :: Maybe (CSVInput) } ) -> InputSerialization
+newInputSerialization'  customize = (InputSerialization <<< customize) { "CSV": Nothing }
 
 
 
 newtype InventoryConfiguration = InventoryConfiguration 
   { "Destination" :: (InventoryDestination)
   , "IsEnabled" :: (IsEnabled)
-  , "Filter" :: NullOrUndefined (InventoryFilter)
+  , "Filter" :: Maybe (InventoryFilter)
   , "Id" :: (InventoryId)
   , "IncludedObjectVersions" :: (InventoryIncludedObjectVersions)
-  , "OptionalFields" :: NullOrUndefined (InventoryOptionalFields)
+  , "OptionalFields" :: Maybe (InventoryOptionalFields)
   , "Schedule" :: (InventorySchedule)
   }
 derive instance newtypeInventoryConfiguration :: Newtype InventoryConfiguration _
@@ -3407,12 +3406,12 @@ instance encodeInventoryConfiguration :: Encode InventoryConfiguration where enc
 
 -- | Constructs InventoryConfiguration from required parameters
 newInventoryConfiguration :: InventoryDestination -> InventoryId -> InventoryIncludedObjectVersions -> IsEnabled -> InventorySchedule -> InventoryConfiguration
-newInventoryConfiguration _Destination _Id _IncludedObjectVersions _IsEnabled _Schedule = InventoryConfiguration { "Destination": _Destination, "Id": _Id, "IncludedObjectVersions": _IncludedObjectVersions, "IsEnabled": _IsEnabled, "Schedule": _Schedule, "Filter": (NullOrUndefined Nothing), "OptionalFields": (NullOrUndefined Nothing) }
+newInventoryConfiguration _Destination _Id _IncludedObjectVersions _IsEnabled _Schedule = InventoryConfiguration { "Destination": _Destination, "Id": _Id, "IncludedObjectVersions": _IncludedObjectVersions, "IsEnabled": _IsEnabled, "Schedule": _Schedule, "Filter": Nothing, "OptionalFields": Nothing }
 
 -- | Constructs InventoryConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryConfiguration' :: InventoryDestination -> InventoryId -> InventoryIncludedObjectVersions -> IsEnabled -> InventorySchedule -> ( { "Destination" :: (InventoryDestination) , "IsEnabled" :: (IsEnabled) , "Filter" :: NullOrUndefined (InventoryFilter) , "Id" :: (InventoryId) , "IncludedObjectVersions" :: (InventoryIncludedObjectVersions) , "OptionalFields" :: NullOrUndefined (InventoryOptionalFields) , "Schedule" :: (InventorySchedule) } -> {"Destination" :: (InventoryDestination) , "IsEnabled" :: (IsEnabled) , "Filter" :: NullOrUndefined (InventoryFilter) , "Id" :: (InventoryId) , "IncludedObjectVersions" :: (InventoryIncludedObjectVersions) , "OptionalFields" :: NullOrUndefined (InventoryOptionalFields) , "Schedule" :: (InventorySchedule) } ) -> InventoryConfiguration
-newInventoryConfiguration' _Destination _Id _IncludedObjectVersions _IsEnabled _Schedule customize = (InventoryConfiguration <<< customize) { "Destination": _Destination, "Id": _Id, "IncludedObjectVersions": _IncludedObjectVersions, "IsEnabled": _IsEnabled, "Schedule": _Schedule, "Filter": (NullOrUndefined Nothing), "OptionalFields": (NullOrUndefined Nothing) }
+newInventoryConfiguration' :: InventoryDestination -> InventoryId -> InventoryIncludedObjectVersions -> IsEnabled -> InventorySchedule -> ( { "Destination" :: (InventoryDestination) , "IsEnabled" :: (IsEnabled) , "Filter" :: Maybe (InventoryFilter) , "Id" :: (InventoryId) , "IncludedObjectVersions" :: (InventoryIncludedObjectVersions) , "OptionalFields" :: Maybe (InventoryOptionalFields) , "Schedule" :: (InventorySchedule) } -> {"Destination" :: (InventoryDestination) , "IsEnabled" :: (IsEnabled) , "Filter" :: Maybe (InventoryFilter) , "Id" :: (InventoryId) , "IncludedObjectVersions" :: (InventoryIncludedObjectVersions) , "OptionalFields" :: Maybe (InventoryOptionalFields) , "Schedule" :: (InventorySchedule) } ) -> InventoryConfiguration
+newInventoryConfiguration' _Destination _Id _IncludedObjectVersions _IsEnabled _Schedule customize = (InventoryConfiguration <<< customize) { "Destination": _Destination, "Id": _Id, "IncludedObjectVersions": _IncludedObjectVersions, "IsEnabled": _IsEnabled, "Schedule": _Schedule, "Filter": Nothing, "OptionalFields": Nothing }
 
 
 
@@ -3447,8 +3446,8 @@ newInventoryDestination' _S3BucketDestination customize = (InventoryDestination 
 
 -- | Contains the type of server-side encryption used to encrypt the inventory results.
 newtype InventoryEncryption = InventoryEncryption 
-  { "SSES3" :: NullOrUndefined (SSES3)
-  , "SSEKMS" :: NullOrUndefined (SSEKMS)
+  { "SSES3" :: Maybe (SSES3)
+  , "SSEKMS" :: Maybe (SSEKMS)
   }
 derive instance newtypeInventoryEncryption :: Newtype InventoryEncryption _
 derive instance repGenericInventoryEncryption :: Generic InventoryEncryption _
@@ -3458,12 +3457,12 @@ instance encodeInventoryEncryption :: Encode InventoryEncryption where encode = 
 
 -- | Constructs InventoryEncryption from required parameters
 newInventoryEncryption :: InventoryEncryption
-newInventoryEncryption  = InventoryEncryption { "SSEKMS": (NullOrUndefined Nothing), "SSES3": (NullOrUndefined Nothing) }
+newInventoryEncryption  = InventoryEncryption { "SSEKMS": Nothing, "SSES3": Nothing }
 
 -- | Constructs InventoryEncryption's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryEncryption' :: ( { "SSES3" :: NullOrUndefined (SSES3) , "SSEKMS" :: NullOrUndefined (SSEKMS) } -> {"SSES3" :: NullOrUndefined (SSES3) , "SSEKMS" :: NullOrUndefined (SSEKMS) } ) -> InventoryEncryption
-newInventoryEncryption'  customize = (InventoryEncryption <<< customize) { "SSEKMS": (NullOrUndefined Nothing), "SSES3": (NullOrUndefined Nothing) }
+newInventoryEncryption' :: ( { "SSES3" :: Maybe (SSES3) , "SSEKMS" :: Maybe (SSEKMS) } -> {"SSES3" :: Maybe (SSES3) , "SSEKMS" :: Maybe (SSEKMS) } ) -> InventoryEncryption
+newInventoryEncryption'  customize = (InventoryEncryption <<< customize) { "SSEKMS": Nothing, "SSES3": Nothing }
 
 
 
@@ -3542,11 +3541,11 @@ instance encodeInventoryOptionalFields :: Encode InventoryOptionalFields where e
 
 
 newtype InventoryS3BucketDestination = InventoryS3BucketDestination 
-  { "AccountId" :: NullOrUndefined (AccountId)
+  { "AccountId" :: Maybe (AccountId)
   , "Bucket" :: (BucketName)
   , "Format" :: (InventoryFormat)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "Encryption" :: NullOrUndefined (InventoryEncryption)
+  , "Prefix" :: Maybe (Prefix)
+  , "Encryption" :: Maybe (InventoryEncryption)
   }
 derive instance newtypeInventoryS3BucketDestination :: Newtype InventoryS3BucketDestination _
 derive instance repGenericInventoryS3BucketDestination :: Generic InventoryS3BucketDestination _
@@ -3556,12 +3555,12 @@ instance encodeInventoryS3BucketDestination :: Encode InventoryS3BucketDestinati
 
 -- | Constructs InventoryS3BucketDestination from required parameters
 newInventoryS3BucketDestination :: BucketName -> InventoryFormat -> InventoryS3BucketDestination
-newInventoryS3BucketDestination _Bucket _Format = InventoryS3BucketDestination { "Bucket": _Bucket, "Format": _Format, "AccountId": (NullOrUndefined Nothing), "Encryption": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newInventoryS3BucketDestination _Bucket _Format = InventoryS3BucketDestination { "Bucket": _Bucket, "Format": _Format, "AccountId": Nothing, "Encryption": Nothing, "Prefix": Nothing }
 
 -- | Constructs InventoryS3BucketDestination's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInventoryS3BucketDestination' :: BucketName -> InventoryFormat -> ( { "AccountId" :: NullOrUndefined (AccountId) , "Bucket" :: (BucketName) , "Format" :: (InventoryFormat) , "Prefix" :: NullOrUndefined (Prefix) , "Encryption" :: NullOrUndefined (InventoryEncryption) } -> {"AccountId" :: NullOrUndefined (AccountId) , "Bucket" :: (BucketName) , "Format" :: (InventoryFormat) , "Prefix" :: NullOrUndefined (Prefix) , "Encryption" :: NullOrUndefined (InventoryEncryption) } ) -> InventoryS3BucketDestination
-newInventoryS3BucketDestination' _Bucket _Format customize = (InventoryS3BucketDestination <<< customize) { "Bucket": _Bucket, "Format": _Format, "AccountId": (NullOrUndefined Nothing), "Encryption": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newInventoryS3BucketDestination' :: BucketName -> InventoryFormat -> ( { "AccountId" :: Maybe (AccountId) , "Bucket" :: (BucketName) , "Format" :: (InventoryFormat) , "Prefix" :: Maybe (Prefix) , "Encryption" :: Maybe (InventoryEncryption) } -> {"AccountId" :: Maybe (AccountId) , "Bucket" :: (BucketName) , "Format" :: (InventoryFormat) , "Prefix" :: Maybe (Prefix) , "Encryption" :: Maybe (InventoryEncryption) } ) -> InventoryS3BucketDestination
+newInventoryS3BucketDestination' _Bucket _Format customize = (InventoryS3BucketDestination <<< customize) { "Bucket": _Bucket, "Format": _Format, "AccountId": Nothing, "Encryption": Nothing, "Prefix": Nothing }
 
 
 
@@ -3659,10 +3658,10 @@ instance encodeLambdaFunctionArn :: Encode LambdaFunctionArn where encode = gene
 
 -- | Container for specifying the AWS Lambda notification configuration.
 newtype LambdaFunctionConfiguration = LambdaFunctionConfiguration 
-  { "Id" :: NullOrUndefined (NotificationId)
+  { "Id" :: Maybe (NotificationId)
   , "LambdaFunctionArn" :: (LambdaFunctionArn)
   , "Events" :: (EventList)
-  , "Filter" :: NullOrUndefined (NotificationConfigurationFilter)
+  , "Filter" :: Maybe (NotificationConfigurationFilter)
   }
 derive instance newtypeLambdaFunctionConfiguration :: Newtype LambdaFunctionConfiguration _
 derive instance repGenericLambdaFunctionConfiguration :: Generic LambdaFunctionConfiguration _
@@ -3672,12 +3671,12 @@ instance encodeLambdaFunctionConfiguration :: Encode LambdaFunctionConfiguration
 
 -- | Constructs LambdaFunctionConfiguration from required parameters
 newLambdaFunctionConfiguration :: EventList -> LambdaFunctionArn -> LambdaFunctionConfiguration
-newLambdaFunctionConfiguration _Events _LambdaFunctionArn = LambdaFunctionConfiguration { "Events": _Events, "LambdaFunctionArn": _LambdaFunctionArn, "Filter": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newLambdaFunctionConfiguration _Events _LambdaFunctionArn = LambdaFunctionConfiguration { "Events": _Events, "LambdaFunctionArn": _LambdaFunctionArn, "Filter": Nothing, "Id": Nothing }
 
 -- | Constructs LambdaFunctionConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLambdaFunctionConfiguration' :: EventList -> LambdaFunctionArn -> ( { "Id" :: NullOrUndefined (NotificationId) , "LambdaFunctionArn" :: (LambdaFunctionArn) , "Events" :: (EventList) , "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } -> {"Id" :: NullOrUndefined (NotificationId) , "LambdaFunctionArn" :: (LambdaFunctionArn) , "Events" :: (EventList) , "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } ) -> LambdaFunctionConfiguration
-newLambdaFunctionConfiguration' _Events _LambdaFunctionArn customize = (LambdaFunctionConfiguration <<< customize) { "Events": _Events, "LambdaFunctionArn": _LambdaFunctionArn, "Filter": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newLambdaFunctionConfiguration' :: EventList -> LambdaFunctionArn -> ( { "Id" :: Maybe (NotificationId) , "LambdaFunctionArn" :: (LambdaFunctionArn) , "Events" :: (EventList) , "Filter" :: Maybe (NotificationConfigurationFilter) } -> {"Id" :: Maybe (NotificationId) , "LambdaFunctionArn" :: (LambdaFunctionArn) , "Events" :: (EventList) , "Filter" :: Maybe (NotificationConfigurationFilter) } ) -> LambdaFunctionConfiguration
+newLambdaFunctionConfiguration' _Events _LambdaFunctionArn customize = (LambdaFunctionConfiguration <<< customize) { "Events": _Events, "LambdaFunctionArn": _LambdaFunctionArn, "Filter": Nothing, "Id": Nothing }
 
 
 
@@ -3720,9 +3719,9 @@ newLifecycleConfiguration' _Rules customize = (LifecycleConfiguration <<< custom
 
 
 newtype LifecycleExpiration = LifecycleExpiration 
-  { "Date" :: NullOrUndefined (Date)
-  , "Days" :: NullOrUndefined (Days)
-  , "ExpiredObjectDeleteMarker" :: NullOrUndefined (ExpiredObjectDeleteMarker)
+  { "Date" :: Maybe (Date)
+  , "Days" :: Maybe (Days)
+  , "ExpiredObjectDeleteMarker" :: Maybe (ExpiredObjectDeleteMarker)
   }
 derive instance newtypeLifecycleExpiration :: Newtype LifecycleExpiration _
 derive instance repGenericLifecycleExpiration :: Generic LifecycleExpiration _
@@ -3732,25 +3731,25 @@ instance encodeLifecycleExpiration :: Encode LifecycleExpiration where encode = 
 
 -- | Constructs LifecycleExpiration from required parameters
 newLifecycleExpiration :: LifecycleExpiration
-newLifecycleExpiration  = LifecycleExpiration { "Date": (NullOrUndefined Nothing), "Days": (NullOrUndefined Nothing), "ExpiredObjectDeleteMarker": (NullOrUndefined Nothing) }
+newLifecycleExpiration  = LifecycleExpiration { "Date": Nothing, "Days": Nothing, "ExpiredObjectDeleteMarker": Nothing }
 
 -- | Constructs LifecycleExpiration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLifecycleExpiration' :: ( { "Date" :: NullOrUndefined (Date) , "Days" :: NullOrUndefined (Days) , "ExpiredObjectDeleteMarker" :: NullOrUndefined (ExpiredObjectDeleteMarker) } -> {"Date" :: NullOrUndefined (Date) , "Days" :: NullOrUndefined (Days) , "ExpiredObjectDeleteMarker" :: NullOrUndefined (ExpiredObjectDeleteMarker) } ) -> LifecycleExpiration
-newLifecycleExpiration'  customize = (LifecycleExpiration <<< customize) { "Date": (NullOrUndefined Nothing), "Days": (NullOrUndefined Nothing), "ExpiredObjectDeleteMarker": (NullOrUndefined Nothing) }
+newLifecycleExpiration' :: ( { "Date" :: Maybe (Date) , "Days" :: Maybe (Days) , "ExpiredObjectDeleteMarker" :: Maybe (ExpiredObjectDeleteMarker) } -> {"Date" :: Maybe (Date) , "Days" :: Maybe (Days) , "ExpiredObjectDeleteMarker" :: Maybe (ExpiredObjectDeleteMarker) } ) -> LifecycleExpiration
+newLifecycleExpiration'  customize = (LifecycleExpiration <<< customize) { "Date": Nothing, "Days": Nothing, "ExpiredObjectDeleteMarker": Nothing }
 
 
 
 newtype LifecycleRule = LifecycleRule 
-  { "Expiration" :: NullOrUndefined (LifecycleExpiration)
-  , "ID" :: NullOrUndefined (ID)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "Filter" :: NullOrUndefined (LifecycleRuleFilter)
+  { "Expiration" :: Maybe (LifecycleExpiration)
+  , "ID" :: Maybe (ID)
+  , "Prefix" :: Maybe (Prefix)
+  , "Filter" :: Maybe (LifecycleRuleFilter)
   , "Status" :: (ExpirationStatus)
-  , "Transitions" :: NullOrUndefined (TransitionList)
-  , "NoncurrentVersionTransitions" :: NullOrUndefined (NoncurrentVersionTransitionList)
-  , "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration)
-  , "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload)
+  , "Transitions" :: Maybe (TransitionList)
+  , "NoncurrentVersionTransitions" :: Maybe (NoncurrentVersionTransitionList)
+  , "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration)
+  , "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload)
   }
 derive instance newtypeLifecycleRule :: Newtype LifecycleRule _
 derive instance repGenericLifecycleRule :: Generic LifecycleRule _
@@ -3760,19 +3759,19 @@ instance encodeLifecycleRule :: Encode LifecycleRule where encode = genericEncod
 
 -- | Constructs LifecycleRule from required parameters
 newLifecycleRule :: ExpirationStatus -> LifecycleRule
-newLifecycleRule _Status = LifecycleRule { "Status": _Status, "AbortIncompleteMultipartUpload": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Filter": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing), "NoncurrentVersionExpiration": (NullOrUndefined Nothing), "NoncurrentVersionTransitions": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Transitions": (NullOrUndefined Nothing) }
+newLifecycleRule _Status = LifecycleRule { "Status": _Status, "AbortIncompleteMultipartUpload": Nothing, "Expiration": Nothing, "Filter": Nothing, "ID": Nothing, "NoncurrentVersionExpiration": Nothing, "NoncurrentVersionTransitions": Nothing, "Prefix": Nothing, "Transitions": Nothing }
 
 -- | Constructs LifecycleRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLifecycleRule' :: ExpirationStatus -> ( { "Expiration" :: NullOrUndefined (LifecycleExpiration) , "ID" :: NullOrUndefined (ID) , "Prefix" :: NullOrUndefined (Prefix) , "Filter" :: NullOrUndefined (LifecycleRuleFilter) , "Status" :: (ExpirationStatus) , "Transitions" :: NullOrUndefined (TransitionList) , "NoncurrentVersionTransitions" :: NullOrUndefined (NoncurrentVersionTransitionList) , "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) } -> {"Expiration" :: NullOrUndefined (LifecycleExpiration) , "ID" :: NullOrUndefined (ID) , "Prefix" :: NullOrUndefined (Prefix) , "Filter" :: NullOrUndefined (LifecycleRuleFilter) , "Status" :: (ExpirationStatus) , "Transitions" :: NullOrUndefined (TransitionList) , "NoncurrentVersionTransitions" :: NullOrUndefined (NoncurrentVersionTransitionList) , "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) } ) -> LifecycleRule
-newLifecycleRule' _Status customize = (LifecycleRule <<< customize) { "Status": _Status, "AbortIncompleteMultipartUpload": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "Filter": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing), "NoncurrentVersionExpiration": (NullOrUndefined Nothing), "NoncurrentVersionTransitions": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Transitions": (NullOrUndefined Nothing) }
+newLifecycleRule' :: ExpirationStatus -> ( { "Expiration" :: Maybe (LifecycleExpiration) , "ID" :: Maybe (ID) , "Prefix" :: Maybe (Prefix) , "Filter" :: Maybe (LifecycleRuleFilter) , "Status" :: (ExpirationStatus) , "Transitions" :: Maybe (TransitionList) , "NoncurrentVersionTransitions" :: Maybe (NoncurrentVersionTransitionList) , "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) } -> {"Expiration" :: Maybe (LifecycleExpiration) , "ID" :: Maybe (ID) , "Prefix" :: Maybe (Prefix) , "Filter" :: Maybe (LifecycleRuleFilter) , "Status" :: (ExpirationStatus) , "Transitions" :: Maybe (TransitionList) , "NoncurrentVersionTransitions" :: Maybe (NoncurrentVersionTransitionList) , "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) } ) -> LifecycleRule
+newLifecycleRule' _Status customize = (LifecycleRule <<< customize) { "Status": _Status, "AbortIncompleteMultipartUpload": Nothing, "Expiration": Nothing, "Filter": Nothing, "ID": Nothing, "NoncurrentVersionExpiration": Nothing, "NoncurrentVersionTransitions": Nothing, "Prefix": Nothing, "Transitions": Nothing }
 
 
 
 -- | This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.
 newtype LifecycleRuleAndOperator = LifecycleRuleAndOperator 
-  { "Prefix" :: NullOrUndefined (Prefix)
-  , "Tags" :: NullOrUndefined (TagSet)
+  { "Prefix" :: Maybe (Prefix)
+  , "Tags" :: Maybe (TagSet)
   }
 derive instance newtypeLifecycleRuleAndOperator :: Newtype LifecycleRuleAndOperator _
 derive instance repGenericLifecycleRuleAndOperator :: Generic LifecycleRuleAndOperator _
@@ -3782,20 +3781,20 @@ instance encodeLifecycleRuleAndOperator :: Encode LifecycleRuleAndOperator where
 
 -- | Constructs LifecycleRuleAndOperator from required parameters
 newLifecycleRuleAndOperator :: LifecycleRuleAndOperator
-newLifecycleRuleAndOperator  = LifecycleRuleAndOperator { "Prefix": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newLifecycleRuleAndOperator  = LifecycleRuleAndOperator { "Prefix": Nothing, "Tags": Nothing }
 
 -- | Constructs LifecycleRuleAndOperator's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLifecycleRuleAndOperator' :: ( { "Prefix" :: NullOrUndefined (Prefix) , "Tags" :: NullOrUndefined (TagSet) } -> {"Prefix" :: NullOrUndefined (Prefix) , "Tags" :: NullOrUndefined (TagSet) } ) -> LifecycleRuleAndOperator
-newLifecycleRuleAndOperator'  customize = (LifecycleRuleAndOperator <<< customize) { "Prefix": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newLifecycleRuleAndOperator' :: ( { "Prefix" :: Maybe (Prefix) , "Tags" :: Maybe (TagSet) } -> {"Prefix" :: Maybe (Prefix) , "Tags" :: Maybe (TagSet) } ) -> LifecycleRuleAndOperator
+newLifecycleRuleAndOperator'  customize = (LifecycleRuleAndOperator <<< customize) { "Prefix": Nothing, "Tags": Nothing }
 
 
 
 -- | The Filter is used to identify objects that a Lifecycle Rule applies to. A Filter must have exactly one of Prefix, Tag, or And specified.
 newtype LifecycleRuleFilter = LifecycleRuleFilter 
-  { "Prefix" :: NullOrUndefined (Prefix)
-  , "Tag" :: NullOrUndefined (Tag)
-  , "And" :: NullOrUndefined (LifecycleRuleAndOperator)
+  { "Prefix" :: Maybe (Prefix)
+  , "Tag" :: Maybe (Tag)
+  , "And" :: Maybe (LifecycleRuleAndOperator)
   }
 derive instance newtypeLifecycleRuleFilter :: Newtype LifecycleRuleFilter _
 derive instance repGenericLifecycleRuleFilter :: Generic LifecycleRuleFilter _
@@ -3805,12 +3804,12 @@ instance encodeLifecycleRuleFilter :: Encode LifecycleRuleFilter where encode = 
 
 -- | Constructs LifecycleRuleFilter from required parameters
 newLifecycleRuleFilter :: LifecycleRuleFilter
-newLifecycleRuleFilter  = LifecycleRuleFilter { "And": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newLifecycleRuleFilter  = LifecycleRuleFilter { "And": Nothing, "Prefix": Nothing, "Tag": Nothing }
 
 -- | Constructs LifecycleRuleFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLifecycleRuleFilter' :: ( { "Prefix" :: NullOrUndefined (Prefix) , "Tag" :: NullOrUndefined (Tag) , "And" :: NullOrUndefined (LifecycleRuleAndOperator) } -> {"Prefix" :: NullOrUndefined (Prefix) , "Tag" :: NullOrUndefined (Tag) , "And" :: NullOrUndefined (LifecycleRuleAndOperator) } ) -> LifecycleRuleFilter
-newLifecycleRuleFilter'  customize = (LifecycleRuleFilter <<< customize) { "And": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newLifecycleRuleFilter' :: ( { "Prefix" :: Maybe (Prefix) , "Tag" :: Maybe (Tag) , "And" :: Maybe (LifecycleRuleAndOperator) } -> {"Prefix" :: Maybe (Prefix) , "Tag" :: Maybe (Tag) , "And" :: Maybe (LifecycleRuleAndOperator) } ) -> LifecycleRuleFilter
+newLifecycleRuleFilter'  customize = (LifecycleRuleFilter <<< customize) { "And": Nothing, "Prefix": Nothing, "Tag": Nothing }
 
 
 
@@ -3824,10 +3823,10 @@ instance encodeLifecycleRules :: Encode LifecycleRules where encode = genericEnc
 
 
 newtype ListBucketAnalyticsConfigurationsOutput = ListBucketAnalyticsConfigurationsOutput 
-  { "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "ContinuationToken" :: NullOrUndefined (Token)
-  , "NextContinuationToken" :: NullOrUndefined (NextToken)
-  , "AnalyticsConfigurationList" :: NullOrUndefined (AnalyticsConfigurationList)
+  { "IsTruncated" :: Maybe (IsTruncated)
+  , "ContinuationToken" :: Maybe (Token)
+  , "NextContinuationToken" :: Maybe (NextToken)
+  , "AnalyticsConfigurationList" :: Maybe (AnalyticsConfigurationList)
   }
 derive instance newtypeListBucketAnalyticsConfigurationsOutput :: Newtype ListBucketAnalyticsConfigurationsOutput _
 derive instance repGenericListBucketAnalyticsConfigurationsOutput :: Generic ListBucketAnalyticsConfigurationsOutput _
@@ -3837,18 +3836,18 @@ instance encodeListBucketAnalyticsConfigurationsOutput :: Encode ListBucketAnaly
 
 -- | Constructs ListBucketAnalyticsConfigurationsOutput from required parameters
 newListBucketAnalyticsConfigurationsOutput :: ListBucketAnalyticsConfigurationsOutput
-newListBucketAnalyticsConfigurationsOutput  = ListBucketAnalyticsConfigurationsOutput { "AnalyticsConfigurationList": (NullOrUndefined Nothing), "ContinuationToken": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing) }
+newListBucketAnalyticsConfigurationsOutput  = ListBucketAnalyticsConfigurationsOutput { "AnalyticsConfigurationList": Nothing, "ContinuationToken": Nothing, "IsTruncated": Nothing, "NextContinuationToken": Nothing }
 
 -- | Constructs ListBucketAnalyticsConfigurationsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBucketAnalyticsConfigurationsOutput' :: ( { "IsTruncated" :: NullOrUndefined (IsTruncated) , "ContinuationToken" :: NullOrUndefined (Token) , "NextContinuationToken" :: NullOrUndefined (NextToken) , "AnalyticsConfigurationList" :: NullOrUndefined (AnalyticsConfigurationList) } -> {"IsTruncated" :: NullOrUndefined (IsTruncated) , "ContinuationToken" :: NullOrUndefined (Token) , "NextContinuationToken" :: NullOrUndefined (NextToken) , "AnalyticsConfigurationList" :: NullOrUndefined (AnalyticsConfigurationList) } ) -> ListBucketAnalyticsConfigurationsOutput
-newListBucketAnalyticsConfigurationsOutput'  customize = (ListBucketAnalyticsConfigurationsOutput <<< customize) { "AnalyticsConfigurationList": (NullOrUndefined Nothing), "ContinuationToken": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing) }
+newListBucketAnalyticsConfigurationsOutput' :: ( { "IsTruncated" :: Maybe (IsTruncated) , "ContinuationToken" :: Maybe (Token) , "NextContinuationToken" :: Maybe (NextToken) , "AnalyticsConfigurationList" :: Maybe (AnalyticsConfigurationList) } -> {"IsTruncated" :: Maybe (IsTruncated) , "ContinuationToken" :: Maybe (Token) , "NextContinuationToken" :: Maybe (NextToken) , "AnalyticsConfigurationList" :: Maybe (AnalyticsConfigurationList) } ) -> ListBucketAnalyticsConfigurationsOutput
+newListBucketAnalyticsConfigurationsOutput'  customize = (ListBucketAnalyticsConfigurationsOutput <<< customize) { "AnalyticsConfigurationList": Nothing, "ContinuationToken": Nothing, "IsTruncated": Nothing, "NextContinuationToken": Nothing }
 
 
 
 newtype ListBucketAnalyticsConfigurationsRequest = ListBucketAnalyticsConfigurationsRequest 
   { "Bucket" :: (BucketName)
-  , "ContinuationToken" :: NullOrUndefined (Token)
+  , "ContinuationToken" :: Maybe (Token)
   }
 derive instance newtypeListBucketAnalyticsConfigurationsRequest :: Newtype ListBucketAnalyticsConfigurationsRequest _
 derive instance repGenericListBucketAnalyticsConfigurationsRequest :: Generic ListBucketAnalyticsConfigurationsRequest _
@@ -3858,20 +3857,20 @@ instance encodeListBucketAnalyticsConfigurationsRequest :: Encode ListBucketAnal
 
 -- | Constructs ListBucketAnalyticsConfigurationsRequest from required parameters
 newListBucketAnalyticsConfigurationsRequest :: BucketName -> ListBucketAnalyticsConfigurationsRequest
-newListBucketAnalyticsConfigurationsRequest _Bucket = ListBucketAnalyticsConfigurationsRequest { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing) }
+newListBucketAnalyticsConfigurationsRequest _Bucket = ListBucketAnalyticsConfigurationsRequest { "Bucket": _Bucket, "ContinuationToken": Nothing }
 
 -- | Constructs ListBucketAnalyticsConfigurationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBucketAnalyticsConfigurationsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContinuationToken" :: NullOrUndefined (Token) } -> {"Bucket" :: (BucketName) , "ContinuationToken" :: NullOrUndefined (Token) } ) -> ListBucketAnalyticsConfigurationsRequest
-newListBucketAnalyticsConfigurationsRequest' _Bucket customize = (ListBucketAnalyticsConfigurationsRequest <<< customize) { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing) }
+newListBucketAnalyticsConfigurationsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContinuationToken" :: Maybe (Token) } -> {"Bucket" :: (BucketName) , "ContinuationToken" :: Maybe (Token) } ) -> ListBucketAnalyticsConfigurationsRequest
+newListBucketAnalyticsConfigurationsRequest' _Bucket customize = (ListBucketAnalyticsConfigurationsRequest <<< customize) { "Bucket": _Bucket, "ContinuationToken": Nothing }
 
 
 
 newtype ListBucketInventoryConfigurationsOutput = ListBucketInventoryConfigurationsOutput 
-  { "ContinuationToken" :: NullOrUndefined (Token)
-  , "InventoryConfigurationList" :: NullOrUndefined (InventoryConfigurationList)
-  , "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "NextContinuationToken" :: NullOrUndefined (NextToken)
+  { "ContinuationToken" :: Maybe (Token)
+  , "InventoryConfigurationList" :: Maybe (InventoryConfigurationList)
+  , "IsTruncated" :: Maybe (IsTruncated)
+  , "NextContinuationToken" :: Maybe (NextToken)
   }
 derive instance newtypeListBucketInventoryConfigurationsOutput :: Newtype ListBucketInventoryConfigurationsOutput _
 derive instance repGenericListBucketInventoryConfigurationsOutput :: Generic ListBucketInventoryConfigurationsOutput _
@@ -3881,18 +3880,18 @@ instance encodeListBucketInventoryConfigurationsOutput :: Encode ListBucketInven
 
 -- | Constructs ListBucketInventoryConfigurationsOutput from required parameters
 newListBucketInventoryConfigurationsOutput :: ListBucketInventoryConfigurationsOutput
-newListBucketInventoryConfigurationsOutput  = ListBucketInventoryConfigurationsOutput { "ContinuationToken": (NullOrUndefined Nothing), "InventoryConfigurationList": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing) }
+newListBucketInventoryConfigurationsOutput  = ListBucketInventoryConfigurationsOutput { "ContinuationToken": Nothing, "InventoryConfigurationList": Nothing, "IsTruncated": Nothing, "NextContinuationToken": Nothing }
 
 -- | Constructs ListBucketInventoryConfigurationsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBucketInventoryConfigurationsOutput' :: ( { "ContinuationToken" :: NullOrUndefined (Token) , "InventoryConfigurationList" :: NullOrUndefined (InventoryConfigurationList) , "IsTruncated" :: NullOrUndefined (IsTruncated) , "NextContinuationToken" :: NullOrUndefined (NextToken) } -> {"ContinuationToken" :: NullOrUndefined (Token) , "InventoryConfigurationList" :: NullOrUndefined (InventoryConfigurationList) , "IsTruncated" :: NullOrUndefined (IsTruncated) , "NextContinuationToken" :: NullOrUndefined (NextToken) } ) -> ListBucketInventoryConfigurationsOutput
-newListBucketInventoryConfigurationsOutput'  customize = (ListBucketInventoryConfigurationsOutput <<< customize) { "ContinuationToken": (NullOrUndefined Nothing), "InventoryConfigurationList": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing) }
+newListBucketInventoryConfigurationsOutput' :: ( { "ContinuationToken" :: Maybe (Token) , "InventoryConfigurationList" :: Maybe (InventoryConfigurationList) , "IsTruncated" :: Maybe (IsTruncated) , "NextContinuationToken" :: Maybe (NextToken) } -> {"ContinuationToken" :: Maybe (Token) , "InventoryConfigurationList" :: Maybe (InventoryConfigurationList) , "IsTruncated" :: Maybe (IsTruncated) , "NextContinuationToken" :: Maybe (NextToken) } ) -> ListBucketInventoryConfigurationsOutput
+newListBucketInventoryConfigurationsOutput'  customize = (ListBucketInventoryConfigurationsOutput <<< customize) { "ContinuationToken": Nothing, "InventoryConfigurationList": Nothing, "IsTruncated": Nothing, "NextContinuationToken": Nothing }
 
 
 
 newtype ListBucketInventoryConfigurationsRequest = ListBucketInventoryConfigurationsRequest 
   { "Bucket" :: (BucketName)
-  , "ContinuationToken" :: NullOrUndefined (Token)
+  , "ContinuationToken" :: Maybe (Token)
   }
 derive instance newtypeListBucketInventoryConfigurationsRequest :: Newtype ListBucketInventoryConfigurationsRequest _
 derive instance repGenericListBucketInventoryConfigurationsRequest :: Generic ListBucketInventoryConfigurationsRequest _
@@ -3902,20 +3901,20 @@ instance encodeListBucketInventoryConfigurationsRequest :: Encode ListBucketInve
 
 -- | Constructs ListBucketInventoryConfigurationsRequest from required parameters
 newListBucketInventoryConfigurationsRequest :: BucketName -> ListBucketInventoryConfigurationsRequest
-newListBucketInventoryConfigurationsRequest _Bucket = ListBucketInventoryConfigurationsRequest { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing) }
+newListBucketInventoryConfigurationsRequest _Bucket = ListBucketInventoryConfigurationsRequest { "Bucket": _Bucket, "ContinuationToken": Nothing }
 
 -- | Constructs ListBucketInventoryConfigurationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBucketInventoryConfigurationsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContinuationToken" :: NullOrUndefined (Token) } -> {"Bucket" :: (BucketName) , "ContinuationToken" :: NullOrUndefined (Token) } ) -> ListBucketInventoryConfigurationsRequest
-newListBucketInventoryConfigurationsRequest' _Bucket customize = (ListBucketInventoryConfigurationsRequest <<< customize) { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing) }
+newListBucketInventoryConfigurationsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContinuationToken" :: Maybe (Token) } -> {"Bucket" :: (BucketName) , "ContinuationToken" :: Maybe (Token) } ) -> ListBucketInventoryConfigurationsRequest
+newListBucketInventoryConfigurationsRequest' _Bucket customize = (ListBucketInventoryConfigurationsRequest <<< customize) { "Bucket": _Bucket, "ContinuationToken": Nothing }
 
 
 
 newtype ListBucketMetricsConfigurationsOutput = ListBucketMetricsConfigurationsOutput 
-  { "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "ContinuationToken" :: NullOrUndefined (Token)
-  , "NextContinuationToken" :: NullOrUndefined (NextToken)
-  , "MetricsConfigurationList" :: NullOrUndefined (MetricsConfigurationList)
+  { "IsTruncated" :: Maybe (IsTruncated)
+  , "ContinuationToken" :: Maybe (Token)
+  , "NextContinuationToken" :: Maybe (NextToken)
+  , "MetricsConfigurationList" :: Maybe (MetricsConfigurationList)
   }
 derive instance newtypeListBucketMetricsConfigurationsOutput :: Newtype ListBucketMetricsConfigurationsOutput _
 derive instance repGenericListBucketMetricsConfigurationsOutput :: Generic ListBucketMetricsConfigurationsOutput _
@@ -3925,18 +3924,18 @@ instance encodeListBucketMetricsConfigurationsOutput :: Encode ListBucketMetrics
 
 -- | Constructs ListBucketMetricsConfigurationsOutput from required parameters
 newListBucketMetricsConfigurationsOutput :: ListBucketMetricsConfigurationsOutput
-newListBucketMetricsConfigurationsOutput  = ListBucketMetricsConfigurationsOutput { "ContinuationToken": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "MetricsConfigurationList": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing) }
+newListBucketMetricsConfigurationsOutput  = ListBucketMetricsConfigurationsOutput { "ContinuationToken": Nothing, "IsTruncated": Nothing, "MetricsConfigurationList": Nothing, "NextContinuationToken": Nothing }
 
 -- | Constructs ListBucketMetricsConfigurationsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBucketMetricsConfigurationsOutput' :: ( { "IsTruncated" :: NullOrUndefined (IsTruncated) , "ContinuationToken" :: NullOrUndefined (Token) , "NextContinuationToken" :: NullOrUndefined (NextToken) , "MetricsConfigurationList" :: NullOrUndefined (MetricsConfigurationList) } -> {"IsTruncated" :: NullOrUndefined (IsTruncated) , "ContinuationToken" :: NullOrUndefined (Token) , "NextContinuationToken" :: NullOrUndefined (NextToken) , "MetricsConfigurationList" :: NullOrUndefined (MetricsConfigurationList) } ) -> ListBucketMetricsConfigurationsOutput
-newListBucketMetricsConfigurationsOutput'  customize = (ListBucketMetricsConfigurationsOutput <<< customize) { "ContinuationToken": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "MetricsConfigurationList": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing) }
+newListBucketMetricsConfigurationsOutput' :: ( { "IsTruncated" :: Maybe (IsTruncated) , "ContinuationToken" :: Maybe (Token) , "NextContinuationToken" :: Maybe (NextToken) , "MetricsConfigurationList" :: Maybe (MetricsConfigurationList) } -> {"IsTruncated" :: Maybe (IsTruncated) , "ContinuationToken" :: Maybe (Token) , "NextContinuationToken" :: Maybe (NextToken) , "MetricsConfigurationList" :: Maybe (MetricsConfigurationList) } ) -> ListBucketMetricsConfigurationsOutput
+newListBucketMetricsConfigurationsOutput'  customize = (ListBucketMetricsConfigurationsOutput <<< customize) { "ContinuationToken": Nothing, "IsTruncated": Nothing, "MetricsConfigurationList": Nothing, "NextContinuationToken": Nothing }
 
 
 
 newtype ListBucketMetricsConfigurationsRequest = ListBucketMetricsConfigurationsRequest 
   { "Bucket" :: (BucketName)
-  , "ContinuationToken" :: NullOrUndefined (Token)
+  , "ContinuationToken" :: Maybe (Token)
   }
 derive instance newtypeListBucketMetricsConfigurationsRequest :: Newtype ListBucketMetricsConfigurationsRequest _
 derive instance repGenericListBucketMetricsConfigurationsRequest :: Generic ListBucketMetricsConfigurationsRequest _
@@ -3946,18 +3945,18 @@ instance encodeListBucketMetricsConfigurationsRequest :: Encode ListBucketMetric
 
 -- | Constructs ListBucketMetricsConfigurationsRequest from required parameters
 newListBucketMetricsConfigurationsRequest :: BucketName -> ListBucketMetricsConfigurationsRequest
-newListBucketMetricsConfigurationsRequest _Bucket = ListBucketMetricsConfigurationsRequest { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing) }
+newListBucketMetricsConfigurationsRequest _Bucket = ListBucketMetricsConfigurationsRequest { "Bucket": _Bucket, "ContinuationToken": Nothing }
 
 -- | Constructs ListBucketMetricsConfigurationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBucketMetricsConfigurationsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContinuationToken" :: NullOrUndefined (Token) } -> {"Bucket" :: (BucketName) , "ContinuationToken" :: NullOrUndefined (Token) } ) -> ListBucketMetricsConfigurationsRequest
-newListBucketMetricsConfigurationsRequest' _Bucket customize = (ListBucketMetricsConfigurationsRequest <<< customize) { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing) }
+newListBucketMetricsConfigurationsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContinuationToken" :: Maybe (Token) } -> {"Bucket" :: (BucketName) , "ContinuationToken" :: Maybe (Token) } ) -> ListBucketMetricsConfigurationsRequest
+newListBucketMetricsConfigurationsRequest' _Bucket customize = (ListBucketMetricsConfigurationsRequest <<< customize) { "Bucket": _Bucket, "ContinuationToken": Nothing }
 
 
 
 newtype ListBucketsOutput = ListBucketsOutput 
-  { "Buckets" :: NullOrUndefined (Buckets)
-  , "Owner" :: NullOrUndefined (Owner)
+  { "Buckets" :: Maybe (Buckets)
+  , "Owner" :: Maybe (Owner)
   }
 derive instance newtypeListBucketsOutput :: Newtype ListBucketsOutput _
 derive instance repGenericListBucketsOutput :: Generic ListBucketsOutput _
@@ -3967,28 +3966,28 @@ instance encodeListBucketsOutput :: Encode ListBucketsOutput where encode = gene
 
 -- | Constructs ListBucketsOutput from required parameters
 newListBucketsOutput :: ListBucketsOutput
-newListBucketsOutput  = ListBucketsOutput { "Buckets": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing) }
+newListBucketsOutput  = ListBucketsOutput { "Buckets": Nothing, "Owner": Nothing }
 
 -- | Constructs ListBucketsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBucketsOutput' :: ( { "Buckets" :: NullOrUndefined (Buckets) , "Owner" :: NullOrUndefined (Owner) } -> {"Buckets" :: NullOrUndefined (Buckets) , "Owner" :: NullOrUndefined (Owner) } ) -> ListBucketsOutput
-newListBucketsOutput'  customize = (ListBucketsOutput <<< customize) { "Buckets": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing) }
+newListBucketsOutput' :: ( { "Buckets" :: Maybe (Buckets) , "Owner" :: Maybe (Owner) } -> {"Buckets" :: Maybe (Buckets) , "Owner" :: Maybe (Owner) } ) -> ListBucketsOutput
+newListBucketsOutput'  customize = (ListBucketsOutput <<< customize) { "Buckets": Nothing, "Owner": Nothing }
 
 
 
 newtype ListMultipartUploadsOutput = ListMultipartUploadsOutput 
-  { "Bucket" :: NullOrUndefined (BucketName)
-  , "KeyMarker" :: NullOrUndefined (KeyMarker)
-  , "UploadIdMarker" :: NullOrUndefined (UploadIdMarker)
-  , "NextKeyMarker" :: NullOrUndefined (NextKeyMarker)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "NextUploadIdMarker" :: NullOrUndefined (NextUploadIdMarker)
-  , "MaxUploads" :: NullOrUndefined (MaxUploads)
-  , "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "Uploads" :: NullOrUndefined (MultipartUploadList)
-  , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
+  { "Bucket" :: Maybe (BucketName)
+  , "KeyMarker" :: Maybe (KeyMarker)
+  , "UploadIdMarker" :: Maybe (UploadIdMarker)
+  , "NextKeyMarker" :: Maybe (NextKeyMarker)
+  , "Prefix" :: Maybe (Prefix)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "NextUploadIdMarker" :: Maybe (NextUploadIdMarker)
+  , "MaxUploads" :: Maybe (MaxUploads)
+  , "IsTruncated" :: Maybe (IsTruncated)
+  , "Uploads" :: Maybe (MultipartUploadList)
+  , "CommonPrefixes" :: Maybe (CommonPrefixList)
+  , "EncodingType" :: Maybe (EncodingType)
   }
 derive instance newtypeListMultipartUploadsOutput :: Newtype ListMultipartUploadsOutput _
 derive instance repGenericListMultipartUploadsOutput :: Generic ListMultipartUploadsOutput _
@@ -3998,23 +3997,23 @@ instance encodeListMultipartUploadsOutput :: Encode ListMultipartUploadsOutput w
 
 -- | Constructs ListMultipartUploadsOutput from required parameters
 newListMultipartUploadsOutput :: ListMultipartUploadsOutput
-newListMultipartUploadsOutput  = ListMultipartUploadsOutput { "Bucket": (NullOrUndefined Nothing), "CommonPrefixes": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxUploads": (NullOrUndefined Nothing), "NextKeyMarker": (NullOrUndefined Nothing), "NextUploadIdMarker": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "UploadIdMarker": (NullOrUndefined Nothing), "Uploads": (NullOrUndefined Nothing) }
+newListMultipartUploadsOutput  = ListMultipartUploadsOutput { "Bucket": Nothing, "CommonPrefixes": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "KeyMarker": Nothing, "MaxUploads": Nothing, "NextKeyMarker": Nothing, "NextUploadIdMarker": Nothing, "Prefix": Nothing, "UploadIdMarker": Nothing, "Uploads": Nothing }
 
 -- | Constructs ListMultipartUploadsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListMultipartUploadsOutput' :: ( { "Bucket" :: NullOrUndefined (BucketName) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "UploadIdMarker" :: NullOrUndefined (UploadIdMarker) , "NextKeyMarker" :: NullOrUndefined (NextKeyMarker) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "NextUploadIdMarker" :: NullOrUndefined (NextUploadIdMarker) , "MaxUploads" :: NullOrUndefined (MaxUploads) , "IsTruncated" :: NullOrUndefined (IsTruncated) , "Uploads" :: NullOrUndefined (MultipartUploadList) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) } -> {"Bucket" :: NullOrUndefined (BucketName) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "UploadIdMarker" :: NullOrUndefined (UploadIdMarker) , "NextKeyMarker" :: NullOrUndefined (NextKeyMarker) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "NextUploadIdMarker" :: NullOrUndefined (NextUploadIdMarker) , "MaxUploads" :: NullOrUndefined (MaxUploads) , "IsTruncated" :: NullOrUndefined (IsTruncated) , "Uploads" :: NullOrUndefined (MultipartUploadList) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) } ) -> ListMultipartUploadsOutput
-newListMultipartUploadsOutput'  customize = (ListMultipartUploadsOutput <<< customize) { "Bucket": (NullOrUndefined Nothing), "CommonPrefixes": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxUploads": (NullOrUndefined Nothing), "NextKeyMarker": (NullOrUndefined Nothing), "NextUploadIdMarker": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "UploadIdMarker": (NullOrUndefined Nothing), "Uploads": (NullOrUndefined Nothing) }
+newListMultipartUploadsOutput' :: ( { "Bucket" :: Maybe (BucketName) , "KeyMarker" :: Maybe (KeyMarker) , "UploadIdMarker" :: Maybe (UploadIdMarker) , "NextKeyMarker" :: Maybe (NextKeyMarker) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "NextUploadIdMarker" :: Maybe (NextUploadIdMarker) , "MaxUploads" :: Maybe (MaxUploads) , "IsTruncated" :: Maybe (IsTruncated) , "Uploads" :: Maybe (MultipartUploadList) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) } -> {"Bucket" :: Maybe (BucketName) , "KeyMarker" :: Maybe (KeyMarker) , "UploadIdMarker" :: Maybe (UploadIdMarker) , "NextKeyMarker" :: Maybe (NextKeyMarker) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "NextUploadIdMarker" :: Maybe (NextUploadIdMarker) , "MaxUploads" :: Maybe (MaxUploads) , "IsTruncated" :: Maybe (IsTruncated) , "Uploads" :: Maybe (MultipartUploadList) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) } ) -> ListMultipartUploadsOutput
+newListMultipartUploadsOutput'  customize = (ListMultipartUploadsOutput <<< customize) { "Bucket": Nothing, "CommonPrefixes": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "KeyMarker": Nothing, "MaxUploads": Nothing, "NextKeyMarker": Nothing, "NextUploadIdMarker": Nothing, "Prefix": Nothing, "UploadIdMarker": Nothing, "Uploads": Nothing }
 
 
 
 newtype ListMultipartUploadsRequest = ListMultipartUploadsRequest 
   { "Bucket" :: (BucketName)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
-  , "KeyMarker" :: NullOrUndefined (KeyMarker)
-  , "MaxUploads" :: NullOrUndefined (MaxUploads)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "UploadIdMarker" :: NullOrUndefined (UploadIdMarker)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "EncodingType" :: Maybe (EncodingType)
+  , "KeyMarker" :: Maybe (KeyMarker)
+  , "MaxUploads" :: Maybe (MaxUploads)
+  , "Prefix" :: Maybe (Prefix)
+  , "UploadIdMarker" :: Maybe (UploadIdMarker)
   }
 derive instance newtypeListMultipartUploadsRequest :: Newtype ListMultipartUploadsRequest _
 derive instance repGenericListMultipartUploadsRequest :: Generic ListMultipartUploadsRequest _
@@ -4024,29 +4023,29 @@ instance encodeListMultipartUploadsRequest :: Encode ListMultipartUploadsRequest
 
 -- | Constructs ListMultipartUploadsRequest from required parameters
 newListMultipartUploadsRequest :: BucketName -> ListMultipartUploadsRequest
-newListMultipartUploadsRequest _Bucket = ListMultipartUploadsRequest { "Bucket": _Bucket, "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxUploads": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "UploadIdMarker": (NullOrUndefined Nothing) }
+newListMultipartUploadsRequest _Bucket = ListMultipartUploadsRequest { "Bucket": _Bucket, "Delimiter": Nothing, "EncodingType": Nothing, "KeyMarker": Nothing, "MaxUploads": Nothing, "Prefix": Nothing, "UploadIdMarker": Nothing }
 
 -- | Constructs ListMultipartUploadsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListMultipartUploadsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "MaxUploads" :: NullOrUndefined (MaxUploads) , "Prefix" :: NullOrUndefined (Prefix) , "UploadIdMarker" :: NullOrUndefined (UploadIdMarker) } -> {"Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "MaxUploads" :: NullOrUndefined (MaxUploads) , "Prefix" :: NullOrUndefined (Prefix) , "UploadIdMarker" :: NullOrUndefined (UploadIdMarker) } ) -> ListMultipartUploadsRequest
-newListMultipartUploadsRequest' _Bucket customize = (ListMultipartUploadsRequest <<< customize) { "Bucket": _Bucket, "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxUploads": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "UploadIdMarker": (NullOrUndefined Nothing) }
+newListMultipartUploadsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "KeyMarker" :: Maybe (KeyMarker) , "MaxUploads" :: Maybe (MaxUploads) , "Prefix" :: Maybe (Prefix) , "UploadIdMarker" :: Maybe (UploadIdMarker) } -> {"Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "KeyMarker" :: Maybe (KeyMarker) , "MaxUploads" :: Maybe (MaxUploads) , "Prefix" :: Maybe (Prefix) , "UploadIdMarker" :: Maybe (UploadIdMarker) } ) -> ListMultipartUploadsRequest
+newListMultipartUploadsRequest' _Bucket customize = (ListMultipartUploadsRequest <<< customize) { "Bucket": _Bucket, "Delimiter": Nothing, "EncodingType": Nothing, "KeyMarker": Nothing, "MaxUploads": Nothing, "Prefix": Nothing, "UploadIdMarker": Nothing }
 
 
 
 newtype ListObjectVersionsOutput = ListObjectVersionsOutput 
-  { "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "KeyMarker" :: NullOrUndefined (KeyMarker)
-  , "VersionIdMarker" :: NullOrUndefined (VersionIdMarker)
-  , "NextKeyMarker" :: NullOrUndefined (NextKeyMarker)
-  , "NextVersionIdMarker" :: NullOrUndefined (NextVersionIdMarker)
-  , "Versions" :: NullOrUndefined (ObjectVersionList)
-  , "DeleteMarkers" :: NullOrUndefined (DeleteMarkers)
-  , "Name" :: NullOrUndefined (BucketName)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "MaxKeys" :: NullOrUndefined (MaxKeys)
-  , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
+  { "IsTruncated" :: Maybe (IsTruncated)
+  , "KeyMarker" :: Maybe (KeyMarker)
+  , "VersionIdMarker" :: Maybe (VersionIdMarker)
+  , "NextKeyMarker" :: Maybe (NextKeyMarker)
+  , "NextVersionIdMarker" :: Maybe (NextVersionIdMarker)
+  , "Versions" :: Maybe (ObjectVersionList)
+  , "DeleteMarkers" :: Maybe (DeleteMarkers)
+  , "Name" :: Maybe (BucketName)
+  , "Prefix" :: Maybe (Prefix)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "MaxKeys" :: Maybe (MaxKeys)
+  , "CommonPrefixes" :: Maybe (CommonPrefixList)
+  , "EncodingType" :: Maybe (EncodingType)
   }
 derive instance newtypeListObjectVersionsOutput :: Newtype ListObjectVersionsOutput _
 derive instance repGenericListObjectVersionsOutput :: Generic ListObjectVersionsOutput _
@@ -4056,23 +4055,23 @@ instance encodeListObjectVersionsOutput :: Encode ListObjectVersionsOutput where
 
 -- | Constructs ListObjectVersionsOutput from required parameters
 newListObjectVersionsOutput :: ListObjectVersionsOutput
-newListObjectVersionsOutput  = ListObjectVersionsOutput { "CommonPrefixes": (NullOrUndefined Nothing), "DeleteMarkers": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NextKeyMarker": (NullOrUndefined Nothing), "NextVersionIdMarker": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "VersionIdMarker": (NullOrUndefined Nothing), "Versions": (NullOrUndefined Nothing) }
+newListObjectVersionsOutput  = ListObjectVersionsOutput { "CommonPrefixes": Nothing, "DeleteMarkers": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "KeyMarker": Nothing, "MaxKeys": Nothing, "Name": Nothing, "NextKeyMarker": Nothing, "NextVersionIdMarker": Nothing, "Prefix": Nothing, "VersionIdMarker": Nothing, "Versions": Nothing }
 
 -- | Constructs ListObjectVersionsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectVersionsOutput' :: ( { "IsTruncated" :: NullOrUndefined (IsTruncated) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "VersionIdMarker" :: NullOrUndefined (VersionIdMarker) , "NextKeyMarker" :: NullOrUndefined (NextKeyMarker) , "NextVersionIdMarker" :: NullOrUndefined (NextVersionIdMarker) , "Versions" :: NullOrUndefined (ObjectVersionList) , "DeleteMarkers" :: NullOrUndefined (DeleteMarkers) , "Name" :: NullOrUndefined (BucketName) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) } -> {"IsTruncated" :: NullOrUndefined (IsTruncated) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "VersionIdMarker" :: NullOrUndefined (VersionIdMarker) , "NextKeyMarker" :: NullOrUndefined (NextKeyMarker) , "NextVersionIdMarker" :: NullOrUndefined (NextVersionIdMarker) , "Versions" :: NullOrUndefined (ObjectVersionList) , "DeleteMarkers" :: NullOrUndefined (DeleteMarkers) , "Name" :: NullOrUndefined (BucketName) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) } ) -> ListObjectVersionsOutput
-newListObjectVersionsOutput'  customize = (ListObjectVersionsOutput <<< customize) { "CommonPrefixes": (NullOrUndefined Nothing), "DeleteMarkers": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NextKeyMarker": (NullOrUndefined Nothing), "NextVersionIdMarker": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "VersionIdMarker": (NullOrUndefined Nothing), "Versions": (NullOrUndefined Nothing) }
+newListObjectVersionsOutput' :: ( { "IsTruncated" :: Maybe (IsTruncated) , "KeyMarker" :: Maybe (KeyMarker) , "VersionIdMarker" :: Maybe (VersionIdMarker) , "NextKeyMarker" :: Maybe (NextKeyMarker) , "NextVersionIdMarker" :: Maybe (NextVersionIdMarker) , "Versions" :: Maybe (ObjectVersionList) , "DeleteMarkers" :: Maybe (DeleteMarkers) , "Name" :: Maybe (BucketName) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "MaxKeys" :: Maybe (MaxKeys) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) } -> {"IsTruncated" :: Maybe (IsTruncated) , "KeyMarker" :: Maybe (KeyMarker) , "VersionIdMarker" :: Maybe (VersionIdMarker) , "NextKeyMarker" :: Maybe (NextKeyMarker) , "NextVersionIdMarker" :: Maybe (NextVersionIdMarker) , "Versions" :: Maybe (ObjectVersionList) , "DeleteMarkers" :: Maybe (DeleteMarkers) , "Name" :: Maybe (BucketName) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "MaxKeys" :: Maybe (MaxKeys) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) } ) -> ListObjectVersionsOutput
+newListObjectVersionsOutput'  customize = (ListObjectVersionsOutput <<< customize) { "CommonPrefixes": Nothing, "DeleteMarkers": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "KeyMarker": Nothing, "MaxKeys": Nothing, "Name": Nothing, "NextKeyMarker": Nothing, "NextVersionIdMarker": Nothing, "Prefix": Nothing, "VersionIdMarker": Nothing, "Versions": Nothing }
 
 
 
 newtype ListObjectVersionsRequest = ListObjectVersionsRequest 
   { "Bucket" :: (BucketName)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
-  , "KeyMarker" :: NullOrUndefined (KeyMarker)
-  , "MaxKeys" :: NullOrUndefined (MaxKeys)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "VersionIdMarker" :: NullOrUndefined (VersionIdMarker)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "EncodingType" :: Maybe (EncodingType)
+  , "KeyMarker" :: Maybe (KeyMarker)
+  , "MaxKeys" :: Maybe (MaxKeys)
+  , "Prefix" :: Maybe (Prefix)
+  , "VersionIdMarker" :: Maybe (VersionIdMarker)
   }
 derive instance newtypeListObjectVersionsRequest :: Newtype ListObjectVersionsRequest _
 derive instance repGenericListObjectVersionsRequest :: Generic ListObjectVersionsRequest _
@@ -4082,26 +4081,26 @@ instance encodeListObjectVersionsRequest :: Encode ListObjectVersionsRequest whe
 
 -- | Constructs ListObjectVersionsRequest from required parameters
 newListObjectVersionsRequest :: BucketName -> ListObjectVersionsRequest
-newListObjectVersionsRequest _Bucket = ListObjectVersionsRequest { "Bucket": _Bucket, "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "VersionIdMarker": (NullOrUndefined Nothing) }
+newListObjectVersionsRequest _Bucket = ListObjectVersionsRequest { "Bucket": _Bucket, "Delimiter": Nothing, "EncodingType": Nothing, "KeyMarker": Nothing, "MaxKeys": Nothing, "Prefix": Nothing, "VersionIdMarker": Nothing }
 
 -- | Constructs ListObjectVersionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectVersionsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "Prefix" :: NullOrUndefined (Prefix) , "VersionIdMarker" :: NullOrUndefined (VersionIdMarker) } -> {"Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "KeyMarker" :: NullOrUndefined (KeyMarker) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "Prefix" :: NullOrUndefined (Prefix) , "VersionIdMarker" :: NullOrUndefined (VersionIdMarker) } ) -> ListObjectVersionsRequest
-newListObjectVersionsRequest' _Bucket customize = (ListObjectVersionsRequest <<< customize) { "Bucket": _Bucket, "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "KeyMarker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "VersionIdMarker": (NullOrUndefined Nothing) }
+newListObjectVersionsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "KeyMarker" :: Maybe (KeyMarker) , "MaxKeys" :: Maybe (MaxKeys) , "Prefix" :: Maybe (Prefix) , "VersionIdMarker" :: Maybe (VersionIdMarker) } -> {"Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "KeyMarker" :: Maybe (KeyMarker) , "MaxKeys" :: Maybe (MaxKeys) , "Prefix" :: Maybe (Prefix) , "VersionIdMarker" :: Maybe (VersionIdMarker) } ) -> ListObjectVersionsRequest
+newListObjectVersionsRequest' _Bucket customize = (ListObjectVersionsRequest <<< customize) { "Bucket": _Bucket, "Delimiter": Nothing, "EncodingType": Nothing, "KeyMarker": Nothing, "MaxKeys": Nothing, "Prefix": Nothing, "VersionIdMarker": Nothing }
 
 
 
 newtype ListObjectsOutput = ListObjectsOutput 
-  { "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "NextMarker" :: NullOrUndefined (NextMarker)
-  , "Contents" :: NullOrUndefined (ObjectList)
-  , "Name" :: NullOrUndefined (BucketName)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "MaxKeys" :: NullOrUndefined (MaxKeys)
-  , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
+  { "IsTruncated" :: Maybe (IsTruncated)
+  , "Marker" :: Maybe (Marker)
+  , "NextMarker" :: Maybe (NextMarker)
+  , "Contents" :: Maybe (ObjectList)
+  , "Name" :: Maybe (BucketName)
+  , "Prefix" :: Maybe (Prefix)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "MaxKeys" :: Maybe (MaxKeys)
+  , "CommonPrefixes" :: Maybe (CommonPrefixList)
+  , "EncodingType" :: Maybe (EncodingType)
   }
 derive instance newtypeListObjectsOutput :: Newtype ListObjectsOutput _
 derive instance repGenericListObjectsOutput :: Generic ListObjectsOutput _
@@ -4111,23 +4110,23 @@ instance encodeListObjectsOutput :: Encode ListObjectsOutput where encode = gene
 
 -- | Constructs ListObjectsOutput from required parameters
 newListObjectsOutput :: ListObjectsOutput
-newListObjectsOutput  = ListObjectsOutput { "CommonPrefixes": (NullOrUndefined Nothing), "Contents": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newListObjectsOutput  = ListObjectsOutput { "CommonPrefixes": Nothing, "Contents": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "Marker": Nothing, "MaxKeys": Nothing, "Name": Nothing, "NextMarker": Nothing, "Prefix": Nothing }
 
 -- | Constructs ListObjectsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectsOutput' :: ( { "IsTruncated" :: NullOrUndefined (IsTruncated) , "Marker" :: NullOrUndefined (Marker) , "NextMarker" :: NullOrUndefined (NextMarker) , "Contents" :: NullOrUndefined (ObjectList) , "Name" :: NullOrUndefined (BucketName) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) } -> {"IsTruncated" :: NullOrUndefined (IsTruncated) , "Marker" :: NullOrUndefined (Marker) , "NextMarker" :: NullOrUndefined (NextMarker) , "Contents" :: NullOrUndefined (ObjectList) , "Name" :: NullOrUndefined (BucketName) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) } ) -> ListObjectsOutput
-newListObjectsOutput'  customize = (ListObjectsOutput <<< customize) { "CommonPrefixes": (NullOrUndefined Nothing), "Contents": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NextMarker": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing) }
+newListObjectsOutput' :: ( { "IsTruncated" :: Maybe (IsTruncated) , "Marker" :: Maybe (Marker) , "NextMarker" :: Maybe (NextMarker) , "Contents" :: Maybe (ObjectList) , "Name" :: Maybe (BucketName) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "MaxKeys" :: Maybe (MaxKeys) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) } -> {"IsTruncated" :: Maybe (IsTruncated) , "Marker" :: Maybe (Marker) , "NextMarker" :: Maybe (NextMarker) , "Contents" :: Maybe (ObjectList) , "Name" :: Maybe (BucketName) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "MaxKeys" :: Maybe (MaxKeys) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) } ) -> ListObjectsOutput
+newListObjectsOutput'  customize = (ListObjectsOutput <<< customize) { "CommonPrefixes": Nothing, "Contents": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "Marker": Nothing, "MaxKeys": Nothing, "Name": Nothing, "NextMarker": Nothing, "Prefix": Nothing }
 
 
 
 newtype ListObjectsRequest = ListObjectsRequest 
   { "Bucket" :: (BucketName)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
-  , "Marker" :: NullOrUndefined (Marker)
-  , "MaxKeys" :: NullOrUndefined (MaxKeys)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "EncodingType" :: Maybe (EncodingType)
+  , "Marker" :: Maybe (Marker)
+  , "MaxKeys" :: Maybe (MaxKeys)
+  , "Prefix" :: Maybe (Prefix)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeListObjectsRequest :: Newtype ListObjectsRequest _
 derive instance repGenericListObjectsRequest :: Generic ListObjectsRequest _
@@ -4137,28 +4136,28 @@ instance encodeListObjectsRequest :: Encode ListObjectsRequest where encode = ge
 
 -- | Constructs ListObjectsRequest from required parameters
 newListObjectsRequest :: BucketName -> ListObjectsRequest
-newListObjectsRequest _Bucket = ListObjectsRequest { "Bucket": _Bucket, "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newListObjectsRequest _Bucket = ListObjectsRequest { "Bucket": _Bucket, "Delimiter": Nothing, "EncodingType": Nothing, "Marker": Nothing, "MaxKeys": Nothing, "Prefix": Nothing, "RequestPayer": Nothing }
 
 -- | Constructs ListObjectsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "Marker" :: NullOrUndefined (Marker) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "Prefix" :: NullOrUndefined (Prefix) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "Marker" :: NullOrUndefined (Marker) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "Prefix" :: NullOrUndefined (Prefix) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> ListObjectsRequest
-newListObjectsRequest' _Bucket customize = (ListObjectsRequest <<< customize) { "Bucket": _Bucket, "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "Marker": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newListObjectsRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "Marker" :: Maybe (Marker) , "MaxKeys" :: Maybe (MaxKeys) , "Prefix" :: Maybe (Prefix) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "Marker" :: Maybe (Marker) , "MaxKeys" :: Maybe (MaxKeys) , "Prefix" :: Maybe (Prefix) , "RequestPayer" :: Maybe (RequestPayer) } ) -> ListObjectsRequest
+newListObjectsRequest' _Bucket customize = (ListObjectsRequest <<< customize) { "Bucket": _Bucket, "Delimiter": Nothing, "EncodingType": Nothing, "Marker": Nothing, "MaxKeys": Nothing, "Prefix": Nothing, "RequestPayer": Nothing }
 
 
 
 newtype ListObjectsV2Output = ListObjectsV2Output 
-  { "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "Contents" :: NullOrUndefined (ObjectList)
-  , "Name" :: NullOrUndefined (BucketName)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "MaxKeys" :: NullOrUndefined (MaxKeys)
-  , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
-  , "KeyCount" :: NullOrUndefined (KeyCount)
-  , "ContinuationToken" :: NullOrUndefined (Token)
-  , "NextContinuationToken" :: NullOrUndefined (NextToken)
-  , "StartAfter" :: NullOrUndefined (StartAfter)
+  { "IsTruncated" :: Maybe (IsTruncated)
+  , "Contents" :: Maybe (ObjectList)
+  , "Name" :: Maybe (BucketName)
+  , "Prefix" :: Maybe (Prefix)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "MaxKeys" :: Maybe (MaxKeys)
+  , "CommonPrefixes" :: Maybe (CommonPrefixList)
+  , "EncodingType" :: Maybe (EncodingType)
+  , "KeyCount" :: Maybe (KeyCount)
+  , "ContinuationToken" :: Maybe (Token)
+  , "NextContinuationToken" :: Maybe (NextToken)
+  , "StartAfter" :: Maybe (StartAfter)
   }
 derive instance newtypeListObjectsV2Output :: Newtype ListObjectsV2Output _
 derive instance repGenericListObjectsV2Output :: Generic ListObjectsV2Output _
@@ -4168,25 +4167,25 @@ instance encodeListObjectsV2Output :: Encode ListObjectsV2Output where encode = 
 
 -- | Constructs ListObjectsV2Output from required parameters
 newListObjectsV2Output :: ListObjectsV2Output
-newListObjectsV2Output  = ListObjectsV2Output { "CommonPrefixes": (NullOrUndefined Nothing), "Contents": (NullOrUndefined Nothing), "ContinuationToken": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "KeyCount": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "StartAfter": (NullOrUndefined Nothing) }
+newListObjectsV2Output  = ListObjectsV2Output { "CommonPrefixes": Nothing, "Contents": Nothing, "ContinuationToken": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "KeyCount": Nothing, "MaxKeys": Nothing, "Name": Nothing, "NextContinuationToken": Nothing, "Prefix": Nothing, "StartAfter": Nothing }
 
 -- | Constructs ListObjectsV2Output's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectsV2Output' :: ( { "IsTruncated" :: NullOrUndefined (IsTruncated) , "Contents" :: NullOrUndefined (ObjectList) , "Name" :: NullOrUndefined (BucketName) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) , "KeyCount" :: NullOrUndefined (KeyCount) , "ContinuationToken" :: NullOrUndefined (Token) , "NextContinuationToken" :: NullOrUndefined (NextToken) , "StartAfter" :: NullOrUndefined (StartAfter) } -> {"IsTruncated" :: NullOrUndefined (IsTruncated) , "Contents" :: NullOrUndefined (ObjectList) , "Name" :: NullOrUndefined (BucketName) , "Prefix" :: NullOrUndefined (Prefix) , "Delimiter" :: NullOrUndefined (Delimiter) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "CommonPrefixes" :: NullOrUndefined (CommonPrefixList) , "EncodingType" :: NullOrUndefined (EncodingType) , "KeyCount" :: NullOrUndefined (KeyCount) , "ContinuationToken" :: NullOrUndefined (Token) , "NextContinuationToken" :: NullOrUndefined (NextToken) , "StartAfter" :: NullOrUndefined (StartAfter) } ) -> ListObjectsV2Output
-newListObjectsV2Output'  customize = (ListObjectsV2Output <<< customize) { "CommonPrefixes": (NullOrUndefined Nothing), "Contents": (NullOrUndefined Nothing), "ContinuationToken": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "KeyCount": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "NextContinuationToken": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "StartAfter": (NullOrUndefined Nothing) }
+newListObjectsV2Output' :: ( { "IsTruncated" :: Maybe (IsTruncated) , "Contents" :: Maybe (ObjectList) , "Name" :: Maybe (BucketName) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "MaxKeys" :: Maybe (MaxKeys) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) , "KeyCount" :: Maybe (KeyCount) , "ContinuationToken" :: Maybe (Token) , "NextContinuationToken" :: Maybe (NextToken) , "StartAfter" :: Maybe (StartAfter) } -> {"IsTruncated" :: Maybe (IsTruncated) , "Contents" :: Maybe (ObjectList) , "Name" :: Maybe (BucketName) , "Prefix" :: Maybe (Prefix) , "Delimiter" :: Maybe (Delimiter) , "MaxKeys" :: Maybe (MaxKeys) , "CommonPrefixes" :: Maybe (CommonPrefixList) , "EncodingType" :: Maybe (EncodingType) , "KeyCount" :: Maybe (KeyCount) , "ContinuationToken" :: Maybe (Token) , "NextContinuationToken" :: Maybe (NextToken) , "StartAfter" :: Maybe (StartAfter) } ) -> ListObjectsV2Output
+newListObjectsV2Output'  customize = (ListObjectsV2Output <<< customize) { "CommonPrefixes": Nothing, "Contents": Nothing, "ContinuationToken": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "IsTruncated": Nothing, "KeyCount": Nothing, "MaxKeys": Nothing, "Name": Nothing, "NextContinuationToken": Nothing, "Prefix": Nothing, "StartAfter": Nothing }
 
 
 
 newtype ListObjectsV2Request = ListObjectsV2Request 
   { "Bucket" :: (BucketName)
-  , "Delimiter" :: NullOrUndefined (Delimiter)
-  , "EncodingType" :: NullOrUndefined (EncodingType)
-  , "MaxKeys" :: NullOrUndefined (MaxKeys)
-  , "Prefix" :: NullOrUndefined (Prefix)
-  , "ContinuationToken" :: NullOrUndefined (Token)
-  , "FetchOwner" :: NullOrUndefined (FetchOwner)
-  , "StartAfter" :: NullOrUndefined (StartAfter)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "Delimiter" :: Maybe (Delimiter)
+  , "EncodingType" :: Maybe (EncodingType)
+  , "MaxKeys" :: Maybe (MaxKeys)
+  , "Prefix" :: Maybe (Prefix)
+  , "ContinuationToken" :: Maybe (Token)
+  , "FetchOwner" :: Maybe (FetchOwner)
+  , "StartAfter" :: Maybe (StartAfter)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeListObjectsV2Request :: Newtype ListObjectsV2Request _
 derive instance repGenericListObjectsV2Request :: Generic ListObjectsV2Request _
@@ -4196,30 +4195,30 @@ instance encodeListObjectsV2Request :: Encode ListObjectsV2Request where encode 
 
 -- | Constructs ListObjectsV2Request from required parameters
 newListObjectsV2Request :: BucketName -> ListObjectsV2Request
-newListObjectsV2Request _Bucket = ListObjectsV2Request { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "FetchOwner": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "StartAfter": (NullOrUndefined Nothing) }
+newListObjectsV2Request _Bucket = ListObjectsV2Request { "Bucket": _Bucket, "ContinuationToken": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "FetchOwner": Nothing, "MaxKeys": Nothing, "Prefix": Nothing, "RequestPayer": Nothing, "StartAfter": Nothing }
 
 -- | Constructs ListObjectsV2Request's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListObjectsV2Request' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "Prefix" :: NullOrUndefined (Prefix) , "ContinuationToken" :: NullOrUndefined (Token) , "FetchOwner" :: NullOrUndefined (FetchOwner) , "StartAfter" :: NullOrUndefined (StartAfter) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Delimiter" :: NullOrUndefined (Delimiter) , "EncodingType" :: NullOrUndefined (EncodingType) , "MaxKeys" :: NullOrUndefined (MaxKeys) , "Prefix" :: NullOrUndefined (Prefix) , "ContinuationToken" :: NullOrUndefined (Token) , "FetchOwner" :: NullOrUndefined (FetchOwner) , "StartAfter" :: NullOrUndefined (StartAfter) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> ListObjectsV2Request
-newListObjectsV2Request' _Bucket customize = (ListObjectsV2Request <<< customize) { "Bucket": _Bucket, "ContinuationToken": (NullOrUndefined Nothing), "Delimiter": (NullOrUndefined Nothing), "EncodingType": (NullOrUndefined Nothing), "FetchOwner": (NullOrUndefined Nothing), "MaxKeys": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "StartAfter": (NullOrUndefined Nothing) }
+newListObjectsV2Request' :: BucketName -> ( { "Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "MaxKeys" :: Maybe (MaxKeys) , "Prefix" :: Maybe (Prefix) , "ContinuationToken" :: Maybe (Token) , "FetchOwner" :: Maybe (FetchOwner) , "StartAfter" :: Maybe (StartAfter) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Delimiter" :: Maybe (Delimiter) , "EncodingType" :: Maybe (EncodingType) , "MaxKeys" :: Maybe (MaxKeys) , "Prefix" :: Maybe (Prefix) , "ContinuationToken" :: Maybe (Token) , "FetchOwner" :: Maybe (FetchOwner) , "StartAfter" :: Maybe (StartAfter) , "RequestPayer" :: Maybe (RequestPayer) } ) -> ListObjectsV2Request
+newListObjectsV2Request' _Bucket customize = (ListObjectsV2Request <<< customize) { "Bucket": _Bucket, "ContinuationToken": Nothing, "Delimiter": Nothing, "EncodingType": Nothing, "FetchOwner": Nothing, "MaxKeys": Nothing, "Prefix": Nothing, "RequestPayer": Nothing, "StartAfter": Nothing }
 
 
 
 newtype ListPartsOutput = ListPartsOutput 
-  { "AbortDate" :: NullOrUndefined (AbortDate)
-  , "AbortRuleId" :: NullOrUndefined (AbortRuleId)
-  , "Bucket" :: NullOrUndefined (BucketName)
-  , "Key" :: NullOrUndefined (ObjectKey)
-  , "UploadId" :: NullOrUndefined (MultipartUploadId)
-  , "PartNumberMarker" :: NullOrUndefined (PartNumberMarker)
-  , "NextPartNumberMarker" :: NullOrUndefined (NextPartNumberMarker)
-  , "MaxParts" :: NullOrUndefined (MaxParts)
-  , "IsTruncated" :: NullOrUndefined (IsTruncated)
-  , "Parts" :: NullOrUndefined (Parts)
-  , "Initiator" :: NullOrUndefined (Initiator)
-  , "Owner" :: NullOrUndefined (Owner)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "AbortDate" :: Maybe (AbortDate)
+  , "AbortRuleId" :: Maybe (AbortRuleId)
+  , "Bucket" :: Maybe (BucketName)
+  , "Key" :: Maybe (ObjectKey)
+  , "UploadId" :: Maybe (MultipartUploadId)
+  , "PartNumberMarker" :: Maybe (PartNumberMarker)
+  , "NextPartNumberMarker" :: Maybe (NextPartNumberMarker)
+  , "MaxParts" :: Maybe (MaxParts)
+  , "IsTruncated" :: Maybe (IsTruncated)
+  , "Parts" :: Maybe (Parts)
+  , "Initiator" :: Maybe (Initiator)
+  , "Owner" :: Maybe (Owner)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeListPartsOutput :: Newtype ListPartsOutput _
 derive instance repGenericListPartsOutput :: Generic ListPartsOutput _
@@ -4229,22 +4228,22 @@ instance encodeListPartsOutput :: Encode ListPartsOutput where encode = genericE
 
 -- | Constructs ListPartsOutput from required parameters
 newListPartsOutput :: ListPartsOutput
-newListPartsOutput  = ListPartsOutput { "AbortDate": (NullOrUndefined Nothing), "AbortRuleId": (NullOrUndefined Nothing), "Bucket": (NullOrUndefined Nothing), "Initiator": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "MaxParts": (NullOrUndefined Nothing), "NextPartNumberMarker": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "PartNumberMarker": (NullOrUndefined Nothing), "Parts": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "UploadId": (NullOrUndefined Nothing) }
+newListPartsOutput  = ListPartsOutput { "AbortDate": Nothing, "AbortRuleId": Nothing, "Bucket": Nothing, "Initiator": Nothing, "IsTruncated": Nothing, "Key": Nothing, "MaxParts": Nothing, "NextPartNumberMarker": Nothing, "Owner": Nothing, "PartNumberMarker": Nothing, "Parts": Nothing, "RequestCharged": Nothing, "StorageClass": Nothing, "UploadId": Nothing }
 
 -- | Constructs ListPartsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPartsOutput' :: ( { "AbortDate" :: NullOrUndefined (AbortDate) , "AbortRuleId" :: NullOrUndefined (AbortRuleId) , "Bucket" :: NullOrUndefined (BucketName) , "Key" :: NullOrUndefined (ObjectKey) , "UploadId" :: NullOrUndefined (MultipartUploadId) , "PartNumberMarker" :: NullOrUndefined (PartNumberMarker) , "NextPartNumberMarker" :: NullOrUndefined (NextPartNumberMarker) , "MaxParts" :: NullOrUndefined (MaxParts) , "IsTruncated" :: NullOrUndefined (IsTruncated) , "Parts" :: NullOrUndefined (Parts) , "Initiator" :: NullOrUndefined (Initiator) , "Owner" :: NullOrUndefined (Owner) , "StorageClass" :: NullOrUndefined (StorageClass) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"AbortDate" :: NullOrUndefined (AbortDate) , "AbortRuleId" :: NullOrUndefined (AbortRuleId) , "Bucket" :: NullOrUndefined (BucketName) , "Key" :: NullOrUndefined (ObjectKey) , "UploadId" :: NullOrUndefined (MultipartUploadId) , "PartNumberMarker" :: NullOrUndefined (PartNumberMarker) , "NextPartNumberMarker" :: NullOrUndefined (NextPartNumberMarker) , "MaxParts" :: NullOrUndefined (MaxParts) , "IsTruncated" :: NullOrUndefined (IsTruncated) , "Parts" :: NullOrUndefined (Parts) , "Initiator" :: NullOrUndefined (Initiator) , "Owner" :: NullOrUndefined (Owner) , "StorageClass" :: NullOrUndefined (StorageClass) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> ListPartsOutput
-newListPartsOutput'  customize = (ListPartsOutput <<< customize) { "AbortDate": (NullOrUndefined Nothing), "AbortRuleId": (NullOrUndefined Nothing), "Bucket": (NullOrUndefined Nothing), "Initiator": (NullOrUndefined Nothing), "IsTruncated": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "MaxParts": (NullOrUndefined Nothing), "NextPartNumberMarker": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "PartNumberMarker": (NullOrUndefined Nothing), "Parts": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "UploadId": (NullOrUndefined Nothing) }
+newListPartsOutput' :: ( { "AbortDate" :: Maybe (AbortDate) , "AbortRuleId" :: Maybe (AbortRuleId) , "Bucket" :: Maybe (BucketName) , "Key" :: Maybe (ObjectKey) , "UploadId" :: Maybe (MultipartUploadId) , "PartNumberMarker" :: Maybe (PartNumberMarker) , "NextPartNumberMarker" :: Maybe (NextPartNumberMarker) , "MaxParts" :: Maybe (MaxParts) , "IsTruncated" :: Maybe (IsTruncated) , "Parts" :: Maybe (Parts) , "Initiator" :: Maybe (Initiator) , "Owner" :: Maybe (Owner) , "StorageClass" :: Maybe (StorageClass) , "RequestCharged" :: Maybe (RequestCharged) } -> {"AbortDate" :: Maybe (AbortDate) , "AbortRuleId" :: Maybe (AbortRuleId) , "Bucket" :: Maybe (BucketName) , "Key" :: Maybe (ObjectKey) , "UploadId" :: Maybe (MultipartUploadId) , "PartNumberMarker" :: Maybe (PartNumberMarker) , "NextPartNumberMarker" :: Maybe (NextPartNumberMarker) , "MaxParts" :: Maybe (MaxParts) , "IsTruncated" :: Maybe (IsTruncated) , "Parts" :: Maybe (Parts) , "Initiator" :: Maybe (Initiator) , "Owner" :: Maybe (Owner) , "StorageClass" :: Maybe (StorageClass) , "RequestCharged" :: Maybe (RequestCharged) } ) -> ListPartsOutput
+newListPartsOutput'  customize = (ListPartsOutput <<< customize) { "AbortDate": Nothing, "AbortRuleId": Nothing, "Bucket": Nothing, "Initiator": Nothing, "IsTruncated": Nothing, "Key": Nothing, "MaxParts": Nothing, "NextPartNumberMarker": Nothing, "Owner": Nothing, "PartNumberMarker": Nothing, "Parts": Nothing, "RequestCharged": Nothing, "StorageClass": Nothing, "UploadId": Nothing }
 
 
 
 newtype ListPartsRequest = ListPartsRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "MaxParts" :: NullOrUndefined (MaxParts)
-  , "PartNumberMarker" :: NullOrUndefined (PartNumberMarker)
+  , "MaxParts" :: Maybe (MaxParts)
+  , "PartNumberMarker" :: Maybe (PartNumberMarker)
   , "UploadId" :: (MultipartUploadId)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeListPartsRequest :: Newtype ListPartsRequest _
 derive instance repGenericListPartsRequest :: Generic ListPartsRequest _
@@ -4254,12 +4253,12 @@ instance encodeListPartsRequest :: Encode ListPartsRequest where encode = generi
 
 -- | Constructs ListPartsRequest from required parameters
 newListPartsRequest :: BucketName -> ObjectKey -> MultipartUploadId -> ListPartsRequest
-newListPartsRequest _Bucket _Key _UploadId = ListPartsRequest { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MaxParts": (NullOrUndefined Nothing), "PartNumberMarker": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newListPartsRequest _Bucket _Key _UploadId = ListPartsRequest { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MaxParts": Nothing, "PartNumberMarker": Nothing, "RequestPayer": Nothing }
 
 -- | Constructs ListPartsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListPartsRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MaxParts" :: NullOrUndefined (MaxParts) , "PartNumberMarker" :: NullOrUndefined (PartNumberMarker) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MaxParts" :: NullOrUndefined (MaxParts) , "PartNumberMarker" :: NullOrUndefined (PartNumberMarker) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> ListPartsRequest
-newListPartsRequest' _Bucket _Key _UploadId customize = (ListPartsRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MaxParts": (NullOrUndefined Nothing), "PartNumberMarker": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing) }
+newListPartsRequest' :: BucketName -> ObjectKey -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MaxParts" :: Maybe (MaxParts) , "PartNumberMarker" :: Maybe (PartNumberMarker) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "MaxParts" :: Maybe (MaxParts) , "PartNumberMarker" :: Maybe (PartNumberMarker) , "UploadId" :: (MultipartUploadId) , "RequestPayer" :: Maybe (RequestPayer) } ) -> ListPartsRequest
+newListPartsRequest' _Bucket _Key _UploadId customize = (ListPartsRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "UploadId": _UploadId, "MaxParts": Nothing, "PartNumberMarker": Nothing, "RequestPayer": Nothing }
 
 
 
@@ -4282,9 +4281,9 @@ instance encodeLocationPrefix :: Encode LocationPrefix where encode = genericEnc
 
 
 newtype LoggingEnabled = LoggingEnabled 
-  { "TargetBucket" :: NullOrUndefined (TargetBucket)
-  , "TargetGrants" :: NullOrUndefined (TargetGrants)
-  , "TargetPrefix" :: NullOrUndefined (TargetPrefix)
+  { "TargetBucket" :: Maybe (TargetBucket)
+  , "TargetGrants" :: Maybe (TargetGrants)
+  , "TargetPrefix" :: Maybe (TargetPrefix)
   }
 derive instance newtypeLoggingEnabled :: Newtype LoggingEnabled _
 derive instance repGenericLoggingEnabled :: Generic LoggingEnabled _
@@ -4294,12 +4293,12 @@ instance encodeLoggingEnabled :: Encode LoggingEnabled where encode = genericEnc
 
 -- | Constructs LoggingEnabled from required parameters
 newLoggingEnabled :: LoggingEnabled
-newLoggingEnabled  = LoggingEnabled { "TargetBucket": (NullOrUndefined Nothing), "TargetGrants": (NullOrUndefined Nothing), "TargetPrefix": (NullOrUndefined Nothing) }
+newLoggingEnabled  = LoggingEnabled { "TargetBucket": Nothing, "TargetGrants": Nothing, "TargetPrefix": Nothing }
 
 -- | Constructs LoggingEnabled's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLoggingEnabled' :: ( { "TargetBucket" :: NullOrUndefined (TargetBucket) , "TargetGrants" :: NullOrUndefined (TargetGrants) , "TargetPrefix" :: NullOrUndefined (TargetPrefix) } -> {"TargetBucket" :: NullOrUndefined (TargetBucket) , "TargetGrants" :: NullOrUndefined (TargetGrants) , "TargetPrefix" :: NullOrUndefined (TargetPrefix) } ) -> LoggingEnabled
-newLoggingEnabled'  customize = (LoggingEnabled <<< customize) { "TargetBucket": (NullOrUndefined Nothing), "TargetGrants": (NullOrUndefined Nothing), "TargetPrefix": (NullOrUndefined Nothing) }
+newLoggingEnabled' :: ( { "TargetBucket" :: Maybe (TargetBucket) , "TargetGrants" :: Maybe (TargetGrants) , "TargetPrefix" :: Maybe (TargetPrefix) } -> {"TargetBucket" :: Maybe (TargetBucket) , "TargetGrants" :: Maybe (TargetGrants) , "TargetPrefix" :: Maybe (TargetPrefix) } ) -> LoggingEnabled
+newLoggingEnabled'  customize = (LoggingEnabled <<< customize) { "TargetBucket": Nothing, "TargetGrants": Nothing, "TargetPrefix": Nothing }
 
 
 
@@ -4404,8 +4403,8 @@ instance encodeMetadataDirective :: Encode MetadataDirective where encode = gene
 
 -- | A metadata key-value pair to store with an object.
 newtype MetadataEntry = MetadataEntry 
-  { "Name" :: NullOrUndefined (MetadataKey)
-  , "Value" :: NullOrUndefined (MetadataValue)
+  { "Name" :: Maybe (MetadataKey)
+  , "Value" :: Maybe (MetadataValue)
   }
 derive instance newtypeMetadataEntry :: Newtype MetadataEntry _
 derive instance repGenericMetadataEntry :: Generic MetadataEntry _
@@ -4415,12 +4414,12 @@ instance encodeMetadataEntry :: Encode MetadataEntry where encode = genericEncod
 
 -- | Constructs MetadataEntry from required parameters
 newMetadataEntry :: MetadataEntry
-newMetadataEntry  = MetadataEntry { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newMetadataEntry  = MetadataEntry { "Name": Nothing, "Value": Nothing }
 
 -- | Constructs MetadataEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetadataEntry' :: ( { "Name" :: NullOrUndefined (MetadataKey) , "Value" :: NullOrUndefined (MetadataValue) } -> {"Name" :: NullOrUndefined (MetadataKey) , "Value" :: NullOrUndefined (MetadataValue) } ) -> MetadataEntry
-newMetadataEntry'  customize = (MetadataEntry <<< customize) { "Name": (NullOrUndefined Nothing), "Value": (NullOrUndefined Nothing) }
+newMetadataEntry' :: ( { "Name" :: Maybe (MetadataKey) , "Value" :: Maybe (MetadataValue) } -> {"Name" :: Maybe (MetadataKey) , "Value" :: Maybe (MetadataValue) } ) -> MetadataEntry
+newMetadataEntry'  customize = (MetadataEntry <<< customize) { "Name": Nothing, "Value": Nothing }
 
 
 
@@ -4443,8 +4442,8 @@ instance encodeMetadataValue :: Encode MetadataValue where encode = genericEncod
 
 
 newtype MetricsAndOperator = MetricsAndOperator 
-  { "Prefix" :: NullOrUndefined (Prefix)
-  , "Tags" :: NullOrUndefined (TagSet)
+  { "Prefix" :: Maybe (Prefix)
+  , "Tags" :: Maybe (TagSet)
   }
 derive instance newtypeMetricsAndOperator :: Newtype MetricsAndOperator _
 derive instance repGenericMetricsAndOperator :: Generic MetricsAndOperator _
@@ -4454,18 +4453,18 @@ instance encodeMetricsAndOperator :: Encode MetricsAndOperator where encode = ge
 
 -- | Constructs MetricsAndOperator from required parameters
 newMetricsAndOperator :: MetricsAndOperator
-newMetricsAndOperator  = MetricsAndOperator { "Prefix": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newMetricsAndOperator  = MetricsAndOperator { "Prefix": Nothing, "Tags": Nothing }
 
 -- | Constructs MetricsAndOperator's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetricsAndOperator' :: ( { "Prefix" :: NullOrUndefined (Prefix) , "Tags" :: NullOrUndefined (TagSet) } -> {"Prefix" :: NullOrUndefined (Prefix) , "Tags" :: NullOrUndefined (TagSet) } ) -> MetricsAndOperator
-newMetricsAndOperator'  customize = (MetricsAndOperator <<< customize) { "Prefix": (NullOrUndefined Nothing), "Tags": (NullOrUndefined Nothing) }
+newMetricsAndOperator' :: ( { "Prefix" :: Maybe (Prefix) , "Tags" :: Maybe (TagSet) } -> {"Prefix" :: Maybe (Prefix) , "Tags" :: Maybe (TagSet) } ) -> MetricsAndOperator
+newMetricsAndOperator'  customize = (MetricsAndOperator <<< customize) { "Prefix": Nothing, "Tags": Nothing }
 
 
 
 newtype MetricsConfiguration = MetricsConfiguration 
   { "Id" :: (MetricsId)
-  , "Filter" :: NullOrUndefined (MetricsFilter)
+  , "Filter" :: Maybe (MetricsFilter)
   }
 derive instance newtypeMetricsConfiguration :: Newtype MetricsConfiguration _
 derive instance repGenericMetricsConfiguration :: Generic MetricsConfiguration _
@@ -4475,12 +4474,12 @@ instance encodeMetricsConfiguration :: Encode MetricsConfiguration where encode 
 
 -- | Constructs MetricsConfiguration from required parameters
 newMetricsConfiguration :: MetricsId -> MetricsConfiguration
-newMetricsConfiguration _Id = MetricsConfiguration { "Id": _Id, "Filter": (NullOrUndefined Nothing) }
+newMetricsConfiguration _Id = MetricsConfiguration { "Id": _Id, "Filter": Nothing }
 
 -- | Constructs MetricsConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetricsConfiguration' :: MetricsId -> ( { "Id" :: (MetricsId) , "Filter" :: NullOrUndefined (MetricsFilter) } -> {"Id" :: (MetricsId) , "Filter" :: NullOrUndefined (MetricsFilter) } ) -> MetricsConfiguration
-newMetricsConfiguration' _Id customize = (MetricsConfiguration <<< customize) { "Id": _Id, "Filter": (NullOrUndefined Nothing) }
+newMetricsConfiguration' :: MetricsId -> ( { "Id" :: (MetricsId) , "Filter" :: Maybe (MetricsFilter) } -> {"Id" :: (MetricsId) , "Filter" :: Maybe (MetricsFilter) } ) -> MetricsConfiguration
+newMetricsConfiguration' _Id customize = (MetricsConfiguration <<< customize) { "Id": _Id, "Filter": Nothing }
 
 
 
@@ -4494,9 +4493,9 @@ instance encodeMetricsConfigurationList :: Encode MetricsConfigurationList where
 
 
 newtype MetricsFilter = MetricsFilter 
-  { "Prefix" :: NullOrUndefined (Prefix)
-  , "Tag" :: NullOrUndefined (Tag)
-  , "And" :: NullOrUndefined (MetricsAndOperator)
+  { "Prefix" :: Maybe (Prefix)
+  , "Tag" :: Maybe (Tag)
+  , "And" :: Maybe (MetricsAndOperator)
   }
 derive instance newtypeMetricsFilter :: Newtype MetricsFilter _
 derive instance repGenericMetricsFilter :: Generic MetricsFilter _
@@ -4506,12 +4505,12 @@ instance encodeMetricsFilter :: Encode MetricsFilter where encode = genericEncod
 
 -- | Constructs MetricsFilter from required parameters
 newMetricsFilter :: MetricsFilter
-newMetricsFilter  = MetricsFilter { "And": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newMetricsFilter  = MetricsFilter { "And": Nothing, "Prefix": Nothing, "Tag": Nothing }
 
 -- | Constructs MetricsFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMetricsFilter' :: ( { "Prefix" :: NullOrUndefined (Prefix) , "Tag" :: NullOrUndefined (Tag) , "And" :: NullOrUndefined (MetricsAndOperator) } -> {"Prefix" :: NullOrUndefined (Prefix) , "Tag" :: NullOrUndefined (Tag) , "And" :: NullOrUndefined (MetricsAndOperator) } ) -> MetricsFilter
-newMetricsFilter'  customize = (MetricsFilter <<< customize) { "And": (NullOrUndefined Nothing), "Prefix": (NullOrUndefined Nothing), "Tag": (NullOrUndefined Nothing) }
+newMetricsFilter' :: ( { "Prefix" :: Maybe (Prefix) , "Tag" :: Maybe (Tag) , "And" :: Maybe (MetricsAndOperator) } -> {"Prefix" :: Maybe (Prefix) , "Tag" :: Maybe (Tag) , "And" :: Maybe (MetricsAndOperator) } ) -> MetricsFilter
+newMetricsFilter'  customize = (MetricsFilter <<< customize) { "And": Nothing, "Prefix": Nothing, "Tag": Nothing }
 
 
 
@@ -4534,12 +4533,12 @@ instance encodeMissingMeta :: Encode MissingMeta where encode = genericEncode op
 
 
 newtype MultipartUpload = MultipartUpload 
-  { "UploadId" :: NullOrUndefined (MultipartUploadId)
-  , "Key" :: NullOrUndefined (ObjectKey)
-  , "Initiated" :: NullOrUndefined (Initiated)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "Owner" :: NullOrUndefined (Owner)
-  , "Initiator" :: NullOrUndefined (Initiator)
+  { "UploadId" :: Maybe (MultipartUploadId)
+  , "Key" :: Maybe (ObjectKey)
+  , "Initiated" :: Maybe (Initiated)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "Owner" :: Maybe (Owner)
+  , "Initiator" :: Maybe (Initiator)
   }
 derive instance newtypeMultipartUpload :: Newtype MultipartUpload _
 derive instance repGenericMultipartUpload :: Generic MultipartUpload _
@@ -4549,12 +4548,12 @@ instance encodeMultipartUpload :: Encode MultipartUpload where encode = genericE
 
 -- | Constructs MultipartUpload from required parameters
 newMultipartUpload :: MultipartUpload
-newMultipartUpload  = MultipartUpload { "Initiated": (NullOrUndefined Nothing), "Initiator": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "UploadId": (NullOrUndefined Nothing) }
+newMultipartUpload  = MultipartUpload { "Initiated": Nothing, "Initiator": Nothing, "Key": Nothing, "Owner": Nothing, "StorageClass": Nothing, "UploadId": Nothing }
 
 -- | Constructs MultipartUpload's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newMultipartUpload' :: ( { "UploadId" :: NullOrUndefined (MultipartUploadId) , "Key" :: NullOrUndefined (ObjectKey) , "Initiated" :: NullOrUndefined (Initiated) , "StorageClass" :: NullOrUndefined (StorageClass) , "Owner" :: NullOrUndefined (Owner) , "Initiator" :: NullOrUndefined (Initiator) } -> {"UploadId" :: NullOrUndefined (MultipartUploadId) , "Key" :: NullOrUndefined (ObjectKey) , "Initiated" :: NullOrUndefined (Initiated) , "StorageClass" :: NullOrUndefined (StorageClass) , "Owner" :: NullOrUndefined (Owner) , "Initiator" :: NullOrUndefined (Initiator) } ) -> MultipartUpload
-newMultipartUpload'  customize = (MultipartUpload <<< customize) { "Initiated": (NullOrUndefined Nothing), "Initiator": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "UploadId": (NullOrUndefined Nothing) }
+newMultipartUpload' :: ( { "UploadId" :: Maybe (MultipartUploadId) , "Key" :: Maybe (ObjectKey) , "Initiated" :: Maybe (Initiated) , "StorageClass" :: Maybe (StorageClass) , "Owner" :: Maybe (Owner) , "Initiator" :: Maybe (Initiator) } -> {"UploadId" :: Maybe (MultipartUploadId) , "Key" :: Maybe (ObjectKey) , "Initiated" :: Maybe (Initiated) , "StorageClass" :: Maybe (StorageClass) , "Owner" :: Maybe (Owner) , "Initiator" :: Maybe (Initiator) } ) -> MultipartUpload
+newMultipartUpload'  customize = (MultipartUpload <<< customize) { "Initiated": Nothing, "Initiator": Nothing, "Key": Nothing, "Owner": Nothing, "StorageClass": Nothing, "UploadId": Nothing }
 
 
 
@@ -4662,7 +4661,7 @@ instance encodeNoSuchUpload :: Encode NoSuchUpload where encode = genericEncode 
 
 -- | Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.
 newtype NoncurrentVersionExpiration = NoncurrentVersionExpiration 
-  { "NoncurrentDays" :: NullOrUndefined (Days)
+  { "NoncurrentDays" :: Maybe (Days)
   }
 derive instance newtypeNoncurrentVersionExpiration :: Newtype NoncurrentVersionExpiration _
 derive instance repGenericNoncurrentVersionExpiration :: Generic NoncurrentVersionExpiration _
@@ -4672,19 +4671,19 @@ instance encodeNoncurrentVersionExpiration :: Encode NoncurrentVersionExpiration
 
 -- | Constructs NoncurrentVersionExpiration from required parameters
 newNoncurrentVersionExpiration :: NoncurrentVersionExpiration
-newNoncurrentVersionExpiration  = NoncurrentVersionExpiration { "NoncurrentDays": (NullOrUndefined Nothing) }
+newNoncurrentVersionExpiration  = NoncurrentVersionExpiration { "NoncurrentDays": Nothing }
 
 -- | Constructs NoncurrentVersionExpiration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNoncurrentVersionExpiration' :: ( { "NoncurrentDays" :: NullOrUndefined (Days) } -> {"NoncurrentDays" :: NullOrUndefined (Days) } ) -> NoncurrentVersionExpiration
-newNoncurrentVersionExpiration'  customize = (NoncurrentVersionExpiration <<< customize) { "NoncurrentDays": (NullOrUndefined Nothing) }
+newNoncurrentVersionExpiration' :: ( { "NoncurrentDays" :: Maybe (Days) } -> {"NoncurrentDays" :: Maybe (Days) } ) -> NoncurrentVersionExpiration
+newNoncurrentVersionExpiration'  customize = (NoncurrentVersionExpiration <<< customize) { "NoncurrentDays": Nothing }
 
 
 
 -- | Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA or GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA or GLACIER storage class at a specific period in the object's lifetime.
 newtype NoncurrentVersionTransition = NoncurrentVersionTransition 
-  { "NoncurrentDays" :: NullOrUndefined (Days)
-  , "StorageClass" :: NullOrUndefined (TransitionStorageClass)
+  { "NoncurrentDays" :: Maybe (Days)
+  , "StorageClass" :: Maybe (TransitionStorageClass)
   }
 derive instance newtypeNoncurrentVersionTransition :: Newtype NoncurrentVersionTransition _
 derive instance repGenericNoncurrentVersionTransition :: Generic NoncurrentVersionTransition _
@@ -4694,12 +4693,12 @@ instance encodeNoncurrentVersionTransition :: Encode NoncurrentVersionTransition
 
 -- | Constructs NoncurrentVersionTransition from required parameters
 newNoncurrentVersionTransition :: NoncurrentVersionTransition
-newNoncurrentVersionTransition  = NoncurrentVersionTransition { "NoncurrentDays": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newNoncurrentVersionTransition  = NoncurrentVersionTransition { "NoncurrentDays": Nothing, "StorageClass": Nothing }
 
 -- | Constructs NoncurrentVersionTransition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNoncurrentVersionTransition' :: ( { "NoncurrentDays" :: NullOrUndefined (Days) , "StorageClass" :: NullOrUndefined (TransitionStorageClass) } -> {"NoncurrentDays" :: NullOrUndefined (Days) , "StorageClass" :: NullOrUndefined (TransitionStorageClass) } ) -> NoncurrentVersionTransition
-newNoncurrentVersionTransition'  customize = (NoncurrentVersionTransition <<< customize) { "NoncurrentDays": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newNoncurrentVersionTransition' :: ( { "NoncurrentDays" :: Maybe (Days) , "StorageClass" :: Maybe (TransitionStorageClass) } -> {"NoncurrentDays" :: Maybe (Days) , "StorageClass" :: Maybe (TransitionStorageClass) } ) -> NoncurrentVersionTransition
+newNoncurrentVersionTransition'  customize = (NoncurrentVersionTransition <<< customize) { "NoncurrentDays": Nothing, "StorageClass": Nothing }
 
 
 
@@ -4714,9 +4713,9 @@ instance encodeNoncurrentVersionTransitionList :: Encode NoncurrentVersionTransi
 
 -- | Container for specifying the notification configuration of the bucket. If this element is empty, notifications are turned off on the bucket.
 newtype NotificationConfiguration = NotificationConfiguration 
-  { "TopicConfigurations" :: NullOrUndefined (TopicConfigurationList)
-  , "QueueConfigurations" :: NullOrUndefined (QueueConfigurationList)
-  , "LambdaFunctionConfigurations" :: NullOrUndefined (LambdaFunctionConfigurationList)
+  { "TopicConfigurations" :: Maybe (TopicConfigurationList)
+  , "QueueConfigurations" :: Maybe (QueueConfigurationList)
+  , "LambdaFunctionConfigurations" :: Maybe (LambdaFunctionConfigurationList)
   }
 derive instance newtypeNotificationConfiguration :: Newtype NotificationConfiguration _
 derive instance repGenericNotificationConfiguration :: Generic NotificationConfiguration _
@@ -4726,19 +4725,19 @@ instance encodeNotificationConfiguration :: Encode NotificationConfiguration whe
 
 -- | Constructs NotificationConfiguration from required parameters
 newNotificationConfiguration :: NotificationConfiguration
-newNotificationConfiguration  = NotificationConfiguration { "LambdaFunctionConfigurations": (NullOrUndefined Nothing), "QueueConfigurations": (NullOrUndefined Nothing), "TopicConfigurations": (NullOrUndefined Nothing) }
+newNotificationConfiguration  = NotificationConfiguration { "LambdaFunctionConfigurations": Nothing, "QueueConfigurations": Nothing, "TopicConfigurations": Nothing }
 
 -- | Constructs NotificationConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotificationConfiguration' :: ( { "TopicConfigurations" :: NullOrUndefined (TopicConfigurationList) , "QueueConfigurations" :: NullOrUndefined (QueueConfigurationList) , "LambdaFunctionConfigurations" :: NullOrUndefined (LambdaFunctionConfigurationList) } -> {"TopicConfigurations" :: NullOrUndefined (TopicConfigurationList) , "QueueConfigurations" :: NullOrUndefined (QueueConfigurationList) , "LambdaFunctionConfigurations" :: NullOrUndefined (LambdaFunctionConfigurationList) } ) -> NotificationConfiguration
-newNotificationConfiguration'  customize = (NotificationConfiguration <<< customize) { "LambdaFunctionConfigurations": (NullOrUndefined Nothing), "QueueConfigurations": (NullOrUndefined Nothing), "TopicConfigurations": (NullOrUndefined Nothing) }
+newNotificationConfiguration' :: ( { "TopicConfigurations" :: Maybe (TopicConfigurationList) , "QueueConfigurations" :: Maybe (QueueConfigurationList) , "LambdaFunctionConfigurations" :: Maybe (LambdaFunctionConfigurationList) } -> {"TopicConfigurations" :: Maybe (TopicConfigurationList) , "QueueConfigurations" :: Maybe (QueueConfigurationList) , "LambdaFunctionConfigurations" :: Maybe (LambdaFunctionConfigurationList) } ) -> NotificationConfiguration
+newNotificationConfiguration'  customize = (NotificationConfiguration <<< customize) { "LambdaFunctionConfigurations": Nothing, "QueueConfigurations": Nothing, "TopicConfigurations": Nothing }
 
 
 
 newtype NotificationConfigurationDeprecated = NotificationConfigurationDeprecated 
-  { "TopicConfiguration" :: NullOrUndefined (TopicConfigurationDeprecated)
-  , "QueueConfiguration" :: NullOrUndefined (QueueConfigurationDeprecated)
-  , "CloudFunctionConfiguration" :: NullOrUndefined (CloudFunctionConfiguration)
+  { "TopicConfiguration" :: Maybe (TopicConfigurationDeprecated)
+  , "QueueConfiguration" :: Maybe (QueueConfigurationDeprecated)
+  , "CloudFunctionConfiguration" :: Maybe (CloudFunctionConfiguration)
   }
 derive instance newtypeNotificationConfigurationDeprecated :: Newtype NotificationConfigurationDeprecated _
 derive instance repGenericNotificationConfigurationDeprecated :: Generic NotificationConfigurationDeprecated _
@@ -4748,18 +4747,18 @@ instance encodeNotificationConfigurationDeprecated :: Encode NotificationConfigu
 
 -- | Constructs NotificationConfigurationDeprecated from required parameters
 newNotificationConfigurationDeprecated :: NotificationConfigurationDeprecated
-newNotificationConfigurationDeprecated  = NotificationConfigurationDeprecated { "CloudFunctionConfiguration": (NullOrUndefined Nothing), "QueueConfiguration": (NullOrUndefined Nothing), "TopicConfiguration": (NullOrUndefined Nothing) }
+newNotificationConfigurationDeprecated  = NotificationConfigurationDeprecated { "CloudFunctionConfiguration": Nothing, "QueueConfiguration": Nothing, "TopicConfiguration": Nothing }
 
 -- | Constructs NotificationConfigurationDeprecated's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotificationConfigurationDeprecated' :: ( { "TopicConfiguration" :: NullOrUndefined (TopicConfigurationDeprecated) , "QueueConfiguration" :: NullOrUndefined (QueueConfigurationDeprecated) , "CloudFunctionConfiguration" :: NullOrUndefined (CloudFunctionConfiguration) } -> {"TopicConfiguration" :: NullOrUndefined (TopicConfigurationDeprecated) , "QueueConfiguration" :: NullOrUndefined (QueueConfigurationDeprecated) , "CloudFunctionConfiguration" :: NullOrUndefined (CloudFunctionConfiguration) } ) -> NotificationConfigurationDeprecated
-newNotificationConfigurationDeprecated'  customize = (NotificationConfigurationDeprecated <<< customize) { "CloudFunctionConfiguration": (NullOrUndefined Nothing), "QueueConfiguration": (NullOrUndefined Nothing), "TopicConfiguration": (NullOrUndefined Nothing) }
+newNotificationConfigurationDeprecated' :: ( { "TopicConfiguration" :: Maybe (TopicConfigurationDeprecated) , "QueueConfiguration" :: Maybe (QueueConfigurationDeprecated) , "CloudFunctionConfiguration" :: Maybe (CloudFunctionConfiguration) } -> {"TopicConfiguration" :: Maybe (TopicConfigurationDeprecated) , "QueueConfiguration" :: Maybe (QueueConfigurationDeprecated) , "CloudFunctionConfiguration" :: Maybe (CloudFunctionConfiguration) } ) -> NotificationConfigurationDeprecated
+newNotificationConfigurationDeprecated'  customize = (NotificationConfigurationDeprecated <<< customize) { "CloudFunctionConfiguration": Nothing, "QueueConfiguration": Nothing, "TopicConfiguration": Nothing }
 
 
 
 -- | Container for object key name filtering rules. For information about key name filtering, go to <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the Amazon Simple Storage Service Developer Guide.
 newtype NotificationConfigurationFilter = NotificationConfigurationFilter 
-  { "Key" :: NullOrUndefined (S3KeyFilter)
+  { "Key" :: Maybe (S3KeyFilter)
   }
 derive instance newtypeNotificationConfigurationFilter :: Newtype NotificationConfigurationFilter _
 derive instance repGenericNotificationConfigurationFilter :: Generic NotificationConfigurationFilter _
@@ -4769,12 +4768,12 @@ instance encodeNotificationConfigurationFilter :: Encode NotificationConfigurati
 
 -- | Constructs NotificationConfigurationFilter from required parameters
 newNotificationConfigurationFilter :: NotificationConfigurationFilter
-newNotificationConfigurationFilter  = NotificationConfigurationFilter { "Key": (NullOrUndefined Nothing) }
+newNotificationConfigurationFilter  = NotificationConfigurationFilter { "Key": Nothing }
 
 -- | Constructs NotificationConfigurationFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotificationConfigurationFilter' :: ( { "Key" :: NullOrUndefined (S3KeyFilter) } -> {"Key" :: NullOrUndefined (S3KeyFilter) } ) -> NotificationConfigurationFilter
-newNotificationConfigurationFilter'  customize = (NotificationConfigurationFilter <<< customize) { "Key": (NullOrUndefined Nothing) }
+newNotificationConfigurationFilter' :: ( { "Key" :: Maybe (S3KeyFilter) } -> {"Key" :: Maybe (S3KeyFilter) } ) -> NotificationConfigurationFilter
+newNotificationConfigurationFilter'  customize = (NotificationConfigurationFilter <<< customize) { "Key": Nothing }
 
 
 
@@ -4789,12 +4788,12 @@ instance encodeNotificationId :: Encode NotificationId where encode = genericEnc
 
 
 newtype Object = Object 
-  { "Key" :: NullOrUndefined (ObjectKey)
-  , "LastModified" :: NullOrUndefined (LastModified)
-  , "ETag" :: NullOrUndefined (ETag)
-  , "Size" :: NullOrUndefined (Size)
-  , "StorageClass" :: NullOrUndefined (ObjectStorageClass)
-  , "Owner" :: NullOrUndefined (Owner)
+  { "Key" :: Maybe (ObjectKey)
+  , "LastModified" :: Maybe (LastModified)
+  , "ETag" :: Maybe (ETag)
+  , "Size" :: Maybe (Size)
+  , "StorageClass" :: Maybe (ObjectStorageClass)
+  , "Owner" :: Maybe (Owner)
   }
 derive instance newtypeObject :: Newtype Object _
 derive instance repGenericObject :: Generic Object _
@@ -4804,12 +4803,12 @@ instance encodeObject :: Encode Object where encode = genericEncode options
 
 -- | Constructs Object from required parameters
 newObject :: Object
-newObject  = Object { "ETag": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newObject  = Object { "ETag": Nothing, "Key": Nothing, "LastModified": Nothing, "Owner": Nothing, "Size": Nothing, "StorageClass": Nothing }
 
 -- | Constructs Object's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObject' :: ( { "Key" :: NullOrUndefined (ObjectKey) , "LastModified" :: NullOrUndefined (LastModified) , "ETag" :: NullOrUndefined (ETag) , "Size" :: NullOrUndefined (Size) , "StorageClass" :: NullOrUndefined (ObjectStorageClass) , "Owner" :: NullOrUndefined (Owner) } -> {"Key" :: NullOrUndefined (ObjectKey) , "LastModified" :: NullOrUndefined (LastModified) , "ETag" :: NullOrUndefined (ETag) , "Size" :: NullOrUndefined (Size) , "StorageClass" :: NullOrUndefined (ObjectStorageClass) , "Owner" :: NullOrUndefined (Owner) } ) -> Object
-newObject'  customize = (Object <<< customize) { "ETag": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newObject' :: ( { "Key" :: Maybe (ObjectKey) , "LastModified" :: Maybe (LastModified) , "ETag" :: Maybe (ETag) , "Size" :: Maybe (Size) , "StorageClass" :: Maybe (ObjectStorageClass) , "Owner" :: Maybe (Owner) } -> {"Key" :: Maybe (ObjectKey) , "LastModified" :: Maybe (LastModified) , "ETag" :: Maybe (ETag) , "Size" :: Maybe (Size) , "StorageClass" :: Maybe (ObjectStorageClass) , "Owner" :: Maybe (Owner) } ) -> Object
+newObject'  customize = (Object <<< customize) { "ETag": Nothing, "Key": Nothing, "LastModified": Nothing, "Owner": Nothing, "Size": Nothing, "StorageClass": Nothing }
 
 
 
@@ -4834,7 +4833,7 @@ instance encodeObjectCannedACL :: Encode ObjectCannedACL where encode = genericE
 
 newtype ObjectIdentifier = ObjectIdentifier 
   { "Key" :: (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
+  , "VersionId" :: Maybe (ObjectVersionId)
   }
 derive instance newtypeObjectIdentifier :: Newtype ObjectIdentifier _
 derive instance repGenericObjectIdentifier :: Generic ObjectIdentifier _
@@ -4844,12 +4843,12 @@ instance encodeObjectIdentifier :: Encode ObjectIdentifier where encode = generi
 
 -- | Constructs ObjectIdentifier from required parameters
 newObjectIdentifier :: ObjectKey -> ObjectIdentifier
-newObjectIdentifier _Key = ObjectIdentifier { "Key": _Key, "VersionId": (NullOrUndefined Nothing) }
+newObjectIdentifier _Key = ObjectIdentifier { "Key": _Key, "VersionId": Nothing }
 
 -- | Constructs ObjectIdentifier's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectIdentifier' :: ObjectKey -> ( { "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) } -> {"Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) } ) -> ObjectIdentifier
-newObjectIdentifier' _Key customize = (ObjectIdentifier <<< customize) { "Key": _Key, "VersionId": (NullOrUndefined Nothing) }
+newObjectIdentifier' :: ObjectKey -> ( { "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) } -> {"Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) } ) -> ObjectIdentifier
+newObjectIdentifier' _Key customize = (ObjectIdentifier <<< customize) { "Key": _Key, "VersionId": Nothing }
 
 
 
@@ -4900,14 +4899,14 @@ instance encodeObjectStorageClass :: Encode ObjectStorageClass where encode = ge
 
 
 newtype ObjectVersion = ObjectVersion 
-  { "ETag" :: NullOrUndefined (ETag)
-  , "Size" :: NullOrUndefined (Size)
-  , "StorageClass" :: NullOrUndefined (ObjectVersionStorageClass)
-  , "Key" :: NullOrUndefined (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "IsLatest" :: NullOrUndefined (IsLatest)
-  , "LastModified" :: NullOrUndefined (LastModified)
-  , "Owner" :: NullOrUndefined (Owner)
+  { "ETag" :: Maybe (ETag)
+  , "Size" :: Maybe (Size)
+  , "StorageClass" :: Maybe (ObjectVersionStorageClass)
+  , "Key" :: Maybe (ObjectKey)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "IsLatest" :: Maybe (IsLatest)
+  , "LastModified" :: Maybe (LastModified)
+  , "Owner" :: Maybe (Owner)
   }
 derive instance newtypeObjectVersion :: Newtype ObjectVersion _
 derive instance repGenericObjectVersion :: Generic ObjectVersion _
@@ -4917,12 +4916,12 @@ instance encodeObjectVersion :: Encode ObjectVersion where encode = genericEncod
 
 -- | Constructs ObjectVersion from required parameters
 newObjectVersion :: ObjectVersion
-newObjectVersion  = ObjectVersion { "ETag": (NullOrUndefined Nothing), "IsLatest": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newObjectVersion  = ObjectVersion { "ETag": Nothing, "IsLatest": Nothing, "Key": Nothing, "LastModified": Nothing, "Owner": Nothing, "Size": Nothing, "StorageClass": Nothing, "VersionId": Nothing }
 
 -- | Constructs ObjectVersion's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newObjectVersion' :: ( { "ETag" :: NullOrUndefined (ETag) , "Size" :: NullOrUndefined (Size) , "StorageClass" :: NullOrUndefined (ObjectVersionStorageClass) , "Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "IsLatest" :: NullOrUndefined (IsLatest) , "LastModified" :: NullOrUndefined (LastModified) , "Owner" :: NullOrUndefined (Owner) } -> {"ETag" :: NullOrUndefined (ETag) , "Size" :: NullOrUndefined (Size) , "StorageClass" :: NullOrUndefined (ObjectVersionStorageClass) , "Key" :: NullOrUndefined (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "IsLatest" :: NullOrUndefined (IsLatest) , "LastModified" :: NullOrUndefined (LastModified) , "Owner" :: NullOrUndefined (Owner) } ) -> ObjectVersion
-newObjectVersion'  customize = (ObjectVersion <<< customize) { "ETag": (NullOrUndefined Nothing), "IsLatest": (NullOrUndefined Nothing), "Key": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "Owner": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newObjectVersion' :: ( { "ETag" :: Maybe (ETag) , "Size" :: Maybe (Size) , "StorageClass" :: Maybe (ObjectVersionStorageClass) , "Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "IsLatest" :: Maybe (IsLatest) , "LastModified" :: Maybe (LastModified) , "Owner" :: Maybe (Owner) } -> {"ETag" :: Maybe (ETag) , "Size" :: Maybe (Size) , "StorageClass" :: Maybe (ObjectVersionStorageClass) , "Key" :: Maybe (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "IsLatest" :: Maybe (IsLatest) , "LastModified" :: Maybe (LastModified) , "Owner" :: Maybe (Owner) } ) -> ObjectVersion
+newObjectVersion'  customize = (ObjectVersion <<< customize) { "ETag": Nothing, "IsLatest": Nothing, "Key": Nothing, "LastModified": Nothing, "Owner": Nothing, "Size": Nothing, "StorageClass": Nothing, "VersionId": Nothing }
 
 
 
@@ -4955,7 +4954,7 @@ instance encodeObjectVersionStorageClass :: Encode ObjectVersionStorageClass whe
 
 -- | Describes the location where the restore job's output is stored.
 newtype OutputLocation = OutputLocation 
-  { "S3" :: NullOrUndefined (S3Location)
+  { "S3" :: Maybe (S3Location)
   }
 derive instance newtypeOutputLocation :: Newtype OutputLocation _
 derive instance repGenericOutputLocation :: Generic OutputLocation _
@@ -4965,18 +4964,18 @@ instance encodeOutputLocation :: Encode OutputLocation where encode = genericEnc
 
 -- | Constructs OutputLocation from required parameters
 newOutputLocation :: OutputLocation
-newOutputLocation  = OutputLocation { "S3": (NullOrUndefined Nothing) }
+newOutputLocation  = OutputLocation { "S3": Nothing }
 
 -- | Constructs OutputLocation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputLocation' :: ( { "S3" :: NullOrUndefined (S3Location) } -> {"S3" :: NullOrUndefined (S3Location) } ) -> OutputLocation
-newOutputLocation'  customize = (OutputLocation <<< customize) { "S3": (NullOrUndefined Nothing) }
+newOutputLocation' :: ( { "S3" :: Maybe (S3Location) } -> {"S3" :: Maybe (S3Location) } ) -> OutputLocation
+newOutputLocation'  customize = (OutputLocation <<< customize) { "S3": Nothing }
 
 
 
 -- | Describes how results of the Select job are serialized.
 newtype OutputSerialization = OutputSerialization 
-  { "CSV" :: NullOrUndefined (CSVOutput)
+  { "CSV" :: Maybe (CSVOutput)
   }
 derive instance newtypeOutputSerialization :: Newtype OutputSerialization _
 derive instance repGenericOutputSerialization :: Generic OutputSerialization _
@@ -4986,18 +4985,18 @@ instance encodeOutputSerialization :: Encode OutputSerialization where encode = 
 
 -- | Constructs OutputSerialization from required parameters
 newOutputSerialization :: OutputSerialization
-newOutputSerialization  = OutputSerialization { "CSV": (NullOrUndefined Nothing) }
+newOutputSerialization  = OutputSerialization { "CSV": Nothing }
 
 -- | Constructs OutputSerialization's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOutputSerialization' :: ( { "CSV" :: NullOrUndefined (CSVOutput) } -> {"CSV" :: NullOrUndefined (CSVOutput) } ) -> OutputSerialization
-newOutputSerialization'  customize = (OutputSerialization <<< customize) { "CSV": (NullOrUndefined Nothing) }
+newOutputSerialization' :: ( { "CSV" :: Maybe (CSVOutput) } -> {"CSV" :: Maybe (CSVOutput) } ) -> OutputSerialization
+newOutputSerialization'  customize = (OutputSerialization <<< customize) { "CSV": Nothing }
 
 
 
 newtype Owner = Owner 
-  { "DisplayName" :: NullOrUndefined (DisplayName)
-  , "ID" :: NullOrUndefined (ID)
+  { "DisplayName" :: Maybe (DisplayName)
+  , "ID" :: Maybe (ID)
   }
 derive instance newtypeOwner :: Newtype Owner _
 derive instance repGenericOwner :: Generic Owner _
@@ -5007,12 +5006,12 @@ instance encodeOwner :: Encode Owner where encode = genericEncode options
 
 -- | Constructs Owner from required parameters
 newOwner :: Owner
-newOwner  = Owner { "DisplayName": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing) }
+newOwner  = Owner { "DisplayName": Nothing, "ID": Nothing }
 
 -- | Constructs Owner's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newOwner' :: ( { "DisplayName" :: NullOrUndefined (DisplayName) , "ID" :: NullOrUndefined (ID) } -> {"DisplayName" :: NullOrUndefined (DisplayName) , "ID" :: NullOrUndefined (ID) } ) -> Owner
-newOwner'  customize = (Owner <<< customize) { "DisplayName": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing) }
+newOwner' :: ( { "DisplayName" :: Maybe (DisplayName) , "ID" :: Maybe (ID) } -> {"DisplayName" :: Maybe (DisplayName) , "ID" :: Maybe (ID) } ) -> Owner
+newOwner'  customize = (Owner <<< customize) { "DisplayName": Nothing, "ID": Nothing }
 
 
 
@@ -5026,10 +5025,10 @@ instance encodeOwnerOverride :: Encode OwnerOverride where encode = genericEncod
 
 
 newtype Part = Part 
-  { "PartNumber" :: NullOrUndefined (PartNumber)
-  , "LastModified" :: NullOrUndefined (LastModified)
-  , "ETag" :: NullOrUndefined (ETag)
-  , "Size" :: NullOrUndefined (Size)
+  { "PartNumber" :: Maybe (PartNumber)
+  , "LastModified" :: Maybe (LastModified)
+  , "ETag" :: Maybe (ETag)
+  , "Size" :: Maybe (Size)
   }
 derive instance newtypePart :: Newtype Part _
 derive instance repGenericPart :: Generic Part _
@@ -5039,12 +5038,12 @@ instance encodePart :: Encode Part where encode = genericEncode options
 
 -- | Constructs Part from required parameters
 newPart :: Part
-newPart  = Part { "ETag": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing) }
+newPart  = Part { "ETag": Nothing, "LastModified": Nothing, "PartNumber": Nothing, "Size": Nothing }
 
 -- | Constructs Part's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPart' :: ( { "PartNumber" :: NullOrUndefined (PartNumber) , "LastModified" :: NullOrUndefined (LastModified) , "ETag" :: NullOrUndefined (ETag) , "Size" :: NullOrUndefined (Size) } -> {"PartNumber" :: NullOrUndefined (PartNumber) , "LastModified" :: NullOrUndefined (LastModified) , "ETag" :: NullOrUndefined (ETag) , "Size" :: NullOrUndefined (Size) } ) -> Part
-newPart'  customize = (Part <<< customize) { "ETag": (NullOrUndefined Nothing), "LastModified": (NullOrUndefined Nothing), "PartNumber": (NullOrUndefined Nothing), "Size": (NullOrUndefined Nothing) }
+newPart' :: ( { "PartNumber" :: Maybe (PartNumber) , "LastModified" :: Maybe (LastModified) , "ETag" :: Maybe (ETag) , "Size" :: Maybe (Size) } -> {"PartNumber" :: Maybe (PartNumber) , "LastModified" :: Maybe (LastModified) , "ETag" :: Maybe (ETag) , "Size" :: Maybe (Size) } ) -> Part
+newPart'  customize = (Part <<< customize) { "ETag": Nothing, "LastModified": Nothing, "PartNumber": Nothing, "Size": Nothing }
 
 
 
@@ -5151,15 +5150,15 @@ newPutBucketAccelerateConfigurationRequest' _AccelerateConfiguration _Bucket cus
 
 
 newtype PutBucketAclRequest = PutBucketAclRequest 
-  { "ACL" :: NullOrUndefined (BucketCannedACL)
-  , "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy)
+  { "ACL" :: Maybe (BucketCannedACL)
+  , "AccessControlPolicy" :: Maybe (AccessControlPolicy)
   , "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
-  , "GrantFullControl" :: NullOrUndefined (GrantFullControl)
-  , "GrantRead" :: NullOrUndefined (GrantRead)
-  , "GrantReadACP" :: NullOrUndefined (GrantReadACP)
-  , "GrantWrite" :: NullOrUndefined (GrantWrite)
-  , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP)
+  , "ContentMD5" :: Maybe (ContentMD5)
+  , "GrantFullControl" :: Maybe (GrantFullControl)
+  , "GrantRead" :: Maybe (GrantRead)
+  , "GrantReadACP" :: Maybe (GrantReadACP)
+  , "GrantWrite" :: Maybe (GrantWrite)
+  , "GrantWriteACP" :: Maybe (GrantWriteACP)
   }
 derive instance newtypePutBucketAclRequest :: Newtype PutBucketAclRequest _
 derive instance repGenericPutBucketAclRequest :: Generic PutBucketAclRequest _
@@ -5169,12 +5168,12 @@ instance encodePutBucketAclRequest :: Encode PutBucketAclRequest where encode = 
 
 -- | Constructs PutBucketAclRequest from required parameters
 newPutBucketAclRequest :: BucketName -> PutBucketAclRequest
-newPutBucketAclRequest _Bucket = PutBucketAclRequest { "Bucket": _Bucket, "ACL": (NullOrUndefined Nothing), "AccessControlPolicy": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWrite": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing) }
+newPutBucketAclRequest _Bucket = PutBucketAclRequest { "Bucket": _Bucket, "ACL": Nothing, "AccessControlPolicy": Nothing, "ContentMD5": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWrite": Nothing, "GrantWriteACP": Nothing }
 
 -- | Constructs PutBucketAclRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketAclRequest' :: BucketName -> ( { "ACL" :: NullOrUndefined (BucketCannedACL) , "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWrite" :: NullOrUndefined (GrantWrite) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) } -> {"ACL" :: NullOrUndefined (BucketCannedACL) , "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWrite" :: NullOrUndefined (GrantWrite) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) } ) -> PutBucketAclRequest
-newPutBucketAclRequest' _Bucket customize = (PutBucketAclRequest <<< customize) { "Bucket": _Bucket, "ACL": (NullOrUndefined Nothing), "AccessControlPolicy": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWrite": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing) }
+newPutBucketAclRequest' :: BucketName -> ( { "ACL" :: Maybe (BucketCannedACL) , "AccessControlPolicy" :: Maybe (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWrite" :: Maybe (GrantWrite) , "GrantWriteACP" :: Maybe (GrantWriteACP) } -> {"ACL" :: Maybe (BucketCannedACL) , "AccessControlPolicy" :: Maybe (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWrite" :: Maybe (GrantWrite) , "GrantWriteACP" :: Maybe (GrantWriteACP) } ) -> PutBucketAclRequest
+newPutBucketAclRequest' _Bucket customize = (PutBucketAclRequest <<< customize) { "Bucket": _Bucket, "ACL": Nothing, "AccessControlPolicy": Nothing, "ContentMD5": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWrite": Nothing, "GrantWriteACP": Nothing }
 
 
 
@@ -5203,7 +5202,7 @@ newPutBucketAnalyticsConfigurationRequest' _AnalyticsConfiguration _Bucket _Id c
 newtype PutBucketCorsRequest = PutBucketCorsRequest 
   { "Bucket" :: (BucketName)
   , "CORSConfiguration" :: (CORSConfiguration)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   }
 derive instance newtypePutBucketCorsRequest :: Newtype PutBucketCorsRequest _
 derive instance repGenericPutBucketCorsRequest :: Generic PutBucketCorsRequest _
@@ -5213,18 +5212,18 @@ instance encodePutBucketCorsRequest :: Encode PutBucketCorsRequest where encode 
 
 -- | Constructs PutBucketCorsRequest from required parameters
 newPutBucketCorsRequest :: BucketName -> CORSConfiguration -> PutBucketCorsRequest
-newPutBucketCorsRequest _Bucket _CORSConfiguration = PutBucketCorsRequest { "Bucket": _Bucket, "CORSConfiguration": _CORSConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketCorsRequest _Bucket _CORSConfiguration = PutBucketCorsRequest { "Bucket": _Bucket, "CORSConfiguration": _CORSConfiguration, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketCorsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketCorsRequest' :: BucketName -> CORSConfiguration -> ( { "Bucket" :: (BucketName) , "CORSConfiguration" :: (CORSConfiguration) , "ContentMD5" :: NullOrUndefined (ContentMD5) } -> {"Bucket" :: (BucketName) , "CORSConfiguration" :: (CORSConfiguration) , "ContentMD5" :: NullOrUndefined (ContentMD5) } ) -> PutBucketCorsRequest
-newPutBucketCorsRequest' _Bucket _CORSConfiguration customize = (PutBucketCorsRequest <<< customize) { "Bucket": _Bucket, "CORSConfiguration": _CORSConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketCorsRequest' :: BucketName -> CORSConfiguration -> ( { "Bucket" :: (BucketName) , "CORSConfiguration" :: (CORSConfiguration) , "ContentMD5" :: Maybe (ContentMD5) } -> {"Bucket" :: (BucketName) , "CORSConfiguration" :: (CORSConfiguration) , "ContentMD5" :: Maybe (ContentMD5) } ) -> PutBucketCorsRequest
+newPutBucketCorsRequest' _Bucket _CORSConfiguration customize = (PutBucketCorsRequest <<< customize) { "Bucket": _Bucket, "CORSConfiguration": _CORSConfiguration, "ContentMD5": Nothing }
 
 
 
 newtype PutBucketEncryptionRequest = PutBucketEncryptionRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "ServerSideEncryptionConfiguration" :: (ServerSideEncryptionConfiguration)
   }
 derive instance newtypePutBucketEncryptionRequest :: Newtype PutBucketEncryptionRequest _
@@ -5235,12 +5234,12 @@ instance encodePutBucketEncryptionRequest :: Encode PutBucketEncryptionRequest w
 
 -- | Constructs PutBucketEncryptionRequest from required parameters
 newPutBucketEncryptionRequest :: BucketName -> ServerSideEncryptionConfiguration -> PutBucketEncryptionRequest
-newPutBucketEncryptionRequest _Bucket _ServerSideEncryptionConfiguration = PutBucketEncryptionRequest { "Bucket": _Bucket, "ServerSideEncryptionConfiguration": _ServerSideEncryptionConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketEncryptionRequest _Bucket _ServerSideEncryptionConfiguration = PutBucketEncryptionRequest { "Bucket": _Bucket, "ServerSideEncryptionConfiguration": _ServerSideEncryptionConfiguration, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketEncryptionRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketEncryptionRequest' :: BucketName -> ServerSideEncryptionConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ServerSideEncryptionConfiguration" :: (ServerSideEncryptionConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ServerSideEncryptionConfiguration" :: (ServerSideEncryptionConfiguration) } ) -> PutBucketEncryptionRequest
-newPutBucketEncryptionRequest' _Bucket _ServerSideEncryptionConfiguration customize = (PutBucketEncryptionRequest <<< customize) { "Bucket": _Bucket, "ServerSideEncryptionConfiguration": _ServerSideEncryptionConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketEncryptionRequest' :: BucketName -> ServerSideEncryptionConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "ServerSideEncryptionConfiguration" :: (ServerSideEncryptionConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "ServerSideEncryptionConfiguration" :: (ServerSideEncryptionConfiguration) } ) -> PutBucketEncryptionRequest
+newPutBucketEncryptionRequest' _Bucket _ServerSideEncryptionConfiguration customize = (PutBucketEncryptionRequest <<< customize) { "Bucket": _Bucket, "ServerSideEncryptionConfiguration": _ServerSideEncryptionConfiguration, "ContentMD5": Nothing }
 
 
 
@@ -5268,7 +5267,7 @@ newPutBucketInventoryConfigurationRequest' _Bucket _Id _InventoryConfiguration c
 
 newtype PutBucketLifecycleConfigurationRequest = PutBucketLifecycleConfigurationRequest 
   { "Bucket" :: (BucketName)
-  , "LifecycleConfiguration" :: NullOrUndefined (BucketLifecycleConfiguration)
+  , "LifecycleConfiguration" :: Maybe (BucketLifecycleConfiguration)
   }
 derive instance newtypePutBucketLifecycleConfigurationRequest :: Newtype PutBucketLifecycleConfigurationRequest _
 derive instance repGenericPutBucketLifecycleConfigurationRequest :: Generic PutBucketLifecycleConfigurationRequest _
@@ -5278,19 +5277,19 @@ instance encodePutBucketLifecycleConfigurationRequest :: Encode PutBucketLifecyc
 
 -- | Constructs PutBucketLifecycleConfigurationRequest from required parameters
 newPutBucketLifecycleConfigurationRequest :: BucketName -> PutBucketLifecycleConfigurationRequest
-newPutBucketLifecycleConfigurationRequest _Bucket = PutBucketLifecycleConfigurationRequest { "Bucket": _Bucket, "LifecycleConfiguration": (NullOrUndefined Nothing) }
+newPutBucketLifecycleConfigurationRequest _Bucket = PutBucketLifecycleConfigurationRequest { "Bucket": _Bucket, "LifecycleConfiguration": Nothing }
 
 -- | Constructs PutBucketLifecycleConfigurationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketLifecycleConfigurationRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "LifecycleConfiguration" :: NullOrUndefined (BucketLifecycleConfiguration) } -> {"Bucket" :: (BucketName) , "LifecycleConfiguration" :: NullOrUndefined (BucketLifecycleConfiguration) } ) -> PutBucketLifecycleConfigurationRequest
-newPutBucketLifecycleConfigurationRequest' _Bucket customize = (PutBucketLifecycleConfigurationRequest <<< customize) { "Bucket": _Bucket, "LifecycleConfiguration": (NullOrUndefined Nothing) }
+newPutBucketLifecycleConfigurationRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "LifecycleConfiguration" :: Maybe (BucketLifecycleConfiguration) } -> {"Bucket" :: (BucketName) , "LifecycleConfiguration" :: Maybe (BucketLifecycleConfiguration) } ) -> PutBucketLifecycleConfigurationRequest
+newPutBucketLifecycleConfigurationRequest' _Bucket customize = (PutBucketLifecycleConfigurationRequest <<< customize) { "Bucket": _Bucket, "LifecycleConfiguration": Nothing }
 
 
 
 newtype PutBucketLifecycleRequest = PutBucketLifecycleRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
-  , "LifecycleConfiguration" :: NullOrUndefined (LifecycleConfiguration)
+  , "ContentMD5" :: Maybe (ContentMD5)
+  , "LifecycleConfiguration" :: Maybe (LifecycleConfiguration)
   }
 derive instance newtypePutBucketLifecycleRequest :: Newtype PutBucketLifecycleRequest _
 derive instance repGenericPutBucketLifecycleRequest :: Generic PutBucketLifecycleRequest _
@@ -5300,19 +5299,19 @@ instance encodePutBucketLifecycleRequest :: Encode PutBucketLifecycleRequest whe
 
 -- | Constructs PutBucketLifecycleRequest from required parameters
 newPutBucketLifecycleRequest :: BucketName -> PutBucketLifecycleRequest
-newPutBucketLifecycleRequest _Bucket = PutBucketLifecycleRequest { "Bucket": _Bucket, "ContentMD5": (NullOrUndefined Nothing), "LifecycleConfiguration": (NullOrUndefined Nothing) }
+newPutBucketLifecycleRequest _Bucket = PutBucketLifecycleRequest { "Bucket": _Bucket, "ContentMD5": Nothing, "LifecycleConfiguration": Nothing }
 
 -- | Constructs PutBucketLifecycleRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketLifecycleRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "LifecycleConfiguration" :: NullOrUndefined (LifecycleConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "LifecycleConfiguration" :: NullOrUndefined (LifecycleConfiguration) } ) -> PutBucketLifecycleRequest
-newPutBucketLifecycleRequest' _Bucket customize = (PutBucketLifecycleRequest <<< customize) { "Bucket": _Bucket, "ContentMD5": (NullOrUndefined Nothing), "LifecycleConfiguration": (NullOrUndefined Nothing) }
+newPutBucketLifecycleRequest' :: BucketName -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "LifecycleConfiguration" :: Maybe (LifecycleConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "LifecycleConfiguration" :: Maybe (LifecycleConfiguration) } ) -> PutBucketLifecycleRequest
+newPutBucketLifecycleRequest' _Bucket customize = (PutBucketLifecycleRequest <<< customize) { "Bucket": _Bucket, "ContentMD5": Nothing, "LifecycleConfiguration": Nothing }
 
 
 
 newtype PutBucketLoggingRequest = PutBucketLoggingRequest 
   { "Bucket" :: (BucketName)
   , "BucketLoggingStatus" :: (BucketLoggingStatus)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   }
 derive instance newtypePutBucketLoggingRequest :: Newtype PutBucketLoggingRequest _
 derive instance repGenericPutBucketLoggingRequest :: Generic PutBucketLoggingRequest _
@@ -5322,12 +5321,12 @@ instance encodePutBucketLoggingRequest :: Encode PutBucketLoggingRequest where e
 
 -- | Constructs PutBucketLoggingRequest from required parameters
 newPutBucketLoggingRequest :: BucketName -> BucketLoggingStatus -> PutBucketLoggingRequest
-newPutBucketLoggingRequest _Bucket _BucketLoggingStatus = PutBucketLoggingRequest { "Bucket": _Bucket, "BucketLoggingStatus": _BucketLoggingStatus, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketLoggingRequest _Bucket _BucketLoggingStatus = PutBucketLoggingRequest { "Bucket": _Bucket, "BucketLoggingStatus": _BucketLoggingStatus, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketLoggingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketLoggingRequest' :: BucketName -> BucketLoggingStatus -> ( { "Bucket" :: (BucketName) , "BucketLoggingStatus" :: (BucketLoggingStatus) , "ContentMD5" :: NullOrUndefined (ContentMD5) } -> {"Bucket" :: (BucketName) , "BucketLoggingStatus" :: (BucketLoggingStatus) , "ContentMD5" :: NullOrUndefined (ContentMD5) } ) -> PutBucketLoggingRequest
-newPutBucketLoggingRequest' _Bucket _BucketLoggingStatus customize = (PutBucketLoggingRequest <<< customize) { "Bucket": _Bucket, "BucketLoggingStatus": _BucketLoggingStatus, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketLoggingRequest' :: BucketName -> BucketLoggingStatus -> ( { "Bucket" :: (BucketName) , "BucketLoggingStatus" :: (BucketLoggingStatus) , "ContentMD5" :: Maybe (ContentMD5) } -> {"Bucket" :: (BucketName) , "BucketLoggingStatus" :: (BucketLoggingStatus) , "ContentMD5" :: Maybe (ContentMD5) } ) -> PutBucketLoggingRequest
+newPutBucketLoggingRequest' _Bucket _BucketLoggingStatus customize = (PutBucketLoggingRequest <<< customize) { "Bucket": _Bucket, "BucketLoggingStatus": _BucketLoggingStatus, "ContentMD5": Nothing }
 
 
 
@@ -5376,7 +5375,7 @@ newPutBucketNotificationConfigurationRequest' _Bucket _NotificationConfiguration
 
 newtype PutBucketNotificationRequest = PutBucketNotificationRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "NotificationConfiguration" :: (NotificationConfigurationDeprecated)
   }
 derive instance newtypePutBucketNotificationRequest :: Newtype PutBucketNotificationRequest _
@@ -5387,19 +5386,19 @@ instance encodePutBucketNotificationRequest :: Encode PutBucketNotificationReque
 
 -- | Constructs PutBucketNotificationRequest from required parameters
 newPutBucketNotificationRequest :: BucketName -> NotificationConfigurationDeprecated -> PutBucketNotificationRequest
-newPutBucketNotificationRequest _Bucket _NotificationConfiguration = PutBucketNotificationRequest { "Bucket": _Bucket, "NotificationConfiguration": _NotificationConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketNotificationRequest _Bucket _NotificationConfiguration = PutBucketNotificationRequest { "Bucket": _Bucket, "NotificationConfiguration": _NotificationConfiguration, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketNotificationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketNotificationRequest' :: BucketName -> NotificationConfigurationDeprecated -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "NotificationConfiguration" :: (NotificationConfigurationDeprecated) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "NotificationConfiguration" :: (NotificationConfigurationDeprecated) } ) -> PutBucketNotificationRequest
-newPutBucketNotificationRequest' _Bucket _NotificationConfiguration customize = (PutBucketNotificationRequest <<< customize) { "Bucket": _Bucket, "NotificationConfiguration": _NotificationConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketNotificationRequest' :: BucketName -> NotificationConfigurationDeprecated -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "NotificationConfiguration" :: (NotificationConfigurationDeprecated) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "NotificationConfiguration" :: (NotificationConfigurationDeprecated) } ) -> PutBucketNotificationRequest
+newPutBucketNotificationRequest' _Bucket _NotificationConfiguration customize = (PutBucketNotificationRequest <<< customize) { "Bucket": _Bucket, "NotificationConfiguration": _NotificationConfiguration, "ContentMD5": Nothing }
 
 
 
 newtype PutBucketPolicyRequest = PutBucketPolicyRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
-  , "ConfirmRemoveSelfBucketAccess" :: NullOrUndefined (ConfirmRemoveSelfBucketAccess)
+  , "ContentMD5" :: Maybe (ContentMD5)
+  , "ConfirmRemoveSelfBucketAccess" :: Maybe (ConfirmRemoveSelfBucketAccess)
   , "Policy" :: (Policy)
   }
 derive instance newtypePutBucketPolicyRequest :: Newtype PutBucketPolicyRequest _
@@ -5410,18 +5409,18 @@ instance encodePutBucketPolicyRequest :: Encode PutBucketPolicyRequest where enc
 
 -- | Constructs PutBucketPolicyRequest from required parameters
 newPutBucketPolicyRequest :: BucketName -> Policy -> PutBucketPolicyRequest
-newPutBucketPolicyRequest _Bucket _Policy = PutBucketPolicyRequest { "Bucket": _Bucket, "Policy": _Policy, "ConfirmRemoveSelfBucketAccess": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketPolicyRequest _Bucket _Policy = PutBucketPolicyRequest { "Bucket": _Bucket, "Policy": _Policy, "ConfirmRemoveSelfBucketAccess": Nothing, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketPolicyRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketPolicyRequest' :: BucketName -> Policy -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ConfirmRemoveSelfBucketAccess" :: NullOrUndefined (ConfirmRemoveSelfBucketAccess) , "Policy" :: (Policy) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ConfirmRemoveSelfBucketAccess" :: NullOrUndefined (ConfirmRemoveSelfBucketAccess) , "Policy" :: (Policy) } ) -> PutBucketPolicyRequest
-newPutBucketPolicyRequest' _Bucket _Policy customize = (PutBucketPolicyRequest <<< customize) { "Bucket": _Bucket, "Policy": _Policy, "ConfirmRemoveSelfBucketAccess": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketPolicyRequest' :: BucketName -> Policy -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "ConfirmRemoveSelfBucketAccess" :: Maybe (ConfirmRemoveSelfBucketAccess) , "Policy" :: (Policy) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "ConfirmRemoveSelfBucketAccess" :: Maybe (ConfirmRemoveSelfBucketAccess) , "Policy" :: (Policy) } ) -> PutBucketPolicyRequest
+newPutBucketPolicyRequest' _Bucket _Policy customize = (PutBucketPolicyRequest <<< customize) { "Bucket": _Bucket, "Policy": _Policy, "ConfirmRemoveSelfBucketAccess": Nothing, "ContentMD5": Nothing }
 
 
 
 newtype PutBucketReplicationRequest = PutBucketReplicationRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "ReplicationConfiguration" :: (ReplicationConfiguration)
   }
 derive instance newtypePutBucketReplicationRequest :: Newtype PutBucketReplicationRequest _
@@ -5432,18 +5431,18 @@ instance encodePutBucketReplicationRequest :: Encode PutBucketReplicationRequest
 
 -- | Constructs PutBucketReplicationRequest from required parameters
 newPutBucketReplicationRequest :: BucketName -> ReplicationConfiguration -> PutBucketReplicationRequest
-newPutBucketReplicationRequest _Bucket _ReplicationConfiguration = PutBucketReplicationRequest { "Bucket": _Bucket, "ReplicationConfiguration": _ReplicationConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketReplicationRequest _Bucket _ReplicationConfiguration = PutBucketReplicationRequest { "Bucket": _Bucket, "ReplicationConfiguration": _ReplicationConfiguration, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketReplicationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketReplicationRequest' :: BucketName -> ReplicationConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ReplicationConfiguration" :: (ReplicationConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ReplicationConfiguration" :: (ReplicationConfiguration) } ) -> PutBucketReplicationRequest
-newPutBucketReplicationRequest' _Bucket _ReplicationConfiguration customize = (PutBucketReplicationRequest <<< customize) { "Bucket": _Bucket, "ReplicationConfiguration": _ReplicationConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketReplicationRequest' :: BucketName -> ReplicationConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "ReplicationConfiguration" :: (ReplicationConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "ReplicationConfiguration" :: (ReplicationConfiguration) } ) -> PutBucketReplicationRequest
+newPutBucketReplicationRequest' _Bucket _ReplicationConfiguration customize = (PutBucketReplicationRequest <<< customize) { "Bucket": _Bucket, "ReplicationConfiguration": _ReplicationConfiguration, "ContentMD5": Nothing }
 
 
 
 newtype PutBucketRequestPaymentRequest = PutBucketRequestPaymentRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "RequestPaymentConfiguration" :: (RequestPaymentConfiguration)
   }
 derive instance newtypePutBucketRequestPaymentRequest :: Newtype PutBucketRequestPaymentRequest _
@@ -5454,18 +5453,18 @@ instance encodePutBucketRequestPaymentRequest :: Encode PutBucketRequestPaymentR
 
 -- | Constructs PutBucketRequestPaymentRequest from required parameters
 newPutBucketRequestPaymentRequest :: BucketName -> RequestPaymentConfiguration -> PutBucketRequestPaymentRequest
-newPutBucketRequestPaymentRequest _Bucket _RequestPaymentConfiguration = PutBucketRequestPaymentRequest { "Bucket": _Bucket, "RequestPaymentConfiguration": _RequestPaymentConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketRequestPaymentRequest _Bucket _RequestPaymentConfiguration = PutBucketRequestPaymentRequest { "Bucket": _Bucket, "RequestPaymentConfiguration": _RequestPaymentConfiguration, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketRequestPaymentRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketRequestPaymentRequest' :: BucketName -> RequestPaymentConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "RequestPaymentConfiguration" :: (RequestPaymentConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "RequestPaymentConfiguration" :: (RequestPaymentConfiguration) } ) -> PutBucketRequestPaymentRequest
-newPutBucketRequestPaymentRequest' _Bucket _RequestPaymentConfiguration customize = (PutBucketRequestPaymentRequest <<< customize) { "Bucket": _Bucket, "RequestPaymentConfiguration": _RequestPaymentConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketRequestPaymentRequest' :: BucketName -> RequestPaymentConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "RequestPaymentConfiguration" :: (RequestPaymentConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "RequestPaymentConfiguration" :: (RequestPaymentConfiguration) } ) -> PutBucketRequestPaymentRequest
+newPutBucketRequestPaymentRequest' _Bucket _RequestPaymentConfiguration customize = (PutBucketRequestPaymentRequest <<< customize) { "Bucket": _Bucket, "RequestPaymentConfiguration": _RequestPaymentConfiguration, "ContentMD5": Nothing }
 
 
 
 newtype PutBucketTaggingRequest = PutBucketTaggingRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "Tagging" :: (Tagging)
   }
 derive instance newtypePutBucketTaggingRequest :: Newtype PutBucketTaggingRequest _
@@ -5476,19 +5475,19 @@ instance encodePutBucketTaggingRequest :: Encode PutBucketTaggingRequest where e
 
 -- | Constructs PutBucketTaggingRequest from required parameters
 newPutBucketTaggingRequest :: BucketName -> Tagging -> PutBucketTaggingRequest
-newPutBucketTaggingRequest _Bucket _Tagging = PutBucketTaggingRequest { "Bucket": _Bucket, "Tagging": _Tagging, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketTaggingRequest _Bucket _Tagging = PutBucketTaggingRequest { "Bucket": _Bucket, "Tagging": _Tagging, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketTaggingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketTaggingRequest' :: BucketName -> Tagging -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "Tagging" :: (Tagging) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "Tagging" :: (Tagging) } ) -> PutBucketTaggingRequest
-newPutBucketTaggingRequest' _Bucket _Tagging customize = (PutBucketTaggingRequest <<< customize) { "Bucket": _Bucket, "Tagging": _Tagging, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketTaggingRequest' :: BucketName -> Tagging -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "Tagging" :: (Tagging) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "Tagging" :: (Tagging) } ) -> PutBucketTaggingRequest
+newPutBucketTaggingRequest' _Bucket _Tagging customize = (PutBucketTaggingRequest <<< customize) { "Bucket": _Bucket, "Tagging": _Tagging, "ContentMD5": Nothing }
 
 
 
 newtype PutBucketVersioningRequest = PutBucketVersioningRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
-  , "MFA" :: NullOrUndefined (MFA)
+  , "ContentMD5" :: Maybe (ContentMD5)
+  , "MFA" :: Maybe (MFA)
   , "VersioningConfiguration" :: (VersioningConfiguration)
   }
 derive instance newtypePutBucketVersioningRequest :: Newtype PutBucketVersioningRequest _
@@ -5499,18 +5498,18 @@ instance encodePutBucketVersioningRequest :: Encode PutBucketVersioningRequest w
 
 -- | Constructs PutBucketVersioningRequest from required parameters
 newPutBucketVersioningRequest :: BucketName -> VersioningConfiguration -> PutBucketVersioningRequest
-newPutBucketVersioningRequest _Bucket _VersioningConfiguration = PutBucketVersioningRequest { "Bucket": _Bucket, "VersioningConfiguration": _VersioningConfiguration, "ContentMD5": (NullOrUndefined Nothing), "MFA": (NullOrUndefined Nothing) }
+newPutBucketVersioningRequest _Bucket _VersioningConfiguration = PutBucketVersioningRequest { "Bucket": _Bucket, "VersioningConfiguration": _VersioningConfiguration, "ContentMD5": Nothing, "MFA": Nothing }
 
 -- | Constructs PutBucketVersioningRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketVersioningRequest' :: BucketName -> VersioningConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "MFA" :: NullOrUndefined (MFA) , "VersioningConfiguration" :: (VersioningConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "MFA" :: NullOrUndefined (MFA) , "VersioningConfiguration" :: (VersioningConfiguration) } ) -> PutBucketVersioningRequest
-newPutBucketVersioningRequest' _Bucket _VersioningConfiguration customize = (PutBucketVersioningRequest <<< customize) { "Bucket": _Bucket, "VersioningConfiguration": _VersioningConfiguration, "ContentMD5": (NullOrUndefined Nothing), "MFA": (NullOrUndefined Nothing) }
+newPutBucketVersioningRequest' :: BucketName -> VersioningConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "MFA" :: Maybe (MFA) , "VersioningConfiguration" :: (VersioningConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "MFA" :: Maybe (MFA) , "VersioningConfiguration" :: (VersioningConfiguration) } ) -> PutBucketVersioningRequest
+newPutBucketVersioningRequest' _Bucket _VersioningConfiguration customize = (PutBucketVersioningRequest <<< customize) { "Bucket": _Bucket, "VersioningConfiguration": _VersioningConfiguration, "ContentMD5": Nothing, "MFA": Nothing }
 
 
 
 newtype PutBucketWebsiteRequest = PutBucketWebsiteRequest 
   { "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "WebsiteConfiguration" :: (WebsiteConfiguration)
   }
 derive instance newtypePutBucketWebsiteRequest :: Newtype PutBucketWebsiteRequest _
@@ -5521,17 +5520,17 @@ instance encodePutBucketWebsiteRequest :: Encode PutBucketWebsiteRequest where e
 
 -- | Constructs PutBucketWebsiteRequest from required parameters
 newPutBucketWebsiteRequest :: BucketName -> WebsiteConfiguration -> PutBucketWebsiteRequest
-newPutBucketWebsiteRequest _Bucket _WebsiteConfiguration = PutBucketWebsiteRequest { "Bucket": _Bucket, "WebsiteConfiguration": _WebsiteConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketWebsiteRequest _Bucket _WebsiteConfiguration = PutBucketWebsiteRequest { "Bucket": _Bucket, "WebsiteConfiguration": _WebsiteConfiguration, "ContentMD5": Nothing }
 
 -- | Constructs PutBucketWebsiteRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutBucketWebsiteRequest' :: BucketName -> WebsiteConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "WebsiteConfiguration" :: (WebsiteConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "WebsiteConfiguration" :: (WebsiteConfiguration) } ) -> PutBucketWebsiteRequest
-newPutBucketWebsiteRequest' _Bucket _WebsiteConfiguration customize = (PutBucketWebsiteRequest <<< customize) { "Bucket": _Bucket, "WebsiteConfiguration": _WebsiteConfiguration, "ContentMD5": (NullOrUndefined Nothing) }
+newPutBucketWebsiteRequest' :: BucketName -> WebsiteConfiguration -> ( { "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "WebsiteConfiguration" :: (WebsiteConfiguration) } -> {"Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "WebsiteConfiguration" :: (WebsiteConfiguration) } ) -> PutBucketWebsiteRequest
+newPutBucketWebsiteRequest' _Bucket _WebsiteConfiguration customize = (PutBucketWebsiteRequest <<< customize) { "Bucket": _Bucket, "WebsiteConfiguration": _WebsiteConfiguration, "ContentMD5": Nothing }
 
 
 
 newtype PutObjectAclOutput = PutObjectAclOutput 
-  { "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypePutObjectAclOutput :: Newtype PutObjectAclOutput _
 derive instance repGenericPutObjectAclOutput :: Generic PutObjectAclOutput _
@@ -5541,28 +5540,28 @@ instance encodePutObjectAclOutput :: Encode PutObjectAclOutput where encode = ge
 
 -- | Constructs PutObjectAclOutput from required parameters
 newPutObjectAclOutput :: PutObjectAclOutput
-newPutObjectAclOutput  = PutObjectAclOutput { "RequestCharged": (NullOrUndefined Nothing) }
+newPutObjectAclOutput  = PutObjectAclOutput { "RequestCharged": Nothing }
 
 -- | Constructs PutObjectAclOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutObjectAclOutput' :: ( { "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> PutObjectAclOutput
-newPutObjectAclOutput'  customize = (PutObjectAclOutput <<< customize) { "RequestCharged": (NullOrUndefined Nothing) }
+newPutObjectAclOutput' :: ( { "RequestCharged" :: Maybe (RequestCharged) } -> {"RequestCharged" :: Maybe (RequestCharged) } ) -> PutObjectAclOutput
+newPutObjectAclOutput'  customize = (PutObjectAclOutput <<< customize) { "RequestCharged": Nothing }
 
 
 
 newtype PutObjectAclRequest = PutObjectAclRequest 
-  { "ACL" :: NullOrUndefined (ObjectCannedACL)
-  , "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy)
+  { "ACL" :: Maybe (ObjectCannedACL)
+  , "AccessControlPolicy" :: Maybe (AccessControlPolicy)
   , "Bucket" :: (BucketName)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
-  , "GrantFullControl" :: NullOrUndefined (GrantFullControl)
-  , "GrantRead" :: NullOrUndefined (GrantRead)
-  , "GrantReadACP" :: NullOrUndefined (GrantReadACP)
-  , "GrantWrite" :: NullOrUndefined (GrantWrite)
-  , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP)
+  , "ContentMD5" :: Maybe (ContentMD5)
+  , "GrantFullControl" :: Maybe (GrantFullControl)
+  , "GrantRead" :: Maybe (GrantRead)
+  , "GrantReadACP" :: Maybe (GrantReadACP)
+  , "GrantWrite" :: Maybe (GrantWrite)
+  , "GrantWriteACP" :: Maybe (GrantWriteACP)
   , "Key" :: (ObjectKey)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
+  , "RequestPayer" :: Maybe (RequestPayer)
+  , "VersionId" :: Maybe (ObjectVersionId)
   }
 derive instance newtypePutObjectAclRequest :: Newtype PutObjectAclRequest _
 derive instance repGenericPutObjectAclRequest :: Generic PutObjectAclRequest _
@@ -5572,24 +5571,24 @@ instance encodePutObjectAclRequest :: Encode PutObjectAclRequest where encode = 
 
 -- | Constructs PutObjectAclRequest from required parameters
 newPutObjectAclRequest :: BucketName -> ObjectKey -> PutObjectAclRequest
-newPutObjectAclRequest _Bucket _Key = PutObjectAclRequest { "Bucket": _Bucket, "Key": _Key, "ACL": (NullOrUndefined Nothing), "AccessControlPolicy": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWrite": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newPutObjectAclRequest _Bucket _Key = PutObjectAclRequest { "Bucket": _Bucket, "Key": _Key, "ACL": Nothing, "AccessControlPolicy": Nothing, "ContentMD5": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWrite": Nothing, "GrantWriteACP": Nothing, "RequestPayer": Nothing, "VersionId": Nothing }
 
 -- | Constructs PutObjectAclRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutObjectAclRequest' :: BucketName -> ObjectKey -> ( { "ACL" :: NullOrUndefined (ObjectCannedACL) , "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWrite" :: NullOrUndefined (GrantWrite) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "VersionId" :: NullOrUndefined (ObjectVersionId) } -> {"ACL" :: NullOrUndefined (ObjectCannedACL) , "AccessControlPolicy" :: NullOrUndefined (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWrite" :: NullOrUndefined (GrantWrite) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "VersionId" :: NullOrUndefined (ObjectVersionId) } ) -> PutObjectAclRequest
-newPutObjectAclRequest' _Bucket _Key customize = (PutObjectAclRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "ACL": (NullOrUndefined Nothing), "AccessControlPolicy": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWrite": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newPutObjectAclRequest' :: BucketName -> ObjectKey -> ( { "ACL" :: Maybe (ObjectCannedACL) , "AccessControlPolicy" :: Maybe (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWrite" :: Maybe (GrantWrite) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "RequestPayer" :: Maybe (RequestPayer) , "VersionId" :: Maybe (ObjectVersionId) } -> {"ACL" :: Maybe (ObjectCannedACL) , "AccessControlPolicy" :: Maybe (AccessControlPolicy) , "Bucket" :: (BucketName) , "ContentMD5" :: Maybe (ContentMD5) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWrite" :: Maybe (GrantWrite) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "RequestPayer" :: Maybe (RequestPayer) , "VersionId" :: Maybe (ObjectVersionId) } ) -> PutObjectAclRequest
+newPutObjectAclRequest' _Bucket _Key customize = (PutObjectAclRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "ACL": Nothing, "AccessControlPolicy": Nothing, "ContentMD5": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWrite": Nothing, "GrantWriteACP": Nothing, "RequestPayer": Nothing, "VersionId": Nothing }
 
 
 
 newtype PutObjectOutput = PutObjectOutput 
-  { "Expiration" :: NullOrUndefined (Expiration)
-  , "ETag" :: NullOrUndefined (ETag)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "Expiration" :: Maybe (Expiration)
+  , "ETag" :: Maybe (ETag)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypePutObjectOutput :: Newtype PutObjectOutput _
 derive instance repGenericPutObjectOutput :: Generic PutObjectOutput _
@@ -5599,42 +5598,42 @@ instance encodePutObjectOutput :: Encode PutObjectOutput where encode = genericE
 
 -- | Constructs PutObjectOutput from required parameters
 newPutObjectOutput :: PutObjectOutput
-newPutObjectOutput  = PutObjectOutput { "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newPutObjectOutput  = PutObjectOutput { "ETag": Nothing, "Expiration": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "VersionId": Nothing }
 
 -- | Constructs PutObjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutObjectOutput' :: ( { "Expiration" :: NullOrUndefined (Expiration) , "ETag" :: NullOrUndefined (ETag) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"Expiration" :: NullOrUndefined (Expiration) , "ETag" :: NullOrUndefined (ETag) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> PutObjectOutput
-newPutObjectOutput'  customize = (PutObjectOutput <<< customize) { "ETag": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newPutObjectOutput' :: ( { "Expiration" :: Maybe (Expiration) , "ETag" :: Maybe (ETag) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "VersionId" :: Maybe (ObjectVersionId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } -> {"Expiration" :: Maybe (Expiration) , "ETag" :: Maybe (ETag) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "VersionId" :: Maybe (ObjectVersionId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } ) -> PutObjectOutput
+newPutObjectOutput'  customize = (PutObjectOutput <<< customize) { "ETag": Nothing, "Expiration": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "VersionId": Nothing }
 
 
 
 newtype PutObjectRequest = PutObjectRequest 
-  { "ACL" :: NullOrUndefined (ObjectCannedACL)
-  , "Body" :: NullOrUndefined (Body)
+  { "ACL" :: Maybe (ObjectCannedACL)
+  , "Body" :: Maybe (Body)
   , "Bucket" :: (BucketName)
-  , "CacheControl" :: NullOrUndefined (CacheControl)
-  , "ContentDisposition" :: NullOrUndefined (ContentDisposition)
-  , "ContentEncoding" :: NullOrUndefined (ContentEncoding)
-  , "ContentLanguage" :: NullOrUndefined (ContentLanguage)
-  , "ContentLength" :: NullOrUndefined (ContentLength)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
-  , "ContentType" :: NullOrUndefined (ContentType)
-  , "Expires" :: NullOrUndefined (Expires)
-  , "GrantFullControl" :: NullOrUndefined (GrantFullControl)
-  , "GrantRead" :: NullOrUndefined (GrantRead)
-  , "GrantReadACP" :: NullOrUndefined (GrantReadACP)
-  , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP)
+  , "CacheControl" :: Maybe (CacheControl)
+  , "ContentDisposition" :: Maybe (ContentDisposition)
+  , "ContentEncoding" :: Maybe (ContentEncoding)
+  , "ContentLanguage" :: Maybe (ContentLanguage)
+  , "ContentLength" :: Maybe (ContentLength)
+  , "ContentMD5" :: Maybe (ContentMD5)
+  , "ContentType" :: Maybe (ContentType)
+  , "Expires" :: Maybe (Expires)
+  , "GrantFullControl" :: Maybe (GrantFullControl)
+  , "GrantRead" :: Maybe (GrantRead)
+  , "GrantReadACP" :: Maybe (GrantReadACP)
+  , "GrantWriteACP" :: Maybe (GrantWriteACP)
   , "Key" :: (ObjectKey)
-  , "Metadata" :: NullOrUndefined (Metadata)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
-  , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
-  , "Tagging" :: NullOrUndefined (TaggingHeader)
+  , "Metadata" :: Maybe (Metadata)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "StorageClass" :: Maybe (StorageClass)
+  , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKey" :: Maybe (SSECustomerKey)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestPayer" :: Maybe (RequestPayer)
+  , "Tagging" :: Maybe (TaggingHeader)
   }
 derive instance newtypePutObjectRequest :: Newtype PutObjectRequest _
 derive instance repGenericPutObjectRequest :: Generic PutObjectRequest _
@@ -5644,17 +5643,17 @@ instance encodePutObjectRequest :: Encode PutObjectRequest where encode = generi
 
 -- | Constructs PutObjectRequest from required parameters
 newPutObjectRequest :: BucketName -> ObjectKey -> PutObjectRequest
-newPutObjectRequest _Bucket _Key = PutObjectRequest { "Bucket": _Bucket, "Key": _Key, "ACL": (NullOrUndefined Nothing), "Body": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newPutObjectRequest _Bucket _Key = PutObjectRequest { "Bucket": _Bucket, "Key": _Key, "ACL": Nothing, "Body": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentLength": Nothing, "ContentMD5": Nothing, "ContentType": Nothing, "Expires": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWriteACP": Nothing, "Metadata": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "WebsiteRedirectLocation": Nothing }
 
 -- | Constructs PutObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutObjectRequest' :: BucketName -> ObjectKey -> ( { "ACL" :: NullOrUndefined (ObjectCannedACL) , "Body" :: NullOrUndefined (Body) , "Bucket" :: (BucketName) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentLength" :: NullOrUndefined (ContentLength) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: NullOrUndefined (Metadata) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "StorageClass" :: NullOrUndefined (StorageClass) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "Tagging" :: NullOrUndefined (TaggingHeader) } -> {"ACL" :: NullOrUndefined (ObjectCannedACL) , "Body" :: NullOrUndefined (Body) , "Bucket" :: (BucketName) , "CacheControl" :: NullOrUndefined (CacheControl) , "ContentDisposition" :: NullOrUndefined (ContentDisposition) , "ContentEncoding" :: NullOrUndefined (ContentEncoding) , "ContentLanguage" :: NullOrUndefined (ContentLanguage) , "ContentLength" :: NullOrUndefined (ContentLength) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "ContentType" :: NullOrUndefined (ContentType) , "Expires" :: NullOrUndefined (Expires) , "GrantFullControl" :: NullOrUndefined (GrantFullControl) , "GrantRead" :: NullOrUndefined (GrantRead) , "GrantReadACP" :: NullOrUndefined (GrantReadACP) , "GrantWriteACP" :: NullOrUndefined (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: NullOrUndefined (Metadata) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "StorageClass" :: NullOrUndefined (StorageClass) , "WebsiteRedirectLocation" :: NullOrUndefined (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestPayer" :: NullOrUndefined (RequestPayer) , "Tagging" :: NullOrUndefined (TaggingHeader) } ) -> PutObjectRequest
-newPutObjectRequest' _Bucket _Key customize = (PutObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "ACL": (NullOrUndefined Nothing), "Body": (NullOrUndefined Nothing), "CacheControl": (NullOrUndefined Nothing), "ContentDisposition": (NullOrUndefined Nothing), "ContentEncoding": (NullOrUndefined Nothing), "ContentLanguage": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "ContentType": (NullOrUndefined Nothing), "Expires": (NullOrUndefined Nothing), "GrantFullControl": (NullOrUndefined Nothing), "GrantRead": (NullOrUndefined Nothing), "GrantReadACP": (NullOrUndefined Nothing), "GrantWriteACP": (NullOrUndefined Nothing), "Metadata": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "WebsiteRedirectLocation": (NullOrUndefined Nothing) }
+newPutObjectRequest' :: BucketName -> ObjectKey -> ( { "ACL" :: Maybe (ObjectCannedACL) , "Body" :: Maybe (Body) , "Bucket" :: (BucketName) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentLength" :: Maybe (ContentLength) , "ContentMD5" :: Maybe (ContentMD5) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: Maybe (Metadata) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "StorageClass" :: Maybe (StorageClass) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestPayer" :: Maybe (RequestPayer) , "Tagging" :: Maybe (TaggingHeader) } -> {"ACL" :: Maybe (ObjectCannedACL) , "Body" :: Maybe (Body) , "Bucket" :: (BucketName) , "CacheControl" :: Maybe (CacheControl) , "ContentDisposition" :: Maybe (ContentDisposition) , "ContentEncoding" :: Maybe (ContentEncoding) , "ContentLanguage" :: Maybe (ContentLanguage) , "ContentLength" :: Maybe (ContentLength) , "ContentMD5" :: Maybe (ContentMD5) , "ContentType" :: Maybe (ContentType) , "Expires" :: Maybe (Expires) , "GrantFullControl" :: Maybe (GrantFullControl) , "GrantRead" :: Maybe (GrantRead) , "GrantReadACP" :: Maybe (GrantReadACP) , "GrantWriteACP" :: Maybe (GrantWriteACP) , "Key" :: (ObjectKey) , "Metadata" :: Maybe (Metadata) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "StorageClass" :: Maybe (StorageClass) , "WebsiteRedirectLocation" :: Maybe (WebsiteRedirectLocation) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestPayer" :: Maybe (RequestPayer) , "Tagging" :: Maybe (TaggingHeader) } ) -> PutObjectRequest
+newPutObjectRequest' _Bucket _Key customize = (PutObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "ACL": Nothing, "Body": Nothing, "CacheControl": Nothing, "ContentDisposition": Nothing, "ContentEncoding": Nothing, "ContentLanguage": Nothing, "ContentLength": Nothing, "ContentMD5": Nothing, "ContentType": Nothing, "Expires": Nothing, "GrantFullControl": Nothing, "GrantRead": Nothing, "GrantReadACP": Nothing, "GrantWriteACP": Nothing, "Metadata": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "WebsiteRedirectLocation": Nothing }
 
 
 
 newtype PutObjectTaggingOutput = PutObjectTaggingOutput 
-  { "VersionId" :: NullOrUndefined (ObjectVersionId)
+  { "VersionId" :: Maybe (ObjectVersionId)
   }
 derive instance newtypePutObjectTaggingOutput :: Newtype PutObjectTaggingOutput _
 derive instance repGenericPutObjectTaggingOutput :: Generic PutObjectTaggingOutput _
@@ -5664,20 +5663,20 @@ instance encodePutObjectTaggingOutput :: Encode PutObjectTaggingOutput where enc
 
 -- | Constructs PutObjectTaggingOutput from required parameters
 newPutObjectTaggingOutput :: PutObjectTaggingOutput
-newPutObjectTaggingOutput  = PutObjectTaggingOutput { "VersionId": (NullOrUndefined Nothing) }
+newPutObjectTaggingOutput  = PutObjectTaggingOutput { "VersionId": Nothing }
 
 -- | Constructs PutObjectTaggingOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutObjectTaggingOutput' :: ( { "VersionId" :: NullOrUndefined (ObjectVersionId) } -> {"VersionId" :: NullOrUndefined (ObjectVersionId) } ) -> PutObjectTaggingOutput
-newPutObjectTaggingOutput'  customize = (PutObjectTaggingOutput <<< customize) { "VersionId": (NullOrUndefined Nothing) }
+newPutObjectTaggingOutput' :: ( { "VersionId" :: Maybe (ObjectVersionId) } -> {"VersionId" :: Maybe (ObjectVersionId) } ) -> PutObjectTaggingOutput
+newPutObjectTaggingOutput'  customize = (PutObjectTaggingOutput <<< customize) { "VersionId": Nothing }
 
 
 
 newtype PutObjectTaggingRequest = PutObjectTaggingRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "Tagging" :: (Tagging)
   }
 derive instance newtypePutObjectTaggingRequest :: Newtype PutObjectTaggingRequest _
@@ -5688,12 +5687,12 @@ instance encodePutObjectTaggingRequest :: Encode PutObjectTaggingRequest where e
 
 -- | Constructs PutObjectTaggingRequest from required parameters
 newPutObjectTaggingRequest :: BucketName -> ObjectKey -> Tagging -> PutObjectTaggingRequest
-newPutObjectTaggingRequest _Bucket _Key _Tagging = PutObjectTaggingRequest { "Bucket": _Bucket, "Key": _Key, "Tagging": _Tagging, "ContentMD5": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newPutObjectTaggingRequest _Bucket _Key _Tagging = PutObjectTaggingRequest { "Bucket": _Bucket, "Key": _Key, "Tagging": _Tagging, "ContentMD5": Nothing, "VersionId": Nothing }
 
 -- | Constructs PutObjectTaggingRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newPutObjectTaggingRequest' :: BucketName -> ObjectKey -> Tagging -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "Tagging" :: (Tagging) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "Tagging" :: (Tagging) } ) -> PutObjectTaggingRequest
-newPutObjectTaggingRequest' _Bucket _Key _Tagging customize = (PutObjectTaggingRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "Tagging": _Tagging, "ContentMD5": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newPutObjectTaggingRequest' :: BucketName -> ObjectKey -> Tagging -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "ContentMD5" :: Maybe (ContentMD5) , "Tagging" :: (Tagging) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "ContentMD5" :: Maybe (ContentMD5) , "Tagging" :: (Tagging) } ) -> PutObjectTaggingRequest
+newPutObjectTaggingRequest' _Bucket _Key _Tagging customize = (PutObjectTaggingRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "Tagging": _Tagging, "ContentMD5": Nothing, "VersionId": Nothing }
 
 
 
@@ -5708,10 +5707,10 @@ instance encodeQueueArn :: Encode QueueArn where encode = genericEncode options
 
 -- | Container for specifying an configuration when you want Amazon S3 to publish events to an Amazon Simple Queue Service (Amazon SQS) queue.
 newtype QueueConfiguration = QueueConfiguration 
-  { "Id" :: NullOrUndefined (NotificationId)
+  { "Id" :: Maybe (NotificationId)
   , "QueueArn" :: (QueueArn)
   , "Events" :: (EventList)
-  , "Filter" :: NullOrUndefined (NotificationConfigurationFilter)
+  , "Filter" :: Maybe (NotificationConfigurationFilter)
   }
 derive instance newtypeQueueConfiguration :: Newtype QueueConfiguration _
 derive instance repGenericQueueConfiguration :: Generic QueueConfiguration _
@@ -5721,20 +5720,20 @@ instance encodeQueueConfiguration :: Encode QueueConfiguration where encode = ge
 
 -- | Constructs QueueConfiguration from required parameters
 newQueueConfiguration :: EventList -> QueueArn -> QueueConfiguration
-newQueueConfiguration _Events _QueueArn = QueueConfiguration { "Events": _Events, "QueueArn": _QueueArn, "Filter": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newQueueConfiguration _Events _QueueArn = QueueConfiguration { "Events": _Events, "QueueArn": _QueueArn, "Filter": Nothing, "Id": Nothing }
 
 -- | Constructs QueueConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newQueueConfiguration' :: EventList -> QueueArn -> ( { "Id" :: NullOrUndefined (NotificationId) , "QueueArn" :: (QueueArn) , "Events" :: (EventList) , "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } -> {"Id" :: NullOrUndefined (NotificationId) , "QueueArn" :: (QueueArn) , "Events" :: (EventList) , "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } ) -> QueueConfiguration
-newQueueConfiguration' _Events _QueueArn customize = (QueueConfiguration <<< customize) { "Events": _Events, "QueueArn": _QueueArn, "Filter": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newQueueConfiguration' :: EventList -> QueueArn -> ( { "Id" :: Maybe (NotificationId) , "QueueArn" :: (QueueArn) , "Events" :: (EventList) , "Filter" :: Maybe (NotificationConfigurationFilter) } -> {"Id" :: Maybe (NotificationId) , "QueueArn" :: (QueueArn) , "Events" :: (EventList) , "Filter" :: Maybe (NotificationConfigurationFilter) } ) -> QueueConfiguration
+newQueueConfiguration' _Events _QueueArn customize = (QueueConfiguration <<< customize) { "Events": _Events, "QueueArn": _QueueArn, "Filter": Nothing, "Id": Nothing }
 
 
 
 newtype QueueConfigurationDeprecated = QueueConfigurationDeprecated 
-  { "Id" :: NullOrUndefined (NotificationId)
-  , "Event" :: NullOrUndefined (Event)
-  , "Events" :: NullOrUndefined (EventList)
-  , "Queue" :: NullOrUndefined (QueueArn)
+  { "Id" :: Maybe (NotificationId)
+  , "Event" :: Maybe (Event)
+  , "Events" :: Maybe (EventList)
+  , "Queue" :: Maybe (QueueArn)
   }
 derive instance newtypeQueueConfigurationDeprecated :: Newtype QueueConfigurationDeprecated _
 derive instance repGenericQueueConfigurationDeprecated :: Generic QueueConfigurationDeprecated _
@@ -5744,12 +5743,12 @@ instance encodeQueueConfigurationDeprecated :: Encode QueueConfigurationDeprecat
 
 -- | Constructs QueueConfigurationDeprecated from required parameters
 newQueueConfigurationDeprecated :: QueueConfigurationDeprecated
-newQueueConfigurationDeprecated  = QueueConfigurationDeprecated { "Event": (NullOrUndefined Nothing), "Events": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Queue": (NullOrUndefined Nothing) }
+newQueueConfigurationDeprecated  = QueueConfigurationDeprecated { "Event": Nothing, "Events": Nothing, "Id": Nothing, "Queue": Nothing }
 
 -- | Constructs QueueConfigurationDeprecated's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newQueueConfigurationDeprecated' :: ( { "Id" :: NullOrUndefined (NotificationId) , "Event" :: NullOrUndefined (Event) , "Events" :: NullOrUndefined (EventList) , "Queue" :: NullOrUndefined (QueueArn) } -> {"Id" :: NullOrUndefined (NotificationId) , "Event" :: NullOrUndefined (Event) , "Events" :: NullOrUndefined (EventList) , "Queue" :: NullOrUndefined (QueueArn) } ) -> QueueConfigurationDeprecated
-newQueueConfigurationDeprecated'  customize = (QueueConfigurationDeprecated <<< customize) { "Event": (NullOrUndefined Nothing), "Events": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Queue": (NullOrUndefined Nothing) }
+newQueueConfigurationDeprecated' :: ( { "Id" :: Maybe (NotificationId) , "Event" :: Maybe (Event) , "Events" :: Maybe (EventList) , "Queue" :: Maybe (QueueArn) } -> {"Id" :: Maybe (NotificationId) , "Event" :: Maybe (Event) , "Events" :: Maybe (EventList) , "Queue" :: Maybe (QueueArn) } ) -> QueueConfigurationDeprecated
+newQueueConfigurationDeprecated'  customize = (QueueConfigurationDeprecated <<< customize) { "Event": Nothing, "Events": Nothing, "Id": Nothing, "Queue": Nothing }
 
 
 
@@ -5817,11 +5816,11 @@ instance encodeRecordDelimiter :: Encode RecordDelimiter where encode = genericE
 
 
 newtype Redirect = Redirect 
-  { "HostName" :: NullOrUndefined (HostName)
-  , "HttpRedirectCode" :: NullOrUndefined (HttpRedirectCode)
-  , "Protocol" :: NullOrUndefined (Protocol)
-  , "ReplaceKeyPrefixWith" :: NullOrUndefined (ReplaceKeyPrefixWith)
-  , "ReplaceKeyWith" :: NullOrUndefined (ReplaceKeyWith)
+  { "HostName" :: Maybe (HostName)
+  , "HttpRedirectCode" :: Maybe (HttpRedirectCode)
+  , "Protocol" :: Maybe (Protocol)
+  , "ReplaceKeyPrefixWith" :: Maybe (ReplaceKeyPrefixWith)
+  , "ReplaceKeyWith" :: Maybe (ReplaceKeyWith)
   }
 derive instance newtypeRedirect :: Newtype Redirect _
 derive instance repGenericRedirect :: Generic Redirect _
@@ -5831,18 +5830,18 @@ instance encodeRedirect :: Encode Redirect where encode = genericEncode options
 
 -- | Constructs Redirect from required parameters
 newRedirect :: Redirect
-newRedirect  = Redirect { "HostName": (NullOrUndefined Nothing), "HttpRedirectCode": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "ReplaceKeyPrefixWith": (NullOrUndefined Nothing), "ReplaceKeyWith": (NullOrUndefined Nothing) }
+newRedirect  = Redirect { "HostName": Nothing, "HttpRedirectCode": Nothing, "Protocol": Nothing, "ReplaceKeyPrefixWith": Nothing, "ReplaceKeyWith": Nothing }
 
 -- | Constructs Redirect's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRedirect' :: ( { "HostName" :: NullOrUndefined (HostName) , "HttpRedirectCode" :: NullOrUndefined (HttpRedirectCode) , "Protocol" :: NullOrUndefined (Protocol) , "ReplaceKeyPrefixWith" :: NullOrUndefined (ReplaceKeyPrefixWith) , "ReplaceKeyWith" :: NullOrUndefined (ReplaceKeyWith) } -> {"HostName" :: NullOrUndefined (HostName) , "HttpRedirectCode" :: NullOrUndefined (HttpRedirectCode) , "Protocol" :: NullOrUndefined (Protocol) , "ReplaceKeyPrefixWith" :: NullOrUndefined (ReplaceKeyPrefixWith) , "ReplaceKeyWith" :: NullOrUndefined (ReplaceKeyWith) } ) -> Redirect
-newRedirect'  customize = (Redirect <<< customize) { "HostName": (NullOrUndefined Nothing), "HttpRedirectCode": (NullOrUndefined Nothing), "Protocol": (NullOrUndefined Nothing), "ReplaceKeyPrefixWith": (NullOrUndefined Nothing), "ReplaceKeyWith": (NullOrUndefined Nothing) }
+newRedirect' :: ( { "HostName" :: Maybe (HostName) , "HttpRedirectCode" :: Maybe (HttpRedirectCode) , "Protocol" :: Maybe (Protocol) , "ReplaceKeyPrefixWith" :: Maybe (ReplaceKeyPrefixWith) , "ReplaceKeyWith" :: Maybe (ReplaceKeyWith) } -> {"HostName" :: Maybe (HostName) , "HttpRedirectCode" :: Maybe (HttpRedirectCode) , "Protocol" :: Maybe (Protocol) , "ReplaceKeyPrefixWith" :: Maybe (ReplaceKeyPrefixWith) , "ReplaceKeyWith" :: Maybe (ReplaceKeyWith) } ) -> Redirect
+newRedirect'  customize = (Redirect <<< customize) { "HostName": Nothing, "HttpRedirectCode": Nothing, "Protocol": Nothing, "ReplaceKeyPrefixWith": Nothing, "ReplaceKeyWith": Nothing }
 
 
 
 newtype RedirectAllRequestsTo = RedirectAllRequestsTo 
   { "HostName" :: (HostName)
-  , "Protocol" :: NullOrUndefined (Protocol)
+  , "Protocol" :: Maybe (Protocol)
   }
 derive instance newtypeRedirectAllRequestsTo :: Newtype RedirectAllRequestsTo _
 derive instance repGenericRedirectAllRequestsTo :: Generic RedirectAllRequestsTo _
@@ -5852,12 +5851,12 @@ instance encodeRedirectAllRequestsTo :: Encode RedirectAllRequestsTo where encod
 
 -- | Constructs RedirectAllRequestsTo from required parameters
 newRedirectAllRequestsTo :: HostName -> RedirectAllRequestsTo
-newRedirectAllRequestsTo _HostName = RedirectAllRequestsTo { "HostName": _HostName, "Protocol": (NullOrUndefined Nothing) }
+newRedirectAllRequestsTo _HostName = RedirectAllRequestsTo { "HostName": _HostName, "Protocol": Nothing }
 
 -- | Constructs RedirectAllRequestsTo's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRedirectAllRequestsTo' :: HostName -> ( { "HostName" :: (HostName) , "Protocol" :: NullOrUndefined (Protocol) } -> {"HostName" :: (HostName) , "Protocol" :: NullOrUndefined (Protocol) } ) -> RedirectAllRequestsTo
-newRedirectAllRequestsTo' _HostName customize = (RedirectAllRequestsTo <<< customize) { "HostName": _HostName, "Protocol": (NullOrUndefined Nothing) }
+newRedirectAllRequestsTo' :: HostName -> ( { "HostName" :: (HostName) , "Protocol" :: Maybe (Protocol) } -> {"HostName" :: (HostName) , "Protocol" :: Maybe (Protocol) } ) -> RedirectAllRequestsTo
+newRedirectAllRequestsTo' _HostName customize = (RedirectAllRequestsTo <<< customize) { "HostName": _HostName, "Protocol": Nothing }
 
 
 
@@ -5912,10 +5911,10 @@ newReplicationConfiguration' _Role _Rules customize = (ReplicationConfiguration 
 
 -- | Container for information about a particular replication rule.
 newtype ReplicationRule = ReplicationRule 
-  { "ID" :: NullOrUndefined (ID)
+  { "ID" :: Maybe (ID)
   , "Prefix" :: (Prefix)
   , "Status" :: (ReplicationRuleStatus)
-  , "SourceSelectionCriteria" :: NullOrUndefined (SourceSelectionCriteria)
+  , "SourceSelectionCriteria" :: Maybe (SourceSelectionCriteria)
   , "Destination" :: (Destination)
   }
 derive instance newtypeReplicationRule :: Newtype ReplicationRule _
@@ -5926,12 +5925,12 @@ instance encodeReplicationRule :: Encode ReplicationRule where encode = genericE
 
 -- | Constructs ReplicationRule from required parameters
 newReplicationRule :: Destination -> Prefix -> ReplicationRuleStatus -> ReplicationRule
-newReplicationRule _Destination _Prefix _Status = ReplicationRule { "Destination": _Destination, "Prefix": _Prefix, "Status": _Status, "ID": (NullOrUndefined Nothing), "SourceSelectionCriteria": (NullOrUndefined Nothing) }
+newReplicationRule _Destination _Prefix _Status = ReplicationRule { "Destination": _Destination, "Prefix": _Prefix, "Status": _Status, "ID": Nothing, "SourceSelectionCriteria": Nothing }
 
 -- | Constructs ReplicationRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newReplicationRule' :: Destination -> Prefix -> ReplicationRuleStatus -> ( { "ID" :: NullOrUndefined (ID) , "Prefix" :: (Prefix) , "Status" :: (ReplicationRuleStatus) , "SourceSelectionCriteria" :: NullOrUndefined (SourceSelectionCriteria) , "Destination" :: (Destination) } -> {"ID" :: NullOrUndefined (ID) , "Prefix" :: (Prefix) , "Status" :: (ReplicationRuleStatus) , "SourceSelectionCriteria" :: NullOrUndefined (SourceSelectionCriteria) , "Destination" :: (Destination) } ) -> ReplicationRule
-newReplicationRule' _Destination _Prefix _Status customize = (ReplicationRule <<< customize) { "Destination": _Destination, "Prefix": _Prefix, "Status": _Status, "ID": (NullOrUndefined Nothing), "SourceSelectionCriteria": (NullOrUndefined Nothing) }
+newReplicationRule' :: Destination -> Prefix -> ReplicationRuleStatus -> ( { "ID" :: Maybe (ID) , "Prefix" :: (Prefix) , "Status" :: (ReplicationRuleStatus) , "SourceSelectionCriteria" :: Maybe (SourceSelectionCriteria) , "Destination" :: (Destination) } -> {"ID" :: Maybe (ID) , "Prefix" :: (Prefix) , "Status" :: (ReplicationRuleStatus) , "SourceSelectionCriteria" :: Maybe (SourceSelectionCriteria) , "Destination" :: (Destination) } ) -> ReplicationRule
+newReplicationRule' _Destination _Prefix _Status customize = (ReplicationRule <<< customize) { "Destination": _Destination, "Prefix": _Prefix, "Status": _Status, "ID": Nothing, "SourceSelectionCriteria": Nothing }
 
 
 
@@ -6066,8 +6065,8 @@ instance encodeRestore :: Encode Restore where encode = genericEncode options
 
 
 newtype RestoreObjectOutput = RestoreObjectOutput 
-  { "RequestCharged" :: NullOrUndefined (RequestCharged)
-  , "RestoreOutputPath" :: NullOrUndefined (RestoreOutputPath)
+  { "RequestCharged" :: Maybe (RequestCharged)
+  , "RestoreOutputPath" :: Maybe (RestoreOutputPath)
   }
 derive instance newtypeRestoreObjectOutput :: Newtype RestoreObjectOutput _
 derive instance repGenericRestoreObjectOutput :: Generic RestoreObjectOutput _
@@ -6077,21 +6076,21 @@ instance encodeRestoreObjectOutput :: Encode RestoreObjectOutput where encode = 
 
 -- | Constructs RestoreObjectOutput from required parameters
 newRestoreObjectOutput :: RestoreObjectOutput
-newRestoreObjectOutput  = RestoreObjectOutput { "RequestCharged": (NullOrUndefined Nothing), "RestoreOutputPath": (NullOrUndefined Nothing) }
+newRestoreObjectOutput  = RestoreObjectOutput { "RequestCharged": Nothing, "RestoreOutputPath": Nothing }
 
 -- | Constructs RestoreObjectOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreObjectOutput' :: ( { "RequestCharged" :: NullOrUndefined (RequestCharged) , "RestoreOutputPath" :: NullOrUndefined (RestoreOutputPath) } -> {"RequestCharged" :: NullOrUndefined (RequestCharged) , "RestoreOutputPath" :: NullOrUndefined (RestoreOutputPath) } ) -> RestoreObjectOutput
-newRestoreObjectOutput'  customize = (RestoreObjectOutput <<< customize) { "RequestCharged": (NullOrUndefined Nothing), "RestoreOutputPath": (NullOrUndefined Nothing) }
+newRestoreObjectOutput' :: ( { "RequestCharged" :: Maybe (RequestCharged) , "RestoreOutputPath" :: Maybe (RestoreOutputPath) } -> {"RequestCharged" :: Maybe (RequestCharged) , "RestoreOutputPath" :: Maybe (RestoreOutputPath) } ) -> RestoreObjectOutput
+newRestoreObjectOutput'  customize = (RestoreObjectOutput <<< customize) { "RequestCharged": Nothing, "RestoreOutputPath": Nothing }
 
 
 
 newtype RestoreObjectRequest = RestoreObjectRequest 
   { "Bucket" :: (BucketName)
   , "Key" :: (ObjectKey)
-  , "VersionId" :: NullOrUndefined (ObjectVersionId)
-  , "RestoreRequest" :: NullOrUndefined (RestoreRequest)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "VersionId" :: Maybe (ObjectVersionId)
+  , "RestoreRequest" :: Maybe (RestoreRequest)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeRestoreObjectRequest :: Newtype RestoreObjectRequest _
 derive instance repGenericRestoreObjectRequest :: Generic RestoreObjectRequest _
@@ -6101,12 +6100,12 @@ instance encodeRestoreObjectRequest :: Encode RestoreObjectRequest where encode 
 
 -- | Constructs RestoreObjectRequest from required parameters
 newRestoreObjectRequest :: BucketName -> ObjectKey -> RestoreObjectRequest
-newRestoreObjectRequest _Bucket _Key = RestoreObjectRequest { "Bucket": _Bucket, "Key": _Key, "RequestPayer": (NullOrUndefined Nothing), "RestoreRequest": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newRestoreObjectRequest _Bucket _Key = RestoreObjectRequest { "Bucket": _Bucket, "Key": _Key, "RequestPayer": Nothing, "RestoreRequest": Nothing, "VersionId": Nothing }
 
 -- | Constructs RestoreObjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RestoreRequest" :: NullOrUndefined (RestoreRequest) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: NullOrUndefined (ObjectVersionId) , "RestoreRequest" :: NullOrUndefined (RestoreRequest) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> RestoreObjectRequest
-newRestoreObjectRequest' _Bucket _Key customize = (RestoreObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "RequestPayer": (NullOrUndefined Nothing), "RestoreRequest": (NullOrUndefined Nothing), "VersionId": (NullOrUndefined Nothing) }
+newRestoreObjectRequest' :: BucketName -> ObjectKey -> ( { "Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "RestoreRequest" :: Maybe (RestoreRequest) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "Key" :: (ObjectKey) , "VersionId" :: Maybe (ObjectVersionId) , "RestoreRequest" :: Maybe (RestoreRequest) , "RequestPayer" :: Maybe (RequestPayer) } ) -> RestoreObjectRequest
+newRestoreObjectRequest' _Bucket _Key customize = (RestoreObjectRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "RequestPayer": Nothing, "RestoreRequest": Nothing, "VersionId": Nothing }
 
 
 
@@ -6121,13 +6120,13 @@ instance encodeRestoreOutputPath :: Encode RestoreOutputPath where encode = gene
 
 -- | Container for restore job parameters.
 newtype RestoreRequest = RestoreRequest 
-  { "Days" :: NullOrUndefined (Days)
-  , "GlacierJobParameters" :: NullOrUndefined (GlacierJobParameters)
-  , "Type" :: NullOrUndefined (RestoreRequestType)
-  , "Tier" :: NullOrUndefined (Tier)
-  , "Description" :: NullOrUndefined (Description)
-  , "SelectParameters" :: NullOrUndefined (SelectParameters)
-  , "OutputLocation" :: NullOrUndefined (OutputLocation)
+  { "Days" :: Maybe (Days)
+  , "GlacierJobParameters" :: Maybe (GlacierJobParameters)
+  , "Type" :: Maybe (RestoreRequestType)
+  , "Tier" :: Maybe (Tier)
+  , "Description" :: Maybe (Description)
+  , "SelectParameters" :: Maybe (SelectParameters)
+  , "OutputLocation" :: Maybe (OutputLocation)
   }
 derive instance newtypeRestoreRequest :: Newtype RestoreRequest _
 derive instance repGenericRestoreRequest :: Generic RestoreRequest _
@@ -6137,12 +6136,12 @@ instance encodeRestoreRequest :: Encode RestoreRequest where encode = genericEnc
 
 -- | Constructs RestoreRequest from required parameters
 newRestoreRequest :: RestoreRequest
-newRestoreRequest  = RestoreRequest { "Days": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlacierJobParameters": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "SelectParameters": (NullOrUndefined Nothing), "Tier": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newRestoreRequest  = RestoreRequest { "Days": Nothing, "Description": Nothing, "GlacierJobParameters": Nothing, "OutputLocation": Nothing, "SelectParameters": Nothing, "Tier": Nothing, "Type": Nothing }
 
 -- | Constructs RestoreRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRestoreRequest' :: ( { "Days" :: NullOrUndefined (Days) , "GlacierJobParameters" :: NullOrUndefined (GlacierJobParameters) , "Type" :: NullOrUndefined (RestoreRequestType) , "Tier" :: NullOrUndefined (Tier) , "Description" :: NullOrUndefined (Description) , "SelectParameters" :: NullOrUndefined (SelectParameters) , "OutputLocation" :: NullOrUndefined (OutputLocation) } -> {"Days" :: NullOrUndefined (Days) , "GlacierJobParameters" :: NullOrUndefined (GlacierJobParameters) , "Type" :: NullOrUndefined (RestoreRequestType) , "Tier" :: NullOrUndefined (Tier) , "Description" :: NullOrUndefined (Description) , "SelectParameters" :: NullOrUndefined (SelectParameters) , "OutputLocation" :: NullOrUndefined (OutputLocation) } ) -> RestoreRequest
-newRestoreRequest'  customize = (RestoreRequest <<< customize) { "Days": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "GlacierJobParameters": (NullOrUndefined Nothing), "OutputLocation": (NullOrUndefined Nothing), "SelectParameters": (NullOrUndefined Nothing), "Tier": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newRestoreRequest' :: ( { "Days" :: Maybe (Days) , "GlacierJobParameters" :: Maybe (GlacierJobParameters) , "Type" :: Maybe (RestoreRequestType) , "Tier" :: Maybe (Tier) , "Description" :: Maybe (Description) , "SelectParameters" :: Maybe (SelectParameters) , "OutputLocation" :: Maybe (OutputLocation) } -> {"Days" :: Maybe (Days) , "GlacierJobParameters" :: Maybe (GlacierJobParameters) , "Type" :: Maybe (RestoreRequestType) , "Tier" :: Maybe (Tier) , "Description" :: Maybe (Description) , "SelectParameters" :: Maybe (SelectParameters) , "OutputLocation" :: Maybe (OutputLocation) } ) -> RestoreRequest
+newRestoreRequest'  customize = (RestoreRequest <<< customize) { "Days": Nothing, "Description": Nothing, "GlacierJobParameters": Nothing, "OutputLocation": Nothing, "SelectParameters": Nothing, "Tier": Nothing, "Type": Nothing }
 
 
 
@@ -6165,7 +6164,7 @@ instance encodeRole :: Encode Role where encode = genericEncode options
 
 
 newtype RoutingRule = RoutingRule 
-  { "Condition" :: NullOrUndefined (Condition)
+  { "Condition" :: Maybe (Condition)
   , "Redirect" :: (Redirect)
   }
 derive instance newtypeRoutingRule :: Newtype RoutingRule _
@@ -6176,12 +6175,12 @@ instance encodeRoutingRule :: Encode RoutingRule where encode = genericEncode op
 
 -- | Constructs RoutingRule from required parameters
 newRoutingRule :: Redirect -> RoutingRule
-newRoutingRule _Redirect = RoutingRule { "Redirect": _Redirect, "Condition": (NullOrUndefined Nothing) }
+newRoutingRule _Redirect = RoutingRule { "Redirect": _Redirect, "Condition": Nothing }
 
 -- | Constructs RoutingRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRoutingRule' :: Redirect -> ( { "Condition" :: NullOrUndefined (Condition) , "Redirect" :: (Redirect) } -> {"Condition" :: NullOrUndefined (Condition) , "Redirect" :: (Redirect) } ) -> RoutingRule
-newRoutingRule' _Redirect customize = (RoutingRule <<< customize) { "Redirect": _Redirect, "Condition": (NullOrUndefined Nothing) }
+newRoutingRule' :: Redirect -> ( { "Condition" :: Maybe (Condition) , "Redirect" :: (Redirect) } -> {"Condition" :: Maybe (Condition) , "Redirect" :: (Redirect) } ) -> RoutingRule
+newRoutingRule' _Redirect customize = (RoutingRule <<< customize) { "Redirect": _Redirect, "Condition": Nothing }
 
 
 
@@ -6195,14 +6194,14 @@ instance encodeRoutingRules :: Encode RoutingRules where encode = genericEncode 
 
 
 newtype Rule = Rule 
-  { "Expiration" :: NullOrUndefined (LifecycleExpiration)
-  , "ID" :: NullOrUndefined (ID)
+  { "Expiration" :: Maybe (LifecycleExpiration)
+  , "ID" :: Maybe (ID)
   , "Prefix" :: (Prefix)
   , "Status" :: (ExpirationStatus)
-  , "Transition" :: NullOrUndefined (Transition)
-  , "NoncurrentVersionTransition" :: NullOrUndefined (NoncurrentVersionTransition)
-  , "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration)
-  , "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload)
+  , "Transition" :: Maybe (Transition)
+  , "NoncurrentVersionTransition" :: Maybe (NoncurrentVersionTransition)
+  , "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration)
+  , "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload)
   }
 derive instance newtypeRule :: Newtype Rule _
 derive instance repGenericRule :: Generic Rule _
@@ -6212,12 +6211,12 @@ instance encodeRule :: Encode Rule where encode = genericEncode options
 
 -- | Constructs Rule from required parameters
 newRule :: Prefix -> ExpirationStatus -> Rule
-newRule _Prefix _Status = Rule { "Prefix": _Prefix, "Status": _Status, "AbortIncompleteMultipartUpload": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing), "NoncurrentVersionExpiration": (NullOrUndefined Nothing), "NoncurrentVersionTransition": (NullOrUndefined Nothing), "Transition": (NullOrUndefined Nothing) }
+newRule _Prefix _Status = Rule { "Prefix": _Prefix, "Status": _Status, "AbortIncompleteMultipartUpload": Nothing, "Expiration": Nothing, "ID": Nothing, "NoncurrentVersionExpiration": Nothing, "NoncurrentVersionTransition": Nothing, "Transition": Nothing }
 
 -- | Constructs Rule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRule' :: Prefix -> ExpirationStatus -> ( { "Expiration" :: NullOrUndefined (LifecycleExpiration) , "ID" :: NullOrUndefined (ID) , "Prefix" :: (Prefix) , "Status" :: (ExpirationStatus) , "Transition" :: NullOrUndefined (Transition) , "NoncurrentVersionTransition" :: NullOrUndefined (NoncurrentVersionTransition) , "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) } -> {"Expiration" :: NullOrUndefined (LifecycleExpiration) , "ID" :: NullOrUndefined (ID) , "Prefix" :: (Prefix) , "Status" :: (ExpirationStatus) , "Transition" :: NullOrUndefined (Transition) , "NoncurrentVersionTransition" :: NullOrUndefined (NoncurrentVersionTransition) , "NoncurrentVersionExpiration" :: NullOrUndefined (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: NullOrUndefined (AbortIncompleteMultipartUpload) } ) -> Rule
-newRule' _Prefix _Status customize = (Rule <<< customize) { "Prefix": _Prefix, "Status": _Status, "AbortIncompleteMultipartUpload": (NullOrUndefined Nothing), "Expiration": (NullOrUndefined Nothing), "ID": (NullOrUndefined Nothing), "NoncurrentVersionExpiration": (NullOrUndefined Nothing), "NoncurrentVersionTransition": (NullOrUndefined Nothing), "Transition": (NullOrUndefined Nothing) }
+newRule' :: Prefix -> ExpirationStatus -> ( { "Expiration" :: Maybe (LifecycleExpiration) , "ID" :: Maybe (ID) , "Prefix" :: (Prefix) , "Status" :: (ExpirationStatus) , "Transition" :: Maybe (Transition) , "NoncurrentVersionTransition" :: Maybe (NoncurrentVersionTransition) , "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) } -> {"Expiration" :: Maybe (LifecycleExpiration) , "ID" :: Maybe (ID) , "Prefix" :: (Prefix) , "Status" :: (ExpirationStatus) , "Transition" :: Maybe (Transition) , "NoncurrentVersionTransition" :: Maybe (NoncurrentVersionTransition) , "NoncurrentVersionExpiration" :: Maybe (NoncurrentVersionExpiration) , "AbortIncompleteMultipartUpload" :: Maybe (AbortIncompleteMultipartUpload) } ) -> Rule
+newRule' _Prefix _Status customize = (Rule <<< customize) { "Prefix": _Prefix, "Status": _Status, "AbortIncompleteMultipartUpload": Nothing, "Expiration": Nothing, "ID": Nothing, "NoncurrentVersionExpiration": Nothing, "NoncurrentVersionTransition": Nothing, "Transition": Nothing }
 
 
 
@@ -6232,7 +6231,7 @@ instance encodeRules :: Encode Rules where encode = genericEncode options
 
 -- | Container for object key name prefix and suffix filtering rules.
 newtype S3KeyFilter = S3KeyFilter 
-  { "FilterRules" :: NullOrUndefined (FilterRuleList)
+  { "FilterRules" :: Maybe (FilterRuleList)
   }
 derive instance newtypeS3KeyFilter :: Newtype S3KeyFilter _
 derive instance repGenericS3KeyFilter :: Generic S3KeyFilter _
@@ -6242,12 +6241,12 @@ instance encodeS3KeyFilter :: Encode S3KeyFilter where encode = genericEncode op
 
 -- | Constructs S3KeyFilter from required parameters
 newS3KeyFilter :: S3KeyFilter
-newS3KeyFilter  = S3KeyFilter { "FilterRules": (NullOrUndefined Nothing) }
+newS3KeyFilter  = S3KeyFilter { "FilterRules": Nothing }
 
 -- | Constructs S3KeyFilter's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3KeyFilter' :: ( { "FilterRules" :: NullOrUndefined (FilterRuleList) } -> {"FilterRules" :: NullOrUndefined (FilterRuleList) } ) -> S3KeyFilter
-newS3KeyFilter'  customize = (S3KeyFilter <<< customize) { "FilterRules": (NullOrUndefined Nothing) }
+newS3KeyFilter' :: ( { "FilterRules" :: Maybe (FilterRuleList) } -> {"FilterRules" :: Maybe (FilterRuleList) } ) -> S3KeyFilter
+newS3KeyFilter'  customize = (S3KeyFilter <<< customize) { "FilterRules": Nothing }
 
 
 
@@ -6255,12 +6254,12 @@ newS3KeyFilter'  customize = (S3KeyFilter <<< customize) { "FilterRules": (NullO
 newtype S3Location = S3Location 
   { "BucketName" :: (BucketName)
   , "Prefix" :: (LocationPrefix)
-  , "Encryption" :: NullOrUndefined (Encryption)
-  , "CannedACL" :: NullOrUndefined (ObjectCannedACL)
-  , "AccessControlList" :: NullOrUndefined (Grants)
-  , "Tagging" :: NullOrUndefined (Tagging)
-  , "UserMetadata" :: NullOrUndefined (UserMetadata)
-  , "StorageClass" :: NullOrUndefined (StorageClass)
+  , "Encryption" :: Maybe (Encryption)
+  , "CannedACL" :: Maybe (ObjectCannedACL)
+  , "AccessControlList" :: Maybe (Grants)
+  , "Tagging" :: Maybe (Tagging)
+  , "UserMetadata" :: Maybe (UserMetadata)
+  , "StorageClass" :: Maybe (StorageClass)
   }
 derive instance newtypeS3Location :: Newtype S3Location _
 derive instance repGenericS3Location :: Generic S3Location _
@@ -6270,12 +6269,12 @@ instance encodeS3Location :: Encode S3Location where encode = genericEncode opti
 
 -- | Constructs S3Location from required parameters
 newS3Location :: BucketName -> LocationPrefix -> S3Location
-newS3Location _BucketName _Prefix = S3Location { "BucketName": _BucketName, "Prefix": _Prefix, "AccessControlList": (NullOrUndefined Nothing), "CannedACL": (NullOrUndefined Nothing), "Encryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "UserMetadata": (NullOrUndefined Nothing) }
+newS3Location _BucketName _Prefix = S3Location { "BucketName": _BucketName, "Prefix": _Prefix, "AccessControlList": Nothing, "CannedACL": Nothing, "Encryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "UserMetadata": Nothing }
 
 -- | Constructs S3Location's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3Location' :: BucketName -> LocationPrefix -> ( { "BucketName" :: (BucketName) , "Prefix" :: (LocationPrefix) , "Encryption" :: NullOrUndefined (Encryption) , "CannedACL" :: NullOrUndefined (ObjectCannedACL) , "AccessControlList" :: NullOrUndefined (Grants) , "Tagging" :: NullOrUndefined (Tagging) , "UserMetadata" :: NullOrUndefined (UserMetadata) , "StorageClass" :: NullOrUndefined (StorageClass) } -> {"BucketName" :: (BucketName) , "Prefix" :: (LocationPrefix) , "Encryption" :: NullOrUndefined (Encryption) , "CannedACL" :: NullOrUndefined (ObjectCannedACL) , "AccessControlList" :: NullOrUndefined (Grants) , "Tagging" :: NullOrUndefined (Tagging) , "UserMetadata" :: NullOrUndefined (UserMetadata) , "StorageClass" :: NullOrUndefined (StorageClass) } ) -> S3Location
-newS3Location' _BucketName _Prefix customize = (S3Location <<< customize) { "BucketName": _BucketName, "Prefix": _Prefix, "AccessControlList": (NullOrUndefined Nothing), "CannedACL": (NullOrUndefined Nothing), "Encryption": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing), "Tagging": (NullOrUndefined Nothing), "UserMetadata": (NullOrUndefined Nothing) }
+newS3Location' :: BucketName -> LocationPrefix -> ( { "BucketName" :: (BucketName) , "Prefix" :: (LocationPrefix) , "Encryption" :: Maybe (Encryption) , "CannedACL" :: Maybe (ObjectCannedACL) , "AccessControlList" :: Maybe (Grants) , "Tagging" :: Maybe (Tagging) , "UserMetadata" :: Maybe (UserMetadata) , "StorageClass" :: Maybe (StorageClass) } -> {"BucketName" :: (BucketName) , "Prefix" :: (LocationPrefix) , "Encryption" :: Maybe (Encryption) , "CannedACL" :: Maybe (ObjectCannedACL) , "AccessControlList" :: Maybe (Grants) , "Tagging" :: Maybe (Tagging) , "UserMetadata" :: Maybe (UserMetadata) , "StorageClass" :: Maybe (StorageClass) } ) -> S3Location
+newS3Location' _BucketName _Prefix customize = (S3Location <<< customize) { "BucketName": _BucketName, "Prefix": _Prefix, "AccessControlList": Nothing, "CannedACL": Nothing, "Encryption": Nothing, "StorageClass": Nothing, "Tagging": Nothing, "UserMetadata": Nothing }
 
 
 
@@ -6382,7 +6381,7 @@ instance encodeServerSideEncryption :: Encode ServerSideEncryption where encode 
 -- | Describes the default server-side encryption to apply to new objects in the bucket. If Put Object request does not specify any server-side encryption, this default encryption will be applied.
 newtype ServerSideEncryptionByDefault = ServerSideEncryptionByDefault 
   { "SSEAlgorithm" :: (ServerSideEncryption)
-  , "KMSMasterKeyID" :: NullOrUndefined (SSEKMSKeyId)
+  , "KMSMasterKeyID" :: Maybe (SSEKMSKeyId)
   }
 derive instance newtypeServerSideEncryptionByDefault :: Newtype ServerSideEncryptionByDefault _
 derive instance repGenericServerSideEncryptionByDefault :: Generic ServerSideEncryptionByDefault _
@@ -6392,12 +6391,12 @@ instance encodeServerSideEncryptionByDefault :: Encode ServerSideEncryptionByDef
 
 -- | Constructs ServerSideEncryptionByDefault from required parameters
 newServerSideEncryptionByDefault :: ServerSideEncryption -> ServerSideEncryptionByDefault
-newServerSideEncryptionByDefault _SSEAlgorithm = ServerSideEncryptionByDefault { "SSEAlgorithm": _SSEAlgorithm, "KMSMasterKeyID": (NullOrUndefined Nothing) }
+newServerSideEncryptionByDefault _SSEAlgorithm = ServerSideEncryptionByDefault { "SSEAlgorithm": _SSEAlgorithm, "KMSMasterKeyID": Nothing }
 
 -- | Constructs ServerSideEncryptionByDefault's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServerSideEncryptionByDefault' :: ServerSideEncryption -> ( { "SSEAlgorithm" :: (ServerSideEncryption) , "KMSMasterKeyID" :: NullOrUndefined (SSEKMSKeyId) } -> {"SSEAlgorithm" :: (ServerSideEncryption) , "KMSMasterKeyID" :: NullOrUndefined (SSEKMSKeyId) } ) -> ServerSideEncryptionByDefault
-newServerSideEncryptionByDefault' _SSEAlgorithm customize = (ServerSideEncryptionByDefault <<< customize) { "SSEAlgorithm": _SSEAlgorithm, "KMSMasterKeyID": (NullOrUndefined Nothing) }
+newServerSideEncryptionByDefault' :: ServerSideEncryption -> ( { "SSEAlgorithm" :: (ServerSideEncryption) , "KMSMasterKeyID" :: Maybe (SSEKMSKeyId) } -> {"SSEAlgorithm" :: (ServerSideEncryption) , "KMSMasterKeyID" :: Maybe (SSEKMSKeyId) } ) -> ServerSideEncryptionByDefault
+newServerSideEncryptionByDefault' _SSEAlgorithm customize = (ServerSideEncryptionByDefault <<< customize) { "SSEAlgorithm": _SSEAlgorithm, "KMSMasterKeyID": Nothing }
 
 
 
@@ -6424,7 +6423,7 @@ newServerSideEncryptionConfiguration' _Rules customize = (ServerSideEncryptionCo
 
 -- | Container for information about a particular server-side encryption configuration rule.
 newtype ServerSideEncryptionRule = ServerSideEncryptionRule 
-  { "ApplyServerSideEncryptionByDefault" :: NullOrUndefined (ServerSideEncryptionByDefault)
+  { "ApplyServerSideEncryptionByDefault" :: Maybe (ServerSideEncryptionByDefault)
   }
 derive instance newtypeServerSideEncryptionRule :: Newtype ServerSideEncryptionRule _
 derive instance repGenericServerSideEncryptionRule :: Generic ServerSideEncryptionRule _
@@ -6434,12 +6433,12 @@ instance encodeServerSideEncryptionRule :: Encode ServerSideEncryptionRule where
 
 -- | Constructs ServerSideEncryptionRule from required parameters
 newServerSideEncryptionRule :: ServerSideEncryptionRule
-newServerSideEncryptionRule  = ServerSideEncryptionRule { "ApplyServerSideEncryptionByDefault": (NullOrUndefined Nothing) }
+newServerSideEncryptionRule  = ServerSideEncryptionRule { "ApplyServerSideEncryptionByDefault": Nothing }
 
 -- | Constructs ServerSideEncryptionRule's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServerSideEncryptionRule' :: ( { "ApplyServerSideEncryptionByDefault" :: NullOrUndefined (ServerSideEncryptionByDefault) } -> {"ApplyServerSideEncryptionByDefault" :: NullOrUndefined (ServerSideEncryptionByDefault) } ) -> ServerSideEncryptionRule
-newServerSideEncryptionRule'  customize = (ServerSideEncryptionRule <<< customize) { "ApplyServerSideEncryptionByDefault": (NullOrUndefined Nothing) }
+newServerSideEncryptionRule' :: ( { "ApplyServerSideEncryptionByDefault" :: Maybe (ServerSideEncryptionByDefault) } -> {"ApplyServerSideEncryptionByDefault" :: Maybe (ServerSideEncryptionByDefault) } ) -> ServerSideEncryptionRule
+newServerSideEncryptionRule'  customize = (ServerSideEncryptionRule <<< customize) { "ApplyServerSideEncryptionByDefault": Nothing }
 
 
 
@@ -6463,7 +6462,7 @@ instance encodeSize :: Encode Size where encode = genericEncode options
 
 -- | Container for filters that define which source objects should be replicated.
 newtype SourceSelectionCriteria = SourceSelectionCriteria 
-  { "SseKmsEncryptedObjects" :: NullOrUndefined (SseKmsEncryptedObjects)
+  { "SseKmsEncryptedObjects" :: Maybe (SseKmsEncryptedObjects)
   }
 derive instance newtypeSourceSelectionCriteria :: Newtype SourceSelectionCriteria _
 derive instance repGenericSourceSelectionCriteria :: Generic SourceSelectionCriteria _
@@ -6473,12 +6472,12 @@ instance encodeSourceSelectionCriteria :: Encode SourceSelectionCriteria where e
 
 -- | Constructs SourceSelectionCriteria from required parameters
 newSourceSelectionCriteria :: SourceSelectionCriteria
-newSourceSelectionCriteria  = SourceSelectionCriteria { "SseKmsEncryptedObjects": (NullOrUndefined Nothing) }
+newSourceSelectionCriteria  = SourceSelectionCriteria { "SseKmsEncryptedObjects": Nothing }
 
 -- | Constructs SourceSelectionCriteria's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSourceSelectionCriteria' :: ( { "SseKmsEncryptedObjects" :: NullOrUndefined (SseKmsEncryptedObjects) } -> {"SseKmsEncryptedObjects" :: NullOrUndefined (SseKmsEncryptedObjects) } ) -> SourceSelectionCriteria
-newSourceSelectionCriteria'  customize = (SourceSelectionCriteria <<< customize) { "SseKmsEncryptedObjects": (NullOrUndefined Nothing) }
+newSourceSelectionCriteria' :: ( { "SseKmsEncryptedObjects" :: Maybe (SseKmsEncryptedObjects) } -> {"SseKmsEncryptedObjects" :: Maybe (SseKmsEncryptedObjects) } ) -> SourceSelectionCriteria
+newSourceSelectionCriteria'  customize = (SourceSelectionCriteria <<< customize) { "SseKmsEncryptedObjects": Nothing }
 
 
 
@@ -6531,7 +6530,7 @@ instance encodeStorageClass :: Encode StorageClass where encode = genericEncode 
 
 
 newtype StorageClassAnalysis = StorageClassAnalysis 
-  { "DataExport" :: NullOrUndefined (StorageClassAnalysisDataExport)
+  { "DataExport" :: Maybe (StorageClassAnalysisDataExport)
   }
 derive instance newtypeStorageClassAnalysis :: Newtype StorageClassAnalysis _
 derive instance repGenericStorageClassAnalysis :: Generic StorageClassAnalysis _
@@ -6541,12 +6540,12 @@ instance encodeStorageClassAnalysis :: Encode StorageClassAnalysis where encode 
 
 -- | Constructs StorageClassAnalysis from required parameters
 newStorageClassAnalysis :: StorageClassAnalysis
-newStorageClassAnalysis  = StorageClassAnalysis { "DataExport": (NullOrUndefined Nothing) }
+newStorageClassAnalysis  = StorageClassAnalysis { "DataExport": Nothing }
 
 -- | Constructs StorageClassAnalysis's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newStorageClassAnalysis' :: ( { "DataExport" :: NullOrUndefined (StorageClassAnalysisDataExport) } -> {"DataExport" :: NullOrUndefined (StorageClassAnalysisDataExport) } ) -> StorageClassAnalysis
-newStorageClassAnalysis'  customize = (StorageClassAnalysis <<< customize) { "DataExport": (NullOrUndefined Nothing) }
+newStorageClassAnalysis' :: ( { "DataExport" :: Maybe (StorageClassAnalysisDataExport) } -> {"DataExport" :: Maybe (StorageClassAnalysisDataExport) } ) -> StorageClassAnalysis
+newStorageClassAnalysis'  customize = (StorageClassAnalysis <<< customize) { "DataExport": Nothing }
 
 
 
@@ -6676,8 +6675,8 @@ instance encodeTargetBucket :: Encode TargetBucket where encode = genericEncode 
 
 
 newtype TargetGrant = TargetGrant 
-  { "Grantee" :: NullOrUndefined (Grantee)
-  , "Permission" :: NullOrUndefined (BucketLogsPermission)
+  { "Grantee" :: Maybe (Grantee)
+  , "Permission" :: Maybe (BucketLogsPermission)
   }
 derive instance newtypeTargetGrant :: Newtype TargetGrant _
 derive instance repGenericTargetGrant :: Generic TargetGrant _
@@ -6687,12 +6686,12 @@ instance encodeTargetGrant :: Encode TargetGrant where encode = genericEncode op
 
 -- | Constructs TargetGrant from required parameters
 newTargetGrant :: TargetGrant
-newTargetGrant  = TargetGrant { "Grantee": (NullOrUndefined Nothing), "Permission": (NullOrUndefined Nothing) }
+newTargetGrant  = TargetGrant { "Grantee": Nothing, "Permission": Nothing }
 
 -- | Constructs TargetGrant's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTargetGrant' :: ( { "Grantee" :: NullOrUndefined (Grantee) , "Permission" :: NullOrUndefined (BucketLogsPermission) } -> {"Grantee" :: NullOrUndefined (Grantee) , "Permission" :: NullOrUndefined (BucketLogsPermission) } ) -> TargetGrant
-newTargetGrant'  customize = (TargetGrant <<< customize) { "Grantee": (NullOrUndefined Nothing), "Permission": (NullOrUndefined Nothing) }
+newTargetGrant' :: ( { "Grantee" :: Maybe (Grantee) , "Permission" :: Maybe (BucketLogsPermission) } -> {"Grantee" :: Maybe (Grantee) , "Permission" :: Maybe (BucketLogsPermission) } ) -> TargetGrant
+newTargetGrant'  customize = (TargetGrant <<< customize) { "Grantee": Nothing, "Permission": Nothing }
 
 
 
@@ -6743,10 +6742,10 @@ instance encodeTopicArn :: Encode TopicArn where encode = genericEncode options
 
 -- | Container for specifying the configuration when you want Amazon S3 to publish events to an Amazon Simple Notification Service (Amazon SNS) topic.
 newtype TopicConfiguration = TopicConfiguration 
-  { "Id" :: NullOrUndefined (NotificationId)
+  { "Id" :: Maybe (NotificationId)
   , "TopicArn" :: (TopicArn)
   , "Events" :: (EventList)
-  , "Filter" :: NullOrUndefined (NotificationConfigurationFilter)
+  , "Filter" :: Maybe (NotificationConfigurationFilter)
   }
 derive instance newtypeTopicConfiguration :: Newtype TopicConfiguration _
 derive instance repGenericTopicConfiguration :: Generic TopicConfiguration _
@@ -6756,20 +6755,20 @@ instance encodeTopicConfiguration :: Encode TopicConfiguration where encode = ge
 
 -- | Constructs TopicConfiguration from required parameters
 newTopicConfiguration :: EventList -> TopicArn -> TopicConfiguration
-newTopicConfiguration _Events _TopicArn = TopicConfiguration { "Events": _Events, "TopicArn": _TopicArn, "Filter": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newTopicConfiguration _Events _TopicArn = TopicConfiguration { "Events": _Events, "TopicArn": _TopicArn, "Filter": Nothing, "Id": Nothing }
 
 -- | Constructs TopicConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTopicConfiguration' :: EventList -> TopicArn -> ( { "Id" :: NullOrUndefined (NotificationId) , "TopicArn" :: (TopicArn) , "Events" :: (EventList) , "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } -> {"Id" :: NullOrUndefined (NotificationId) , "TopicArn" :: (TopicArn) , "Events" :: (EventList) , "Filter" :: NullOrUndefined (NotificationConfigurationFilter) } ) -> TopicConfiguration
-newTopicConfiguration' _Events _TopicArn customize = (TopicConfiguration <<< customize) { "Events": _Events, "TopicArn": _TopicArn, "Filter": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing) }
+newTopicConfiguration' :: EventList -> TopicArn -> ( { "Id" :: Maybe (NotificationId) , "TopicArn" :: (TopicArn) , "Events" :: (EventList) , "Filter" :: Maybe (NotificationConfigurationFilter) } -> {"Id" :: Maybe (NotificationId) , "TopicArn" :: (TopicArn) , "Events" :: (EventList) , "Filter" :: Maybe (NotificationConfigurationFilter) } ) -> TopicConfiguration
+newTopicConfiguration' _Events _TopicArn customize = (TopicConfiguration <<< customize) { "Events": _Events, "TopicArn": _TopicArn, "Filter": Nothing, "Id": Nothing }
 
 
 
 newtype TopicConfigurationDeprecated = TopicConfigurationDeprecated 
-  { "Id" :: NullOrUndefined (NotificationId)
-  , "Events" :: NullOrUndefined (EventList)
-  , "Event" :: NullOrUndefined (Event)
-  , "Topic" :: NullOrUndefined (TopicArn)
+  { "Id" :: Maybe (NotificationId)
+  , "Events" :: Maybe (EventList)
+  , "Event" :: Maybe (Event)
+  , "Topic" :: Maybe (TopicArn)
   }
 derive instance newtypeTopicConfigurationDeprecated :: Newtype TopicConfigurationDeprecated _
 derive instance repGenericTopicConfigurationDeprecated :: Generic TopicConfigurationDeprecated _
@@ -6779,12 +6778,12 @@ instance encodeTopicConfigurationDeprecated :: Encode TopicConfigurationDeprecat
 
 -- | Constructs TopicConfigurationDeprecated from required parameters
 newTopicConfigurationDeprecated :: TopicConfigurationDeprecated
-newTopicConfigurationDeprecated  = TopicConfigurationDeprecated { "Event": (NullOrUndefined Nothing), "Events": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Topic": (NullOrUndefined Nothing) }
+newTopicConfigurationDeprecated  = TopicConfigurationDeprecated { "Event": Nothing, "Events": Nothing, "Id": Nothing, "Topic": Nothing }
 
 -- | Constructs TopicConfigurationDeprecated's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTopicConfigurationDeprecated' :: ( { "Id" :: NullOrUndefined (NotificationId) , "Events" :: NullOrUndefined (EventList) , "Event" :: NullOrUndefined (Event) , "Topic" :: NullOrUndefined (TopicArn) } -> {"Id" :: NullOrUndefined (NotificationId) , "Events" :: NullOrUndefined (EventList) , "Event" :: NullOrUndefined (Event) , "Topic" :: NullOrUndefined (TopicArn) } ) -> TopicConfigurationDeprecated
-newTopicConfigurationDeprecated'  customize = (TopicConfigurationDeprecated <<< customize) { "Event": (NullOrUndefined Nothing), "Events": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "Topic": (NullOrUndefined Nothing) }
+newTopicConfigurationDeprecated' :: ( { "Id" :: Maybe (NotificationId) , "Events" :: Maybe (EventList) , "Event" :: Maybe (Event) , "Topic" :: Maybe (TopicArn) } -> {"Id" :: Maybe (NotificationId) , "Events" :: Maybe (EventList) , "Event" :: Maybe (Event) , "Topic" :: Maybe (TopicArn) } ) -> TopicConfigurationDeprecated
+newTopicConfigurationDeprecated'  customize = (TopicConfigurationDeprecated <<< customize) { "Event": Nothing, "Events": Nothing, "Id": Nothing, "Topic": Nothing }
 
 
 
@@ -6798,9 +6797,9 @@ instance encodeTopicConfigurationList :: Encode TopicConfigurationList where enc
 
 
 newtype Transition = Transition 
-  { "Date" :: NullOrUndefined (Date)
-  , "Days" :: NullOrUndefined (Days)
-  , "StorageClass" :: NullOrUndefined (TransitionStorageClass)
+  { "Date" :: Maybe (Date)
+  , "Days" :: Maybe (Days)
+  , "StorageClass" :: Maybe (TransitionStorageClass)
   }
 derive instance newtypeTransition :: Newtype Transition _
 derive instance repGenericTransition :: Generic Transition _
@@ -6810,12 +6809,12 @@ instance encodeTransition :: Encode Transition where encode = genericEncode opti
 
 -- | Constructs Transition from required parameters
 newTransition :: Transition
-newTransition  = Transition { "Date": (NullOrUndefined Nothing), "Days": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newTransition  = Transition { "Date": Nothing, "Days": Nothing, "StorageClass": Nothing }
 
 -- | Constructs Transition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTransition' :: ( { "Date" :: NullOrUndefined (Date) , "Days" :: NullOrUndefined (Days) , "StorageClass" :: NullOrUndefined (TransitionStorageClass) } -> {"Date" :: NullOrUndefined (Date) , "Days" :: NullOrUndefined (Days) , "StorageClass" :: NullOrUndefined (TransitionStorageClass) } ) -> Transition
-newTransition'  customize = (Transition <<< customize) { "Date": (NullOrUndefined Nothing), "Days": (NullOrUndefined Nothing), "StorageClass": (NullOrUndefined Nothing) }
+newTransition' :: ( { "Date" :: Maybe (Date) , "Days" :: Maybe (Days) , "StorageClass" :: Maybe (TransitionStorageClass) } -> {"Date" :: Maybe (Date) , "Days" :: Maybe (Days) , "StorageClass" :: Maybe (TransitionStorageClass) } ) -> Transition
+newTransition'  customize = (Transition <<< customize) { "Date": Nothing, "Days": Nothing, "StorageClass": Nothing }
 
 
 
@@ -6865,13 +6864,13 @@ instance encodeUploadIdMarker :: Encode UploadIdMarker where encode = genericEnc
 
 
 newtype UploadPartCopyOutput = UploadPartCopyOutput 
-  { "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId)
-  , "CopyPartResult" :: NullOrUndefined (CopyPartResult)
-  , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "CopySourceVersionId" :: Maybe (CopySourceVersionId)
+  , "CopyPartResult" :: Maybe (CopyPartResult)
+  , "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeUploadPartCopyOutput :: Newtype UploadPartCopyOutput _
 derive instance repGenericUploadPartCopyOutput :: Generic UploadPartCopyOutput _
@@ -6881,33 +6880,33 @@ instance encodeUploadPartCopyOutput :: Encode UploadPartCopyOutput where encode 
 
 -- | Constructs UploadPartCopyOutput from required parameters
 newUploadPartCopyOutput :: UploadPartCopyOutput
-newUploadPartCopyOutput  = UploadPartCopyOutput { "CopyPartResult": (NullOrUndefined Nothing), "CopySourceVersionId": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing) }
+newUploadPartCopyOutput  = UploadPartCopyOutput { "CopyPartResult": Nothing, "CopySourceVersionId": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing }
 
 -- | Constructs UploadPartCopyOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUploadPartCopyOutput' :: ( { "CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId) , "CopyPartResult" :: NullOrUndefined (CopyPartResult) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"CopySourceVersionId" :: NullOrUndefined (CopySourceVersionId) , "CopyPartResult" :: NullOrUndefined (CopyPartResult) , "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> UploadPartCopyOutput
-newUploadPartCopyOutput'  customize = (UploadPartCopyOutput <<< customize) { "CopyPartResult": (NullOrUndefined Nothing), "CopySourceVersionId": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing) }
+newUploadPartCopyOutput' :: ( { "CopySourceVersionId" :: Maybe (CopySourceVersionId) , "CopyPartResult" :: Maybe (CopyPartResult) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } -> {"CopySourceVersionId" :: Maybe (CopySourceVersionId) , "CopyPartResult" :: Maybe (CopyPartResult) , "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } ) -> UploadPartCopyOutput
+newUploadPartCopyOutput'  customize = (UploadPartCopyOutput <<< customize) { "CopyPartResult": Nothing, "CopySourceVersionId": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing }
 
 
 
 newtype UploadPartCopyRequest = UploadPartCopyRequest 
   { "Bucket" :: (BucketName)
   , "CopySource" :: (CopySource)
-  , "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch)
-  , "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince)
-  , "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch)
-  , "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince)
-  , "CopySourceRange" :: NullOrUndefined (CopySourceRange)
+  , "CopySourceIfMatch" :: Maybe (CopySourceIfMatch)
+  , "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince)
+  , "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch)
+  , "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince)
+  , "CopySourceRange" :: Maybe (CopySourceRange)
   , "Key" :: (ObjectKey)
   , "PartNumber" :: (PartNumber)
   , "UploadId" :: (MultipartUploadId)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm)
-  , "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey)
-  , "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKey" :: Maybe (SSECustomerKey)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm)
+  , "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey)
+  , "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeUploadPartCopyRequest :: Newtype UploadPartCopyRequest _
 derive instance repGenericUploadPartCopyRequest :: Generic UploadPartCopyRequest _
@@ -6917,22 +6916,22 @@ instance encodeUploadPartCopyRequest :: Encode UploadPartCopyRequest where encod
 
 -- | Constructs UploadPartCopyRequest from required parameters
 newUploadPartCopyRequest :: BucketName -> CopySource -> ObjectKey -> PartNumber -> MultipartUploadId -> UploadPartCopyRequest
-newUploadPartCopyRequest _Bucket _CopySource _Key _PartNumber _UploadId = UploadPartCopyRequest { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "CopySourceIfMatch": (NullOrUndefined Nothing), "CopySourceIfModifiedSince": (NullOrUndefined Nothing), "CopySourceIfNoneMatch": (NullOrUndefined Nothing), "CopySourceIfUnmodifiedSince": (NullOrUndefined Nothing), "CopySourceRange": (NullOrUndefined Nothing), "CopySourceSSECustomerAlgorithm": (NullOrUndefined Nothing), "CopySourceSSECustomerKey": (NullOrUndefined Nothing), "CopySourceSSECustomerKeyMD5": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing) }
+newUploadPartCopyRequest _Bucket _CopySource _Key _PartNumber _UploadId = UploadPartCopyRequest { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "CopySourceIfMatch": Nothing, "CopySourceIfModifiedSince": Nothing, "CopySourceIfNoneMatch": Nothing, "CopySourceIfUnmodifiedSince": Nothing, "CopySourceRange": Nothing, "CopySourceSSECustomerAlgorithm": Nothing, "CopySourceSSECustomerKey": Nothing, "CopySourceSSECustomerKeyMD5": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing }
 
 -- | Constructs UploadPartCopyRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUploadPartCopyRequest' :: BucketName -> CopySource -> ObjectKey -> PartNumber -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince) , "CopySourceRange" :: NullOrUndefined (CopySourceRange) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Bucket" :: (BucketName) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: NullOrUndefined (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: NullOrUndefined (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: NullOrUndefined (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: NullOrUndefined (CopySourceIfUnmodifiedSince) , "CopySourceRange" :: NullOrUndefined (CopySourceRange) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "CopySourceSSECustomerAlgorithm" :: NullOrUndefined (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: NullOrUndefined (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: NullOrUndefined (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> UploadPartCopyRequest
-newUploadPartCopyRequest' _Bucket _CopySource _Key _PartNumber _UploadId customize = (UploadPartCopyRequest <<< customize) { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "CopySourceIfMatch": (NullOrUndefined Nothing), "CopySourceIfModifiedSince": (NullOrUndefined Nothing), "CopySourceIfNoneMatch": (NullOrUndefined Nothing), "CopySourceIfUnmodifiedSince": (NullOrUndefined Nothing), "CopySourceRange": (NullOrUndefined Nothing), "CopySourceSSECustomerAlgorithm": (NullOrUndefined Nothing), "CopySourceSSECustomerKey": (NullOrUndefined Nothing), "CopySourceSSECustomerKeyMD5": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing) }
+newUploadPartCopyRequest' :: BucketName -> CopySource -> ObjectKey -> PartNumber -> MultipartUploadId -> ( { "Bucket" :: (BucketName) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: Maybe (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince) , "CopySourceRange" :: Maybe (CopySourceRange) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Bucket" :: (BucketName) , "CopySource" :: (CopySource) , "CopySourceIfMatch" :: Maybe (CopySourceIfMatch) , "CopySourceIfModifiedSince" :: Maybe (CopySourceIfModifiedSince) , "CopySourceIfNoneMatch" :: Maybe (CopySourceIfNoneMatch) , "CopySourceIfUnmodifiedSince" :: Maybe (CopySourceIfUnmodifiedSince) , "CopySourceRange" :: Maybe (CopySourceRange) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "CopySourceSSECustomerAlgorithm" :: Maybe (CopySourceSSECustomerAlgorithm) , "CopySourceSSECustomerKey" :: Maybe (CopySourceSSECustomerKey) , "CopySourceSSECustomerKeyMD5" :: Maybe (CopySourceSSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) } ) -> UploadPartCopyRequest
+newUploadPartCopyRequest' _Bucket _CopySource _Key _PartNumber _UploadId customize = (UploadPartCopyRequest <<< customize) { "Bucket": _Bucket, "CopySource": _CopySource, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "CopySourceIfMatch": Nothing, "CopySourceIfModifiedSince": Nothing, "CopySourceIfNoneMatch": Nothing, "CopySourceIfUnmodifiedSince": Nothing, "CopySourceRange": Nothing, "CopySourceSSECustomerAlgorithm": Nothing, "CopySourceSSECustomerKey": Nothing, "CopySourceSSECustomerKeyMD5": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing }
 
 
 
 newtype UploadPartOutput = UploadPartOutput 
-  { "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption)
-  , "ETag" :: NullOrUndefined (ETag)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId)
-  , "RequestCharged" :: NullOrUndefined (RequestCharged)
+  { "ServerSideEncryption" :: Maybe (ServerSideEncryption)
+  , "ETag" :: Maybe (ETag)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId)
+  , "RequestCharged" :: Maybe (RequestCharged)
   }
 derive instance newtypeUploadPartOutput :: Newtype UploadPartOutput _
 derive instance repGenericUploadPartOutput :: Generic UploadPartOutput _
@@ -6942,27 +6941,27 @@ instance encodeUploadPartOutput :: Encode UploadPartOutput where encode = generi
 
 -- | Constructs UploadPartOutput from required parameters
 newUploadPartOutput :: UploadPartOutput
-newUploadPartOutput  = UploadPartOutput { "ETag": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing) }
+newUploadPartOutput  = UploadPartOutput { "ETag": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing }
 
 -- | Constructs UploadPartOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUploadPartOutput' :: ( { "ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "ETag" :: NullOrUndefined (ETag) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } -> {"ServerSideEncryption" :: NullOrUndefined (ServerSideEncryption) , "ETag" :: NullOrUndefined (ETag) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "SSEKMSKeyId" :: NullOrUndefined (SSEKMSKeyId) , "RequestCharged" :: NullOrUndefined (RequestCharged) } ) -> UploadPartOutput
-newUploadPartOutput'  customize = (UploadPartOutput <<< customize) { "ETag": (NullOrUndefined Nothing), "RequestCharged": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing), "SSEKMSKeyId": (NullOrUndefined Nothing), "ServerSideEncryption": (NullOrUndefined Nothing) }
+newUploadPartOutput' :: ( { "ServerSideEncryption" :: Maybe (ServerSideEncryption) , "ETag" :: Maybe (ETag) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } -> {"ServerSideEncryption" :: Maybe (ServerSideEncryption) , "ETag" :: Maybe (ETag) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "SSEKMSKeyId" :: Maybe (SSEKMSKeyId) , "RequestCharged" :: Maybe (RequestCharged) } ) -> UploadPartOutput
+newUploadPartOutput'  customize = (UploadPartOutput <<< customize) { "ETag": Nothing, "RequestCharged": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKeyMD5": Nothing, "SSEKMSKeyId": Nothing, "ServerSideEncryption": Nothing }
 
 
 
 newtype UploadPartRequest = UploadPartRequest 
-  { "Body" :: NullOrUndefined (Body)
+  { "Body" :: Maybe (Body)
   , "Bucket" :: (BucketName)
-  , "ContentLength" :: NullOrUndefined (ContentLength)
-  , "ContentMD5" :: NullOrUndefined (ContentMD5)
+  , "ContentLength" :: Maybe (ContentLength)
+  , "ContentMD5" :: Maybe (ContentMD5)
   , "Key" :: (ObjectKey)
   , "PartNumber" :: (PartNumber)
   , "UploadId" :: (MultipartUploadId)
-  , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm)
-  , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey)
-  , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5)
-  , "RequestPayer" :: NullOrUndefined (RequestPayer)
+  , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm)
+  , "SSECustomerKey" :: Maybe (SSECustomerKey)
+  , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5)
+  , "RequestPayer" :: Maybe (RequestPayer)
   }
 derive instance newtypeUploadPartRequest :: Newtype UploadPartRequest _
 derive instance repGenericUploadPartRequest :: Generic UploadPartRequest _
@@ -6972,12 +6971,12 @@ instance encodeUploadPartRequest :: Encode UploadPartRequest where encode = gene
 
 -- | Constructs UploadPartRequest from required parameters
 newUploadPartRequest :: BucketName -> ObjectKey -> PartNumber -> MultipartUploadId -> UploadPartRequest
-newUploadPartRequest _Bucket _Key _PartNumber _UploadId = UploadPartRequest { "Bucket": _Bucket, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "Body": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing) }
+newUploadPartRequest _Bucket _Key _PartNumber _UploadId = UploadPartRequest { "Bucket": _Bucket, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "Body": Nothing, "ContentLength": Nothing, "ContentMD5": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing }
 
 -- | Constructs UploadPartRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUploadPartRequest' :: BucketName -> ObjectKey -> PartNumber -> MultipartUploadId -> ( { "Body" :: NullOrUndefined (Body) , "Bucket" :: (BucketName) , "ContentLength" :: NullOrUndefined (ContentLength) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) } -> {"Body" :: NullOrUndefined (Body) , "Bucket" :: (BucketName) , "ContentLength" :: NullOrUndefined (ContentLength) , "ContentMD5" :: NullOrUndefined (ContentMD5) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: NullOrUndefined (SSECustomerAlgorithm) , "SSECustomerKey" :: NullOrUndefined (SSECustomerKey) , "SSECustomerKeyMD5" :: NullOrUndefined (SSECustomerKeyMD5) , "RequestPayer" :: NullOrUndefined (RequestPayer) } ) -> UploadPartRequest
-newUploadPartRequest' _Bucket _Key _PartNumber _UploadId customize = (UploadPartRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "Body": (NullOrUndefined Nothing), "ContentLength": (NullOrUndefined Nothing), "ContentMD5": (NullOrUndefined Nothing), "RequestPayer": (NullOrUndefined Nothing), "SSECustomerAlgorithm": (NullOrUndefined Nothing), "SSECustomerKey": (NullOrUndefined Nothing), "SSECustomerKeyMD5": (NullOrUndefined Nothing) }
+newUploadPartRequest' :: BucketName -> ObjectKey -> PartNumber -> MultipartUploadId -> ( { "Body" :: Maybe (Body) , "Bucket" :: (BucketName) , "ContentLength" :: Maybe (ContentLength) , "ContentMD5" :: Maybe (ContentMD5) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) } -> {"Body" :: Maybe (Body) , "Bucket" :: (BucketName) , "ContentLength" :: Maybe (ContentLength) , "ContentMD5" :: Maybe (ContentMD5) , "Key" :: (ObjectKey) , "PartNumber" :: (PartNumber) , "UploadId" :: (MultipartUploadId) , "SSECustomerAlgorithm" :: Maybe (SSECustomerAlgorithm) , "SSECustomerKey" :: Maybe (SSECustomerKey) , "SSECustomerKeyMD5" :: Maybe (SSECustomerKeyMD5) , "RequestPayer" :: Maybe (RequestPayer) } ) -> UploadPartRequest
+newUploadPartRequest' _Bucket _Key _PartNumber _UploadId customize = (UploadPartRequest <<< customize) { "Bucket": _Bucket, "Key": _Key, "PartNumber": _PartNumber, "UploadId": _UploadId, "Body": Nothing, "ContentLength": Nothing, "ContentMD5": Nothing, "RequestPayer": Nothing, "SSECustomerAlgorithm": Nothing, "SSECustomerKey": Nothing, "SSECustomerKeyMD5": Nothing }
 
 
 
@@ -7009,8 +7008,8 @@ instance encodeVersionIdMarker :: Encode VersionIdMarker where encode = genericE
 
 
 newtype VersioningConfiguration = VersioningConfiguration 
-  { "MFADelete" :: NullOrUndefined (MFADelete)
-  , "Status" :: NullOrUndefined (BucketVersioningStatus)
+  { "MFADelete" :: Maybe (MFADelete)
+  , "Status" :: Maybe (BucketVersioningStatus)
   }
 derive instance newtypeVersioningConfiguration :: Newtype VersioningConfiguration _
 derive instance repGenericVersioningConfiguration :: Generic VersioningConfiguration _
@@ -7020,20 +7019,20 @@ instance encodeVersioningConfiguration :: Encode VersioningConfiguration where e
 
 -- | Constructs VersioningConfiguration from required parameters
 newVersioningConfiguration :: VersioningConfiguration
-newVersioningConfiguration  = VersioningConfiguration { "MFADelete": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newVersioningConfiguration  = VersioningConfiguration { "MFADelete": Nothing, "Status": Nothing }
 
 -- | Constructs VersioningConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newVersioningConfiguration' :: ( { "MFADelete" :: NullOrUndefined (MFADelete) , "Status" :: NullOrUndefined (BucketVersioningStatus) } -> {"MFADelete" :: NullOrUndefined (MFADelete) , "Status" :: NullOrUndefined (BucketVersioningStatus) } ) -> VersioningConfiguration
-newVersioningConfiguration'  customize = (VersioningConfiguration <<< customize) { "MFADelete": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing) }
+newVersioningConfiguration' :: ( { "MFADelete" :: Maybe (MFADelete) , "Status" :: Maybe (BucketVersioningStatus) } -> {"MFADelete" :: Maybe (MFADelete) , "Status" :: Maybe (BucketVersioningStatus) } ) -> VersioningConfiguration
+newVersioningConfiguration'  customize = (VersioningConfiguration <<< customize) { "MFADelete": Nothing, "Status": Nothing }
 
 
 
 newtype WebsiteConfiguration = WebsiteConfiguration 
-  { "ErrorDocument" :: NullOrUndefined (ErrorDocument)
-  , "IndexDocument" :: NullOrUndefined (IndexDocument)
-  , "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo)
-  , "RoutingRules" :: NullOrUndefined (RoutingRules)
+  { "ErrorDocument" :: Maybe (ErrorDocument)
+  , "IndexDocument" :: Maybe (IndexDocument)
+  , "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo)
+  , "RoutingRules" :: Maybe (RoutingRules)
   }
 derive instance newtypeWebsiteConfiguration :: Newtype WebsiteConfiguration _
 derive instance repGenericWebsiteConfiguration :: Generic WebsiteConfiguration _
@@ -7043,12 +7042,12 @@ instance encodeWebsiteConfiguration :: Encode WebsiteConfiguration where encode 
 
 -- | Constructs WebsiteConfiguration from required parameters
 newWebsiteConfiguration :: WebsiteConfiguration
-newWebsiteConfiguration  = WebsiteConfiguration { "ErrorDocument": (NullOrUndefined Nothing), "IndexDocument": (NullOrUndefined Nothing), "RedirectAllRequestsTo": (NullOrUndefined Nothing), "RoutingRules": (NullOrUndefined Nothing) }
+newWebsiteConfiguration  = WebsiteConfiguration { "ErrorDocument": Nothing, "IndexDocument": Nothing, "RedirectAllRequestsTo": Nothing, "RoutingRules": Nothing }
 
 -- | Constructs WebsiteConfiguration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newWebsiteConfiguration' :: ( { "ErrorDocument" :: NullOrUndefined (ErrorDocument) , "IndexDocument" :: NullOrUndefined (IndexDocument) , "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo) , "RoutingRules" :: NullOrUndefined (RoutingRules) } -> {"ErrorDocument" :: NullOrUndefined (ErrorDocument) , "IndexDocument" :: NullOrUndefined (IndexDocument) , "RedirectAllRequestsTo" :: NullOrUndefined (RedirectAllRequestsTo) , "RoutingRules" :: NullOrUndefined (RoutingRules) } ) -> WebsiteConfiguration
-newWebsiteConfiguration'  customize = (WebsiteConfiguration <<< customize) { "ErrorDocument": (NullOrUndefined Nothing), "IndexDocument": (NullOrUndefined Nothing), "RedirectAllRequestsTo": (NullOrUndefined Nothing), "RoutingRules": (NullOrUndefined Nothing) }
+newWebsiteConfiguration' :: ( { "ErrorDocument" :: Maybe (ErrorDocument) , "IndexDocument" :: Maybe (IndexDocument) , "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo) , "RoutingRules" :: Maybe (RoutingRules) } -> {"ErrorDocument" :: Maybe (ErrorDocument) , "IndexDocument" :: Maybe (IndexDocument) , "RedirectAllRequestsTo" :: Maybe (RedirectAllRequestsTo) , "RoutingRules" :: Maybe (RoutingRules) } ) -> WebsiteConfiguration
+newWebsiteConfiguration'  customize = (WebsiteConfiguration <<< customize) { "ErrorDocument": Nothing, "IndexDocument": Nothing, "RedirectAllRequestsTo": Nothing, "RoutingRules": Nothing }
 
 
 

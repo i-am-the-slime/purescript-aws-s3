@@ -43,67 +43,67 @@ createMultipartUpload (S3.Service serviceImpl) = AWS.request serviceImpl method 
 
 
 -- | Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
-deleteBucket :: forall eff. S3.Service -> S3Types.DeleteBucketRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucket :: forall eff. S3.Service -> S3Types.DeleteBucketRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucket (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucket"
 
 
 -- | Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).
-deleteBucketAnalyticsConfiguration :: forall eff. S3.Service -> S3Types.DeleteBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketAnalyticsConfiguration :: forall eff. S3.Service -> S3Types.DeleteBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketAnalyticsConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketAnalyticsConfiguration"
 
 
 -- | Deletes the cors configuration information set for the bucket.
-deleteBucketCors :: forall eff. S3.Service -> S3Types.DeleteBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketCors :: forall eff. S3.Service -> S3Types.DeleteBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketCors (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketCors"
 
 
 -- | Deletes the server-side encryption configuration from the bucket.
-deleteBucketEncryption :: forall eff. S3.Service -> S3Types.DeleteBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketEncryption :: forall eff. S3.Service -> S3Types.DeleteBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketEncryption (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketEncryption"
 
 
 -- | Deletes an inventory configuration (identified by the inventory ID) from the bucket.
-deleteBucketInventoryConfiguration :: forall eff. S3.Service -> S3Types.DeleteBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketInventoryConfiguration :: forall eff. S3.Service -> S3Types.DeleteBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketInventoryConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketInventoryConfiguration"
 
 
 -- | Deletes the lifecycle configuration from the bucket.
-deleteBucketLifecycle :: forall eff. S3.Service -> S3Types.DeleteBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketLifecycle :: forall eff. S3.Service -> S3Types.DeleteBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketLifecycle (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketLifecycle"
 
 
 -- | Deletes a metrics configuration (specified by the metrics configuration ID) from the bucket.
-deleteBucketMetricsConfiguration :: forall eff. S3.Service -> S3Types.DeleteBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketMetricsConfiguration :: forall eff. S3.Service -> S3Types.DeleteBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketMetricsConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketMetricsConfiguration"
 
 
 -- | Deletes the policy from the bucket.
-deleteBucketPolicy :: forall eff. S3.Service -> S3Types.DeleteBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketPolicy :: forall eff. S3.Service -> S3Types.DeleteBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketPolicy (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketPolicy"
 
 
 -- | Deletes the replication configuration from the bucket.
-deleteBucketReplication :: forall eff. S3.Service -> S3Types.DeleteBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketReplication :: forall eff. S3.Service -> S3Types.DeleteBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketReplication (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketReplication"
 
 
 -- | Deletes the tags from the bucket.
-deleteBucketTagging :: forall eff. S3.Service -> S3Types.DeleteBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketTagging :: forall eff. S3.Service -> S3Types.DeleteBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketTagging (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketTagging"
 
 
 -- | This operation removes the website configuration from the bucket.
-deleteBucketWebsite :: forall eff. S3.Service -> S3Types.DeleteBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+deleteBucketWebsite :: forall eff. S3.Service -> S3Types.DeleteBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Unit
 deleteBucketWebsite (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "deleteBucketWebsite"
 
@@ -265,7 +265,7 @@ getObjectTorrent (S3.Service serviceImpl) = AWS.request serviceImpl method  wher
 
 
 -- | This operation is useful to determine if a bucket exists and you have permission to access it.
-headBucket :: forall eff. S3.Service -> S3Types.HeadBucketRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+headBucket :: forall eff. S3.Service -> S3Types.HeadBucketRequest -> Aff (exception :: EXCEPTION | eff) Unit
 headBucket (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "headBucket"
 
@@ -296,7 +296,7 @@ listBucketMetricsConfigurations (S3.Service serviceImpl) = AWS.request serviceIm
 
 -- | Returns a list of all buckets owned by the authenticated sender of the request.
 listBuckets :: forall eff. S3.Service ->  Aff (exception :: EXCEPTION | eff) S3Types.ListBucketsOutput
-listBuckets (S3.Service serviceImpl) = AWS.request serviceImpl method (Types.NoInput unit) where
+listBuckets (S3.Service serviceImpl) = AWS.request serviceImpl method unit where
     method = AWS.MethodName "listBuckets"
 
 
@@ -331,109 +331,109 @@ listParts (S3.Service serviceImpl) = AWS.request serviceImpl method  where
 
 
 -- | Sets the accelerate configuration of an existing bucket.
-putBucketAccelerateConfiguration :: forall eff. S3.Service -> S3Types.PutBucketAccelerateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketAccelerateConfiguration :: forall eff. S3.Service -> S3Types.PutBucketAccelerateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketAccelerateConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketAccelerateConfiguration"
 
 
 -- | Sets the permissions on a bucket using access control lists (ACL).
-putBucketAcl :: forall eff. S3.Service -> S3Types.PutBucketAclRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketAcl :: forall eff. S3.Service -> S3Types.PutBucketAclRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketAcl (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketAcl"
 
 
 -- | Sets an analytics configuration for the bucket (specified by the analytics configuration ID).
-putBucketAnalyticsConfiguration :: forall eff. S3.Service -> S3Types.PutBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketAnalyticsConfiguration :: forall eff. S3.Service -> S3Types.PutBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketAnalyticsConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketAnalyticsConfiguration"
 
 
 -- | Sets the cors configuration for a bucket.
-putBucketCors :: forall eff. S3.Service -> S3Types.PutBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketCors :: forall eff. S3.Service -> S3Types.PutBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketCors (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketCors"
 
 
 -- | Creates a new server-side encryption configuration (or replaces an existing one, if present).
-putBucketEncryption :: forall eff. S3.Service -> S3Types.PutBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketEncryption :: forall eff. S3.Service -> S3Types.PutBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketEncryption (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketEncryption"
 
 
 -- | Adds an inventory configuration (identified by the inventory ID) from the bucket.
-putBucketInventoryConfiguration :: forall eff. S3.Service -> S3Types.PutBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketInventoryConfiguration :: forall eff. S3.Service -> S3Types.PutBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketInventoryConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketInventoryConfiguration"
 
 
 -- | Deprecated, see the PutBucketLifecycleConfiguration operation.
-putBucketLifecycle :: forall eff. S3.Service -> S3Types.PutBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketLifecycle :: forall eff. S3.Service -> S3Types.PutBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketLifecycle (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketLifecycle"
 
 
 -- | Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.
-putBucketLifecycleConfiguration :: forall eff. S3.Service -> S3Types.PutBucketLifecycleConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketLifecycleConfiguration :: forall eff. S3.Service -> S3Types.PutBucketLifecycleConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketLifecycleConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketLifecycleConfiguration"
 
 
 -- | Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the logging status of a bucket, you must be the bucket owner.
-putBucketLogging :: forall eff. S3.Service -> S3Types.PutBucketLoggingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketLogging :: forall eff. S3.Service -> S3Types.PutBucketLoggingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketLogging (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketLogging"
 
 
 -- | Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
-putBucketMetricsConfiguration :: forall eff. S3.Service -> S3Types.PutBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketMetricsConfiguration :: forall eff. S3.Service -> S3Types.PutBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketMetricsConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketMetricsConfiguration"
 
 
 -- | Deprecated, see the PutBucketNotificationConfiguraiton operation.
-putBucketNotification :: forall eff. S3.Service -> S3Types.PutBucketNotificationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketNotification :: forall eff. S3.Service -> S3Types.PutBucketNotificationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketNotification (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketNotification"
 
 
 -- | Enables notifications of specified events for a bucket.
-putBucketNotificationConfiguration :: forall eff. S3.Service -> S3Types.PutBucketNotificationConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketNotificationConfiguration :: forall eff. S3.Service -> S3Types.PutBucketNotificationConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketNotificationConfiguration (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketNotificationConfiguration"
 
 
 -- | Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.
-putBucketPolicy :: forall eff. S3.Service -> S3Types.PutBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketPolicy :: forall eff. S3.Service -> S3Types.PutBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketPolicy (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketPolicy"
 
 
 -- | Creates a new replication configuration (or replaces an existing one, if present).
-putBucketReplication :: forall eff. S3.Service -> S3Types.PutBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketReplication :: forall eff. S3.Service -> S3Types.PutBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketReplication (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketReplication"
 
 
 -- | Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
-putBucketRequestPayment :: forall eff. S3.Service -> S3Types.PutBucketRequestPaymentRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketRequestPayment :: forall eff. S3.Service -> S3Types.PutBucketRequestPaymentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketRequestPayment (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketRequestPayment"
 
 
 -- | Sets the tags for a bucket.
-putBucketTagging :: forall eff. S3.Service -> S3Types.PutBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketTagging :: forall eff. S3.Service -> S3Types.PutBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketTagging (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketTagging"
 
 
 -- | Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.
-putBucketVersioning :: forall eff. S3.Service -> S3Types.PutBucketVersioningRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketVersioning :: forall eff. S3.Service -> S3Types.PutBucketVersioningRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketVersioning (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketVersioning"
 
 
 -- | Set the website configuration for a bucket.
-putBucketWebsite :: forall eff. S3.Service -> S3Types.PutBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Types.NoOutput
+putBucketWebsite :: forall eff. S3.Service -> S3Types.PutBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Unit
 putBucketWebsite (S3.Service serviceImpl) = AWS.request serviceImpl method  where
     method = AWS.MethodName "putBucketWebsite"
 

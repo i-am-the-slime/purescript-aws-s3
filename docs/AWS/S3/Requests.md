@@ -43,7 +43,7 @@ createMultipartUpload :: forall eff. Service -> CreateMultipartUploadRequest -> 
 #### `deleteBucket`
 
 ``` purescript
-deleteBucket :: forall eff. Service -> DeleteBucketRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucket :: forall eff. Service -> DeleteBucketRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes the bucket. All objects (including all object versions and Delete Markers) in the bucket must be deleted before the bucket itself can be deleted.
@@ -51,7 +51,7 @@ Deletes the bucket. All objects (including all object versions and Delete Marker
 #### `deleteBucketAnalyticsConfiguration`
 
 ``` purescript
-deleteBucketAnalyticsConfiguration :: forall eff. Service -> DeleteBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketAnalyticsConfiguration :: forall eff. Service -> DeleteBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).
@@ -59,7 +59,7 @@ Deletes an analytics configuration for the bucket (specified by the analytics co
 #### `deleteBucketCors`
 
 ``` purescript
-deleteBucketCors :: forall eff. Service -> DeleteBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketCors :: forall eff. Service -> DeleteBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes the cors configuration information set for the bucket.
@@ -67,7 +67,7 @@ Deletes the cors configuration information set for the bucket.
 #### `deleteBucketEncryption`
 
 ``` purescript
-deleteBucketEncryption :: forall eff. Service -> DeleteBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketEncryption :: forall eff. Service -> DeleteBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes the server-side encryption configuration from the bucket.
@@ -75,7 +75,7 @@ Deletes the server-side encryption configuration from the bucket.
 #### `deleteBucketInventoryConfiguration`
 
 ``` purescript
-deleteBucketInventoryConfiguration :: forall eff. Service -> DeleteBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketInventoryConfiguration :: forall eff. Service -> DeleteBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes an inventory configuration (identified by the inventory ID) from the bucket.
@@ -83,7 +83,7 @@ Deletes an inventory configuration (identified by the inventory ID) from the buc
 #### `deleteBucketLifecycle`
 
 ``` purescript
-deleteBucketLifecycle :: forall eff. Service -> DeleteBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketLifecycle :: forall eff. Service -> DeleteBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes the lifecycle configuration from the bucket.
@@ -91,7 +91,7 @@ Deletes the lifecycle configuration from the bucket.
 #### `deleteBucketMetricsConfiguration`
 
 ``` purescript
-deleteBucketMetricsConfiguration :: forall eff. Service -> DeleteBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketMetricsConfiguration :: forall eff. Service -> DeleteBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes a metrics configuration (specified by the metrics configuration ID) from the bucket.
@@ -99,7 +99,7 @@ Deletes a metrics configuration (specified by the metrics configuration ID) from
 #### `deleteBucketPolicy`
 
 ``` purescript
-deleteBucketPolicy :: forall eff. Service -> DeleteBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketPolicy :: forall eff. Service -> DeleteBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes the policy from the bucket.
@@ -107,7 +107,7 @@ Deletes the policy from the bucket.
 #### `deleteBucketReplication`
 
 ``` purescript
-deleteBucketReplication :: forall eff. Service -> DeleteBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketReplication :: forall eff. Service -> DeleteBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes the replication configuration from the bucket.
@@ -115,7 +115,7 @@ Deletes the replication configuration from the bucket.
 #### `deleteBucketTagging`
 
 ``` purescript
-deleteBucketTagging :: forall eff. Service -> DeleteBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketTagging :: forall eff. Service -> DeleteBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deletes the tags from the bucket.
@@ -123,7 +123,7 @@ Deletes the tags from the bucket.
 #### `deleteBucketWebsite`
 
 ``` purescript
-deleteBucketWebsite :: forall eff. Service -> DeleteBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteBucketWebsite :: forall eff. Service -> DeleteBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 This operation removes the website configuration from the bucket.
@@ -339,7 +339,7 @@ Return torrent files from a bucket.
 #### `headBucket`
 
 ``` purescript
-headBucket :: forall eff. Service -> HeadBucketRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+headBucket :: forall eff. Service -> HeadBucketRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 This operation is useful to determine if a bucket exists and you have permission to access it.
@@ -427,7 +427,7 @@ Lists the parts that have been uploaded for a specific multipart upload.
 #### `putBucketAccelerateConfiguration`
 
 ``` purescript
-putBucketAccelerateConfiguration :: forall eff. Service -> PutBucketAccelerateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketAccelerateConfiguration :: forall eff. Service -> PutBucketAccelerateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets the accelerate configuration of an existing bucket.
@@ -435,7 +435,7 @@ Sets the accelerate configuration of an existing bucket.
 #### `putBucketAcl`
 
 ``` purescript
-putBucketAcl :: forall eff. Service -> PutBucketAclRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketAcl :: forall eff. Service -> PutBucketAclRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets the permissions on a bucket using access control lists (ACL).
@@ -443,7 +443,7 @@ Sets the permissions on a bucket using access control lists (ACL).
 #### `putBucketAnalyticsConfiguration`
 
 ``` purescript
-putBucketAnalyticsConfiguration :: forall eff. Service -> PutBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketAnalyticsConfiguration :: forall eff. Service -> PutBucketAnalyticsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets an analytics configuration for the bucket (specified by the analytics configuration ID).
@@ -451,7 +451,7 @@ Sets an analytics configuration for the bucket (specified by the analytics confi
 #### `putBucketCors`
 
 ``` purescript
-putBucketCors :: forall eff. Service -> PutBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketCors :: forall eff. Service -> PutBucketCorsRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets the cors configuration for a bucket.
@@ -459,7 +459,7 @@ Sets the cors configuration for a bucket.
 #### `putBucketEncryption`
 
 ``` purescript
-putBucketEncryption :: forall eff. Service -> PutBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketEncryption :: forall eff. Service -> PutBucketEncryptionRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Creates a new server-side encryption configuration (or replaces an existing one, if present).
@@ -467,7 +467,7 @@ Creates a new server-side encryption configuration (or replaces an existing one,
 #### `putBucketInventoryConfiguration`
 
 ``` purescript
-putBucketInventoryConfiguration :: forall eff. Service -> PutBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketInventoryConfiguration :: forall eff. Service -> PutBucketInventoryConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Adds an inventory configuration (identified by the inventory ID) from the bucket.
@@ -475,7 +475,7 @@ Adds an inventory configuration (identified by the inventory ID) from the bucket
 #### `putBucketLifecycle`
 
 ``` purescript
-putBucketLifecycle :: forall eff. Service -> PutBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketLifecycle :: forall eff. Service -> PutBucketLifecycleRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deprecated, see the PutBucketLifecycleConfiguration operation.
@@ -483,7 +483,7 @@ Deprecated, see the PutBucketLifecycleConfiguration operation.
 #### `putBucketLifecycleConfiguration`
 
 ``` purescript
-putBucketLifecycleConfiguration :: forall eff. Service -> PutBucketLifecycleConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketLifecycleConfiguration :: forall eff. Service -> PutBucketLifecycleConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets lifecycle configuration for your bucket. If a lifecycle configuration exists, it replaces it.
@@ -491,7 +491,7 @@ Sets lifecycle configuration for your bucket. If a lifecycle configuration exist
 #### `putBucketLogging`
 
 ``` purescript
-putBucketLogging :: forall eff. Service -> PutBucketLoggingRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketLogging :: forall eff. Service -> PutBucketLoggingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. To set the logging status of a bucket, you must be the bucket owner.
@@ -499,7 +499,7 @@ Set the logging parameters for a bucket and to specify permissions for who can v
 #### `putBucketMetricsConfiguration`
 
 ``` purescript
-putBucketMetricsConfiguration :: forall eff. Service -> PutBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketMetricsConfiguration :: forall eff. Service -> PutBucketMetricsConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets a metrics configuration (specified by the metrics configuration ID) for the bucket.
@@ -507,7 +507,7 @@ Sets a metrics configuration (specified by the metrics configuration ID) for the
 #### `putBucketNotification`
 
 ``` purescript
-putBucketNotification :: forall eff. Service -> PutBucketNotificationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketNotification :: forall eff. Service -> PutBucketNotificationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Deprecated, see the PutBucketNotificationConfiguraiton operation.
@@ -515,7 +515,7 @@ Deprecated, see the PutBucketNotificationConfiguraiton operation.
 #### `putBucketNotificationConfiguration`
 
 ``` purescript
-putBucketNotificationConfiguration :: forall eff. Service -> PutBucketNotificationConfigurationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketNotificationConfiguration :: forall eff. Service -> PutBucketNotificationConfigurationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Enables notifications of specified events for a bucket.
@@ -523,7 +523,7 @@ Enables notifications of specified events for a bucket.
 #### `putBucketPolicy`
 
 ``` purescript
-putBucketPolicy :: forall eff. Service -> PutBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketPolicy :: forall eff. Service -> PutBucketPolicyRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Replaces a policy on a bucket. If the bucket already has a policy, the one in this request completely replaces it.
@@ -531,7 +531,7 @@ Replaces a policy on a bucket. If the bucket already has a policy, the one in th
 #### `putBucketReplication`
 
 ``` purescript
-putBucketReplication :: forall eff. Service -> PutBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketReplication :: forall eff. Service -> PutBucketReplicationRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Creates a new replication configuration (or replaces an existing one, if present).
@@ -539,7 +539,7 @@ Creates a new replication configuration (or replaces an existing one, if present
 #### `putBucketRequestPayment`
 
 ``` purescript
-putBucketRequestPayment :: forall eff. Service -> PutBucketRequestPaymentRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketRequestPayment :: forall eff. Service -> PutBucketRequestPaymentRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets the request payment configuration for a bucket. By default, the bucket owner pays for downloads from the bucket. This configuration parameter enables the bucket owner (only) to specify that the person requesting the download will be charged for the download. Documentation on requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
@@ -547,7 +547,7 @@ Sets the request payment configuration for a bucket. By default, the bucket owne
 #### `putBucketTagging`
 
 ``` purescript
-putBucketTagging :: forall eff. Service -> PutBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketTagging :: forall eff. Service -> PutBucketTaggingRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets the tags for a bucket.
@@ -555,7 +555,7 @@ Sets the tags for a bucket.
 #### `putBucketVersioning`
 
 ``` purescript
-putBucketVersioning :: forall eff. Service -> PutBucketVersioningRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketVersioning :: forall eff. Service -> PutBucketVersioningRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Sets the versioning state of an existing bucket. To set the versioning state, you must be the bucket owner.
@@ -563,7 +563,7 @@ Sets the versioning state of an existing bucket. To set the versioning state, yo
 #### `putBucketWebsite`
 
 ``` purescript
-putBucketWebsite :: forall eff. Service -> PutBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+putBucketWebsite :: forall eff. Service -> PutBucketWebsiteRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 Set the website configuration for a bucket.
